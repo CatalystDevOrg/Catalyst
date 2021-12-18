@@ -1,0 +1,14 @@
+/* Stylesheet for the Catalyst browser */
+
+body {
+    background-color: white;
+}
+
+* {
+    color: blue;
+    border-radius: 2pt;
+}
+
+input {
+    color: black;
+}
