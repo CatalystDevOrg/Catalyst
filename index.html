@@ -3,6 +3,7 @@
     <HEAD>
         <Title> Catalyst </Title>
         <link rel="stylesheet" href="materialize/css/materialize.css">
+        <link rel="stylesheet" href="styles.css">
 	<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" rel="stylesheet">
 	<meta name="viewport" content= "width=device-width, initial-scale=1.0">
     </HEAD>
@@ -13,6 +14,8 @@
 	<button id="reload" onClick="function()" class="waves-effect waves-light btn"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 	<button id="forward" onClick="function()" class="waves-effect waves-light btn">Forward</button>
 	<button id="back" onClick="function()" class="waves-effect waves-light btn">Back</button>
-        <webview id="view" src=""></webview>
+        <div id="webview">
+        <webview width="100%" height="95%" id="view" src=""></webview>
+        </div>
     </BODY>
 </HTML>
