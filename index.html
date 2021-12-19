@@ -4,7 +4,7 @@
 <HEAD>
     <Title> Catalyst </Title>
     <link rel="stylesheet" href="materialize/css/materialize.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </HEAD>
 
@@ -18,9 +18,9 @@
     <script src="src/loader.js"></script>
     <input style="width: 78%" id="searchbar" class="" placeholder="It all starts here...">
     <button id="go" onClick="loadWeb()" class="waves-effect waves-light btn-floating">Go</button>
-    <button id="reload" onClick="reload()" class="waves-effect waves-light btn-floating">Reload</button>
-    <button id="forward" onClick="forward()" class="waves-effect waves-light btn-floating">Forward</button>
-    <button id="back" onClick="backward()" class="waves-effect waves-light btn-floating">Back</button>
+    <button id="reload" onClick="reload()" class="waves-effect waves-light btn-floating"><i class="fa fa-refresh"></i></button>
+    <button id="forward" onClick="forward()" class="waves-effect waves-light btn-floating"><i class="fa fa-forward"></i></button>
+    <button id="back" onClick="backward()" class="waves-effect waves-light btn-floating"><i class="fa fa-backward"></i></button>
     <webview width="100vw" height="95vh" id="view" src=""></webview>
 </BODY>
 
