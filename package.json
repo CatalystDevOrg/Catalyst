@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "catalyst",
+  "version": "1.0.0-dev",
+  "description": "A minimal Electron Web Browser",
   "main": "main/main.js",
   "scripts": {
     "start": "electron ."
@@ -9,13 +9,11 @@
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Browser",
+    "Internet"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "JaydenDev",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^16.0.5"
   }
