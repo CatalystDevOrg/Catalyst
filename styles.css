@@ -1,30 +1,14 @@
 /* Stylesheet for the Catalyst browser */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&display=swap');
 
-body {
-    background-color: white;
-}
-
 * {
     color: blue;
-    border-radius: 2pt;
     font-family: 'Open Sans', sans-serif;
 }
 
-input {
-    color: black;
-    width: 95%;
-    height: 20px;
-    border: none;
-    font-size: 15pt;
-    outline: none;
-}
-
-.go-button {
-    height: 20px;
-    border: none;
-    padding: 10 10 10 10;
-    font-size: 10pt;
+#webview {
+    width: 100%;
+    height: 100%;
 }
 
 .center {
