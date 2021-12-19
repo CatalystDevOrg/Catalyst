@@ -1,0 +1,6 @@
+node_modules
+*.swp
+*.out
+*.bin
+out
+out/*
