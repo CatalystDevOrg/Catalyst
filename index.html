@@ -16,11 +16,13 @@
         }
     </style>
     <script src="src/loader.js"></script>
-    <input style="max-width: 80%" id="searchbar" class="" placeholder="It all starts here...">
-    <button id="go" onClick="loadWeb()" class="waves-effect waves-light btn-flat"><span style="color: black;">Go</p></button>
-    <button id="reload" onClick="reload()" class="waves-effect waves-light btn-flat"><i style="color: black;" class="fa fa-refresh"></i></button>
-    <button id="forward" onClick="forward()" class="waves-effect waves-light btn-flat"><i style="color: black;" class="fa fa-forward"></i></button>
-    <button id="back" onClick="backward()" class="waves-effect waves-light btn-flat"><i style="color: black;" class="fa fa-backward"></i></button>
+    <div class="nav-wrapper red">
+      <input style="max-width: 80%" id="searchbar" class="blue" placeholder="It all starts here...">
+      <button id="go" onClick="loadWeb()" class="waves-effect waves-light btn-flat"><span style="color: white;">Go</p></button>
+      <button id="reload" onClick="reload()" class="waves-effect waves-light btn-flat"><i style="color: white;" class="fa fa-refresh"></i></button>
+      <button id="forward" onClick="forward()" class="waves-effect waves-light btn-flat"><i style="color: white;" class="fa fa-forward"></i></button>
+      <button id="back" onClick="backward()" class="waves-effect waves-light btn-flat"><i style="color: white;" class="fa fa-backward"></i></button>
+    </div>
     <webview width="100vw" height="95vh" id="view" src="https://jaydendev.github.io/start"></webview>
 </BODY>
 
