@@ -2,17 +2,17 @@
 <HTML>
     <HEAD>
         <Title> Catalyst </Title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="materialize/css/materialize.css">
+	<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" rel="stylesheet">
 	<meta name="viewport" content= "width=device-width, initial-scale=1.0">
     </HEAD>
     <BODY>
         <script src="src/loader.js"></script>
         <input id="searchbar" class="" placeholder="It all starts here..."> 
-        <button id="go" onClick="loadWeb()" class="go-button">Go</button>
-        <br>
-        <h1 class="center"> Catalyst Web Browser </h1>
-        <p class="center"> Go on, start searching </p>
-        <br>
-        <webview id="view" src="https://jaydendev.github.io/start"></webview>
+        <button id="go" onClick="loadWeb()" class="waves-effect waves-light btn">Go</button>
+	<button id="reload" onClick="function()" class="waves-effect waves-light btn"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+	<button id="forward" onClick="function()" class="waves-effect waves-light btn">Forward</button>
+	<button id="back" onClick="function()" class="waves-effect waves-light btn">Back</button>
+        <webview id="view" src=""></webview>
     </BODY>
 </HTML>
