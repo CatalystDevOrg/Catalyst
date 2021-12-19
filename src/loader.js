@@ -1,4 +1,4 @@
 function loadWeb () {
-    page = document.getElementById("go.value");
+    page = document.getElementById("searchbox").value;
     document.getElementById("view").src = page;
 }
