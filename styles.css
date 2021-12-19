@@ -1,0 +1,11 @@
+body {
+    background-color: #FFFFFF;
+}
+
+.action-btn {
+    color: black;
+    background-color: white;
+    border: none;
+    font-size: 10pt;
+    padding: 2 2 2 2;
+}
