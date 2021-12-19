@@ -2,10 +2,16 @@
 <HTML>
     <HEAD>
         <Title> Catalyst </Title>
-        <!-- Decide on a stylesheet, community -->
-        <!-- <link rel="stylesheet" href=""> -->
+        <link rel="stylesheet" href="styles.css">
     </HEAD>
     <BODY>
-        <h1> It all starts here</h1>
+        <script src="src/loader.js"></script>
+        <input id="searchbar" class="" placeholder="It all starts here..."> 
+        <button id="go" onClick="loadWeb()" class="go-button">Go</button>
+        <br>
+        <h1 class="center"> Catalyst Web Browser </h1>
+        <p class="center"> Go on, start searching </p>
+        <br>
+        <webview id="view" src=""></webview>
     </BODY>
 </HTML>
