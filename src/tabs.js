@@ -11,6 +11,8 @@ function createTab() {
 	// Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
 	let randomHash =
 		Math.random().toString(36).substring(2, 15) +
+		Math.random().toString(36).substring(2, 15) +
+		Math.random().toString(36).substring(2, 15) +
 		Math.random().toString(36).substring(2, 15);
 	tab.classList.add("tab");
 	tab.id = `tab-${randomHash}`;
