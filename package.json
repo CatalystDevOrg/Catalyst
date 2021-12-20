@@ -1,21 +1,26 @@
 {
-  "name": "catalyst",
-  "version": "1.0.0-dev",
-  "description": "A minimal Electron Web Browser",
-  "main": "main/main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "Browser",
-    "Internet"
-  ],
-  "author": "JaydenDev",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^16.0.5",
-    "font-awesome": "^4.7.0"
-  }
+	"name": "catalyst",
+	"version": "1.0.0-dev",
+	"description": "A minimal Electron Web Browser",
+	"main": "main/main.js",
+	"scripts": {
+		"start": "electron .",
+		"dev": "concurrently -k npm:start npm:tailwind",
+		"tailwind": "npx tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch"
+	},
+	"repository": "https://github.com/electron/electron-quick-start",
+	"keywords": [
+		"Electron",
+		"Browser",
+		"Internet"
+	],
+	"author": "JaydenDev",
+	"license": "MIT",
+	"devDependencies": {
+		"concurrently": "^6.5.1",
+		"electron": "^16.0.5",
+		"electron-reloader": "^1.2.1",
+		"font-awesome": "^4.7.0",
+		"tailwindcss": "^3.0.7"
+	}
 }

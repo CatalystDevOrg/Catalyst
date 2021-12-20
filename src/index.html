@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+  <Title> Catalyst </Title>
+  <script src="src/loader.js"></script>
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</HEAD>
+
+<BODY class="min-w-full min-h-full dark:bg-black">
+  <div class="w-full min-h-3 p-2 flex justify-center">
+    <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 p-2 rounded-t"
+      placeholder="Browse a URL" />
+    <button id="go" onClick="loadWeb()"
+      class="text-center p-2 bg-red-300 hover:bg-red-400 transition rounded-r">Go</button>
+  </div>
+  <button id="reload" onClick="reload()" class="action-btn"><i style="color: black;" class="fa fa-refresh"></i></button>
+  <button id="forward" onClick="forward()" class="action-btn"><i style="color: black;"
+      class="fa fa-forward"></i></button>
+  <button id="back" onClick="backward()" class="action-btn"><i style="color: black;"
+      class="fa fa-backward"></i></button>
+  <webview style="width: 100vw; height: 95vh;" id="view" src="https://jaydendev.github.io/start"></webview>
+</BODY>
+
+</HTML>
