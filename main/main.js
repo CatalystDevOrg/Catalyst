@@ -10,6 +10,7 @@ function createWindow() {
 		webPreferences: {
 			preload: path.join(__dirname, "preload.js"),
 			webviewTag: true,
+			nodeIntegration: true,
 		},
 	});
 	mainWindow.setMenuBarVisibility(false);
