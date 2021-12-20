@@ -59,8 +59,16 @@ function switchTabs(tabHash) {
 }
 
 function addListeners(view, hash) {
+	const tab = document.getElementById(`tab-${hash}`);
 	view.addEventListener("did-stop-loading", () => {
-		document.getElementById(`tab-${hash}`).innerText = view.getTitle();
+		tab.innerText = view.getTitle();
+		tab.classList.remove("animate-pulse");
+	});
+	view.addEventListener("did-start-loading", () => {
+		tab.classList.add("animate-pulse");
+	});
+	view.addEventListener("page-title-updated", (e) => {
+		tab.innerText = e.title;
 	});
 }
 
