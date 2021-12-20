@@ -1,4 +1,4 @@
-![Catalyst](https://assets.scratch.mit.edu/get_image/.%2E/5f862fc2a8ea0c3d2b20ace2ac25ebb1.svg)
+![Catalyst](https://raw.githubusercontent.com/JaydenDev/Catalyst/master/marketing/banner.svg)
 # Catalyst
 An amazing and elegant Electron web browser.
 ## Stay Secure
