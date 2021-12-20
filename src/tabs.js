@@ -9,11 +9,7 @@ let activeHash = "0";
 function createTab() {
 	let tab = document.createElement("div");
 	// Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
-	let randomHash =
-		Math.random().toString(36).substring(2, 15) +
-		Math.random().toString(36).substring(2, 15) +
-		Math.random().toString(36).substring(2, 15) +
-		Math.random().toString(36).substring(2, 15);
+	let randomHash = generateHashkey();
 	tab.classList.add("tab");
 	tab.id = `tab-${randomHash}`;
 	tab.onclick = () => {
@@ -24,9 +20,9 @@ function createTab() {
 	let view = document.createElement("webview");
 	view.id = "view-" + randomHash;
 	view.classList.add("view");
-	view.allowpopups = "allowpopups";
+	view.allowpopups = false;
 	view.webpreferences = "nativeWindowOpen=true";
-  view.useragent = "Catalyst"
+	view.useragent = "Catalyst";
 	view.src = "./welcome.html"; // will be changed when startpage settings are added
 	addListeners(view, randomHash);
 	document.getElementById("webviews").appendChild(view);
@@ -66,12 +62,20 @@ function addListeners(view, hash) {
 	view.addEventListener("did-stop-loading", () => {
 		tab.innerText = view.getTitle();
 		tab.classList.remove("animate-pulse");
+		let viewURL = view.getURL();
+		if (!viewURL.startsWith("file://")) {
+			document.getElementById("searchbar").value = viewURL;
+		}
 	});
 	view.addEventListener("did-start-loading", () => {
 		tab.classList.add("animate-pulse");
 	});
 	view.addEventListener("page-title-updated", (e) => {
 		tab.innerText = e.title;
+		let viewURL = view.getURL();
+		if (!viewURL.startsWith("file://")) {
+			document.getElementById("searchbar").value = viewURL;
+		}
 	});
 }
 

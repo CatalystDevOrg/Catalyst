@@ -3,20 +3,22 @@
 
 <HEAD>
   <Title> Catalyst </Title>
+  <script src="./functions.js"></script>
   <script src="./tabs.js" defer></script>
   <script src="./loader.js" defer></script>
+  <script src="./search.js" defer></script>
   <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../styles.css">
   <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </HEAD>
 
 <BODY class="min-w-full min-h-full dark:bg-black">
-  <div class="flex items-center px-4 py-2 mt-2 bg-gray-300">
+  <div class="flex items-center px-4 py-2 mt-2 bg-gray-100">
     <div id="tabs-bar" class="flex items-center flex-1 space-x-2 overflow-auto no-scrollbar">
       <!-- tabs are inserted with JS -->
     </div>
-    <div class="inline-flex px-1"><button id="create-tab" onClick="createTab()"
+    <div class="inline-flex px-1">
+      <button id="create-tab" onClick="createTab()"
         class="rounded-l text-center p-2 bg-red-300 hover:bg-red-400 transition"><i style="color: black;"
           class="fa fa-plus"></i></button>
       <button id="remove-tab" onClick="removeTab()"
@@ -27,8 +29,8 @@
   </div>
   <div class="w-full min-h-3 p-2 flex justify-center pt-4">
     <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 p-2 rounded-t"
-      placeholder="Browse a URL" />
-    <button id="go" onClick="loadWeb()" class="text-center p-2 bg-purple-300 hover:bg-purple-400 transition">Go</button>
+      placeholder="Browse the Web" />
+    <button id="go" onClick="loadURL()" class="text-center p-2 bg-purple-300 hover:bg-purple-400 transition">Go</button>
     <button id="reload" onClick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><i
         style="color: black;" class="fa fa-refresh"></i></button>
     <button id="back" onClick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><i
@@ -36,6 +38,9 @@
     <button id="forward" onClick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><i
         style="color: black;" class="fa fa-forward"></i></button>
 
+  </div>
+  <div class="suggestions-box" id="autocomplete-suggestions">
+    <!-- suggestions made with js -->
   </div>
   <div id="webviews"></div>
   <!-- <webview style="width: 100vw; height: 95vh;" id="view" src="./welcome.html"></webview> -->
