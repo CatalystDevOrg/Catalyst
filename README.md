@@ -1,4 +1,4 @@
-![Catalyst](https://raw.githubusercontent.com/JaydenDev/Catalyst/master/marketing/banner.svg)
+![Catalyst](https://raw.githubusercontent.com/JaydenDev/Catalyst/master/assets/banner.svg)
 # Catalyst
 An amazing and elegant Electron web browser.
 ## Stay Secure
