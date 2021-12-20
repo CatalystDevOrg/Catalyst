@@ -16,6 +16,9 @@
     <div id="tabs-bar" class="flex items-center flex-1 space-x-2 overflow-auto no-scrollbar">
       <!-- tabs are inserted with JS -->
     </div>
+    <button id="remove-tab" onClick="removeTab()"
+      class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded"><i style="color: black;"
+        class="fa fa-times-circle"></i></button>
   </div>
   <div class="w-full min-h-3 p-2 flex justify-center pt-4">
     <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 p-2 rounded-t"
@@ -27,7 +30,7 @@
         style="color: black;" class="fa fa-backward"></i></button>
     <button id="forward" onClick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><i
         style="color: black;" class="fa fa-forward"></i></button>
-    <button id="forward" onClick="createTab()"
+    <button id="create-tab" onClick="createTab()"
       class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded-r"><i style="color: black;"
         class="fa fa-plus"></i></button>
 

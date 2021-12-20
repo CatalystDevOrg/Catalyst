@@ -43,7 +43,6 @@ function switchTabs(tabHash) {
 	}
 
 	let activeTab = document.getElementById("tab-" + tabHash);
-	console.log("tab-" + tabHash);
 	activeTab.classList.add("active-tab");
 	activeTab.classList.remove("tab");
 
@@ -60,8 +59,20 @@ function switchTabs(tabHash) {
 }
 
 function addListeners(view, hash) {
-	console.log(view);
 	view.addEventListener("did-stop-loading", () => {
 		document.getElementById(`tab-${hash}`).innerText = view.getTitle();
 	});
+}
+
+function removeTab() {
+	document.querySelector(".current").remove();
+	document.querySelector(".active-tab").remove();
+	switchTabs(
+		document
+			.getElementById("tabs-bar")
+			.lastElementChild.id.substring(
+				4,
+				document.getElementById("tabs-bar").lastElementChild.id.length
+			)
+	);
 }
