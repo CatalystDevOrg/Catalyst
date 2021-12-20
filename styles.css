@@ -3,6 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Tailwind classes */
+@layer components {
+	.tab {
+		@apply flex items-center flex-1 max-w-md p-2 overflow-hidden text-sm text-gray-600 bg-emerald-100 rounded cursor-pointer whitespace-nowrap;
+	}
+	.active-tab {
+		@apply flex items-center flex-1 max-w-md p-2 overflow-hidden text-sm text-white bg-emerald-500 rounded cursor-default whitespace-nowrap font-bold;
+	}
+	.view {
+		@apply w-[100vw] h-[100vh];
+	}
+}
+
 /* Custom Styles (should be removed soon) */
 body {
 	background-color: #ffffff;
