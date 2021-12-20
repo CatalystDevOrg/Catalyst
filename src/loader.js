@@ -1,18 +1,16 @@
 function loadWeb() {
-    var page = document.getElementById("searchbar").value;
-    document.getElementById("view").src = page;
+	var page = document.getElementById("searchbar").value;
+	document.querySelector(".current").src = page;
 }
 
-var webview = document.getElementById("view");
-
 function reload() {
-  view.reload();
+	document.querySelector(".current").reload();
 }
 
 function forward() {
-  view.goForward();
+	document.querySelector(".current").goForward();
 }
 
 function backward() {
-  view.goBack();
+	document.querySelector(".current").goBack();
 }

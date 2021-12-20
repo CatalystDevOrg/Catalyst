@@ -3,7 +3,8 @@
 
 <HEAD>
   <Title> Catalyst </Title>
-  <script src="loader.js"></script>
+  <script src="./tabs.js" defer></script>
+  <script src="./loader.js" defer></script>
   <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../styles.css">
   <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
@@ -11,6 +12,14 @@
 </HEAD>
 
 <BODY class="min-w-full min-h-full dark:bg-black">
+  <div class="flex items-center px-4 mt-2">
+    <div id="tabs-bar" class="flex items-center flex-1 space-x-2 overflow-auto no-scrollbar">
+      <!-- tabs are inserted with JS -->
+    </div>
+    <button id="remove-tab" onClick="removeTab()"
+      class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded"><i style="color: black;"
+        class="fa fa-times-circle"></i></button>
+  </div>
   <div class="w-full min-h-3 p-2 flex justify-center pt-4">
     <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 p-2 rounded-t"
       placeholder="Browse a URL" />
@@ -19,12 +28,15 @@
         style="color: black;" class="fa fa-refresh"></i></button>
     <button id="back" onClick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><i
         style="color: black;" class="fa fa-backward"></i></button>
-    <button id="forward" onClick="forward()"
+    <button id="forward" onClick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><i
+        style="color: black;" class="fa fa-forward"></i></button>
+    <button id="create-tab" onClick="createTab()"
       class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded-r"><i style="color: black;"
-        class="fa fa-forward"></i></button>
+        class="fa fa-plus"></i></button>
 
   </div>
-  <webview style="width: 100vw; height: 95vh;" id="view" src=""></webview>
+  <div id="webviews"></div>
+  <!-- <webview style="width: 100vw; height: 95vh;" id="view" src="./welcome.html"></webview> -->
 </BODY>
 
 </HTML>

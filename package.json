@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "electron .",
 		"dev": "concurrently -k npm:start npm:tailwind",
-		"tailwind": "npx tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch",
+		"tailwind": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch",
 		"package": "electron-forge package",
 		"make": "electron-forge make"
 	},
