@@ -1,11 +1,16 @@
-body {
-    background-color: #FFFFFF;
-}
+/* Setup Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Custom Styles (should be removed soon) */
+body {
+	background-color: #ffffff;
+}
 .action-btn {
-    color: black;
-    background-color: white;
-    border: none;
-    font-size: 10pt;
-    padding: 2 2 2 2;
+	color: black;
+	background-color: white;
+	border: none;
+	font-size: 10pt;
+	padding: 2 2 2 2;
 }
