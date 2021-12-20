@@ -10,7 +10,8 @@ Starts in seconds, no matter the hardware
 ## Great UI
 Powered by tailwindcss, this amazing UI wille be great to look at.
 # Thanks to
-@webdev03, the new and fresh UI
-@JaydenDev, For some features and UI work
-@Velocity, For the marketing and icons
+@webdev03, the new and fresh UI \
+@JaydenDev, For some features and UI work \
+@Velocity, For the marketing and icons \
+@MystPi, Original code for tabs 
 ## If you deserve to be here and aren't let @JaydenDev know!

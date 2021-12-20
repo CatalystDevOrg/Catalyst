@@ -26,6 +26,7 @@ function createTab() {
 	view.classList.add("view");
 	view.allowpopups = "allowpopups";
 	view.webpreferences = "nativeWindowOpen=true";
+  view.useragent = "Catalyst"
 	view.src = "./welcome.html"; // will be changed when startpage settings are added
 	addListeners(view, randomHash);
 	document.getElementById("webviews").appendChild(view);
