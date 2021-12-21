@@ -7,7 +7,10 @@ searchbar.addEventListener("input", async () => {
 		removeChildren(suggestionsEl);
 		return;
 	}
-	if (shouldAutocomplete(searchbar.value)) {
+	if (
+		shouldAutocomplete(searchbar.value) &&
+		JSON.parse(window.localStorage.getItem("preferences")).autocomplete
+	) {
 		// This is for duckduckgo only, in the future, this may be something else, but I think DDG is fine for now.
 		const autoCompleteCheck = await fetch(
 			`https://duckduckgo.com/ac/?q=${searchbar.value}`

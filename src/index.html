@@ -50,7 +50,7 @@
     <label for="pref-darkmode">Dark Mode? </label>
     <input id="pref-darkmode" type="checkbox" class="" />
     <p class="text-sm">If Catalyst should use Dark Mode.</p>
-    <br>
+    <br />
     <label for="pref-useragent">User Agent: </label>
     <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded" placeholder="Catalyst/{{version}}"
       value="Catalyst/{{version}}" />
@@ -58,7 +58,11 @@
       your device information. You can add
       {{version}} which will be replaced by the current Catalyst version. <b>Note: You may need to make a new tab after
         changing this for it to apply.</b></p>
-    <br><br>
+    <br>
+    <label for="pref-autocomplete">DuckDuckGo Autocomplete? </label>
+    <input id="pref-autocomplete" type="checkbox" class="" />
+    <p class="text-sm">If Catalyst should automatically suggest autocompletions for your searches with DuckDuckGo.</p>
+    <br /><br />
     <button onclick="togglePreferences()"
       class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded dark:text-gray-800">Close
       Settings</button>

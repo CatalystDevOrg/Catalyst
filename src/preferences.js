@@ -14,6 +14,8 @@ function togglePreferences() {
 		// update fields in preferences
 		document.getElementById("pref-darkmode").checked = preferences.dark;
 		addCheckboxListener(document.getElementById("pref-darkmode"), "dark");
+    document.getElementById("pref-autocomplete").checked = preferences.autocomplete;
+		addCheckboxListener(document.getElementById("pref-autocomplete"), "autocomplete");
 		if (preferences.agent.toString().length > 1) {
 			document.getElementById("pref-useragent").value =
 				preferences.agent || "Catalyst/{{version}}";
@@ -32,7 +34,7 @@ function getPreferences() {
 	if (!window.localStorage.getItem("preferences")) {
 		window.localStorage.setItem(
 			"preferences",
-			JSON.stringify({ dark: false, agent: "Catalyst/{{version}}" })
+			JSON.stringify({ dark: false, agent: "", autocomplete: true })
 		);
 	}
 	return JSON.parse(window.localStorage.getItem("preferences"));
