@@ -12,13 +12,13 @@
 		@apply transition flex items-center flex-1 max-w-md p-3 overflow-hidden text-sm text-white bg-emerald-500 rounded cursor-default whitespace-nowrap font-bold;
 	}
 	.view {
-		@apply min-w-[100vw] min-h-[100vh];
+		@apply min-w-[100vw] min-h-[80vh] max-h-[100vh];
 	}
 	.suggestion {
-		@apply w-screen border-solid p-2 border-blue-500;
+		@apply w-screen border-solid p-2 border-blue-500 dark:text-white;
 	}
 	.suggestions-box {
-		@apply absolute rounded-xl bg-red-200 border-blue-500;
+		@apply absolute rounded-xl bg-red-200 dark:bg-gray-800 border-blue-500;
 	}
 	*:focus {
 		@apply outline-emerald-600;
