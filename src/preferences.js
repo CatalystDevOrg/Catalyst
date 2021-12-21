@@ -1,6 +1,10 @@
 let preferences = getPreferences();
 const preferencesBox = document.getElementById("preferences-box");
 evaluatePreferences();
+
+/**
+ * Toggles the preferences viewer
+ */
 function togglePreferences() {
 	preferences = getPreferences();
 	preferencesBox.classList.toggle("hidden");
@@ -57,11 +61,17 @@ function addTextListener(element, prefKey) {
 	});
 }
 
+/**
+ * Updates the preferences in LocalStorage to the new preferences and evaluates the new ones
+ */
 function updatePreferences() {
 	window.localStorage.setItem("preferences", JSON.stringify(preferences));
 	evaluatePreferences();
 }
 
+/**
+ * Evaluates the preferences in the preferences variable
+ */
 function evaluatePreferences() {
 	if (preferences.dark) {
 		document.documentElement.classList.add("dark");
