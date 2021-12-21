@@ -28,16 +28,16 @@
 
   </div>
   <div class="w-full min-h-3 p-2 flex justify-center pt-4">
-    <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 p-2 rounded-t"
+    <button id="back" onClick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><i
+        style="color: black;" class="fa fa-backward"></i></button>
+    <button id="forward" onClick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><i
+        style="color: black;" class="fa fa-forward"></i></button>
+    <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 p-2"
       placeholder="Browse the Web" />
     <button id="go" onClick="loadURL()" class="text-center p-2 bg-purple-300 hover:bg-purple-400 transition">Go</button>
-    <button id="reload" onClick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><i
+    <button id="reload" onClick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition rounded-r"><i
         style="color: black;" class="fa fa-refresh"></i></button>
-    <button id="back" onClick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><i
-        style="color: black;" class="fa fa-backward"></i></button>
-    <button id="forward" onClick="forward()"
-      class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded-r"><i style="color: black;"
-        class="fa fa-forward"></i></button>
+
 
   </div>
   <div class="suggestions-box" id="autocomplete-suggestions">

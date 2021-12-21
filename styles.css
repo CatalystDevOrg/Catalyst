@@ -15,10 +15,13 @@
 		@apply min-w-[100vw] min-h-[100vh];
 	}
 	.suggestion {
-		@apply w-screen bg-emerald-200 min-h-[30px] p-2;
+		@apply w-screen border-solid p-2 border-blue-500;
 	}
 	.suggestions-box {
-		@apply absolute rounded-3xl;
+		@apply absolute rounded-xl bg-red-200 border-blue-500;
+	}
+	*:focus {
+		@apply outline-emerald-600;
 	}
 }
 

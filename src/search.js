@@ -30,7 +30,6 @@ searchbar.addEventListener("input", async () => {
         removeChildren(suggestionsEl);
 			});
 			suggestionsEl.appendChild(suggestion);
-			suggestionsEl.appendChild(document.createElement("hr"));
 		}
 	} else {
 		removeChildren(suggestionsEl);
