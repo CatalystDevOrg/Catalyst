@@ -44,11 +44,18 @@
         class="fa fa-cog"></i></button>
   </div>
   <!-- Preferences -->
-  <div id="preferences-box"
-    class="shadow-md bg-gray-200 p-2 hidden min-h-screen absolute dark:text-gray-900 text-gray-900">
+  <div id="preferences-box" class="shadow-md bg-gray-200 p-2 w-[40%] hidden min-h-screen absolute text-gray-900">
     <h1 class="font-bold text-xl">Preferences</h1>
     <label for="pref-darkmode">Dark Mode? </label>
     <input id="pref-darkmode" type="checkbox" class="" />
+    <p class="text-sm">If Catalyst should use Dark Mode.</p>
+    <br>
+    <label for="pref-useragent">User Agent: </label>
+    <input id="pref-useragent" type="text" class="" placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
+    <p class="text-sm">If you leave it empty, it will default to the usual user agent by Electron, which may include
+      your device. You can add
+      {{version}} which will be replaced by the current Catalyst version. <b>Note: You may need to make a new tab after
+        changing this for it to apply.</b></p>
     <br><br>
     <button onclick="togglePreferences()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded">Close
       Settings</button>

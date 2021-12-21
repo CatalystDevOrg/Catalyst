@@ -10,6 +10,13 @@ function togglePreferences() {
 		// update fields in preferences
 		document.getElementById("pref-darkmode").checked = preferences.dark;
 		addCheckboxListener(document.getElementById("pref-darkmode"), "dark");
+		if (preferences.agent.toString().length > 1) {
+			document.getElementById("pref-useragent").value =
+				preferences.agent || "Catalyst/{{version}}";
+		} else {
+			document.getElementById("pref-useragent").value = preferences.agent;
+		}
+		addTextListener(document.getElementById("pref-useragent"), "agent");
 	}
 }
 
@@ -19,7 +26,10 @@ function togglePreferences() {
  */
 function getPreferences() {
 	if (!window.localStorage.getItem("preferences")) {
-		window.localStorage.setItem("preferences", JSON.stringify({ dark: false }));
+		window.localStorage.setItem(
+			"preferences",
+			JSON.stringify({ dark: false, agent: "Catalyst/{{version}}" })
+		);
 	}
 	return JSON.parse(window.localStorage.getItem("preferences"));
 }
@@ -35,6 +45,18 @@ function addCheckboxListener(element, prefKey) {
 		updatePreferences();
 	});
 }
+/**
+ * Adds a Text input listener
+ * @param {HTMLElement} element The HTMLElement to listen to
+ * @param {string} prefKey The key in "preferences" for this element.
+ */
+function addTextListener(element, prefKey) {
+	element.addEventListener("input", () => {
+		preferences[prefKey] = element.value;
+		updatePreferences();
+	});
+}
+
 function updatePreferences() {
 	window.localStorage.setItem("preferences", JSON.stringify(preferences));
 	evaluatePreferences();

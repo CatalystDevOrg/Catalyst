@@ -6,7 +6,11 @@ let hasFavicon = {};
 /**
  * Creates a new tab
  */
-function createTab() {
+async function createTab() {
+	const packageJSON = await getPackageJSON();
+	const inputAgent = JSON.parse(
+		window.localStorage.getItem("preferences")
+	).agent;
 	let tab = document.createElement("div");
 	let span = document.createElement("span");
 	// Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
@@ -23,7 +27,9 @@ function createTab() {
 	view.classList.add("view");
 	view.allowpopups = false;
 	view.webpreferences = "nativeWindowOpen=true";
-	view.useragent = "Catalyst";
+	if (!inputAgent.length < 1) {
+		view.useragent = inputAgent.replace("{{version}}", packageJSON.version);
+	}
 	view.src = "./welcome.html"; // will be changed when startpage settings are added
 	let image = document.createElement("img");
 	image.width = "16";
@@ -100,7 +106,7 @@ function addListeners(view, hash) {
 			img.src = icon;
 		} else {
 			hasFavicon[hash] = false;
-      tab.getElementsByTagName("span")[0].classList.remove("px-2");
+			tab.getElementsByTagName("span")[0].classList.remove("px-2");
 			tab.getElementsByTagName("img")[0].style.display = "none";
 		}
 	});

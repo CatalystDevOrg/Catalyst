@@ -15,3 +15,6 @@ const removeChildren = (parent) => {
 		parent.removeChild(parent.lastChild);
 	}
 };
+const getPackageJSON = async() => {
+  return await (await fetch("../package.json")).json();
+}
