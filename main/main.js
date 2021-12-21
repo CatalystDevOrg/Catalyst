@@ -13,6 +13,7 @@ function createWindow() {
 			webviewTag: true,
 			nodeIntegration: true,
 		},
+		title: "Catalyst",
 	});
 	mainWindow.setMenuBarVisibility(false);
 
