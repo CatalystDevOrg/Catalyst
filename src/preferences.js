@@ -1,12 +1,14 @@
 let preferences = getPreferences();
 const preferencesBox = document.getElementById("preferences-box");
+evaluatePreferences();
 function togglePreferences() {
 	preferences = getPreferences();
 	preferencesBox.classList.toggle("hidden");
 	if (!preferencesBox.classList.contains("hidden")) {
+		// run preferences
+		evaluatePreferences();
 		// update fields in preferences
 		document.getElementById("pref-darkmode").checked = preferences.dark;
-		console.log(document.getElementById("pref-darkmode").checked);
 		addCheckboxListener(document.getElementById("pref-darkmode"), "dark");
 	}
 }
@@ -30,10 +32,18 @@ function getPreferences() {
 function addCheckboxListener(element, prefKey) {
 	element.addEventListener("change", () => {
 		preferences[prefKey] = !!element.checked;
-		console.log(preferences);
 		updatePreferences();
 	});
 }
 function updatePreferences() {
 	window.localStorage.setItem("preferences", JSON.stringify(preferences));
+	evaluatePreferences();
+}
+
+function evaluatePreferences() {
+	if (preferences.dark) {
+		document.documentElement.classList.add("dark");
+	} else {
+		document.documentElement.classList.remove("dark");
+	}
 }
