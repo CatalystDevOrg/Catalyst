@@ -15,24 +15,17 @@
 		@apply min-w-[100vw] min-h-[100vh];
 	}
 	.suggestion {
-		@apply w-screen border-solid p-2 border-blue-500;
+		@apply w-screen border-solid p-2 border-blue-500 dark:text-white;
 	}
 	.suggestions-box {
-		@apply absolute rounded-xl bg-red-200 border-blue-500;
+		@apply absolute rounded-xl bg-red-200 dark:bg-gray-800 border-blue-500;
 	}
 	*:focus {
 		@apply outline-emerald-600;
 	}
 }
 
-/* Custom Styles (should be removed soon) */
+/* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */
 body {
 	background-color: #ffffff;
-}
-.action-btn {
-	color: black;
-	background-color: white;
-	border: none;
-	font-size: 10pt;
-	padding: 2 2 2 2;
 }

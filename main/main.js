@@ -2,9 +2,10 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 
+let mainWindow;
 function createWindow() {
 	// Create the browser window.
-	const mainWindow = new BrowserWindow({
+	mainWindow = new BrowserWindow({
 		width: 1024,
 		height: 768,
 		webPreferences: {
@@ -12,6 +13,7 @@ function createWindow() {
 			webviewTag: true,
 			nodeIntegration: true,
 		},
+		title: "Catalyst",
 	});
 	mainWindow.setMenuBarVisibility(false);
 

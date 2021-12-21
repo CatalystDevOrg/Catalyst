@@ -1,14 +1,16 @@
 // protocols
 const protocols = ["https", "http"];
-const removeChildren = (parent) => {
-	while (parent.lastChild) {
-		parent.removeChild(parent.lastChild);
-	}
-};
 const searchbar = document.getElementById("searchbar");
 const suggestionsEl = document.getElementById("autocomplete-suggestions");
 searchbar.addEventListener("input", async () => {
-	if (shouldAutocomplete(searchbar.value)) {
+	if (searchbar.value.length < 1) {
+		removeChildren(suggestionsEl);
+		return;
+	}
+	if (
+		shouldAutocomplete(searchbar.value) &&
+		JSON.parse(window.localStorage.getItem("preferences")).autocomplete
+	) {
 		// This is for duckduckgo only, in the future, this may be something else, but I think DDG is fine for now.
 		const autoCompleteCheck = await fetch(
 			`https://duckduckgo.com/ac/?q=${searchbar.value}`
@@ -27,7 +29,7 @@ searchbar.addEventListener("input", async () => {
 			suggestion.addEventListener("click", () => {
 				document.getElementById("searchbar").value = suggestionText;
 				loadURL();
-        removeChildren(suggestionsEl);
+				removeChildren(suggestionsEl);
 			});
 			suggestionsEl.appendChild(suggestion);
 		}

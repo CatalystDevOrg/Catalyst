@@ -7,13 +7,15 @@
   <script src="./tabs.js" defer></script>
   <script src="./loader.js" defer></script>
   <script src="./search.js" defer></script>
+  <script src="./preferences.js" defer></script>
   <link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </HEAD>
 
-<BODY class="min-w-full min-h-full dark:bg-black">
-  <div class="flex items-center px-4 py-2 mt-2 bg-gray-100">
+<BODY class="min-w-full min-h-screen dark:bg-black">
+  <!-- Tab bar -->
+  <div class="flex items-center px-4 py-2 mt-2 bg-gray-100 dark:bg-gray-700">
     <div id="tabs-bar" class="flex items-center flex-1 space-x-2 overflow-auto no-scrollbar">
       <!-- tabs are inserted with JS -->
     </div>
@@ -25,24 +27,51 @@
         class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded-r"><i style="color: black;"
           class="fa fa-times-circle"></i></button>
     </div>
-
   </div>
-  <div class="w-full min-h-3 p-2 flex justify-center pt-4">
-    <button id="back" onClick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><i
+  <!-- Utility buttons -->
+  <div class="w-full min-h-3 p-2 flex justify-center pt-4 dark:text-gray-900">
+    <button id="back" onclick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><i
         style="color: black;" class="fa fa-backward"></i></button>
-    <button id="forward" onClick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><i
+    <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><i
         style="color: black;" class="fa fa-forward"></i></button>
-    <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 p-2"
+    <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 dark:text-gray-900 p-2"
       placeholder="Browse the Web" />
-    <button id="go" onClick="loadURL()" class="text-center p-2 bg-purple-300 hover:bg-purple-400 transition">Go</button>
-    <button id="reload" onClick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition rounded-r"><i
+    <button id="go" onclick="loadURL()" class="text-center p-2 bg-purple-300 hover:bg-purple-400 transition">Go</button>
+    <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><i
         style="color: black;" class="fa fa-refresh"></i></button>
-
-
+    <button id="openPreferences" onclick="togglePreferences()"
+      class="text-center p-2 bg-red-300 hover:bg-red-400 transition rounded-r"><i style="color: black;"
+        class="fa fa-cog"></i></button>
   </div>
+  <!-- Preferences -->
+  <div id="preferences-box"
+    class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden min-h-screen absolute text-gray-900 dark:text-gray-50">
+    <h1 class="font-bold text-xl">Preferences</h1>
+    <label for="pref-darkmode">Dark Mode? </label>
+    <input id="pref-darkmode" type="checkbox" class="" />
+    <p class="text-sm">If Catalyst should use Dark Mode.</p>
+    <br />
+    <label for="pref-useragent">User Agent: </label>
+    <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded" placeholder="Catalyst/{{version}}"
+      value="Catalyst/{{version}}" />
+    <p class="text-sm">If you leave it empty, it will default to the usual user agent by Electron, which may include
+      your device information. You can add
+      {{version}} which will be replaced by the current Catalyst version. <b>Note: You may need to make a new tab after
+        changing this for it to apply.</b></p>
+    <br>
+    <label for="pref-autocomplete">DuckDuckGo Autocomplete? </label>
+    <input id="pref-autocomplete" type="checkbox" class="" />
+    <p class="text-sm">If Catalyst should automatically suggest autocompletions for your searches with DuckDuckGo.</p>
+    <br /><br />
+    <button onclick="togglePreferences()"
+      class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded dark:text-gray-800">Close
+      Settings</button>
+  </div>
+  <!-- Suggestions -->
   <div class="suggestions-box" id="autocomplete-suggestions">
     <!-- suggestions made with js -->
   </div>
+  <!-- Webviews generated with JS -->
   <div id="webviews"></div>
   <!-- <webview style="width: 100vw; height: 95vh;" id="view" src="./welcome.html"></webview> -->
 </BODY>
