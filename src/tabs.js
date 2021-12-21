@@ -1,6 +1,6 @@
 // Init variables
 let activeHash = "0";
-
+let hasFavicon = {};
 // Functions
 
 /**
@@ -8,24 +8,29 @@ let activeHash = "0";
  */
 function createTab() {
 	let tab = document.createElement("div");
+	let span = document.createElement("span");
 	// Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
-	let randomHash =
-		Math.random().toString(36).substring(2, 15) +
-		Math.random().toString(36).substring(2, 15);
+	let randomHash = generateHashkey();
 	tab.classList.add("tab");
 	tab.id = `tab-${randomHash}`;
 	tab.onclick = () => {
 		switchTabs(randomHash);
 	};
-	tab.innerText = "New Tab";
+	span.innerText = "New Tab";
 	document.getElementById("tabs-bar").appendChild(tab);
 	let view = document.createElement("webview");
 	view.id = "view-" + randomHash;
 	view.classList.add("view");
-	view.allowpopups = "allowpopups";
+	view.allowpopups = false;
 	view.webpreferences = "nativeWindowOpen=true";
-  view.useragent = "Catalyst"
+	view.useragent = "Catalyst";
 	view.src = "./welcome.html"; // will be changed when startpage settings are added
+	let image = document.createElement("img");
+	image.width = "16";
+	image.height = "16";
+	image.style.border = "0";
+	tab.appendChild(image);
+	tab.appendChild(span);
 	addListeners(view, randomHash);
 	document.getElementById("webviews").appendChild(view);
 	switchTabs(randomHash);
@@ -52,7 +57,6 @@ function switchTabs(tabHash) {
 		x.style.display = "none";
 		x.classList.remove("current");
 	});
-
 	document.getElementById("view-" + tabHash).style.display = "flex";
 	document.getElementById("view-" + tabHash).classList.add("current");
 	view = document.getElementById("view-" + tabHash);
@@ -61,15 +65,44 @@ function switchTabs(tabHash) {
 
 function addListeners(view, hash) {
 	const tab = document.getElementById(`tab-${hash}`);
+	hasFavicon[hash] = false;
+	if (!hasFavicon[hash]) {
+		tab.getElementsByTagName("img")[0].style.display = "none";
+	} else {
+		tab.getElementsByTagName("img")[0].style.display = "inline";
+	}
 	view.addEventListener("did-stop-loading", () => {
-		tab.innerText = view.getTitle();
+		tab.getElementsByTagName("span")[0].innerText = view.getTitle();
 		tab.classList.remove("animate-pulse");
+		let viewURL = view.getURL();
+		if (!viewURL.startsWith("file://")) {
+			document.getElementById("searchbar").value = viewURL;
+		}
 	});
 	view.addEventListener("did-start-loading", () => {
 		tab.classList.add("animate-pulse");
+		tab.getElementsByTagName("img")[0].style.display = "none";
 	});
 	view.addEventListener("page-title-updated", (e) => {
-		tab.innerText = e.title;
+		tab.getElementsByTagName("span")[0].innerText = e.title;
+		let viewURL = view.getURL();
+		if (!viewURL.startsWith("file://")) {
+			document.getElementById("searchbar").value = viewURL;
+		}
+	});
+	view.addEventListener("page-favicon-updated", (e) => {
+		if (e.favicons.length > 0) {
+			hasFavicon[hash] = true;
+			let icon = e.favicons[0];
+			let img = tab.getElementsByTagName("img")[0];
+			img.style.display = "inline";
+			tab.getElementsByTagName("span")[0].classList.add("px-2");
+			img.src = icon;
+		} else {
+			hasFavicon[hash] = false;
+      tab.getElementsByTagName("span")[0].classList.remove("px-2");
+			tab.getElementsByTagName("img")[0].style.display = "none";
+		}
 	});
 }
 

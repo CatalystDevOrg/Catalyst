@@ -1,8 +1,3 @@
-function loadWeb() {
-	var page = document.getElementById("searchbar").value;
-	document.querySelector(".current").src = page;
-}
-
 function reload() {
 	document.querySelector(".current").reload();
 }
