@@ -14,6 +14,7 @@ function createWindow() {
 			nodeIntegration: true,
 		},
 		title: "Catalyst",
+		icon: path.join(__dirname,"../assets/icon.png")
 	});
 	mainWindow.setMenuBarVisibility(false);
 
