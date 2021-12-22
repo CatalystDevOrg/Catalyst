@@ -4,7 +4,7 @@
 	"description": "A minimal Electron Web Browser",
 	"main": "main/main.js",
 	"scripts": {
-		"start": "electron .",
+		"start": "electron-forge start",
 		"dev": "concurrently -k npm:start npm:tailwind",
 		"tailwind": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch",
 		"package": "electron-forge package",
