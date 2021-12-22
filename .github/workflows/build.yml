@@ -3,7 +3,7 @@ name: Release Catalyst
 on:
   push:
     tags:
-      - "v*"
+      - "*"
 jobs:
   release:
     runs-on: ${{ matrix.os }}
