@@ -53,7 +53,7 @@ try {
 	require("electron-reloader")(module);
 } catch {}
 
-async function checkForUpdate(mainWindow) {
+async function checkForUpdate(windowToDialog) {
 	try {
 		const githubFetch = await fetch(
 			"https://api.github.com/repos/JaydenDev/Catalyst/releases"
@@ -73,7 +73,7 @@ async function checkForUpdate(mainWindow) {
 				tagVersionInt <
 				Number(release["tag_name"].replace(replacerRegex, "").slice(1))
 			) {
-				dialog.showMessageBox(mainWindow, {
+				dialog.showMessageBox(windowToDialog, {
 					message: "An update is available for Catalyst.",
 					detail: `Go to github.com/JaydenDev/Catalyst/releases to install Catalyst ${release["tag_name"]}`,
 					type: "info",
