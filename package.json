@@ -8,6 +8,7 @@
 		"dev": "concurrently -k npm:start npm:tailwind",
 		"tailwind": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch",
 		"package": "electron-forge package",
+		"publish": "electron-forge publish",
 		"make": "electron-forge make"
 	},
 	"repository": "https://github.com/electron/electron-quick-start",
