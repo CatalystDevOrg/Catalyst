@@ -1,13 +1,13 @@
 {
 	"name": "catalyst",
-	"version": "21.12.102",
+	"version": "21.12.104",
 	"description": "A minimal Electron Web Browser",
 	"main": "main/main.js",
 	"scripts": {
 		"start": "electron .",
 		"dev": "concurrently -k npm:start npm:tailwind",
 		"tailwind": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch",
-    "tailwind:once": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify",
+		"tailwind:once": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify",
 		"package": "electron-forge package",
 		"publish": "electron-forge publish",
 		"make": "electron-forge make"
