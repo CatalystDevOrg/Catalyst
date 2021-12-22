@@ -1,7 +1,7 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, dialog } = require("electron");
 const path = require("path");
-
+const fetch = require("cross-fetch");
 let mainWindow;
 function createWindow() {
 	// Create the browser window.
@@ -14,7 +14,7 @@ function createWindow() {
 			nodeIntegration: true,
 		},
 		title: "Catalyst",
-		icon: path.join(__dirname,"../assets/icon.png")
+		icon: path.join(__dirname, "../assets/icon.png"),
 	});
 	mainWindow.setMenuBarVisibility(false);
 
@@ -23,6 +23,7 @@ function createWindow() {
 
 	// Open the DevTools.
 	// mainWindow.webContents.openDevTools()
+	checkForUpdate(mainWindow);
 }
 
 // This method will be called when Electron has finished
@@ -51,3 +52,36 @@ app.on("window-all-closed", function () {
 try {
 	require("electron-reloader")(module);
 } catch {}
+
+async function checkForUpdate(windowToDialog) {
+	try {
+		const githubFetch = await fetch(
+			"https://api.github.com/repos/JaydenDev/Catalyst/releases"
+		);
+		if (!githubFetch.ok) {
+			// this means that
+			return;
+		}
+		const releaseJSON = await githubFetch.json();
+		const replacerRegex = /["."]/gm;
+		const appVersionStr = app.getVersion();
+		const tagVersionInt = Number(appVersionStr.replace(replacerRegex, ""));
+		for (let i in releaseJSON) {
+			const release = releaseJSON[i];
+			if (release.draft || release.prerelease) continue;
+			if (
+				tagVersionInt <
+				Number(release["tag_name"].replace(replacerRegex, "").slice(1))
+			) {
+				dialog.showMessageBox(windowToDialog, {
+					message: "An update is available for Catalyst.",
+					detail: `Go to github.com/JaydenDev/Catalyst/releases to install Catalyst ${release["tag_name"]}`,
+					type: "info",
+				});
+				return;
+			}
+		}
+	} catch (error) {
+		console.error(error);
+	}
+}
