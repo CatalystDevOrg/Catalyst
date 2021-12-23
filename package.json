@@ -12,7 +12,7 @@
 		"publish": "electron-forge publish",
 		"make": "electron-forge make"
 	},
-	"repository": "https://github.com/electron/electron-quick-start",
+	"repository": "https://github.com/JaydenDev/electron-quick-start",
 	"keywords": [
 		"Electron",
 		"Browser",
