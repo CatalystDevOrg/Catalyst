@@ -69,9 +69,10 @@ async function checkForUpdate(windowToDialog) {
 		for (let i in releaseJSON) {
 			const release = releaseJSON[i];
 			if (release.draft || release.prerelease) continue;
+      const replaced = release["tag_name"].replace(replacerRegex, "");
 			if (
 				tagVersionInt <
-				Number(release["tag_name"].replace(replacerRegex, "").slice(1))
+				Number(replaced.startsWith("v") ? replaced.slice(1) : replaced)
 			) {
 				dialog.showMessageBox(windowToDialog, {
 					message: "An update is available for Catalyst.",
