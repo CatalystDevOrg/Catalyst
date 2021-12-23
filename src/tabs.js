@@ -8,7 +8,7 @@ let hasFavicon = {};
  * @param {string} url The URL of the page to go to, optional.
  */
 async function createTab(url) {
-  url = url ? url : "./welcome.html"
+  url = url || "./welcome.html"
 	const packageJSON = await getPackageJSON();
 	const inputAgent = JSON.parse(
 		window.localStorage.getItem("preferences")
