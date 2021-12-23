@@ -5,8 +5,10 @@ let hasFavicon = {};
 
 /**
  * Creates a new tab
+ * @param {string} url The URL of the page to go to, optional.
  */
-async function createTab() {
+async function createTab(url) {
+  url = url ? url : "./welcome.html"
 	const packageJSON = await getPackageJSON();
 	const inputAgent = JSON.parse(
 		window.localStorage.getItem("preferences")
@@ -25,12 +27,12 @@ async function createTab() {
 	let view = document.createElement("webview");
 	view.id = "view-" + randomHash;
 	view.classList.add("view");
-	view.allowpopups = false;
+	view.allowpopups = "allowpopups";
 	view.webpreferences = "nativeWindowOpen=true";
 	if (!inputAgent.length < 1) {
 		view.useragent = inputAgent.replace("{{version}}", packageJSON.version);
 	}
-	view.src = "./welcome.html"; // will be changed when startpage settings are added
+	view.src = url;
 	let image = document.createElement("img");
 	image.width = "16";
 	image.height = "16";
@@ -96,6 +98,8 @@ function addListeners(view, hash) {
 			document.getElementById("searchbar").value = viewURL;
 		}
 	});
+  view.addEventListener("new-window", (e) => createTab(e.url))
+  view.addEventListener("close", removeTab);
 	view.addEventListener("page-favicon-updated", (e) => {
 		if (e.favicons.length > 0) {
 			hasFavicon[hash] = true;
