@@ -44,11 +44,11 @@ async function createTab(url) {
 	switchTabs(randomHash);
 }
 createTab();
+
 /**
  * Switches the tab to the selected one
  * @param {string} tabHash - The random hash of the tab to switch to
  */
-
 function switchTabs(tabHash) {
 	let currentTab = document.querySelector(".active-tab");
 	if (currentTab) {
