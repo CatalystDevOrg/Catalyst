@@ -58,3 +58,9 @@ function shouldAutocomplete(input) {
 	}
 	return true;
 }
+
+// add listeners
+searchbar.addEventListener("keydown", (e) => {
+  console.log("wow", e.code)
+	if (e.code === "Enter") loadURL();
+});
