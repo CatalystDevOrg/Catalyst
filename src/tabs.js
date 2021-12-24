@@ -100,7 +100,6 @@ function addListeners(view, hash) {
 	});
 	view.addEventListener("new-window", (e) => createTab(e.url));
 	view.addEventListener("close", removeTab);
-  view.addEventListener("keydown", (e) => handleTabShortcuts(e));
 	view.addEventListener("page-favicon-updated", (e) => {
 		if (e.favicons.length > 0) {
 			hasFavicon[hash] = true;
@@ -144,4 +143,4 @@ function handleTabShortcuts(e) {
 		removeTab();
 		e.preventDefault();
 	}
-}
+};
