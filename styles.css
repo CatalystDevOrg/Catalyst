@@ -18,7 +18,7 @@
 		@apply w-screen border-solid p-2 border-blue-500 dark:text-white;
 	}
 	.suggestions-box {
-		@apply absolute rounded-b-lg bg-red-200 dark:bg-gray-800 border-blue-500;
+		@apply absolute rounded-b-lg bg-red-200 dark:bg-gray-800 border-blue-500 shadow;
 	}
 	*:focus {
 		@apply outline-emerald-600;
