@@ -61,6 +61,5 @@ function shouldAutocomplete(input) {
 
 // add listeners
 searchbar.addEventListener("keydown", (e) => {
-  console.log("wow", e.code)
 	if (e.code === "Enter") loadURL();
 });
