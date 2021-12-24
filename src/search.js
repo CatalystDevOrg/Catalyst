@@ -58,3 +58,8 @@ function shouldAutocomplete(input) {
 	}
 	return true;
 }
+
+// add listeners
+searchbar.addEventListener("keydown", (e) => {
+	if (e.code === "Enter") loadURL();
+});

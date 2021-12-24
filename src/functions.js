@@ -17,4 +17,4 @@ const removeChildren = (parent) => {
 };
 const getPackageJSON = async() => {
   return await (await fetch("../package.json")).json();
-}
+};
