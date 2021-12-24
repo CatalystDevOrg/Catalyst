@@ -7,7 +7,8 @@ ZERO data collection!
 ## Fast and stable
 Starts in seconds, no matter the hardware
 ## Great UI
-Powered by tailwindcss, this amazing UI wille be great to look at.
+Powered by TailwindCSS, this amazing UI is great to look at.
+Neat and modern icons by Bootstrap Icons are easy to understand.
 # Thanks to
 @webdev03, the new and fresh UI \
 @JaydenDev, For some features and UI work \
