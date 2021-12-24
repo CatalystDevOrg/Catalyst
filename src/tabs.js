@@ -8,7 +8,7 @@ let hasFavicon = {};
  * @param {string} url The URL of the page to go to, optional.
  */
 async function createTab(url) {
-  url = url || "./welcome.html"
+  url = url || "./welcome.html";
 	const packageJSON = await getPackageJSON();
 	const inputAgent = JSON.parse(
 		window.localStorage.getItem("preferences")
@@ -117,6 +117,7 @@ function addListeners(view, hash) {
 }
 
 function removeTab() {
+  if (document.getElementById("webviews").childNodes.length === 1) return;
 	document.querySelector(".current").remove();
 	document.querySelector(".active-tab").remove();
 	switchTabs(
