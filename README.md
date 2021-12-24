@@ -8,7 +8,7 @@ ZERO data collection!
 Starts in seconds, no matter the hardware
 ## Great UI
 Powered by TailwindCSS, this amazing UI is great to look at.
-Neat and modern icons by Bootstrap Icons are easy to understand.
+Neat and modern icons by Bootstrap Icons are easy to understand. They are in `assets/icons`.
 # Thanks to
 @webdev03, the new and fresh UI \
 @JaydenDev, For some features and UI work \
