@@ -8,7 +8,7 @@ let hasFavicon = {};
  * @param {string} url The URL of the page to go to, optional.
  */
 async function createTab(url) {
-  url = url || "./welcome.html";
+	url = url || "./welcome.html";
 	const packageJSON = await getPackageJSON();
 	const inputAgent = JSON.parse(
 		window.localStorage.getItem("preferences")
@@ -98,8 +98,9 @@ function addListeners(view, hash) {
 			document.getElementById("searchbar").value = viewURL;
 		}
 	});
-  view.addEventListener("new-window", (e) => createTab(e.url))
-  view.addEventListener("close", removeTab);
+	view.addEventListener("new-window", (e) => createTab(e.url));
+	view.addEventListener("close", removeTab);
+  view.addEventListener("keydown", (e) => handleTabShortcuts(e));
 	view.addEventListener("page-favicon-updated", (e) => {
 		if (e.favicons.length > 0) {
 			hasFavicon[hash] = true;
@@ -117,7 +118,7 @@ function addListeners(view, hash) {
 }
 
 function removeTab() {
-  if (document.getElementById("webviews").childNodes.length === 1) return;
+	if (document.getElementById("webviews").childNodes.length === 1) return;
 	document.querySelector(".current").remove();
 	document.querySelector(".active-tab").remove();
 	switchTabs(
@@ -128,4 +129,19 @@ function removeTab() {
 				document.getElementById("tabs-bar").lastElementChild.id.length
 			)
 	);
+}
+
+document.addEventListener("keydown", (e) => handleTabShortcuts(e));
+
+function handleTabShortcuts(e) {
+	// on macos, e.ctrlKey isn't true when pressing cmd, so use e.metaKey too
+	const isModifier = e.metaKey || e.ctrlKey;
+	if (isModifier && e.key === "t") {
+		createTab();
+		e.preventDefault();
+	}
+	if (isModifier && e.key === "w") {
+		removeTab();
+		e.preventDefault();
+	}
 }
