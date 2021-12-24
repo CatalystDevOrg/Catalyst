@@ -1,5 +1,5 @@
 ![Catalyst](https://raw.githubusercontent.com/JaydenDev/Catalyst/master/assets/banner.svg)
-<p style="color: red";>Merry</p> \
+<p style="color: red;">Merry</p> \
 <p style="color: green;"Christmas</p> \
 An amazing and elegant Electron web browser.
 ## Stay Secure
