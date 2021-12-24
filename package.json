@@ -1,6 +1,6 @@
 {
 	"name": "catalyst",
-	"version": "21.12.106",
+	"version": "21.12.107",
 	"description": "A minimal Electron Web Browser",
 	"main": "main/main.js",
 	"scripts": {
