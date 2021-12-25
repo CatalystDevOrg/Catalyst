@@ -25,6 +25,9 @@ function addBookmarkToBar(url, title) {
 	bookmarksBar.appendChild(bookmarkEl);
 }
 
+/**
+ * Bookmarks the current tab
+ */
 function bookmarkCurrentTab() {
 	updateBookmarksVar();
 	const toPush = {
@@ -47,6 +50,9 @@ function bookmarkCurrentTab() {
 	storeBookmarks();
 }
 
+/**
+ * Updates the bookmarks variable and displays the bookmarks
+ */
 function updateBookmarksVar() {
 	console.log(window.localStorage.getItem("bookmarks"));
 	bookmarks = JSON.parse(window.localStorage.getItem("bookmarks"));
@@ -57,6 +63,9 @@ function updateBookmarksVar() {
 	}
 }
 
+/**
+ * Stores the bookmarks in localstorage and runs updateBookmarksVar
+ */
 function storeBookmarks() {
 	window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 	updateBookmarksVar();
