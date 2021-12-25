@@ -6,10 +6,10 @@
 /* Custom Tailwind classes */
 @layer components {
 	.tab {
-		@apply transition flex items-center flex-1 max-w-md p-2 overflow-hidden text-sm text-gray-600 bg-emerald-100 rounded cursor-pointer whitespace-nowrap;
+		@apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-gray-600 bg-emerald-100 rounded cursor-pointer whitespace-nowrap;
 	}
 	.active-tab {
-		@apply transition flex items-center flex-1 max-w-md p-3 overflow-hidden text-sm text-white bg-emerald-500 rounded cursor-default whitespace-nowrap font-bold;
+		@apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-white bg-emerald-500 rounded cursor-default whitespace-nowrap font-bold;
 	}
 	.view {
 		@apply min-w-[100vw] min-h-[100vh];
@@ -23,6 +23,10 @@
 	*:focus {
 		@apply outline-emerald-600;
 	}
+  .bookmark {
+    /* @apply w-6 text-gray-900 dark:text-white cursor-pointer; */
+    @apply transition flex items-center flex-1 max-w-[12rem] flex-shrink-0 px-2 overflow-hidden text-sm text-gray-600 dark:text-gray-100 rounded cursor-pointer;
+  }
 }
 
 /* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */

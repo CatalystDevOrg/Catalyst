@@ -9,7 +9,6 @@
   <script src="./loader.js" defer></script>
   <script src="./search.js" defer></script>
   <script src="./preferences.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="../assets/fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -26,7 +25,7 @@
         class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded-r"><img src="../assets/icons/x.svg" alt="Remove tab"></button>
     </div>
   </div>
-  <!-- Utility buttons -->
+  <!-- Utility bar -->
   <div class="w-full min-h-3 p-2 flex justify-center pt-0.5 dark:text-gray-900 bg-white dark:bg-gray-700">
     <button id="back" onclick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>
     <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>
@@ -36,12 +35,13 @@
     <button id="openPreferences" onclick="togglePreferences()"
       class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img src="../assets/icons/gear-fill.svg" alt="Settings"></button>
   </div>
-  <div id="bookmarks">
+  <!-- Bookmarks -->
+  <div id="bookmarks" class="flex px-4 py-2 bg-white dark:bg-gray-700">
     <!-- bookmarks inserted with JS -->
   </div>
   <!-- Preferences -->
   <div id="preferences-box"
-    class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden min-h-screen absolute text-gray-900 dark:text-gray-50">
+    class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden h-full max-h-screen absolute text-gray-900 dark:text-gray-50 !overflow-scroll">
     <h1 class="font-bold text-xl">Preferences</h1>
     <label for="pref-darkmode">Dark Mode? </label>
     <input id="pref-darkmode" type="checkbox" class="" />
@@ -54,10 +54,14 @@
       your device information. You can add
       {{version}} which will be replaced by the current Catalyst version. <b>Note: You may need to make a new tab after
         changing this for it to apply.</b></p>
-    <br>
+    <br />
     <label for="pref-autocomplete">DuckDuckGo Autocomplete? </label>
     <input id="pref-autocomplete" type="checkbox" class="" />
     <p class="text-sm">If Catalyst should automatically suggest autocompletions for your searches with DuckDuckGo.</p>
+    <br />
+    <label for="pref-bookmarks">Bookmarks? </label>
+    <input id="pref-bookmarks" type="checkbox" class="" />
+    <p class="text-sm">If Catalyst should display the bookmarks bar.</p>
     <br /><br />
     <button onclick="clearData()"
       class="text-center p-2 bg-red-500 hover:bg-red-600 transition rounded dark:text-gray-800">
@@ -72,7 +76,6 @@
   </div>
   <!-- Webviews generated with JS -->
   <div id="webviews"></div>
-  <!-- <webview style="width: 100vw; height: 95vh;" id="view" src="./welcome.html"></webview> -->
 </body>
 
 </html>
