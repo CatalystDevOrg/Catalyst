@@ -12,7 +12,14 @@
   <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body class="min-w-full min-h-screen dark:bg-gray-700 bg-white overflow-hidden">
+  <!-- Context menu for bookmarks -->
+  <div id="bookmarksMenu" class="hidden">
+    <ul>
+      <li><a href="#">Remove bookmark</a></li>
+    </ul>
+  </div>
   <!-- Tab bar -->
   <div class="flex items-center px-4 py-2 mt-2 bg-white dark:bg-gray-700">
     <div id="tabs-bar" class="flex items-center flex-1 space-x-2 overflow-auto no-scrollbar">
@@ -20,20 +27,30 @@
     </div>
     <div class="inline-flex px-1">
       <button id="create-tab" onclick="createTab()"
-        class="rounded-l text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/plus.svg" alt="Create tab"></button>
+        class="rounded-l text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/plus.svg"
+          alt="Create tab"></button>
       <button id="remove-tab" onclick="removeTab()"
-        class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded-r"><img src="../assets/icons/x.svg" alt="Remove tab"></button>
+        class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img src="../assets/icons/x.svg"
+          alt="Remove tab"></button>
+      <button id="remove-tab" onclick="bookmarkCurrentTab()"
+        class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img src="../assets/icons/star.svg"
+          width="12" alt="Bookmark tab"></button>
     </div>
   </div>
   <!-- Utility bar -->
   <div class="w-full min-h-3 p-2 flex justify-center pt-0.5 dark:text-gray-900 bg-white dark:bg-gray-700">
-    <button id="back" onclick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>
-    <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>
+    <button id="back" onclick="backward()"
+      class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><img
+        src="../assets/icons/arrow-left.svg" alt="Backward"></button>
+    <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
+        src="../assets/icons/arrow-right.svg" alt="Forward"></button>
     <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 dark:text-gray-900 p-2"
       placeholder="Browse the Web" />
-    <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
+    <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
+        src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
     <button id="openPreferences" onclick="togglePreferences()"
-      class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img src="../assets/icons/gear-fill.svg" alt="Settings"></button>
+      class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
+        src="../assets/icons/gear-fill.svg" alt="Settings"></button>
   </div>
   <!-- Bookmarks -->
   <div id="bookmarks" class="flex px-4 py-2 bg-white dark:bg-gray-700">

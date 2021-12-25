@@ -11,6 +11,9 @@
 	.active-tab {
 		@apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-white bg-emerald-500 rounded cursor-default whitespace-nowrap font-bold;
 	}
+  .tab-star {
+    @apply ml-auto;
+  }
 	.view {
 		@apply min-w-[100vw] min-h-[100vh];
 	}
