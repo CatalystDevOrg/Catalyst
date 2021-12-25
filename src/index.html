@@ -5,6 +5,7 @@
   <title>Catalyst</title>
   <script src="./functions.js"></script>
   <script src="./tabs.js" defer></script>
+  <script src="./bookmarks.js" defer></script>
   <script src="./loader.js" defer></script>
   <script src="./search.js" defer></script>
   <script src="./preferences.js" defer></script>
@@ -19,9 +20,9 @@
       <!-- tabs are inserted with JS -->
     </div>
     <div class="inline-flex px-1">
-      <button id="create-tab" onClick="createTab()"
+      <button id="create-tab" onclick="createTab()"
         class="rounded-l text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/plus.svg" alt="Create tab"></button>
-      <button id="remove-tab" onClick="removeTab()"
+      <button id="remove-tab" onclick="removeTab()"
         class="text-center p-2 bg-green-300 hover:bg-green-400 transition rounded-r"><img src="../assets/icons/x.svg" alt="Remove tab"></button>
     </div>
   </div>
@@ -34,6 +35,9 @@
     <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
     <button id="openPreferences" onclick="togglePreferences()"
       class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img src="../assets/icons/gear-fill.svg" alt="Settings"></button>
+  </div>
+  <div id="bookmarks">
+    <!-- bookmarks inserted with JS -->
   </div>
   <!-- Preferences -->
   <div id="preferences-box"
