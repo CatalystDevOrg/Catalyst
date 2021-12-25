@@ -27,25 +27,28 @@ function addBookmarkToBar(url, title) {
 
 function bookmarkCurrentTab() {
 	updateBookmarksVar();
-  const toPush = { title: document.querySelector(".current").getTitle(), url: document.querySelector(".current").getURL() };
-  if (bookmarks.some(key => key.url === toPush.url)) {
-    if (confirm("Would you like to un-bookmark this page?")) {
-      for (let index in bookmarks) {
-        if (bookmarks[index].url == toPush.url) {
-          bookmarks.splice(index, 1);
-          break;
-        }
-      }
-      storeBookmarks();
-    };
-    return;
-  };
+	const toPush = {
+		title: document.querySelector(".current").getTitle(),
+		url: document.querySelector(".current").getURL(),
+	};
+	if (bookmarks.some((key) => key.url === toPush.url)) {
+		if (confirm("Would you like to un-bookmark this page?")) {
+			for (let index in bookmarks) {
+				if (bookmarks[index].url == toPush.url) {
+					bookmarks.splice(index, 1);
+					break;
+				}
+			}
+			storeBookmarks();
+		}
+		return;
+	}
 	bookmarks.push(toPush);
-  storeBookmarks();
+	storeBookmarks();
 }
 
 function updateBookmarksVar() {
-  console.log(window.localStorage.getItem("bookmarks"))
+	console.log(window.localStorage.getItem("bookmarks"));
 	bookmarks = JSON.parse(window.localStorage.getItem("bookmarks"));
 	removeChildren(bookmarksBar);
 	for (let bookmarkIdx in bookmarks) {
@@ -56,5 +59,5 @@ function updateBookmarksVar() {
 
 function storeBookmarks() {
 	window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
-  updateBookmarksVar();
+	updateBookmarksVar();
 }
