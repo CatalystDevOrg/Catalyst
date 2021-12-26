@@ -1,9 +1,9 @@
 {
 	"name": "catalyst",
-	"version": "21.12.109",
+	"version": "1.0.0-pre1",
 	"description": "A minimal Electron Web Browser",
 	"main": "main/main.js",
-  "private": true,
+	"private": true,
 	"scripts": {
 		"start": "electron .",
 		"dev": "concurrently -k npm:start npm:tailwind",
