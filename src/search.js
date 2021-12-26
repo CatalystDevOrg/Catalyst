@@ -1,5 +1,5 @@
 // protocols
-const protocols = ["https", "http"];
+const protocols = ["https", "http", "file"];
 const searchbar = document.getElementById("searchbar");
 const suggestionsEl = document.getElementById("autocomplete-suggestions");
 searchbar.addEventListener("input", async () => {

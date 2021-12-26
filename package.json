@@ -3,6 +3,7 @@
 	"version": "21.12.109",
 	"description": "A minimal Electron Web Browser",
 	"main": "main/main.js",
+  "private": true,
 	"scripts": {
 		"start": "electron .",
 		"dev": "concurrently -k npm:start npm:tailwind",
