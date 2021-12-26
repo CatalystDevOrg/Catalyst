@@ -27,8 +27,7 @@
 		@apply outline-emerald-600;
 	}
   .bookmark {
-    /* @apply w-6 text-gray-900 dark:text-white cursor-pointer; */
-    @apply transition flex items-center flex-1 max-w-[12rem] flex-shrink-0 px-2 overflow-hidden text-sm text-gray-600 dark:text-gray-100 rounded cursor-pointer;
+    @apply transition flex items-center flex-1 max-w-sm m-1 min-w-[12px] overflow-hidden text-sm rounded cursor-pointer text-gray-600 dark:text-gray-100 whitespace-nowrap;
   }
 }
 
