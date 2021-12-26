@@ -82,7 +82,7 @@ function evaluatePreferences() {
 	} else {
 		document.documentElement.classList.remove("dark");
 	}
-  if (preferences.bookmarks) {
+  if (preferences.bookmarks && JSON.parse(window.localStorage.getItem("bookmarks")).length > 0) {
     document.getElementById("bookmarks").classList.remove("hidden");
   } else {
     document.getElementById("bookmarks").classList.add("hidden");

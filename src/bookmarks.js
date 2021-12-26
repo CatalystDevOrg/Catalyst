@@ -57,6 +57,7 @@ function updateBookmarksVar() {
 	console.log(window.localStorage.getItem("bookmarks"));
 	bookmarks = JSON.parse(window.localStorage.getItem("bookmarks"));
 	removeChildren(bookmarksBar);
+  if (bookmarks.length === 0) bookmarksBar.classList.add("hidden");
 	for (let bookmarkIdx in bookmarks) {
 		const bookmark = bookmarks[bookmarkIdx];
 		addBookmarkToBar(bookmark.url, bookmark.title);
@@ -67,6 +68,7 @@ function updateBookmarksVar() {
  * Stores the bookmarks in localstorage and runs updateBookmarksVar
  */
 function storeBookmarks() {
+  if (bookmarks.length === 0) bookmarksBar.classList.add("hidden");
 	window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 	updateBookmarksVar();
 }
