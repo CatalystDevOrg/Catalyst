@@ -48,10 +48,15 @@
   </div>
   <!-- More menu -->
   <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-300 text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
-    <ul class="flex justify-center align-middle">
+    <ul class="justify-center align-middle flex-wrap max-w-sm">
       <li class="cursor-pointer" onclick="togglePreferences()">
         <img
         src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">Preferences
+      </li>
+      <hr class="dark:border-gray-900 mt-2 mb-2">
+      <li class="cursor-pointer" onclick="inspectTab()">
+        <img
+        src="../assets/icons/tools.svg" class="inline-flex mb-1 px-2" alt="Tools">Inspect tab
       </li>
       <!-- Add more menu items here by copying this: -->
       <!-- <li class="cursor-pointer">
