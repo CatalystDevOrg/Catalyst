@@ -10,7 +10,7 @@ Starts in seconds, no matter the hardware
 Powered by TailwindCSS, this amazing UI is great to look at.
 Neat and modern icons by Bootstrap Icons are easy to understand. They are in `assets/icons`.
 # Thanks to
-@webdev03, UI Design/ Feature Design
+@webdev03, UI Design/ Feature Design \
 @JaydenDev, Repository Maintainer \
 @VelocityDesign, Icons \
 @MystPi, Original code for tabs 
