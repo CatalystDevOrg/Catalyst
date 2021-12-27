@@ -15,3 +15,7 @@ function clearData() {
   window.localStorage.clear();
   window.close();
 }
+
+function inspectTab() {
+  document.querySelector(".current").inspectElement(0, 0);
+}
