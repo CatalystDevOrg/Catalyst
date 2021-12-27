@@ -4,6 +4,7 @@
 <head>
   <title>Catalyst</title>
   <script src="./functions.js"></script>
+  <script src="./listeners.js" defer></script>
   <script src="./tabs.js" defer></script>
   <script src="./bookmarks.js" defer></script>
   <script src="./loader.js" defer></script>
@@ -42,9 +43,22 @@
       placeholder="Browse the Web" />
     <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
-    <button id="openPreferences" onclick="togglePreferences()"
-      class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
-        src="../assets/icons/gear-fill.svg" alt="Settings"></button>
+      <button id="more-btn" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
+          src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
+  </div>
+  <!-- More menu -->
+  <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-300 text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
+    <ul class="flex justify-center align-middle">
+      <li class="cursor-pointer" onclick="togglePreferences()">
+        <img
+        src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">Preferences
+      </li>
+      <!-- Add more menu items here by copying this: -->
+      <!-- <li class="cursor-pointer">
+        <img
+        src="path/to/icon" class="inline-flex mb-1 px-2" alt="Short image description">My menu item
+      </li> -->
+    </ul>
   </div>
   <!-- Bookmarks -->
   <div id="bookmarks" class="flex px-4 py-2 bg-white dark:bg-gray-700">
@@ -79,7 +93,7 @@
       Clear Data</button>
     <button onclick="togglePreferences()"
       class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded dark:text-gray-800">Close
-      Settings</button>
+      Preferences</button>
   </div>
   <!-- Suggestions -->
   <div class="suggestions-box" id="autocomplete-suggestions">
