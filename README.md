@@ -1,3 +1,4 @@
+# This is the ORIGINAL Catalyst Repository
 ![Catalyst](https://raw.githubusercontent.com/JaydenDev/Catalyst/master/assets/banner.svg)
 An amazing and elegant Electron web browser.
 ## Stay Secure
