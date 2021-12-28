@@ -1,0 +1,20 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "errno": 1,
+    "code": "ELIFECYCLE",
+    "pkgid": "catalyst@21.12.112",
+    "stage": "dev",
+    "script": "concurrently -k npm:start npm:tailwind",
+    "pkgname": "catalyst",
+    "err": {
+      "name": "pnpm",
+      "message": "catalyst@21.12.112 dev: `concurrently -k npm:start npm:tailwind`\nExit status 1",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: catalyst@21.12.112 dev: `concurrently -k npm:start npm:tailwind`\nExit status 1\n    at EventEmitter.<anonymous> (/usr/local/pnpm-global/5/node_modules/.pnpm/pnpm@6.24.3/node_modules/pnpm/dist/pnpm.cjs:103858:20)\n    at EventEmitter.emit (node:events:390:28)\n    at ChildProcess.<anonymous> (/usr/local/pnpm-global/5/node_modules/.pnpm/pnpm@6.24.3/node_modules/pnpm/dist/pnpm.cjs:91787:18)\n    at ChildProcess.emit (node:events:390:28)\n    at maybeClose (node:internal/child_process:1064:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:301:5)"
+    }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+}
