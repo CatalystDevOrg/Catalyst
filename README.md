@@ -14,4 +14,4 @@ Neat and modern icons by Bootstrap Icons are easy to understand. They are in `as
 @JaydenDev, Repository Maintainer \
 @VelocityDesign, Icons \
 @MystPi, Original code for tabs 
-## If you deserve to be here and aren't let @JaydenDev know!
+## If you deserve to be here and aren't, let @JaydenDev know!
