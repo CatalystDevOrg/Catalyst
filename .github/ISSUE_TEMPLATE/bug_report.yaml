@@ -1,6 +1,6 @@
 name: Bug Report
 description: File a bug report
-title: "[Bug]: "
+title: "[Bug]: <title>"
 labels: ["bug", "triage"]
 assignees:
   - octocat
@@ -24,6 +24,13 @@ body:
       placeholder: Tell us what you see!
     validations:
       required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Your environment (if applicable)
+      description: Run `npx envinfo --system --duplicates --npmPackages`
+    validations:
+      required: false
   - type: input
     id: version
     attributes:
