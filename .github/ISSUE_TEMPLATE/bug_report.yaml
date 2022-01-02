@@ -28,7 +28,7 @@ body:
     id: environment
     attributes:
       label: Your environment (if applicable)
-      description: Run `npx envinfo --system --duplicates --npmPackages`
+      description: Run `npx envinfo --system --duplicates --npmPackages` in the Catalyst repo (only if it relates to internal files or OS)
     validations:
       required: false
   - type: input
