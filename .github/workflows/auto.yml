@@ -1,4 +1,4 @@
-name: Validate
+name: Auto
 on: 
   schedule:
     - cron: 0 0 * * *
@@ -10,4 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: The-Catalyst-Browser-Project/ci-auto-release@main
-      
+      - name: Commit
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git checkout "${GITHUB_REF:11}"
+          git push --follow-tags
