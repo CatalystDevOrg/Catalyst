@@ -10,6 +10,10 @@ Starts in seconds, no matter the hardware
 ## Great UI
 Powered by TailwindCSS, this amazing UI is great to look at.
 Neat and modern icons by Bootstrap Icons are easy to understand. They are in `assets/icons`.
+# OS Version Requirements.
+MacOS Min (10.11 El Capitan) Max (12.0 Monterey) \
+Windows Min (Windows 7) Max (Windows 11) \
+Linux Min (UBU 14* FED 24 DEB 8) Max (UBU 20* FED RAWHIDE DEB 11)
 # Thanks to
 @webdev03, UI Design/ Feature Design \
 @JaydenDev, Repository Maintainer \
