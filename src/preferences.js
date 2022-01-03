@@ -88,3 +88,8 @@ function evaluatePreferences() {
     document.getElementById("bookmarks").classList.add("hidden");
   }
 }
+
+(async() => {
+  const vstr = document.getElementById("verstring");
+  vstr.innerText = vstr.innerText.replace("{{version}}", (await getPackageJSON()).version)
+})()
