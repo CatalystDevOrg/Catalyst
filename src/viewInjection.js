@@ -4,6 +4,7 @@ let userstyles = [];
 if (window.localStorage.getItem("userstyles") == null) {
 	window.localStorage.setItem("userstyles", JSON.stringify([]));
 }
+userstyles = JSON.parse(window.localStorage.getItem("userstyles"))
 
 // https://stackoverflow.com/questions/52143451/javascript-filter-with-wildcard
 const filterBy = (str, items) =>
@@ -16,7 +17,6 @@ currentView().addEventListener("did-start-loading", () => {
   for (let index = 0; index < userstyles.length; index++) {
     filtered += filterBy(userstyles[index].matchURL, userstyles)
   }
-  filtered = filterBy(userstyles[index].matchURL, userstyles);
 	for (let index in filtered) {
     currentView.insertCSS(userstyles[index].css)
   }
