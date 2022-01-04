@@ -43,20 +43,27 @@
       placeholder="Browse the Web" />
     <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
-      <button id="more-btn" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
-          src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
+    <button id="more-btn" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
+        src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
   </div>
   <!-- More menu -->
-  <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-300 text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
+  <div id="more-menu"
+    class="absolute bg-gray-100 dark:bg-gray-300 text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
     <ul class="justify-center align-middle flex-wrap max-w-sm">
       <li class="cursor-pointer" onclick="togglePreferences()">
-        <img
-        src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">Preferences
+        <img src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">Preferences
       </li>
       <hr class="dark:border-gray-900 mt-2 mb-2">
       <li class="cursor-pointer" onclick="inspectTab()">
-        <img
-        src="../assets/icons/tools.svg" class="inline-flex mb-1 px-2" alt="Tools">Inspect tab
+        <img src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">Inspect tab
+      </li>
+      <li onClick="openFeedback()" class="cursor-pointer">
+        <img src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2"
+          alt="this image has not loaded properly">Feedback
+      </li>
+      <li onClick="openGithub()" class="cursor-pointer">
+        <img src="../assets/icons/github.svg" class="inline-flex mb-1 px-2"
+          alt="this image has not loaded properly">Development
       </li>
       <!-- Add more menu items here by copying this: -->
       <!-- <li class="cursor-pointer">
