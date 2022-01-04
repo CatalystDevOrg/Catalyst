@@ -13,7 +13,7 @@ const filterBy = (str, items) =>
 
 currentView().addEventListener("did-start-loading", () => {
   let filtered = [];
-  for (let index = 0; index < array.length; index++) {
+  for (let index = 0; index < userstyles.length; index++) {
     filtered += filterBy(userstyles[index].matchURL, userstyles)
   }
   filtered = filterBy(userstyles[index].matchURL, userstyles);
