@@ -1,5 +1,4 @@
 // TODO: allow users to store and use userstyles
-const currentView = () => document.querySelector(".current");
 let userstyles = [];
 if (window.localStorage.getItem("userstyles") == null) {
 	window.localStorage.setItem("userstyles", JSON.stringify([]));
@@ -12,12 +11,19 @@ const filterBy = (str, items) =>
 		new RegExp("^" + str.replace(/\*/g, ".*") + "$").test(item)
 	);
 
-currentView().addEventListener("did-start-loading", () => {
-  let filtered = [];
-  for (let index = 0; index < userstyles.length; index++) {
-    filtered += filterBy(userstyles[index].matchURL, userstyles)
-  }
-	for (let index in filtered) {
-    currentView.insertCSS(userstyles[index].css)
-  }
-});
+window.addEventListener("DOM-content-loaded", () => {
+  document.querySelector(".current").addEventListener("did-start-loading", () => {
+    let filtered = [];
+    for (let index = 0; index < userstyles.length; index++) {
+      filtered += filterBy(userstyles[index].matchURL, userstyles)
+    }
+    for (let index in filtered) {
+      document.querySelector(".current").insertCSS(userstyles[index].css)
+    }
+  });
+  
+})
+
+function toggleUserstyles() {
+  document.getElementById("userstyle-manager").classList.toggle("hidden")
+}

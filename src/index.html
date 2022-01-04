@@ -53,7 +53,7 @@
         <img
         src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">Preferences
       </li>
-      <li class="cursor-pointer">
+      <li class="cursor-pointer" onclick="toggleUserstyles()">
         <img
         src="../assets/icons/brush-fill.svg" class="inline-flex mb-1 px-2" alt="Brush">Userstyle Manager
       </li>
@@ -68,6 +68,9 @@
         src="path/to/icon" class="inline-flex mb-1 px-2" alt="Short image description">My menu item
       </li> -->
     </ul>
+  </div>
+  <!-- Userstyles -->
+  <div id="userstyle-manager" class="absolute bg-gray-100 dark:bg-gray-300 text-gray-900 hidden p-3 mt-2 w-72 float-left left-1 rounded">
   </div>
   <!-- Bookmarks -->
   <div id="bookmarks" class="flex px-4 mb-2 bg-white dark:bg-gray-700">
@@ -112,6 +115,7 @@
   </div>
   <!-- Webviews generated with JS -->
   <div id="webviews"></div>
+  <script src="./viewInjection.js" defer></script>
 </body>
 
 </html>
