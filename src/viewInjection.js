@@ -12,8 +12,12 @@ const filterBy = (str, items) =>
 	);
 
 currentView().addEventListener("did-start-loading", () => {
-  const filtered = filterBy(userstyles[index].matchURL, userstyles)
+  let filtered = [];
+  for (let index = 0; index < array.length; index++) {
+    filtered += filterBy(userstyles[index].matchURL, userstyles)
+  }
+  filtered = filterBy(userstyles[index].matchURL, userstyles);
 	for (let index in filtered) {
-    // TODO: inject CSS
+    currentView.insertCSS(userstyles[index].css)
   }
 });
