@@ -12,7 +12,7 @@ const filterBy = (str, items) =>
 	);
 
 currentView().addEventListener("did-start-loading", () => {
-  const filtered = filterBy(filterByuserstyles[index].matchURL, userstyles)
+  const filtered = filterBy(userstyles[index].matchURL, userstyles)
 	for (let index in filtered) {
     // TODO: inject CSS
   }
