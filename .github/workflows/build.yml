@@ -23,6 +23,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
+      - name: Apple Silicon
+        if: ${{ matrix.os == 'macos-latest' }}
+        run: npm run publish -- --arch=arm64
   release32bit:
   # npm run publish -- --arch=ia32
     runs-on: ${{ matrix.os }}
