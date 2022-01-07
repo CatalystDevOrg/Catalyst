@@ -43,6 +43,8 @@ jobs:
       - name: Apple Silicon
         if: ${{ matrix.os == 'macos-latest' }}
         run: npm run publish -- --arch=arm64
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build32:
     needs: build
     runs-on: ${{ matrix.os }}
