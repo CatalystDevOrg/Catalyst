@@ -27,7 +27,7 @@
 		"@electron-forge/maker-dmg": "^6.0.0-beta.61",
 		"@electron-forge/maker-rpm": "^6.0.0-beta.61",
 		"@electron-forge/maker-squirrel": "^6.0.0-beta.61",
-		"@electron-forge/maker-zip": "^6.0.0-beta.61",
+		"@electron-forge/maker-zip": "^6.0.0-beta.63",
 		"@electron-forge/publisher-github": "^6.0.0-beta.61",
 		"concurrently": "^7.0.0",
 		"electron": "^16.0.6",
