@@ -34,3 +34,11 @@ browserLicense = "MIT";
    console.log(securityPatchID);
    console.log(currentSecurityPatch);
  }
+
+// Show info in preferences
+document.getElementById("current-security-patch").innerText = currentSecurityPatch;
+document.getElementById("current-security-patch-id").innerText = securityPatchID;
+//document.getElementById("").innerText = ""
+//document.getElementById("").innerText = ""
+//document.getElementById("").innerText = ""
+//document.getElementById("").innerText = ""
