@@ -36,8 +36,8 @@ browserLicense = "MIT";
  }
 
 // Show info in preferences
-document.getElementById("current-security-patch").innerText = currentSecurityPatch;
-document.getElementById("current-security-patch-id").innerText = securityPatchID;
+document.getElementById("current-security-patch").innerText = "Patch&nbsp" + currentSecurityPatch;
+document.getElementById("current-security-patch-id").innerText = "Patch&nbsp&ID%nbsp" + securityPatchID;
 //document.getElementById("").innerText = ""
 //document.getElementById("").innerText = ""
 //document.getElementById("").innerText = ""
