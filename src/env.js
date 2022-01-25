@@ -3,9 +3,9 @@
 
 // Security Patches
 securityPatchLevel = "January22Q1";
-securityPatchID = "1002942";
-latestSecurityPatch = "release11-patch002";
-currentSecurityPatch = "release11-patch002";
+securityPatchID = "1002972";
+latestSecurityPatch = "release11-patch003";
+currentSecurityPatch = "release11-patch003";
 
 // Browser Meta Data
 browserName = "Catalyst";
