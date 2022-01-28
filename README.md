@@ -4,6 +4,8 @@ We need more contributors, otherwise we cannot bring the features planned for 2.
 If you or someone you know can code with Electron applications and HTML/CSS/JS \
 please help. This browser and other software heavily depend on community support \
 as its not an organization or any of such. Thank you for using Catalyst
+# GitLab
+[GitLab](https://gitlab.com/JaydenDev/Catalyst)
 ![Catalyst](https://raw.githubusercontent.com/JaydenDev/Catalyst/master/assets/banner.svg)
 An amazing and elegant Electron web browser.
 ![img](https://user-images.githubusercontent.com/92550746/147862353-c30a1246-1ab6-48b0-992f-f138b8f95648.png)
