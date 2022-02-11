@@ -32,7 +32,7 @@
 		"concurrently": "^7.0.0",
 		"electron": "^17.0.0",
 		"electron-reloader": "^1.2.1",
-		"tailwindcss": "^3.0.18"
+		"tailwindcss": "^3.0.22"
 	},
 	"dependencies": {
 		"cross-fetch": "^3.1.5",
