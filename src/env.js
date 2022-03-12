@@ -2,14 +2,14 @@
 // Similar to the navigator functions in all browsers
 
 // Security Patches
-securityPatchLevel = "January22Q1";
-securityPatchID = "1002972";
-latestSecurityPatch = "release11-patch003";
-currentSecurityPatch = "release11-patch003";
+securityPatchLevel = "March22Q1";
+securityPatchID = "1008922";
+latestSecurityPatch = "release11-patch012";
+currentSecurityPatch = "release11-patch012";
 
 // Browser Meta Data
 browserName = "Catalyst";
-browserEngine = "Chromium 94, Blink, Electron Latest";
+browserEngine = "Chromium 99, Blink, Electron Latest";
 browserRepository = "https://github.com/JaydenDev/Catalyst";
 browserLicense = "MIT";
 
