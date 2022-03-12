@@ -2,6 +2,10 @@
 const { app, BrowserWindow, dialog } = require("electron");
 const path = require("path");
 const fetch = require("cross-fetch");
+
+// fix bug where application runs during installation
+if(require("electron-squirrel-startup")) app.quit();
+
 let mainWindow;
 function createWindow() {
 	// Create the browser window.

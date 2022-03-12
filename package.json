@@ -1,6 +1,6 @@
 {
 	"name": "catalyst",
-	"version": "1.1.8",
+	"version": "1.1.11",
 	"description": "A minimal Electron Web Browser",
 	"main": "main/main.js",
 	"private": true,
@@ -30,7 +30,7 @@
 		"@electron-forge/maker-zip": "^6.0.0-beta.63",
 		"@electron-forge/publisher-github": "^6.0.0-beta.61",
 		"concurrently": "^7.0.0",
-		"electron": "^17.0.1",
+		"electron": "^17.1.2",
 		"electron-reloader": "^1.2.1",
 		"tailwindcss": "^3.0.23"
 	},
