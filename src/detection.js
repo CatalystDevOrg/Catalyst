@@ -1,5 +1,5 @@
 function checkEncryption() {
-    var page = document.getElementsByClassName("current").src;
+    var page = document.getElementsByClassName(“current”)[0].src
     if (page.includes("https://")) {
         encrypted = true;
     }
