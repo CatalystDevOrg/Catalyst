@@ -16,4 +16,4 @@ Neat and modern icons by Bootstrap Icons are easy to understand. They are in `as
 MacOS Min (10.11 El Capitan) Max (12.1 Monterey) \
 Windows Min (Windows 7) Max (Windows 11) \
 Linux Min (UBU 14* FED 24 DEB 8) Max (UBU 20* FED RAWHIDE DEB 11)
-# Contributers
+# Contributors
