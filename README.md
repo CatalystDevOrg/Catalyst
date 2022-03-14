@@ -55,5 +55,12 @@ Linux Min (UBU 14* FED 24 DEB 8) Max (UBU 20* FED RAWHIDE DEB 11)
             <sub style="font-size:14px"><b>hello-smile6</b></sub>
         </a>
     </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/ScolderCreations>
+            <img src=https://avatars.githubusercontent.com/u/69083943?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Scolder/>
+            <br />
+            <sub style="font-size:14px"><b>Scolder</b></sub>
+        </a>
+    </td>
 </tr>
 </table>
