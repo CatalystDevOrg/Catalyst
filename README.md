@@ -2,7 +2,7 @@
 [GitLab](https://gitlab.com/JaydenDev/Catalyst)
 ![Catalyst](https://raw.githubusercontent.com/JaydenDev/Catalyst/master/assets/banner.svg)
 An amazing and elegant Electron web browser.
-![img](https://user-images.githubusercontent.com/92550746/147862353-c30a1246-1ab6-48b0-992f-f138b8f95648.png)
+![image](https://user-images.githubusercontent.com/92550746/158218881-ad635f36-4de7-4713-bff5-4d075ca5c68d.png)
 ## Stay Secure
 With, at least I hope, no vulnerabilities your data will stay secure!
 ## No Privacy Concerns
