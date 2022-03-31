@@ -13,7 +13,7 @@ searchbar.addEventListener("input", async () => {
 	) {
 		// This is for duckduckgo only, in the future, this may be something else, but I think DDG is fine for now.
 		const autoCompleteCheck = await fetch(
-			`https://duckduckgo.com/ac/?q=${searchbar.value}`
+			`https://duckduckgo.com/ac/?q=${encodeURIComponent(searchbar.value)}`
 		);
 		if (!autoCompleteCheck.ok) return;
 		const autocomplete = await autoCompleteCheck.json();
@@ -43,7 +43,7 @@ function loadURL() {
 	if (shouldAutocomplete(page)) {
 		document.querySelector(
 			".current"
-		).src = `https://duckduckgo.com/?q=${page}`;
+		).src = `https://duckduckgo.com/?q=${encodeURIComponent(page)}`;
 	} else {
 		document.querySelector(".current").src = page;
 	}
