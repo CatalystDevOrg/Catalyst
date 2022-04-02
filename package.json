@@ -1,6 +1,6 @@
 {
     "name": "catalyst",
-    "version": "1.2.1",
+    "version": "0.0.1",
     "description": "A minimal Electron Web Browser",
     "main": "main/main.js",
     "private": true,
@@ -43,17 +43,20 @@
             "packagerConfig": {
                 "icon": "./assets/icon-scaled"
             },
-            "publishers": [{
-                "name": "@electron-forge/publisher-github",
-                "config": {
-                    "repository": {
-                        "owner": "JaydenDev",
-                        "name": "Catalyst"
-                    },
-                    "draft": true
+            "publishers": [
+                {
+                    "name": "@electron-forge/publisher-github",
+                    "config": {
+                        "repository": {
+                            "owner": "JaydenDev",
+                            "name": "Catalyst"
+                        },
+                        "draft": true
+                    }
                 }
-            }],
-            "makers": [{
+            ],
+            "makers": [
+                {
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
                         "name": "catalyst"
@@ -83,8 +86,12 @@
                     "name": "@electron-forge/maker-flatpak",
                     "config": {
                         "options": {
-                            "categories": ["Video"],
-                            "mimeType": ["video/h264"]
+                            "categories": [
+                                "Video"
+                            ],
+                            "mimeType": [
+                                "video/h264"
+                            ]
                         }
                     }
                 }
