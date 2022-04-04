@@ -11,9 +11,9 @@ Starts in seconds, no matter the hardware
 Powered by TailwindCSS, this amazing UI is great to look at.
 Neat and modern icons by Bootstrap Icons are easy to understand. They are in `assets/icons`.
 # OS Version Requirements.
-MacOS El Capitan and later
-Windows 7+
-Ubuntu 14.04+
-Fedora 24+
-Debian 8+
+- MacOS El Capitan and later
+- Windows 7+
+- Ubuntu 14.04+
+- Fedora 24+
+- Debian 8+
 # Contributers
