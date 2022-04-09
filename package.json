@@ -43,20 +43,17 @@
             "packagerConfig": {
                 "icon": "./assets/icon-scaled"
             },
-            "publishers": [
-                {
-                    "name": "@electron-forge/publisher-github",
-                    "config": {
-                        "repository": {
-                            "owner": "JaydenDev",
-                            "name": "Catalyst"
-                        },
-                        "draft": true
-                    }
+            "publishers": [{
+                "name": "@electron-forge/publisher-github",
+                "config": {
+                    "repository": {
+                        "owner": "JaydenDev",
+                        "name": "Catalyst"
+                    },
+                    "draft": true
                 }
-            ],
-            "makers": [
-                {
+            }],
+            "makers": [{
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
                         "name": "catalyst"
@@ -82,19 +79,7 @@
                     "name": "@electron-forge/maker-rpm",
                     "config": {}
                 },
-                {
-                    "name": "@electron-forge/maker-flatpak",
-                    "config": {
-                        "options": {
-                            "categories": [
-                                "Video"
-                            ],
-                            "mimeType": [
-                                "video/h264"
-                            ]
-                        }
-                    }
-                }
+                {}
             ]
         }
     }
