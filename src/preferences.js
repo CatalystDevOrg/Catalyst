@@ -6,26 +6,24 @@ evaluatePreferences();
  * Toggles the preferences viewer
  */
 function togglePreferences() {
-	preferences = getPreferences();
-	preferencesBox.classList.toggle("hidden");
-	if (!preferencesBox.classList.contains("hidden")) {
-		// run preferences
-		evaluatePreferences();
-		// update fields in preferences
-		document.getElementById("pref-darkmode").checked = preferences.dark;
-		addCheckboxListener(document.getElementById("pref-darkmode"), "dark");
-    document.getElementById("pref-autocomplete").checked = preferences.autocomplete;
-		addCheckboxListener(document.getElementById("pref-autocomplete"), "autocomplete");
-    document.getElementById("pref-bookmarks").checked = preferences.bookmarks;
-		addCheckboxListener(document.getElementById("pref-bookmarks"), "bookmarks");
-		if (preferences.agent.toString().length > 1) {
-			document.getElementById("pref-useragent").value =
-				preferences.agent || "Catalyst/{{version}}";
-		} else {
-			document.getElementById("pref-useragent").value = preferences.agent;
-		}
-		addTextListener(document.getElementById("pref-useragent"), "agent");
-	}
+    preferences = getPreferences();
+    preferencesBox.classList.toggle("hidden");
+    if (!preferencesBox.classList.contains("hidden")) {
+        // run preferences
+        evaluatePreferences();
+        // update fields in preferences
+        document.getElementById("pref-darkmode").checked = preferences.dark;
+        addCheckboxListener(document.getElementById("pref-darkmode"), "dark");
+        document.getElementById("pref-autocomplete").checked = preferences.autocomplete;
+        addCheckboxListener(document.getElementById("pref-autocomplete"), "autocomplete");
+        document.getElementById("pref-bookmarks").checked = preferences.bookmarks;
+        addCheckboxListener(document.getElementById("pref-bookmarks"), "bookmarks");
+        if (preferences.agent.toString().length > 1) {
+            document.getElementById("pref-useragent").value =
+                preferences.agent || "Catalyst/{{version}}";
+        } else {}
+        addTextListener(document.getElementById("pref-useragent"), "agent");
+    }
 }
 
 /**
@@ -33,13 +31,13 @@ function togglePreferences() {
  * @returns {Object}
  */
 function getPreferences() {
-	if (!window.localStorage.getItem("preferences")) {
-		window.localStorage.setItem(
-			"preferences",
-			JSON.stringify({ dark: false, agent: "", autocomplete: true, bookmarks: false })
-		);
-	}
-	return JSON.parse(window.localStorage.getItem("preferences"));
+    if (!window.localStorage.getItem("preferences")) {
+        window.localStorage.setItem(
+            "preferences",
+            JSON.stringify({ dark: false, agent: "", autocomplete: true, bookmarks: false })
+        );
+    }
+    return JSON.parse(window.localStorage.getItem("preferences"));
 }
 
 /**
@@ -48,10 +46,10 @@ function getPreferences() {
  * @param {string} prefKey The key in "preferences" for this element.
  */
 function addCheckboxListener(element, prefKey) {
-	element.addEventListener("change", () => {
-		preferences[prefKey] = !!element.checked;
-		updatePreferences();
-	});
+    element.addEventListener("change", () => {
+        preferences[prefKey] = !!element.checked;
+        updatePreferences();
+    });
 }
 /**
  * Adds a Text input listener
@@ -59,37 +57,37 @@ function addCheckboxListener(element, prefKey) {
  * @param {string} prefKey The key in "preferences" for this element.
  */
 function addTextListener(element, prefKey) {
-	element.addEventListener("input", () => {
-		preferences[prefKey] = element.value;
-		updatePreferences();
-	});
+    element.addEventListener("input", () => {
+        preferences[prefKey] = element.value;
+        updatePreferences();
+    });
 }
 
 /**
  * Updates the preferences in LocalStorage to the new preferences and evaluates the new ones
  */
 function updatePreferences() {
-	window.localStorage.setItem("preferences", JSON.stringify(preferences));
-	evaluatePreferences();
+    window.localStorage.setItem("preferences", JSON.stringify(preferences));
+    evaluatePreferences();
 }
 
 /**
  * Evaluates the preferences in the preferences variable
  */
 function evaluatePreferences() {
-	if (preferences.dark) {
-		document.documentElement.classList.add("dark");
-	} else {
-		document.documentElement.classList.remove("dark");
-	}
-  if (preferences.bookmarks && JSON.parse(window.localStorage.getItem("bookmarks")).length > 0) {
-    document.getElementById("bookmarks").classList.remove("hidden");
-  } else {
-    document.getElementById("bookmarks").classList.add("hidden");
-  }
+    if (preferences.dark) {
+        document.documentElement.classList.add("dark");
+    } else {
+        document.documentElement.classList.remove("dark");
+    }
+    if (preferences.bookmarks && JSON.parse(window.localStorage.getItem("bookmarks")).length > 0) {
+        document.getElementById("bookmarks").classList.remove("hidden");
+    } else {
+        document.getElementById("bookmarks").classList.add("hidden");
+    }
 }
 
 (async() => {
-  const vstr = document.getElementById("verstring");
-  vstr.innerText = vstr.innerText.replace("{{version}}", (await getPackageJSON()).version)
+    const vstr = document.getElementById("verstring");
+    vstr.innerText = vstr.innerText.replace("{{version}}", (await getPackageJSON()).version)
 })()

@@ -24,8 +24,8 @@
     </div>
     </div>
     <!-- Tab bar -->
-    <div class="flex items-center px-4 py-2 mt-2 bg-white dark:bg-gray-700">
-        <div id="tabs-bar" class="flex items-center flex-1 space-x-2 overflow-auto no-scrollbar">
+    <div class="flex items-center px-1.5 py-1 mt-0 bg-white dark:bg-gray-700">
+        <div id="tabs-bar" class="flex items-center flex-1 space-x-1 overflow-auto no-scrollbar">
             <!-- tabs are inserted with JS -->
         </div>
         <div class="inline-flex px-1">
@@ -38,12 +38,12 @@
         </div>
     </div>
     <!-- Utility bar -->
-    <div class="w-full min-h-3 p-2 flex justify-center pt-0.5 dark:text-gray-900 bg-white dark:bg-gray-700">
+    <div class="w-full min-h-0.5 p-0.5 flex justify-center pt-0.5 dark:text-gray-900 bg-white dark:bg-gray-700">
         <button id="back" onclick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><img
         src="../assets/icons/arrow-left.svg" alt="Backward"></button>
         <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
         src="../assets/icons/arrow-right.svg" alt="Forward"></button>
-        <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 dark:text-gray-900 p-2" placeholder="Browse the Web" />
+        <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />
         <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
         <button id="more-btn" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
@@ -73,7 +73,7 @@
         </ul>
     </div>
     <!-- Bookmarks -->
-    <div id="bookmarks" class="flex px-4 mb-2 bg-white dark:bg-gray-700">
+    <div id="bookmarks" class="flex px-1 mb-0.5 bg-white dark:bg-gray-700">
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
@@ -84,13 +84,6 @@
         <p class="text-sm">If Catalyst should use Dark Mode.</p>
         <br />
         <label for="pref-useragent">User Agent: </label>
-        <!--<input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded" placeholder="Catalyst/{{version}}"
-      value="Catalyst/{{version}}" />
-    <p class="text-sm">If you leave it empty, it will default to the usual user agent by Electron, which may include
-      your device information. You can add
-      {{version}} which will be replaced by the current Catalyst version. <b>Note: You may need to make a new tab after
-        changing this for it to apply.</b></p>
-    <br /> -->
         <label for="pref-autocomplete">DuckDuckGo Autocomplete? </label>
         <input id="pref-autocomplete" type="checkbox" class="" />
         <p class="text-sm">If Catalyst should automatically suggest autocompletions for your searches with DuckDuckGo.</p>
