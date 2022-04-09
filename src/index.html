@@ -38,7 +38,7 @@
         </div>
     </div>
     <!-- Utility bar -->
-    <div class="w-full min-h-0.2 p-0.5 flex justify-center pt-0.5 dark:text-gray-900 bg-white dark:bg-gray-700">
+    <div class="w-full min-h-0.1 p-0.10 flex justify-center pt-0.10 dark:text-gray-900 bg-white dark:bg-gray-700">
         <button id="back" onclick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><img
         src="../assets/icons/arrow-left.svg" alt="Backward"></button>
         <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
@@ -50,20 +50,20 @@
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-300 text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
+    <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
-            <li class="cursor-pointer" onclick="togglePreferences()">
-                <img src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">Preferences
+            <li class="flex cursor-pointer" onclick="togglePreferences()">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
             </li>
             <hr class="dark:border-gray-900 mt-2 mb-2">
-            <li class="cursor-pointer" onclick="inspectTab()">
-                <img src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">Inspect tab
-            </li>
-            <li onClick="openFeedback()" class="cursor-pointer">
-                <img src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">Feedback
-            </li>
-            <li onClick="openGithub()" class="cursor-pointer">
-                <img src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">Development
+            <li class="cursor-pointer flex" onclick="inspectTab()">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
+            </li>&nbsp;
+            <li onClick="openFeedback()" class="flex cursor-pointer">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
+            </li>&nbsp;
+            <li onClick="openGithub()" class="flex cursor-pointer">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
             </li>
             <!-- Add more menu items here by copying this: -->
             <!-- <li class="cursor-pointer">
@@ -77,7 +77,7 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden h-full max-h-screen absolute text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden max-h-screen h-[80%] rounded-l mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
