@@ -13,6 +13,7 @@
     <script src="./patchtails.js" defer></script>
     <script src="../plugins/plugins.conf.js" defer></script>
     <script src="./pluginWorker.js" defer></script>
+    <script src="./FirstTime.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -102,6 +103,15 @@
     <!-- Suggestions -->
     <div class="suggestions-box" id="autocomplete-suggestions">
         <!-- suggestions made with js -->
+    </div>
+    <!-- Welcome to Catalyst page -->
+    <div id="welcomepage" class="hidden h-fit shadow-md bg-gray-200 dark:bg-gray-900 p-2 rounded-l w-full rounded-lg">
+        <h1 class="dark:text-white font-bold text-xl">Welcome to Catalyst!</h1>&nbsp;
+        <button class="rounded-lg p-1 bg-white text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
+        <button class="rounded-lg p-1 bg-white text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
+        <button class="rounded-lg p-1 bg-white text-black w-fit" onClick="openFeedback()">Found a bug?</button>
+
+
     </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
