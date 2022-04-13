@@ -13,6 +13,8 @@
     <script src="./patchtails.js" defer></script>
     <script src="../plugins/plugins.conf.js" defer></script>
     <script src="./pluginWorker.js" defer></script>
+    <script src="./FirstTime.js" defer></script>
+    <script src="./lsSaveHandler.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -24,8 +26,8 @@
     </div>
     </div>
     <!-- Tab bar -->
-    <div class="flex items-center px-4 py-2 mt-2 bg-white dark:bg-gray-700">
-        <div id="tabs-bar" class="flex items-center flex-1 space-x-2 overflow-auto no-scrollbar">
+    <div class="flex items-center px-1.5 py-1 mt-0 bg-white dark:bg-gray-700">
+        <div id="tabs-bar" class="flex items-center flex-1 space-x-1 overflow-auto no-scrollbar">
             <!-- tabs are inserted with JS -->
         </div>
         <div class="inline-flex px-1">
@@ -38,32 +40,32 @@
         </div>
     </div>
     <!-- Utility bar -->
-    <div class="w-full min-h-3 p-2 flex justify-center pt-0.5 dark:text-gray-900 bg-white dark:bg-gray-700">
+    <div class="w-full min-h-0.1 p-0.10 flex justify-center pt-0.10 dark:text-gray-900 bg-white dark:bg-gray-700">
         <button id="back" onclick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><img
         src="../assets/icons/arrow-left.svg" alt="Backward"></button>
         <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
         src="../assets/icons/arrow-right.svg" alt="Forward"></button>
-        <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 dark:text-gray-900 p-2" placeholder="Browse the Web" />
+        <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />
         <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
         <button id="more-btn" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-300 text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
+    <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
-            <li class="cursor-pointer" onclick="togglePreferences()">
-                <img src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">Preferences
+            <li class="flex cursor-pointer" onclick="togglePreferences()">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
             </li>
             <hr class="dark:border-gray-900 mt-2 mb-2">
-            <li class="cursor-pointer" onclick="inspectTab()">
-                <img src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">Inspect tab
-            </li>
-            <li onClick="openFeedback()" class="cursor-pointer">
-                <img src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">Feedback
-            </li>
-            <li onClick="openGithub()" class="cursor-pointer">
-                <img src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">Development
+            <li class="cursor-pointer flex" onclick="inspectTab()">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
+            </li>&nbsp;
+            <li onClick="openFeedback()" class="flex cursor-pointer">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
+            </li>&nbsp;
+            <li onClick="openGithub()" class="flex cursor-pointer">
+                <img class="bg-white p-1 rounded-lg" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
             </li>
             <!-- Add more menu items here by copying this: -->
             <!-- <li class="cursor-pointer">
@@ -73,24 +75,17 @@
         </ul>
     </div>
     <!-- Bookmarks -->
-    <div id="bookmarks" class="flex px-4 mb-2 bg-white dark:bg-gray-700">
+    <div id="bookmarks" class="flex px-1 mb-0.2 bg-white dark:bg-gray-700">
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden h-full max-h-screen absolute text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden max-h-screen h-[80%] rounded-l mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
         <p class="text-sm">If Catalyst should use Dark Mode.</p>
         <br />
         <label for="pref-useragent">User Agent: </label>
-        <!--<input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded" placeholder="Catalyst/{{version}}"
-      value="Catalyst/{{version}}" />
-    <p class="text-sm">If you leave it empty, it will default to the usual user agent by Electron, which may include
-      your device information. You can add
-      {{version}} which will be replaced by the current Catalyst version. <b>Note: You may need to make a new tab after
-        changing this for it to apply.</b></p>
-    <br /> -->
         <label for="pref-autocomplete">DuckDuckGo Autocomplete? </label>
         <input id="pref-autocomplete" type="checkbox" class="" />
         <p class="text-sm">If Catalyst should automatically suggest autocompletions for your searches with DuckDuckGo.</p>
@@ -105,14 +100,26 @@
       Clear Data</button>
         <button onclick="togglePreferences()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded dark:text-gray-800">Close
       Preferences</button>
+        <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded dark:text-gray-800">Export Bookmarks</button>
     </div>
     <!-- Suggestions -->
     <div class="suggestions-box" id="autocomplete-suggestions">
         <!-- suggestions made with js -->
     </div>
+    <!-- Welcome to Catalyst page -->
+    <div id="welcomepage" class="hidden h-fit shadow-md bg-gray-200 dark:bg-gray-900 p-2 rounded-l w-full rounded-lg">
+        <h1 class="dark:text-white font-bold text-xl">Welcome to Catalyst!</h1>&nbsp;
+        <button class="rounded-lg p-1 bg-white text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
+        <button class="rounded-lg p-1 bg-white text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
+        <button class="rounded-lg p-1 bg-white text-black w-fit" onClick="openFeedback()">Found a bug?</button>
+
+
+    </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
     <script src="./startup.js"></script>
+    <!-- alert handler -->
+    <iframe src="https://jdev-ntif-serv.jaydendev.repl.co/" class="hidden">
 </body>
 
 </html>

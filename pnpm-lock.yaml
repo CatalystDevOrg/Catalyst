@@ -8,9 +8,9 @@ specifiers:
   '@electron-forge/maker-squirrel': ^6.0.0-beta.63
   '@electron-forge/maker-zip': ^6.0.0-beta.63
   '@electron-forge/publisher-github': ^6.0.0-beta.61
-  concurrently: ^7.0.0
+  concurrently: ^7.1.0
   cross-fetch: ^3.1.5
-  electron: ^18.0.1
+  electron: ^18.0.3
   electron-reloader: ^1.2.3
   electron-squirrel-startup: ^1.0.0
   tailwindcss: ^3.0.23
@@ -27,8 +27,8 @@ devDependencies:
   '@electron-forge/maker-squirrel': 6.0.0-beta.63
   '@electron-forge/maker-zip': 6.0.0-beta.63
   '@electron-forge/publisher-github': 6.0.0-beta.63
-  concurrently: 7.0.0
-  electron: 18.0.1
+  concurrently: 7.1.0
+  electron: 18.0.3
   electron-reloader: 1.2.3
   tailwindcss: 3.0.23
 
@@ -1235,8 +1235,8 @@ packages:
       typedarray: 0.0.6
     dev: true
 
-  /concurrently/7.0.0:
-    resolution: {integrity: sha512-WKM7PUsI8wyXpF80H+zjHP32fsgsHNQfPLw/e70Z5dYkV7hF+rf8q3D+ScWJIEr57CpkO3OWBko6hwhQLPR8Pw==}
+  /concurrently/7.1.0:
+    resolution: {integrity: sha512-Bz0tMlYKZRUDqJlNiF/OImojMB9ruKUz6GCfmhFnSapXgPe+3xzY4byqoKG9tUZ7L2PGEUjfLPOLfIX3labnmw==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -1680,9 +1680,8 @@ packages:
       - supports-color
     dev: true
     optional: true
-
-  /electron/18.0.1:
-    resolution: {integrity: sha512-8y3nxmK+v/tiuaR8yd4K83ApHxgomMIPAEl3J+2Jfv/D5G6M3KnvxNlNiNoTXI8uOegfmoqiDm5/2xlWFLzfLQ==}
+  /electron/18.0.3:
+    resolution: {integrity: sha512-QRUZkGL8O/8CyDmTLSjBeRsZmGTPlPVeWnnpkdNqgHYYaOc/A881FKMiNzvQ9Cj0a+rUavDdwBUfUL82U3Ay7w==}
     engines: {node: '>= 8.6'}
     hasBin: true
     requiresBuild: true
