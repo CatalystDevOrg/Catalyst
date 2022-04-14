@@ -52,7 +52,7 @@
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
+    <div id="more-menu" class="shadow-lg absolute bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="flex cursor-pointer" onclick="togglePreferences()">
                 <img class="bg-white p-1 rounded-lg" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
@@ -79,7 +79,7 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="shadow-md bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden max-h-screen h-[80%] rounded-l mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="shadow-lg bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden max-h-screen h-[80%] rounded-md mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
@@ -96,11 +96,11 @@
         <br />
         <span id="verstring">Catalyst {{version}}</span>
         <br>
-        <button onclick="clearData()" class="text-center p-2 bg-red-500 hover:bg-red-600 transition rounded dark:text-gray-800">
+        <button onclick="clearData()" class="rounded-full text-center p-2 bg-red-500 hover:bg-red-600 transition dark:text-gray-800">
       Clear Data</button>
-        <button onclick="togglePreferences()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded dark:text-gray-800">Close
+        <button onclick="togglePreferences()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Close
       Preferences</button>
-        <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded dark:text-gray-800">Export Bookmarks</button>
+        <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Export Bookmarks</button>
     </div>
     <!-- Suggestions -->
     <div class="suggestions-box" id="autocomplete-suggestions">
