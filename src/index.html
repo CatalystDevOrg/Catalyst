@@ -31,25 +31,25 @@
             <!-- tabs are inserted with JS -->
         </div>
         <div class="inline-flex px-1">
-            <button id="create-tab" onclick="createTab()" class="rounded-l text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/plus.svg"
-          alt="Create tab"></button>
-            <button id="remove-tab" onclick="removeTab()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img src="../assets/icons/x.svg"
-          alt="Remove tab"></button>
-            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img src="../assets/icons/star.svg"
-          width="12" alt="Bookmark tab"></button>
+            <button id="create-tab" onclick="createTab()" class="rounded-full text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/plus.svg"
+          alt="Create tab"></button>&nbsp;
+            <button id="remove-tab" onclick="removeTab()" class="rounded-full text-center p-2 bg-green-300 hover:bg-green-400 transition"><img src="../assets/icons/x.svg"
+          alt="Remove tab"></button>&nbsp;
+            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
+          width="" alt="Bookmark tab"></button>
         </div>
     </div>
     <!-- Utility bar -->
-    <div class="w-full min-h-0.1 p-0.10 flex justify-center pt-0.10 dark:text-gray-900 bg-white dark:bg-gray-700">
-        <button id="back" onclick="backward()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 rounded-l transition"><img
-        src="../assets/icons/arrow-left.svg" alt="Backward"></button>
-        <button id="forward" onclick="forward()" class="text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
-        src="../assets/icons/arrow-right.svg" alt="Forward"></button>
-        <input id="searchbar" type="text" style="width: 90%" class="min-w-fit bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />
-        <button id="reload" onclick="reload()" class="text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
-        src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
-        <button id="more-btn" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-r"><img
-        src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
+    <div class="w-full flex pb-1 dark:text-gray-900 bg-white dark:bg-gray-700">
+        <button id="back" onclick="backward()" class="rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
+        <button id="forward" onclick="forward()" class="rounded-full text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
+        src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
+        <input id="searchbar" type="text" class="rounded-full outline-0 min-w-fit w-[95%] bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />&nbsp;
+        <button id="reload" onclick="reload()" class="rounded-full text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
+        src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
+        <button id="more-btn" class="rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
     </div>
     <!-- More menu -->
     <div id="more-menu" class="absolute bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
