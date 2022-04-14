@@ -90,12 +90,14 @@
         <br />
         <span id="verstring">Catalyst {{version}}</span>
         <br>
-        <div class="lg:bg-gray-700 space-y-2 sm:bg-transparent md:bg-transparent rounded-full p-3 w-fit">
-            <button onclick="clearData()" class="rounded-full text-center p-2 bg-red-500 hover:bg-red-600 transition dark:text-gray-800">
+        <div class="lg:bg-gray-700 sm:bg-transparent md:bg-transparent rounded-full p-3 w-fit">
+            <div class="space-y-2">
+                <button onclick="clearData()" class="rounded-full text-center p-2 bg-red-500 hover:bg-red-600 transition dark:text-gray-800">
       Clear Data</button>
-            <button onclick="togglePreferences()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Close
+                <button onclick="togglePreferences()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Close
       Preferences</button>
-            <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Export Data</button></div>
+                <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Export Data</button></div>
+        </div>
     </div>
     <!-- Suggestions -->
     <div class="suggestions-box" id="autocomplete-suggestions">
