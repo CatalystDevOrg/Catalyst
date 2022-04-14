@@ -56,8 +56,7 @@
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="flex cursor-pointer" onclick="togglePreferences()">
                 <img class="bg-white p-1 rounded-lg" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
-            </li>
-            <hr class="dark:border-gray-900 mt-2 mb-2">
+            </li>&nbsp;
             <li class="cursor-pointer flex" onclick="inspectTab()">
                 <img class="bg-white p-1 rounded-lg" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
             </li>&nbsp;
@@ -96,11 +95,12 @@
         <br />
         <span id="verstring">Catalyst {{version}}</span>
         <br>
-        <button onclick="clearData()" class="rounded-full text-center p-2 bg-red-500 hover:bg-red-600 transition dark:text-gray-800">
+        <div class="bg-gray-700 rounded-full p-1 w-fit">
+            <button onclick="clearData()" class="rounded-full text-center p-2 bg-red-500 hover:bg-red-600 transition dark:text-gray-800">
       Clear Data</button>
-        <button onclick="togglePreferences()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Close
+            <button onclick="togglePreferences()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Close
       Preferences</button>
-        <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Export Bookmarks</button>
+            <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Export Bookmarks</button></div>
     </div>
     <!-- Suggestions -->
     <div class="suggestions-box" id="autocomplete-suggestions">
