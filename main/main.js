@@ -13,10 +13,12 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1024,
         height: 768,
+        minWidth: 150,
+        minHeight: 599,
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
             webviewTag: true,
-            nodeIntegration: false
+            nodeIntegration: false,
         },
         title: "Catalyst",
         icon: path.join(__dirname, "../assets/icon.png"),
