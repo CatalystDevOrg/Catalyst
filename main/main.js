@@ -2,6 +2,7 @@
 const { app, BrowserWindow, dialog } = require("electron");
 const path = require("path");
 const fetch = require("cross-fetch");
+const { Menu } = require("electron");
 
 // fix bug where application runs during installation
 if (require("electron-squirrel-startup")) app.quit();
@@ -16,15 +17,12 @@ function createWindow() {
         minWidth: 150,
         minHeight: 599,
         webPreferences: {
-            preload: path.join(__dirname, "preload.js"),
             webviewTag: true,
-            nodeIntegration: false,
+            devTools: true,
         },
         title: "Catalyst",
         icon: path.join(__dirname, "../assets/icon.png"),
     });
-    mainWindow.setMenuBarVisibility(false);
-
     // and load the index.html of the app.
     mainWindow.loadFile("./src/index.html");
 
@@ -100,3 +98,33 @@ async function checkForUpdate(windowToDialog) {
         console.error(error);
     }
 }
+
+let ver = app.getVersion();
+let appName = app.getName();
+
+function aboutApp() {
+    dialog.showMessageBoxSync({
+        title: `About ${appName}`,
+        message: `${appName} ${ver}`,
+        buttons: ["OK"],
+        icon: './assets/icon.png'
+    });
+}
+
+const template = [{
+        label: "About",
+        click: function() {
+            aboutApp();
+        }
+    },
+    {
+        label: "Quit",
+        click: function() {
+            app.quit();
+        }
+    }
+];
+
+
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
