@@ -18,11 +18,11 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById("pref-autocomplete"), "autocomplete");
         document.getElementById("pref-bookmarks").checked = preferences.bookmarks;
         addCheckboxListener(document.getElementById("pref-bookmarks"), "bookmarks");
-        if (preferences.agent.toString().length > 1) {
-            document.getElementById("pref-useragent").value =
-                preferences.agent || "Catalyst/{{version}}";
-        } else {}
-        addTextListener(document.getElementById("pref-useragent"), "agent");
+        //if (preferences.agent.toString().length > 1) {
+        //  document.getElementById("pref-useragent").value =
+        //    preferences.agent || "Catalyst/{{version}}";
+        //} else {}
+        //addTextListener(document.getElementById("pref-useragent"), "agent");
     }
 }
 
