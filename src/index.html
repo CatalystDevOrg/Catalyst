@@ -52,7 +52,7 @@
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="shadow-lg absolute bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
+    <div id="more-menu" class="shadow-lg absolute backdrop-blur-xl bg-gray-100/30 dark:bg-gray-800/30 dark:text-white text-gray-900 p-3 mt-2 w-72 float-right hidden right-1 rounded">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="flex cursor-pointer" onclick="togglePreferences()">
                 <img class="bg-white p-1 rounded-lg" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
@@ -73,7 +73,7 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="shadow-lg bg-gray-200 dark:bg-gray-800 p-2 w-[40%] hidden max-h-screen h-[80%] rounded-md mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="shadow-lg backdrop-blur-xl bg-gray-200/30 dark:bg-gray-800/30 p-2 w-[40%] hidden max-h-screen h-[80%] rounded-md mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
@@ -100,7 +100,7 @@
         </div>
     </div>
     <!-- Suggestions -->
-    <div class="suggestions-box" id="autocomplete-suggestions">
+    <div class="backdrop-blur-xl bg-gray-200/30 dark:bg-gray-800/30 suggestions-box" id="autocomplete-suggestions">
         <!-- suggestions made with js -->
     </div>
     <!-- Welcome to Catalyst page -->
