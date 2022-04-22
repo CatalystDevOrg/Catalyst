@@ -15,4 +15,4 @@ Neat and modern icons by Bootstrap Icons are easy to understand. They are in `as
 - Ubuntu 14.04+
 - Fedora 24+
 - Debian 8+
-# Contributers
+# Contributors
