@@ -25,6 +25,7 @@ function createWindow() {
     });
     // and load the index.html of the app.
     mainWindow.loadFile("./src/index.html");
+    mainWindow.setMenuBarVisibility(false)
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
@@ -121,6 +122,35 @@ const template = [{
         label: "Quit",
         click: function() {
             app.quit();
+        }
+    },
+    {
+        label: "Hide",
+        accelerator: "CmdOrCtrl+H",
+        click: function() {
+            mainWindow.setMenuBarVisibility(false);
+        }
+    },
+    {
+        label: "Show",
+        accelerator: "CmdOrCtrl+S",
+        click: function() {
+            mainWindow.setMenuBarVisibility(true);
+        }
+    },
+    {
+        label: "DevTools",
+        accelerator: "CmdOrCtrl+I",
+        click: function() {
+            // toggle devTools
+            mainWindow.webContents.toggleDevTools();
+        }
+    },
+    {
+        label: "Check for Updates",
+        accelerator: "CmdOrCtrl+U",
+        click: function() {
+            checkForUpdate(mainWindow);
         }
     }
 ];

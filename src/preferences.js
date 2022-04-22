@@ -18,11 +18,6 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById("pref-autocomplete"), "autocomplete");
         document.getElementById("pref-bookmarks").checked = preferences.bookmarks;
         addCheckboxListener(document.getElementById("pref-bookmarks"), "bookmarks");
-        //if (preferences.agent.toString().length > 1) {
-        //  document.getElementById("pref-useragent").value =
-        //    preferences.agent || "Catalyst/{{version}}";
-        //} else {}
-        //addTextListener(document.getElementById("pref-useragent"), "agent");
     }
 }
 
@@ -86,8 +81,3 @@ function evaluatePreferences() {
         document.getElementById("bookmarks").classList.add("hidden");
     }
 }
-
-(async() => {
-    const vstr = document.getElementById("verstring");
-    vstr.innerText = vstr.innerText.replace("{{version}}", (await getPackageJSON()).version)
-})()

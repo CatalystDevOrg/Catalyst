@@ -41,14 +41,14 @@
     </div>
     <!-- Utility bar -->
     <div class="w-full flex pb-1 dark:text-gray-900 bg-white dark:bg-gray-700">
-        <button id="back" onclick="backward()" class="rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="back" onclick="backward()" class="ml-2 rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
         <button id="forward" onclick="forward()" class="rounded-full text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
         src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
         <input id="searchbar" type="text" class="rounded-full outline-0 min-w-fit w-[95%] bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />&nbsp;
         <button id="reload" onclick="reload()" class="rounded-full text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
-        <button id="more-btn" class="rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="more-btn" class="rounded-full mr-2 text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
     </div>
     <!-- More menu -->
@@ -79,10 +79,9 @@
         <input id="pref-darkmode" type="checkbox" class="" />
         <p class="text-sm">If Catalyst should use Dark Mode.</p>
         <br />
-        <label for="pref-useragent">User Agent: </label>
-        <label for="pref-autocomplete">DuckDuckGo Autocomplete? </label>
+        <label for="pref-autocomplete">Autocomplete </label>
         <input id="pref-autocomplete" type="checkbox" class="" />
-        <p class="text-sm">If Catalyst should automatically suggest autocompletions for your searches with DuckDuckGo.</p>
+        <p class="text-sm">Search Autocomplete</p>
         <br />
         <label for="pref-bookmarks">Bookmarks? </label>
         <input id="pref-bookmarks" type="checkbox" class="" />
