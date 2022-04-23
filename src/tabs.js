@@ -45,6 +45,7 @@ async function createTab(url) {
     // add class 'rounded-full' to the tab
     tab.classList.add("rounded-full");
     tab.classList.add("shadow-sm");
+    tab.classList.add("")
 }
 createTab();
 
