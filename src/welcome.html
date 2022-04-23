@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="overflow-hidden bg-gray-900">
+<body style="background-image: url(https://picsum.photos/1920/1080);" class="overflow-hidden bg-gray-900">
     <div class="flex justify-center">
         <div id="area" class="rounded-3xl grid gap-1 grid-cols-3 w-fit my-[25%] h-26 bg-gray-800 m-auto p-1">
             <button onClick="createBtn()" class="rounded-3xl disabled:hidden bg-gray-900 text-white p-1" disabled>
@@ -25,6 +25,9 @@
             <a href="https://scratch.mit.edu" class="rounded-3xl bg-gray-900 text-white p-1">
                 <img width="60" height="60" class="m-auto rounded-3xl w-30 h-30" src="../assets/icons/scratch.png" alt="">
             </a>
+        </div>
+        <div class="fixed top-0 my-4 bg-gray-900 rounded-lg w-fit h-fit p-3 text-white">
+            <p>background image provided by <a href="https://picsum.photos/">Picsum</a></p>
         </div>
     </div>
 </body>

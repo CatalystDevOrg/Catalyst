@@ -10,7 +10,7 @@ specifiers:
   '@electron-forge/publisher-github': ^6.0.0-beta.61
   concurrently: ^7.1.0
   cross-fetch: ^3.1.5
-  electron: ^18.0.4
+  electron: ^18.1.0
   electron-reloader: ^1.2.3
   electron-squirrel-startup: ^1.0.0
   tailwindcss: ^3.0.24
@@ -28,7 +28,7 @@ devDependencies:
   '@electron-forge/maker-zip': 6.0.0-beta.63
   '@electron-forge/publisher-github': 6.0.0-beta.63
   concurrently: 7.1.0
-  electron: 18.0.4
+  electron: 18.1.0
   electron-reloader: 1.2.3
   tailwindcss: 3.0.24
 
@@ -1614,8 +1614,8 @@ packages:
     dev: true
     optional: true
 
-  /electron/18.0.4:
-    resolution: {integrity: sha512-xfsozNpFr3WzeM1EFlw2qqiqXbCrgQNBJJMlcC4/DUYVpkF8364SZenX7FFFA42NmwXiOEahkvvho/u7UrAcGg==}
+  /electron/18.1.0:
+    resolution: {integrity: sha512-P55wdHNTRMo7a/agC84ZEZDYEK/pTBcQdlp8lFbHcx3mO4Kr+Im/J5p2uQgiuXtown31HqNh2paL3V0p+E6rpQ==}
     engines: {node: '>= 8.6'}
     hasBin: true
     requiresBuild: true

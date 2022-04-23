@@ -44,6 +44,7 @@ async function createTab(url) {
     switchTabs(randomHash);
     // add class 'rounded-full' to the tab
     tab.classList.add("rounded-full");
+    tab.classList.add("shadow-sm");
 }
 createTab();
 
@@ -71,11 +72,6 @@ function switchTabs(tabHash) {
     document.getElementById("view-" + tabHash).classList.add("current");
     view = document.getElementById("view-" + tabHash);
     activeHash = tabHash;
-    // add 'animate-bounce' class to the active tab for 2 seconds
-    activeTab.classList.add("animate-bounce");
-    setTimeout(() => {
-        activeTab.classList.remove("animate-bounce");
-    }, 1000);
 }
 
 function addListeners(view, hash) {
