@@ -1,5 +1,5 @@
 An amazing and elegant Electron web browser.
-![image](https://user-images.githubusercontent.com/92550746/162594368-b615d7fc-78bc-4582-874c-c3cf07f5392b.png)
+![image](https://user-images.githubusercontent.com/92550746/164913432-ad3b9cd1-1e09-4e94-b0c8-a2f0b0ef5b78.png)
 ## Stay Secure
 With, at least I hope, no vulnerabilities your data will stay secure!
 ## No Privacy Concerns
