@@ -33,5 +33,33 @@ if (localStorage.getItem('ctlystBlurDisabled') === 'true') {
 }
 }
 
+if (localStorage.getItem('ctlystLogging') === 'true') {
 console.log(localStorage.getItem('ctlystBlurDisabled'))
+}
+
 toggleBlur();
+
+const ctlystPreferenceLogging = document.querySelector('#pref-logging');
+
+ctlystPreferenceLogging.addEventListener('change', () => {
+    if (ctlystPreferenceLogging.checked) {
+        localStorage.setItem('ctlystLogging', true);
+        alert("Restart the browser to apply changes.");
+    } else {
+        localStorage.setItem('ctlystLogging', false);
+        alert("Restart the browser to apply changes.");
+    }
+    }
+);
+
+// if ctlystLogging is set to true, set the blur checkbox to checked
+if (localStorage.getItem('ctlystLogging') === 'true') {
+    let enableLogging = true
+    ctlystPreferenceLogging.checked = true;
+}
+
+// if ctlystLogging is set to false, set the blur checkbox to unchecked
+if (localStorage.getItem('ctlystLogging') === 'false') {
+    let enableLogging = false
+    ctlystPreferenceLogging.checked = false;
+}

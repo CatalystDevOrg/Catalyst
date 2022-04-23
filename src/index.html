@@ -6,7 +6,7 @@
     <script src="./functions.js"></script>
     <script src="./listeners.js" defer></script>
     <script src="./tabs.js" defer></script>
-    <script src="./bookmarks.js" defer></script>
+    <script type="module" src="./bookmarks.js" defer></script>
     <script src="./search.js" defer></script>
     <script src="./preferences.js" defer></script>
     <script src="./sortable.js" defer></script>
@@ -15,7 +15,7 @@
     <script src="./pluginWorker.js" defer></script>
     <script src="./FirstTime.js" defer></script>
     <script src="./lsSaveHandler.js" defer></script>
-    <script src="./configHandler.js" defer></script>
+    <script type="module" src="./configHandler.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -88,9 +88,16 @@
         <input id="pref-bookmarks" type="checkbox" class="" />
         <p class="text-sm">Toggles the bookmarks bar</p>
         <br />
-        <label for="pref-blur">Disable Blur</label>
-        <input id="pref-blur" type="checkbox" class="" />
-        <p class="text-sm">Toggles the blur in the UI</p>
+        <div class="blurred backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent rounded-sm p-3 w-full">
+            <h1>Flags</h1>
+            <label for="pref-blur">Disable Blur</label>
+            <input id="pref-blur" type="checkbox" class="" />
+            <p class="text-sm">Toggles the blur in the UI</p>
+            <br>
+            <label for="pref-logging">Logs</label>
+            <input id="pref-logging" type="checkbox" class="" />
+            <p class="text-sm">Toggles console logs</p>
+        </div>
         <br />
         <br>
         <div class="lg:bg-gray-700/30 backdrop-blur-md sm:bg-transparent/30 md:bg-transparent rounded-full p-3 w-fit">
