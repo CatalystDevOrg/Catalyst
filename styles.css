@@ -1,41 +1,37 @@
 /* Setup Tailwind */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom Tailwind classes */
-
 @layer components {
-    .tab {
-        @apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-gray-600 bg-emerald-100 rounded cursor-pointer whitespace-nowrap;
-    }
-    .active-tab {
-        @apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-white bg-emerald-500 rounded cursor-default whitespace-nowrap font-bold;
-    }
-    .tab-star {
-        @apply ml-auto;
-    }
-    .view {
-        @apply min-w-[100vw] min-h-[100vh];
-    }
-    .suggestion {
-        @apply w-screen border-solid p-2 border-blue-500 dark: text-white;
-    }
-    .suggestions-box {
-        @apply absolute rounded-b-lg bg-red-200 dark: bg-gray-800 border-blue-500 shadow;
-    }
-    *:focus {
-        @apply outline-emerald-600;
-    }
-    .bookmark {
-        @apply transition flex items-center flex-1 max-w-sm p-1 m-0.5 min-w-[12px] overflow-hidden bg-gray-200 dark: bg-gray-900 text-sm rounded cursor-pointer text-gray-600 dark: text-gray-100 whitespace-nowrap;
-    }
+	.tab {
+		@apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-gray-600 bg-emerald-100 rounded cursor-pointer whitespace-nowrap;
+	}
+	.active-tab {
+		@apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-white bg-emerald-500 rounded cursor-default whitespace-nowrap font-bold;
+	}
+  .tab-star {
+    @apply ml-auto;
+  }
+	.view {
+		@apply min-w-[100vw] min-h-[100vh];
+	}
+	.suggestion {
+		@apply w-screen border-solid p-2 border-blue-500 dark:text-white;
+	}
+	.suggestions-box {
+		@apply absolute rounded-b-lg bg-red-200 dark:bg-gray-800 border-blue-500 shadow;
+	}
+	*:focus {
+		@apply outline-emerald-600;
+	}
+  .bookmark {
+    @apply transition flex items-center flex-1 max-w-sm p-1 m-0.5 min-w-[12px] overflow-hidden bg-gray-200 dark:bg-gray-900 text-sm rounded cursor-pointer text-gray-600 dark:text-gray-100 whitespace-nowrap;
+  }
 }
 
-
 /* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */
-
 webview {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
