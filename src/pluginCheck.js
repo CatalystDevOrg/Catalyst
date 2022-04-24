@@ -11,7 +11,9 @@ function checkPlugin(namespace) {
   }
   [ // To add a blacklisted object, add content.test(regex)
       content.test(/[\0\s\n]process./),
-      content.test(/[^"'`].*eval(/)
+      content.test(/[^"'`].*eval(/),
+      content.test(/[^"'`].*alert(/),
+      content.test(/[^"'`].*localStorage(/)
   ]
       .forEach(function(a) {a => testCondition(a, "Contains disallowed object").then(res => ret)}) // This line disallows process and eval
   return ret;
