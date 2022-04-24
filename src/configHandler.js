@@ -11,14 +11,9 @@ ctlystPreferenceBlur.addEventListener('change', () => {
     }
 );
 
-// if ctlystBlurDisabled is set to true, set the blur checkbox to checked
-if (localStorage.getItem('ctlystBlurDisabled') === 'true') {
-    ctlystPreferenceBlur.checked = true;
-}
-
-// if ctlystBlurDisabled is set to false, set the blur checkbox to unchecked
-if (localStorage.getItem('ctlystBlurDisabled') === 'false') {
-    ctlystPreferenceBlur.checked = false;
+// if ctlystBlurDisabled is bool, set the blur checkbox to ctlystBlurDisabled
+if (typeof localStorage.getItem('ctlystBlurDisabled') == 'boolean') {
+    ctlystPreferenceBlur.checked = localStorage.getItem('ctlystBlurDisabled');
 }
 
 // if localStorage value ctlystBlurDisabled is true, then run a function
@@ -53,13 +48,7 @@ ctlystPreferenceLogging.addEventListener('change', () => {
 );
 
 // if ctlystLogging is set to true, set the blur checkbox to checked
-if (localStorage.getItem('ctlystLogging') === 'true') {
-    let enableLogging = true
-    ctlystPreferenceLogging.checked = true;
-}
-
-// if ctlystLogging is set to false, set the blur checkbox to unchecked
-if (localStorage.getItem('ctlystLogging') === 'false') {
-    let enableLogging = false
-    ctlystPreferenceLogging.checked = false;
+if (typeof localStorage.getItem('ctlystLogging') == 'boolean') {
+    let enableLogging = localStorage.getItem('ctlystLogging');
+    ctlystPreferenceLogging.checked = enableLogging;
 }
