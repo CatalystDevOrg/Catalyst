@@ -1,7 +1,6 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, dialog } = require("electron");
 const path = require("path");
-const fetch = require("cross-fetch");
 const { Menu } = require("electron");
 
 // fix bug where application runs during installation
