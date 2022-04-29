@@ -72,6 +72,7 @@ async function checkForUpdate(windowToDialog) {
         );
         if (!githubFetch.ok) {
             // this means that
+            alert("Error fetching releases");
             return;
         }
         const releaseJSON = await githubFetch.json();
