@@ -10,9 +10,4 @@ function checkPlugin(namespace) {
             return false;
         }
   }
-      // To add a blacklisted object, add content.test(regex)
-      //content.test(/[\0\s\n]process./),
-      // content.test(/[\0\s\n]*eval./)
-      // .forEach(function(a) {a => testCondition(a, "Contains disallowed object").then(res => ret)})
-  // return ret;
 }
