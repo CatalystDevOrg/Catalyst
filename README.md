@@ -1,20 +1,7 @@
 An amazing and elegant Electron web browser.
 ![image](https://user-images.githubusercontent.com/92550746/164913432-ad3b9cd1-1e09-4e94-b0c8-a2f0b0ef5b78.png)
-## Stay Secure
-With, at least I hope, no vulnerabilities your data will stay secure!
-## No Privacy Concerns
-ZERO data collection!
-## Fast and stable
-Starts in seconds, no matter the hardware
-## Great UI
-Powered by TailwindCSS, this amazing UI is great to look at.
-Neat and modern icons by Bootstrap Icons are easy to understand. They are in `assets/icons`.
-# OS Version Requirements.
-- MacOS El Capitan and later
-- Windows 7+
-- Ubuntu 14.04+
-- Fedora 24+
-- Debian 8+
+# Catalyst
+Catalyst is a hobby project entirely managed and written by the community. It is an Electron/Chromium based web browser that really doesn't have a purpose, the contributors are below
 # Contributors
 
 <table>
