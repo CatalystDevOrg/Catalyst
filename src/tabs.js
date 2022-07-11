@@ -43,7 +43,7 @@ async function createTab(url) {
     document.getElementById("webviews").appendChild(view);
     switchTabs(randomHash);
     // add class 'rounded-full' to the tab
-    tab.classList.add("rounded-full");
+    tab.classList.add("rounded-sm");
     tab.classList.add("shadow-sm");
 }
 createTab();

@@ -33,40 +33,40 @@
             <!-- tabs are inserted with JS -->
         </div>
         <div class="inline-flex px-1">
-            <button id="create-tab" onclick="createTab()" class="rounded-full text-center p-2 bg-red-300 hover:bg-red-400 transition"><img src="../assets/icons/plus.svg"
+            <button id="create-tab" onclick="createTab()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/plus.svg"
           alt="Create tab"></button>&nbsp;
-            <button id="remove-tab" onclick="removeTab()" class="rounded-full text-center p-2 bg-green-300 hover:bg-green-400 transition"><img src="../assets/icons/x.svg"
+            <button id="remove-tab" onclick="removeTab()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/x.svg"
           alt="Remove tab"></button>&nbsp;
-            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
+            <button id="remove-tab" onclick="bookmarkCurrentTab()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
           width="" alt="Bookmark tab"></button>
         </div>
     </div>
     <!-- Utility bar -->
     <div class="w-full flex pb-1 dark:text-gray-900 bg-white dark:bg-gray-700">
-        <button id="back" onclick="backward()" class="shadow-sm ml-2 rounded-full text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="back" onclick="backward()" class="shadow-sm ml-2  text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
-        <button id="forward" onclick="forward()" class="shadow-sm rounded-full text-center p-2 bg-green-300 hover:bg-green-400 transition"><img
+        <button id="forward" onclick="forward()" class="shadow-sm  text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
-        <input id="searchbar" type="text" class="rounded-full shadow-sm outline-0 min-w-fit w-[95%] bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />&nbsp;
-        <button id="reload" onclick="reload()" class="rounded-full shadow-sm text-center p-2 bg-red-300 hover:bg-red-400 transition"><img
+        <input id="searchbar" type="text" class=" shadow-sm outline-0 min-w-fit w-[95%] bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />&nbsp;
+        <button id="reload" onclick="reload()" class=" shadow-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
-        <button id="more-btn" class="rounded-full shadow-sm mr-2 text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="more-btn" class=" shadow-sm mr-2 text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="shadow-lg absolute backdrop-blur-md bg-gray-100/75 dark:bg-gray-800/75 dark:text-white text-gray-900 p-3 mt-2 w-72 blurred float-right hidden right-1 rounded">
+    <div id="more-menu" class="shadow-lg absolute backdrop-blur-md bg-gray-100/75 dark:bg-gray-800/75 dark:text-white text-gray-900 p-3 mt-2 w-72 blurred float-right hidden right-1 ">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="flex cursor-pointer" onclick="togglePreferences()">
-                <img class="bg-white p-1 rounded-lg" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
+                <img class="bg-blue-300 p-1 -lg" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
             </li>&nbsp;
             <li class="cursor-pointer flex" onclick="inspectTab()">
-                <img class="bg-white p-1 rounded-lg" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
+                <img class="bg-blue-300 bg-white p-1 -lg" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
             </li>&nbsp;
             <li onClick="openFeedback()" class="flex cursor-pointer">
-                <img class="bg-white p-1 rounded-lg" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
+                <img class="bg-blue-300 bg-white p-1 -lg" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
             </li>&nbsp;
             <li onClick="openGithub()" class="flex cursor-pointer">
-                <img class="bg-white p-1 rounded-lg" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
+                <img class="bg-blue-300 p-1 -lg" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
             </li>
         </ul>
     </div>
@@ -75,7 +75,7 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="blurred shadow-lg backdrop-blur-md bg-gray-200/75 dark:bg-gray-800/75 p-2 w-[40%] hidden max-h-screen h-[80%] rounded-md mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="blurred shadow-lg backdrop-blur-md bg-gray-200/75 dark:bg-gray-800/75 p-2 w-[40%] hidden max-h-screen h-[80%] -md mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
@@ -89,7 +89,7 @@
         <input id="pref-bookmarks" type="checkbox" class="" />
         <p class="text-sm">Toggles the bookmarks bar</p>
         <br />
-        <div class="blurred backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent rounded-sm p-3 w-full">
+        <div class="blurred backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
             <h1>Flags</h1>
             <label for="pref-blur">Disable Blur</label>
             <input id="pref-blur" type="checkbox" class="" />
@@ -101,13 +101,13 @@
         </div>
         <br />
         <br>
-        <div class="lg:bg-gray-700/30 backdrop-blur-md sm:bg-transparent/30 md:bg-transparent rounded-full p-3 w-fit">
+        <div class="lg:bg-gray-700/30 backdrop-blur-md sm:bg-transparent/30 md:bg-transparent  p-3 w-fit">
             <div class="space-y-1">
-                <button onclick="clearData()" class="rounded-full text-center p-2 bg-red-500 hover:bg-red-600 transition dark:text-gray-800">
+                <button onclick="clearData()" class=" text-center p-2 bg-blue-500 hover:bg-blue-600 transition dark:text-gray-800">
       Clear Data</button>
-                <button onclick="togglePreferences()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Close
+                <button onclick="togglePreferences()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Close
       Preferences</button>
-                <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition rounded-full dark:text-gray-800">Export Data</button></div>
+                <button onclick="lsSaveBookmarks()" class="text-center p-2 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Export Data</button></div>
         </div>
     </div>
     <!-- Suggestions -->
@@ -115,12 +115,12 @@
         <!-- suggestions made with js -->
     </div>
     <!-- Welcome to Catalyst page -->
-    <div id="welcomepage" class="hidden h-fit shadow-md bg-gray-200/75 dark:bg-gray-900/75 backdrop-blur-xl blurred  dark:text-white p-2 rounded-l w-full rounded-lg">
+    <div id="welcomepage" class="hidden h-fit shadow-md bg-gray-200/75 dark:bg-gray-900/75 backdrop-blur-xl blurred  dark:text-white p-2 -l w-full -lg">
         <h1 class="dark:text-white font-bold text-xl">Welcome to and a goodbye from Catalyst!</h1>&nbsp;
         <h1>Catalyst will be discontinued soon!</h1>
         <p>Prepare to make the switch forward, to Catalyst Native.</p>
-        <button class="rounded-lg p-1 bg-white  text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
-        <button class="rounded-lg p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
+        <button class="-lg p-1 bg-white  text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
+        <button class="-lg p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
     </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
