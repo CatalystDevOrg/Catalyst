@@ -37,8 +37,8 @@
           alt="Create tab"></button>&nbsp;
             <button id="remove-tab" onclick="removeTab()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/x.svg"
           alt="Remove tab"></button>&nbsp;
-            <button id="remove-tab" onclick="bookmarkCurrentTab()" class=" text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
-          width="" alt="Bookmark tab"></button>
+            <button id="remove-tab" onclick="bookmarkCurrentTab()" class=" text-center p-2 hidden bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
+          width="" alt="Bookmark tab" disabled></button>
         </div>
     </div>
     <!-- Utility bar -->
@@ -86,10 +86,11 @@
         <p class="text-sm">Search Autocomplete</p>
         <br />
         <label for="pref-bookmarks">Bookmarks Bar </label>
-        <input id="pref-bookmarks" type="checkbox" class="" />
+        <input id="pref-bookmarks" type="checkbox" class="" disabled/>
         <p class="text-sm">Toggles the bookmarks bar</p>
+        <b>This feature is temporarily disabled.</b>
         <br />
-        <div class="blurred backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
+        <div class="blurred hidden backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
             <h1>Flags</h1>
             <label for="pref-blur">Disable Blur</label>
             <input id="pref-blur" type="checkbox" class="" />

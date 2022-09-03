@@ -30,7 +30,9 @@ function createWindow() {
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
-    checkForUpdate(mainWindow);
+
+    // update checking will be temporarily disabled until further notice.
+    // checkForUpdate(mainWindow);
 }
 
 // This method will be called when Electron has finished
