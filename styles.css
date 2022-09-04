@@ -13,7 +13,10 @@
 	}
   .tab-star {
     @apply ml-auto;
-  }
+  	}
+  	.bg {
+		@apply bg-cover bg-no-repeat;
+	}
 	.view {
 		@apply min-w-[100vw] min-h-[100vh];
 	}
