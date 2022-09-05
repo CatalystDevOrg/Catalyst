@@ -6,7 +6,6 @@
     <script src="./functions.js"></script>
     <script src="./listeners.js" defer></script>
     <script src="./tabs.js" defer></script>
-    <script type="module" src="./bookmarks.js" defer></script>
     <script src="./search.js" defer></script>
     <script src="./preferences.js" defer></script>
     <script src="./sortable.js" defer></script>
@@ -37,7 +36,7 @@
           alt="Create tab"></button>&nbsp;
             <button id="remove-tab" onclick="removeTab()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/x.svg"
           alt="Remove tab"></button>&nbsp;
-            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="rounded-sm text-center p-2 hidden bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
+            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
           width="" alt="Bookmark tab" disabled></button>
         </div>
     </div>
@@ -86,9 +85,8 @@
         <p class="text-sm">Search Autocomplete</p>
         <br />
         <label for="pref-bookmarks">Bookmarks Bar </label>
-        <input id="pref-bookmarks" type="checkbox" class="" disabled/>
+        <input id="pref-bookmarks" type="checkbox" class=""/>
         <p class="text-sm">Toggles the bookmarks bar</p>
-        <b>This feature is temporarily disabled.</b>
         <br />
         <br />
         <div class="blurred hidden backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
@@ -127,6 +125,7 @@
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
     <script src="./startup.js"></script>
+    <script src="./bookmarks.js"></script>
 </body>
 
 </html>
