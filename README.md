@@ -1,5 +1,5 @@
 An amazing and elegant Electron web browser.
-![image](https://user-images.githubusercontent.com/92550746/164913432-ad3b9cd1-1e09-4e94-b0c8-a2f0b0ef5b78.png)
+![image](https://user-images.githubusercontent.com/92550746/189765570-e67e70ab-160d-4ed6-bea1-f2698ed5bf8e.png)
 # Catalyst
 Catalyst is a hobby project entirely managed and written by the community. It is an Electron/Chromium based web browser that really doesn't have a purpose, the contributors are below
 # Contributors
