@@ -122,16 +122,17 @@
         <h1 class="dark:text-white font-bold text-xl">Welcome to and a goodbye from Catalyst!</h1>&nbsp;
         <h1>Welcome to Catalyst!</h1>
         <p>We hope you enjoy our hand-crafted stable web browser!</p>
-        <button class="-lg p-1 bg-white  text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
-        <button class="-lg p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
+        <button class="p-1 bg-white  text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
+        <button class="p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
     </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
     <script src="./startup.js"></script>
     <script src="./bookmarks.js"></script>
-    <div class="bg-gray-900 m-4 fixed bottom-0 p-4 rounded-lg w-fit h-fit text-white">
+    <div id="devPop" class="bg-gray-900/70 m-4 fixed bottom-0 p-4 rounded-lg w-fit h-fit text-white">
         <h1 class="text-emerald-500">This is a development copy of Catalyst</h1>
         <p>This version may have incomplete or non-working features!</p>
+        <button onClick="hideDevPop()" class="bg-emerald-500 text-white p-1 rounded-lg" hint="This will only hide the popup until the application is restarted.">Close (temporarily)</button>
     </div>
 </body>
 

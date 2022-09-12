@@ -31,6 +31,10 @@ function reload() {
     document.querySelector(".current").reload();
 }
 
+function hideDevPop() {
+    document.querySelector("#devPop").style.display = "none";
+}
+
 function openDocs() {
     createTab('https://getcatalyst.eu.org/docs')
 }
