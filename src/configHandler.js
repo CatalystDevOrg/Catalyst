@@ -11,14 +11,12 @@ ctlystPreferenceBlur.addEventListener('change', () => {
     }
 );
 
-// if ctlystBlurDisabled is bool, set the blur checkbox to ctlystBlurDisabled
 if (typeof localStorage.getItem('ctlystBlurDisabled') == 'boolean') {
     ctlystPreferenceBlur.checked = "true";
 } else {
     ctlystPreferenceBlur.checked = "false";
 }
 
-// if localStorage value ctlystBlurDisabled is true, then run a function
 function toggleBlur() {
 if (localStorage.getItem('ctlystBlurDisabled') === 'true') {
     const blurredElements = document.querySelectorAll('.blurred');
@@ -50,7 +48,6 @@ ctlystPreferenceLogging.addEventListener('change', () => {
 );
 
 var enableLogging = localStorage.getItem('ctlystLogging');
-// if ctlystLogging is set to true, set the blur checkbox to checked
 if (enableLogging == "true") {
     ctlystPreferenceLogging.checked = "true";
 } else {

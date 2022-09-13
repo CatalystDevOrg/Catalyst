@@ -7,6 +7,7 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <script src="home.js" defer></script>
+    <script src="./functions.js"></script>
 </head>
 
 <body class="overflow-hidden bg-gray-900">
@@ -30,8 +31,12 @@
             <input id="p-3">
             <button id="btn001" onClick="savePref()">Save</button>
         </div>
-        <div class="p-8 bg-gray-900 rounded-lg w-fit h-fit text-white">
+        <div class="p-8 bg-gray-900 rounded-lg space-y-4 w-fit h-fit text-white">
             <a class="bg-gray-600 rounded-full p-4 mt-80" href="./dino.htm">Play</a>
+            <a class="bg-gray-600 rounded-full p-4 mt-80" href="./whatsnew.htm">What's new in <span id="ver"></span></a>
+            <script>
+                getVerDisp();
+            </script>
         </div>
     </div>
     <script src="./bgIMG.js"></script>
