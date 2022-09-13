@@ -15,7 +15,6 @@
     <script src="./pluginWorker.js" defer></script>
     <script src="./firstTime.js" defer></script>
     <script src="./lsSaveHandler.js" defer></script>
-    <script type="module" src="./configHandler.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -77,7 +76,7 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="blurred shadow-lg backdrop-blur-md bg-gray-200/75 dark:bg-gray-800/75 p-2 w-[40%] hidden max-h-screen h-[80%] -md mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="blurred shadow-lg backdrop-blur-md bg-gray-200/75  dark:bg-gray-800/75 p-2 w-[40%] hidden max-h-screen h-[80%] mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
@@ -92,7 +91,7 @@
         <p class="text-sm">Toggles the bookmarks bar</p>
         <br />
         <br />
-        <div class="blurred hidden backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
+        <div class="blurred backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
             <h1>Flags</h1>
             <label for="pref-blur">Disable Blur</label>
             <input id="pref-blur" type="checkbox" class="" />
@@ -104,14 +103,12 @@
         </div>
         <br />
         <br>
-        <div class="rounded-sm lg:bg-gray-700/30 backdrop-blur-md sm:bg-transparent/30 md:bg-transparent  p-3 w-fit">
-            <div class="space-y-1">
-                <button onclick="clearData()" class="rounded-sm text-center p-2 bg-blue-500 hover:bg-blue-600 transition dark:text-gray-800">
+        <div class="p-3 text-white w-fit space-y-1">
+                <button onclick="clearData()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition dark:text-gray-800">
       Clear Data</button>
                 <button onclick="togglePreferences()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Close
       Preferences</button>
                 <button onclick="lsSaveBookmarks()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Export Data</button></div>
-        </div>
     </div>
     <!-- Suggestions -->
     <div class="backdrop-blur-md blurred bg-gray-200/75 dark:bg-gray-800/75 suggestions-box" id="autocomplete-suggestions">
@@ -128,7 +125,9 @@
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
     <script src="./startup.js"></script>
+    <script type="module" src="./configHandler.js" defer></script>
     <script src="./bookmarks.js"></script>
+    <!-- Watermark for development builds (remove in releases) -->
     <div id="devPop" class="bg-gray-900/70 m-4 fixed bottom-0 p-4 rounded-lg w-fit h-fit text-white">
         <h1 class="text-emerald-500">This is a development copy of Catalyst</h1>
         <p>This version may have incomplete or non-working features!</p>
