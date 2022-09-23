@@ -78,3 +78,5 @@ function storeBookmarks() {
 	window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 	updateBookmarksVar();
 }
+
+addBookmarkToBar('https://co.wukko.me/', 'Upload')

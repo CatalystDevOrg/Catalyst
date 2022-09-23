@@ -11,26 +11,29 @@
 </head>
 
 <body class="overflow-hidden bg-gray-900">
-    <div class="flex justify-center">
-        <div id="area" class="rounded-3xl grid gap-1 grid-cols-3 w-fit my-[25%] h-26 bg-gray-800 m-auto p-1">
+    <div class="fixed right-0">
+        <div id="area" class="hidden text-black rounded-sm grid gap-1 grid-rows-6 my-[10%] w-fit h-fit bg-gray-800 p-1">
             <button onClick="createBtn()" class="rounded-3xl disabled:hidden bg-gray-900 text-white p-1" disabled>
                 <img src="../assets/icons/plus.png">
             </button>
-            <a href="https://duckduckgo.com" class="rounded-3xl bg-gray-900 text-white p-1">
-                <img width="60" height="60" class="rounded-3xl w-30 h-30" src="../assets/icons/ddg.svg" alt="">
+            <a href="https://duckduckgo.com" class="rounded-sm bg-blue-300 hover:bg-blue-400 text-white p-1">
+                <h1>DuckDuckGo</h1>
+                <img width="40" height="30" class="rounded-sm" src="../assets/icons/ddg.svg" alt="">
             </a>
-            <a href="https://github.com" class="rounded-3xl bg-gray-900 text-white p-1">
-                <img width="60" height="60" class="rounded-3xl w-30 h-30" src="../assets/icons/github.svg" alt="">
+            <a href="https://github.com" class="rounded-sm bg-blue-300 hover:bg-blue-400 text-white p-1">
+                <h1>GitHub</h1>
+                <img width="40" height="30" class="rounded-sm" src="../assets/icons/github.svg" alt="">
             </a>
         </div>
-        <div class="hidden fixed top-0 my-4 bg-gray-900 rounded-lg w-fit h-fit p-3 text-white">
+        <div class="fixed top-0 left-0 my-4 bg-gray-900 rounded-lg w-fit h-fit p-3 text-white">
             <label for="pref-bg">Background Image </label>
             <input id="p-3">
             <button id="btn001" onClick="savePref()">Save</button>
         </div>
         <div class="p-8 bg-gray-900 rounded-lg space-y-4 w-fit h-fit text-white">
-            <a class="bg-gray-600 rounded-full p-4 mt-80" href="./dino.htm">Play</a>
-            <a class="hidden bg-gray-600 rounded-full p-4 mt-80" href="./whatsnew.htm">What's new in <span id="ver"></span></a>
+            <a class="bg-blue-400 hover:bg-blue-500 rounded-sm p-2 mt-80" href="./dino.htm">Play</a>
+            <a class="bg-blue-400 hover:bg-blue-500 rounded-sm p-2 mt-80" href="./whatsnew.htm">What's new in <span id="ver"></span></a>
+            <script src="./getChangeLogs.js"></script>
             <script>
                 getVerDisp();
             </script>
