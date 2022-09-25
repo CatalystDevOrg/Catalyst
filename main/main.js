@@ -1,5 +1,4 @@
 // Modules to control application life and create native browser window
-const { ElectronBlocker } = require("@cliqz/adblocker-electron");
 const { app, BrowserWindow, dialog } = require("electron");
 const path = require("path");
 const { Menu } = require("electron");
@@ -32,7 +31,7 @@ function createWindow() {
     // mainWindow.webContents.openDevTools()
 
     // update checking will be temporarily disabled until further notice.
-    // checkForUpdate(mainWindow);
+    checkForUpdate(mainWindow);
 }
 
 // This method will be called when Electron has finished
@@ -59,10 +58,7 @@ app.on("web-contents-created", function(event, contents) {
         contents.on("new-window", function(newWindowEvent) {
             newWindowEvent.preventDefault();
         });
-    }
-    ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
-        blocker.enableBlockingInSession(session.defaultSession);
-     });    
+    }  
 });
 
 // In this file you can include the rest of your app's specific main process
