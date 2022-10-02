@@ -31,15 +31,6 @@ function reload() {
     document.querySelector(".current").reload();
 }
 
-function getVerDisp() {
-    // using Promise 
-    fetch("../package.json") 
-    	.then(response => response.json()) 
-        .then(data =>
-            document.querySelector('#ver').innerText = data.version
-        )
-}
-
 function hideDevPop() {
     document.querySelector("#devPop").style.display = "none";
 }

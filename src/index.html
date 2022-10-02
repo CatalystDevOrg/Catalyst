@@ -58,10 +58,10 @@
                 <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
             </li>&nbsp;
             <li class="cursor-pointer flex" onclick="inspectTab()">
-                <img class="rounded-sm bg-blue-300 bg-white p-1" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
+                <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
             </li>&nbsp;
             <li onClick="openFeedback()" class="flex cursor-pointer">
-                <img class="rounded-sm bg-blue-300 bg-white p-1" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
+                <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
             </li>&nbsp;
             <li onClick="openGithub()" class="flex cursor-pointer">
                 <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
@@ -88,8 +88,7 @@
         <br />
         <label for="pref-bookmarks">Bookmarks Bar </label>
         <input id="pref-bookmarks" type="checkbox" class=""/>
-        <p class="text-sm">Toggles the bookmarks bar</p>
-        <br />
+        <p class="text-sm">Toggles the bookmarks bar</p>        <br />
         <br />
         <div class="blurred backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
             <h1>Flags</h1>
@@ -128,11 +127,13 @@
     <script type="module" src="./configHandler.js" defer></script>
     <script src="./bookmarks.js"></script>
     <!-- Watermark for development builds (remove in releases) -->
-    <div id="devPop" class="hidden bg-gray-900/70 m-4 fixed bottom-0 p-4 rounded-lg w-fit h-fit text-white">
+    <div id="devPop" class=" bg-gray-900/70 m-4 fixed bottom-0 p-4 rounded-lg w-fit h-fit text-white">
         <h1 class="text-emerald-500">This is a development copy of Catalyst</h1>
         <p>This version may have incomplete or non-working features!</p>
         <button onClick="hideDevPop()" class="bg-emerald-500 text-white p-1 rounded-lg" hint="This will only hide the popup until the application is restarted.">Close (temporarily)</button>
     </div>
+    <script src="./getChangeLogs.js"></script>
+    <script>getVerDisp()</script>
 </body>
 
 </html>

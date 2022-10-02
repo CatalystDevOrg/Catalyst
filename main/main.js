@@ -31,7 +31,7 @@ function createWindow() {
     // mainWindow.webContents.openDevTools()
 
     // update checking will be temporarily disabled until further notice.
-    // checkForUpdate(mainWindow);
+    checkForUpdate(mainWindow);
 }
 
 // This method will be called when Electron has finished
