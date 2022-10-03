@@ -1,0 +1,1 @@
+ctlyststrppg = localStorage.getItem('ctlyststrppg')

@@ -29,9 +29,36 @@
 	*:focus {
 		@apply outline-emerald-600;
 	}
+	.sliding-rtl {
+		animation-name: sliding-rtl;
+		animation-duration: 300ms;
+		animation-fill-mode: forwards;
+	}
+	.sliding-ttb {
+		animation-name: sliding-ttb;
+		animation-duration: 300ms;
+		animation-fill-mode: forwards;
+	}
+	@keyframes sliding-ttb {
+		0% {
+			transform: translateY(-100%);
+			clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+		}
+
+		100% {
+			transform: translateY(0%);
+			clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+		}
+	}
   .bookmark {
     @apply transition flex items-center flex-1 max-w-sm p-1 m-0.5 min-w-[12px] overflow-hidden bg-gray-200 dark:bg-gray-900 text-sm rounded cursor-pointer text-gray-600 dark:text-gray-100 whitespace-nowrap;
   }
+  @keyframes sliding-rtl {
+	0% {
+		transform: translateX(100%);
+		clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%);
+	}
+}
 }
 
 /* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */

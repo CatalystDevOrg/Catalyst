@@ -2,13 +2,15 @@
 let activeHash = "0";
 let hasFavicon = {};
 // Functions
+ctlyststrppg = localStorage.getItem('ctlyststrppg')
 
 /**
  * Creates a new tab
  * @param {string} url The URL of the page to go to, optional.
  */
+
 async function createTab(url) {
-    url = url || "./welcome.html";
+    url = url || ctlyststrppg
     const packageJSON = await getPackageJSON();
     const inputAgent = JSON.parse(
         window.localStorage.getItem("preferences")

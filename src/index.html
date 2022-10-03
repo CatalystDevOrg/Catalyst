@@ -3,6 +3,7 @@
 
 <head>
     <title>Catalyst</title>
+    <script src="./getStartupReqVars.js"></script>
     <script src="./functions.js"></script>
     <script src="./listeners.js" defer></script>
     <script src="./tabs.js" defer></script>
@@ -19,40 +20,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="bg min-w-full min-h-screen dark:bg-gray-700 bg-white overflow-hidden">
+<body class="bg min-w-full bg-gray-200 dark:bg-gray-900 min-h-screen bg-white/0 overflow-hidden">
     <div id="loading" class="fixed z-40 flex items-center justify-center w-full h-full transition duration-500 bg-gray-50 dark:bg-gray-900">
         <img src="../assets/icon.png" alt="loading..." class="animate-spin h-1/2 aspect-square">
     </div>
     </div>
     </div>
     <!-- Tab bar -->
-    <div class="flex items-center px-1.5 py-1 mt-0 bg-white dark:bg-gray-700">
+    <div class="flex items-center px-1.5 py-1 mt-0 bg-white dark:bg-gray-800">
         <div id="tabs-bar" class="flex items-center flex-1 space-x-1 overflow-auto no-scrollbar">
             <!-- tabs are inserted with JS -->
         </div>
         <div class="inline-flex px-1">
-            <button id="create-tab" onclick="createTab()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/plus.svg"
+            <button id="create-tab" onclick="createTab()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/plus.svg"
           alt="Create tab"></button>&nbsp;
-            <button id="remove-tab" onclick="removeTab()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/x.svg"
+            <button id="remove-tab" onclick="removeTab()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/x.svg"
           alt="Remove tab"></button>&nbsp;
-            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
+            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
           width="" alt="Bookmark tab" disabled></button>
         </div>
     </div>
     <!-- Utility bar -->
-    <div class="w-full flex pb-1 dark:text-gray-900 bg-white dark:bg-gray-700">
-        <button id="back" onclick="backward()" class="rounded-sm shadow-sm ml-2  text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+    <div class="w-full flex pb-1 dark:text-gray-900 bg-white dark:bg-gray-800">
+        <button id="back" onclick="backward()" class="rounded-sm shadow-sm ml-2  text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
-        <button id="forward" onclick="forward()" class="rounded-sm shadow-sm  text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="forward" onclick="forward()" class="rounded-sm shadow-sm  text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
         <input id="searchbar" type="text" class="rounded-sm shadow-sm outline-0 min-w-fit w-[95%] bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />&nbsp;
-        <button id="reload" onclick="reload()" class="rounded-sm shadow-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="reload" onclick="reload()" class="rounded-sm shadow-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
-        <button id="more-btn" class="rounded-sm shadow-sm mr-2 text-center p-2 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="more-btn" class="rounded-sm shadow-sm mr-2 text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="shadow-lg rounded-sm absolute backdrop-blur-md bg-gray-100/75 dark:bg-gray-800/75 dark:text-white text-gray-900 p-3 mt-2 w-72 blurred float-right hidden right-1 ">
+    <div id="more-menu" class="sliding-rtl shadow-lg absolute bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-900 h-[95%] p-1.5 w-36 blurred float-right hidden right-0 ">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="flex cursor-pointer" onclick="togglePreferences()">
                 <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
@@ -72,11 +73,11 @@
         </ul>
     </div>
     <!-- Bookmarks -->
-    <div id="bookmarks" class="flex px-1 mb-0.2 bg-white dark:bg-gray-700">
+    <div id="bookmarks" class="flex px-1 mb-0.2 bg-white dark:bg-gray-800">
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="blurred shadow-lg backdrop-blur-md bg-gray-200/75  dark:bg-gray-800/75 p-2 w-[40%] hidden max-h-screen h-[80%] mt-3 mb-3 ml-3 absolute text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="sliding-ttb justify-center items-center absolute top-0 right-0 bottom-0 left-0 shadow-lg bg-gray-200 p-1.5 rounded-sm dark:bg-gray-800 w-[55%] h-[55%] align-middle hidden max-h-screen h-full m-auto text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
@@ -88,34 +89,28 @@
         <br />
         <label for="pref-bookmarks">Bookmarks Bar </label>
         <input id="pref-bookmarks" type="checkbox" class=""/>
-        <p class="text-sm">Toggles the bookmarks bar</p>        <br />
+        <p class="text-sm">Toggles the bookmarks bar</p>
         <br />
-        <div class="blurred backdrop-blur-md lg:bg-gray-700/30 sm:bg-transparent -sm p-3 w-full">
-            <h1>Flags</h1>
-            <label for="pref-blur">Disable Blur</label>
-            <input id="pref-blur" type="checkbox" class="" />
-            <p class="text-sm">Toggles the blur in the UI</p>
-            <br>
-            <label for="pref-logging">Logs</label>
-            <input id="pref-logging" type="checkbox" class="" />
-            <p class="text-sm">Toggles console logs</p>
-        </div>
+        <label for="pref-strt">Startup Page</label>
+        <input class="text-black p-1.5 rounded-sm" id="pref-strt" class=""/>
+        <p class="text-sm">Sets a custom startup page.</p>
+        <b>(You must restart Catalyst every time this is changed)</b>
         <br />
-        <br>
-        <div class="p-3 text-white w-fit space-y-1">
-                <button onclick="clearData()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition dark:text-gray-800">
+        <br />
+        <div class="p-1.5 fixed align-middle bottom-0 left-0 text-white">
+                <button onclick="clearData()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition dark:text-gray-800">
       Clear Data</button>
-                <button onclick="togglePreferences()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Close
+                <button onclick="togglePreferences()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Close
       Preferences</button>
-                <button onclick="lsSaveBookmarks()" class="rounded-sm text-center p-2 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Export Data</button></div>
+                <button onclick="lsSaveBookmarks()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Export Data</button></div>
     </div>
     <!-- Suggestions -->
-    <div class="backdrop-blur-md blurred bg-gray-200/75 dark:bg-gray-800/75 suggestions-box" id="autocomplete-suggestions">
+    <div class="bg-gray-200/75 dark:bg-gray-800 suggestions-box" id="autocomplete-suggestions">
         <!-- suggestions made with js -->
     </div>
     <!-- Welcome to Catalyst page -->
-    <div id="welcomepage" class="hidden h-fit shadow-md bg-gray-200/75 dark:bg-gray-900/75 backdrop-blur-xl blurred  dark:text-white p-2 -l w-full -lg">
-        <h1 class="dark:text-white font-bold text-xl">Welcome to and a goodbye from Catalyst!</h1>&nbsp;
+    <div id="welcomepage" class="hidden h-fit shadow-md bg-gray-200dark:bg-gray-900 dark:text-white p-1.5 -l w-full -lg">
+        <h1 class="dark:text-white font-bold text-xl">Welcome to Catalyst!</h1>&nbsp;
         <h1>Welcome to Catalyst!</h1>
         <p>We hope you enjoy our hand-crafted stable web browser!</p>
         <button class="p-1 bg-white  text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
@@ -124,16 +119,10 @@
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
     <script src="./startup.js"></script>
-    <script type="module" src="./configHandler.js" defer></script>
     <script src="./bookmarks.js"></script>
-    <!-- Watermark for development builds (remove in releases) -->
-    <div id="devPop" class=" bg-gray-900/70 m-4 fixed bottom-0 p-4 rounded-lg w-fit h-fit text-white">
-        <h1 class="text-emerald-500">This is a development copy of Catalyst</h1>
-        <p>This version may have incomplete or non-working features!</p>
-        <button onClick="hideDevPop()" class="bg-emerald-500 text-white p-1 rounded-lg" hint="This will only hide the popup until the application is restarted.">Close (temporarily)</button>
-    </div>
     <script src="./getChangeLogs.js"></script>
     <script>getVerDisp()</script>
+    <script src="./configHandler.js"></script>
 </body>
 
 </html>

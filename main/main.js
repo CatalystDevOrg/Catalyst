@@ -75,7 +75,7 @@ async function checkForUpdate(windowToDialog) {
         );
         if (!githubFetch.ok) {
             // this means that
-            alert("Error fetching releases");
+            alert("There was an error checking for a new update, check your WiFi connection and try again from the menubar.");
             return;
         }
         const releaseJSON = await githubFetch.json();
