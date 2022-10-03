@@ -58,7 +58,7 @@ app.on("web-contents-created", function(event, contents) {
         contents.on("new-window", function(newWindowEvent) {
             newWindowEvent.preventDefault();
         });
-    }  
+    }
 });
 
 // In this file you can include the rest of your app's specific main process
