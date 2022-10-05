@@ -30,7 +30,7 @@
         "@electron-forge/maker-zip": "^6.0.0-beta.66",
         "@electron-forge/publisher-github": "^6.0.0-beta.66",
         "concurrently": "^7.4.0",
-        "electron": "^20.2.0",
+        "electron": "^21.1.0",
         "electron-reloader": "^1.2.3",
         "tailwindcss": "^3.1.8"
     },
