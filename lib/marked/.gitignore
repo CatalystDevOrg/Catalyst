@@ -1,7 +1,0 @@
-.DS_Store
-.vercel
-node_modules/
-test/compiled_tests
-public
-docs/LICENSE.md
-

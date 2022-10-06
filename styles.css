@@ -39,6 +39,9 @@
 		animation-duration: 300ms;
 		animation-fill-mode: forwards;
 	}
+	.moreMenuItem:hover {
+		@apply bg-blue-300 text-black rounded-sm;
+	}
 	@keyframes sliding-ttb {
 		0% {
 			transform: translateY(-100%);

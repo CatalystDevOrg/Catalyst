@@ -1,6 +1,0 @@
-# level1
-## level2
-### level3
-- foo=bar
-- foo2=bar2
-### level3

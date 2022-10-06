@@ -3,7 +3,6 @@
 
 <head>
     <title>Catalyst</title>
-    <script src="./getStartupReqVars.js"></script>
     <script src="./functions.js"></script>
     <script src="./listeners.js" defer></script>
     <script src="./tabs.js" defer></script>
@@ -16,6 +15,7 @@
     <script src="./pluginWorker.js" defer></script>
     <script src="./firstTime.js" defer></script>
     <script src="./lsSaveHandler.js" defer></script>
+    <script src="./viewDatGetHandler.js"></script>
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -55,21 +55,28 @@
     <!-- More menu -->
     <div id="more-menu" class="sliding-rtl shadow-lg absolute bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-900 h-[95%] p-1.5 w-36 blurred float-right hidden right-0 ">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
-            <li class="flex cursor-pointer" onclick="togglePreferences()">
+            <li class="moreMenuItem flex cursor-pointer" onclick="togglePreferences()">
                 <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
             </li>&nbsp;
-            <li class="cursor-pointer flex" onclick="inspectTab()">
+            <li class="moreMenuItem cursor-pointer flex" onclick="inspectTab()">
                 <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
             </li>&nbsp;
-            <li onClick="openFeedback()" class="flex cursor-pointer">
+            <li onClick="openFeedback()" class="moreMenuItem flex cursor-pointer">
                 <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
             </li>&nbsp;
-            <li onClick="openGithub()" class="flex cursor-pointer">
+            <li onClick="openGithub()" class="moreMenuItem flex cursor-pointer">
                 <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
             </li>&nbsp;
-            <li onClick="openDocs()" class="flex cursor-pointer">
+            <li onClick="openDocs()" class="moreMenuItem flex cursor-pointer">
                 <img class="rounded-sm bg-blue-300 p-1" width="30" height="30" src="../assets/icons/quest.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Guide
             </li>
+            &nbsp;
+            <a onClick="createTab('./dino.htm')" class="moreMenuItem flex cursor-pointer">
+                <p>Play the dino game!</p>
+            </a>
+            <a onClick="downloadCurrentPage()" class="moreMenuItem flex cursor-pointer">
+                <p>Download current tab page as HTML.</p>
+            </a>
         </ul>
     </div>
     <!-- Bookmarks -->
@@ -120,8 +127,6 @@
     <div id="webviews"></div>
     <script src="./startup.js"></script>
     <script src="./bookmarks.js"></script>
-    <script src="./getChangeLogs.js"></script>
-    <script>getVerDisp()</script>
     <script src="./configHandler.js"></script>
 </body>
 
