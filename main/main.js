@@ -32,6 +32,9 @@ function createWindow() {
 
     // update checking will be temporarily disabled until further notice.
     checkForUpdate(mainWindow);
+
+    // setup auto update
+    require('update-electron-app')()
 }
 
 // This method will be called when Electron has finished
