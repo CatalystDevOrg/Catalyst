@@ -6,3 +6,7 @@ setTimeout(() => {
         document.getElementById('loading').style.display = 'none';
     }, 500);
 }, 1000);
+
+document.getElementsByTagName('webview').addEventListener('click'), () => {
+    closePreferences();
+}

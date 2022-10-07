@@ -11,3 +11,4 @@ strt.addEventListener('change', () => {
 }   
 );
 strt.value = localStorage.getItem('ctlyststrppg');
+

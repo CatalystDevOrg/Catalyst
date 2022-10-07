@@ -21,6 +21,13 @@ function togglePreferences() {
     }
 }
 
+function closePreferences() {
+    preferences = getPreferences();
+    if (!preferencesBox.classList.contains("hidden")) {
+        preferencesBox.classList.toggle('hidden');
+    }
+}
+
 /**
  * Gets the preferences stored in LocalStorage
  * @returns {Object}
