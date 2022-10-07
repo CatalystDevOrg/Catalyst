@@ -12,3 +12,16 @@ function loadPlugs() {
 if (loadPlugins == "true") {
     loadPlugs();
 }
+
+var content;
+
+function checkPlugin(namespace) {
+    let content = fetch("../plugins/" + namespace + "/plugin.js").then(res => res.text);
+    var ret = Boolean(1);
+    function testCondition(condition, errcod) {
+        if (condition) {
+            console.err(`Could not load plugin ${namespace} because of error: ${errcod}`)
+            return false;
+        }
+  }
+}

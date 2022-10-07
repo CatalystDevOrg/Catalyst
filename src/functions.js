@@ -17,6 +17,27 @@ const removeChildren = (parent) => {
     }
 };
 
+
+function downloadCurrentPage() {
+    currentView = document.querySelector('.current')
+    let contents = currentView.src;
+    downloadURI(contents, contents);
+}
+
+function closeWelcome() {
+    // add hidden class to welcomepage id
+    document.getElementById("welcomepage").classList.add("hidden");
+}
+
+// if value new isn't set, remove class hidden from welcomepage id then set value new to false
+function openWelcome() {
+    if (window.localStorage.getItem("new") === null) {
+        // remove class hidden from welcomepage id and add flex to welcomepage id
+        document.getElementById("welcomepage").classList.remove("hidden");
+        window.localStorage.setItem("new", false);
+    }
+}
+
 function downloadURI(uri, name) {
     var link = document.createElement("a");
     link.download = name;
@@ -25,7 +46,7 @@ function downloadURI(uri, name) {
     link.click();
     document.body.removeChild(link);
     delete link;
-  }
+}
 
 const getPackageJSON = async() => {
     return await (await fetch("../package.json")).json();
@@ -68,3 +89,5 @@ function clearData() {
 function inspectTab() {
     document.querySelector(".current").inspectElement(0, 0);
 }
+
+openWelcome()

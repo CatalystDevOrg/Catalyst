@@ -19,9 +19,6 @@ function addBookmarkToBar(url, title) {
 	bookmarkEl.innerText = title;
 	bookmarkEl.onclick = () => {
 		document.getElementById("searchbar").value = url;
-		if (enableLogging === true) {
-		console.log(document.getElementById("searchbar").value);
-		}
 		loadURL();
 	};
 	bookmarkEl.classList.add("bookmark");
@@ -57,9 +54,6 @@ function bookmarkCurrentTab() {
  * Updates the bookmarks variable and displays the bookmarks
  */
 function updateBookmarksVar() {
-	if (localStorage.getItem('ctlystLogging') === 'true') {
-		console.log(window.localStorage.getItem("bookmarks"));
-	}
 	bookmarks = JSON.parse(window.localStorage.getItem("bookmarks"));
 	removeChildren(bookmarksBar);
   if (bookmarks.length === 0) bookmarksBar.classList.add("hidden");
