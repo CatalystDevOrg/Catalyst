@@ -126,6 +126,7 @@ function addListeners(view, hash) {
 function removeTab() {
     if (document.getElementById("webviews").childNodes.length === 1) return;
     document.querySelector(".current").remove();
+    document.querySelector('.active-tab').classList.toggle("sliding-rtl")
     document.querySelector(".active-tab").remove();
     switchTabs(
         document
