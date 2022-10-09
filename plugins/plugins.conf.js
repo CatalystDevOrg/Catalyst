@@ -1,4 +1,4 @@
-const loadPlugins = "true"
+var loadPlugins = "true"
 
 const plugins = [
     "example"
