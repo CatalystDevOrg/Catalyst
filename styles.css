@@ -6,14 +6,20 @@
 /* Custom Tailwind classes */
 @layer components {
 	.tab {
-		@apply transition sliding-rtl flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-gray-600 bg-blue-300 rounded cursor-pointer whitespace-nowrap;
+		@apply transition flex text-center items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 rounded-t-xl cursor-pointer whitespace-nowrap;
 	}
 	.active-tab {
-		@apply transition flex items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-white bg-blue-400 rounded cursor-default whitespace-nowrap font-bold;
+		@apply transition flex items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 dark:text-white bg-gray-100 dark:bg-gray-700 rounded-t-xl cursor-default whitespace-nowrap;
 	}
   .tab-star {
     @apply ml-auto;
   	}
+	.btn {
+		@apply dark:text-white hover:bg-gray-400 text-black rounded-lg ml-2 dark:hover:bg-gray-600 text-center p-1.5 bg-transparent transition
+	}
+	.btn img {
+		@apply dark:invert;
+	}
   	.bg {
 		@apply bg-cover bg-no-repeat;
 	}
@@ -31,16 +37,16 @@
 	}
 	.sliding-rtl {
 		animation-name: sliding-rtl;
-		animation-duration: 300ms;
+		animation-duration: 100ms;
 		animation-fill-mode: forwards;
 	}
 	.sliding-ttb {
 		animation-name: sliding-ttb;
-		animation-duration: 300ms;
+		animation-duration: 100ms;
 		animation-fill-mode: forwards;
 	}
 	.moreMenuItem:hover {
-		@apply bg-blue-300 text-black rounded-sm;
+		@apply bg-blue-300 text-black rounded-sm dark:hover:bg-gray-600 hover:bg-gray-200 dark:hover:text-white;
 	}
 	@keyframes sliding-ttb {
 		0% {

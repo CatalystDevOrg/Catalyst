@@ -38,16 +38,25 @@ searchbar.addEventListener("input", async() => {
     }
 });
 
-function loadURL() {
-    var page = document.getElementById("searchbar").value;
-    if (shouldAutocomplete(page)) {
+function loadURL(url) {
+    view = document.querySelector('.current')
+    if (shouldAutocomplete(url)) {
         document.querySelector(
             ".current"
-        ).src = `https://duckduckgo.com/?q=${encodeURIComponent(page)}`;
+        ).src = `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
     } else {
-        document.querySelector(".current").src = page;
+        view.src = url
+        view.addEventListener('did-fail-load', () => {
+            view.src = 'err.txt'
+            return;
+        })
     }
     removeChildren(suggestionsEl);
+    view.addEventListener('did-finish-load', () => {
+        if (preferences.dm) {
+            invertTab();
+        }
+    })
 }
 
 function shouldAutocomplete(input) {
@@ -62,5 +71,6 @@ function shouldAutocomplete(input) {
 
 // add listeners
 searchbar.addEventListener("keydown", (e) => {
-    if (e.code === "Enter") loadURL();
+    var url = document.getElementById("searchbar").value;
+    if (e.code === "Enter") loadURL(url);
 });

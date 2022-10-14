@@ -18,6 +18,8 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById("pref-autocomplete"), "autocomplete");
         document.getElementById("pref-bookmarks").checked = preferences.bookmarks;
         addCheckboxListener(document.getElementById("pref-bookmarks"), "bookmarks");
+        document.getElementById("pref-dm").checked = preferences.dm;
+        addCheckboxListener(document.getElementById('pref-dm'), "dm");
     }
 }
 

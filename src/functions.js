@@ -75,34 +75,24 @@ function openGithub() {
     createTab('https://github.com/JaydenDev/Catalyst')
 }
 
-function reload() {
-    document.querySelector(".current").reload();
-}
-
-function hideDevPop() {
-    document.querySelector("#devPop").style.display = "none";
-}
-
 function openDocs() {
     createTab('https://getcatalyst.eu.org/docs')
-}
-
-function forward() {
-    document.querySelector(".current").goForward();
-}
-
-function backward() {
-    document.querySelector(".current").goBack();
 }
 
 function clearData() {
     if (!confirm("Are you sure you want to delete all preferences and bookmarks from Catalyst? \n   You will stay logged into all the websites you use!")) return;
     window.localStorage.clear();
+    localStorage.setItem('ctlyststrppg', './home.html')
     window.close();
 }
 
 function inspectTab() {
     document.querySelector(".current").inspectElement(0, 0);
+}
+
+function invertTab() {
+    view.insertCSS('html { filter: invert(100%); }')
+    view.insertCSS("img { filter: invert(100%) !important} ")
 }
 
 openWelcome()

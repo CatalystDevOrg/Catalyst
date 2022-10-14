@@ -24,40 +24,40 @@
             <!-- tabs are inserted with JS -->
         </div>
         <div class="inline-flex px-1">
-            <button id="create-tab" onclick="createTab()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/plus.svg"
+            <button id="create-tab" onclick="createTab()" class="btn"><img src="../assets/icons/plus.svg"
           alt="Create tab"></button>&nbsp;
-            <button id="remove-tab" onclick="removeTab()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/x.svg"
+            <button id="remove-tab" onclick="removeTab()" class="btn"><img src="../assets/icons/x.svg"
           alt="Remove tab"></button>&nbsp;
-            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img src="../assets/icons/star.svg"
+            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="btn"><img src="../assets/icons/star.svg"
           width="" alt="Bookmark tab" disabled></button>
         </div>
     </div>
     <!-- Utility bar -->
     <div class="w-full flex pb-1 dark:text-gray-900 bg-white dark:bg-gray-800">
-        <button id="back" onclick="backward()" class="rounded-sm shadow-sm ml-2  text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="back" class="btn"><img
         src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
-        <button id="forward" onclick="forward()" class="rounded-sm shadow-sm  text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="forward" class="btn"><img
         src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
-        <input id="searchbar" type="text" class="rounded-sm shadow-sm outline-0 min-w-fit w-[95%] bg-gray-100 dark:text-gray-900 p-1" placeholder="Search or type a URL" />&nbsp;
-        <button id="reload" onclick="reload()" class="rounded-sm shadow-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
+        <input id="searchbar" type="text" class="rounded-3xl outline-0 dark:text-white min-w-fit w-[95%] text-sm bg-gray-100 dark:bg-gray-700 dark:text-gray-900 py-1 px-2" placeholder="Search or type a URL" />&nbsp;
+        <button id="reload" class="btn"><img
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
-        <button id="more-btn" class="rounded-sm shadow-sm mr-2 text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition"><img
+        <button id="more-btn" class="btn"><img
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="sliding-rtl shadow-lg absolute bg-gray-100 dark:bg-gray-800 dark:text-white text-gray-900 h-[95%] p-1.5 w-36 blurred float-right hidden right-0 ">
+    <div id="more-menu" class="sliding-rtl shadow-lg absolute bg-white dark:bg-gray-800 dark:text-white text-gray-900 h-[95%] p-1.5 w-36 blurred float-right hidden right-0 ">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="moreMenuItem flex cursor-pointer" onclick="togglePreferences()">
-                <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
             </li>&nbsp;
             <li class="moreMenuItem cursor-pointer flex" onclick="inspectTab()">
-                <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
             </li>&nbsp;
             <li onClick="openFeedback()" class="moreMenuItem flex cursor-pointer">
-                <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
             </li>&nbsp;
             <li onClick="openGithub()" class="moreMenuItem flex cursor-pointer">
-                <img class="rounded-sm bg-blue-300 p-1" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
             </li>
             &nbsp;
             <a onClick="createTab('./dino.htm')" class="moreMenuItem flex cursor-pointer">
@@ -73,7 +73,7 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="sliding-ttb justify-center items-center absolute top-0 right-0 bottom-0 left-0 shadow-lg bg-gray-200 p-1.5 rounded-sm dark:bg-gray-800 w-[55%] h-[55%] align-middle hidden max-h-screen h-full m-auto text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="sliding-ttb justify-center items-center absolute top-0 right-0 bottom-0 left-0 shadow-lg bg-gray-200 p-1.5 rounded-sm dark:bg-gray-800 w-[75%] h-[65%] align-middle hidden max-h-screen h-full m-auto text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
@@ -93,12 +93,17 @@
         <b>(You must restart Catalyst every time this is changed)</b>
         <br />
         <br />
+        <label for="pref-dm">Force Dark Mode</label>
+        <input id="pref-dm" type="checkbox" class=""/>  
+        <p class="text-sm">Toggles forced dark mode for all sites.</p>
+        <br />
+        <br />
         <div class="p-1.5 fixed align-middle bottom-0 left-0 text-white">
-                <button onclick="clearData()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition dark:text-gray-800">
+                <button onclick="clearData()" class="btn">
       Clear Data</button>
-                <button onclick="togglePreferences()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Close
+                <button onclick="togglePreferences()" class="btn">Close
       Preferences</button>
-                <button onclick="lsSaveBookmarks()" class="rounded-sm text-center p-1.5 bg-blue-300 hover:bg-blue-400 transition  dark:text-gray-800">Export Data</button></div>
+                <button onclick="lsSaveBookmarks()" class="btn">Export Data</button></div>
     </div>
     <!-- Suggestions -->
     <div class="sliding-ttb bg-gray-200 dark:bg-gray-800 suggestions-box" id="autocomplete-suggestions">
@@ -107,10 +112,8 @@
     <!-- Welcome to Catalyst page -->
     <div id="welcomepage" class="hidden h-fit shadow-xl border-2 dark:border-0 bg-gray-200 dark:bg-gray-900 dark:text-white p-1.5 -l w-full rounded-b-sm">
         <h1 class="dark:text-white font-bold text-xl">Welcome to Catalyst!</h1>&nbsp;
-        <h1>Welcome to Catalyst!</h1>
-        <p>We hope you enjoy our hand-crafted stable web browser!</p>
-        <button class="p-1 bg-white text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
-        <button class="p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
+        <button class="rounded-sm p-1 bg-white text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
+        <button class="rounded-sm p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
     </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
