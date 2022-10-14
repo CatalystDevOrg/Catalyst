@@ -60,7 +60,7 @@
                 {
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
-                        "name": "Catalyst 3"
+                        "name": "Catalyst3"
                     }
                 },
                 {
