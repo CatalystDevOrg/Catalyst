@@ -22,6 +22,7 @@ jobs:
         run: npm version $TAG_NAME
         env:
           TAG_NAME: ${{ steps.date.outputs.date }}.${{ github.run_id }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
         run: npm install
       - name: Get tailwind styles
