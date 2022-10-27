@@ -17,11 +17,11 @@ jobs:
           node-version: 16
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d')"
+        run: echo "::set-output name=date::$(date +'0.%Y%m%d.')"
       - name: Set Version
         run: npm version $TAG_NAME
         env:
-          TAG_NAME: ${{ steps.date.outputs.date }}-${{ github.run_id }}
+          TAG_NAME: ${{ steps.date.outputs.date }}.${{ github.run_id }}
       - name: Install dependencies
         run: npm install
       - name: Get tailwind styles
