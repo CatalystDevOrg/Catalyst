@@ -1,7 +1,7 @@
 # taken from https://dev.to/abulka/comment/1dh3k thanks!
 name: Release Catalyst (Dev)
 on: 
-  - cron: 0 0 * * *
+  workflow_dispatch:
 
 jobs:
   release:
