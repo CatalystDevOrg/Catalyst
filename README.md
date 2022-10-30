@@ -1,4 +1,5 @@
-# Catalyst
+![image](https://img.shields.io/github/issues/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/forks/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/stars/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/license/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge)
+# Catalyst 
 An amazing and elegant ElectronJS web browser.
 
 ![image](https://user-images.githubusercontent.com/92550746/194955977-c37b21f6-5ec3-4d1a-939f-c27b23cd9a9a.png)
@@ -132,3 +133,5 @@ Thank you to all of our contributers!
             <sub style="font-size:14px"><b>CocoTheMii</b></sub>
         </a>
     </td>
+</tr>
+</table>
