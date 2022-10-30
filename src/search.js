@@ -1,8 +1,8 @@
 // protocols
-const protocols = ["https", "http", "file", "data"];
+const protocols = ["https", "http", "file", "data", "steam"];
 const searchbar = document.getElementById("searchbar");
 const suggestionsEl = document.getElementById("autocomplete-suggestions");
-searchbar.addEventListener("input", async() => {
+searchbar.addEventListener("input", async () => {
     if (searchbar.value.length < 1) {
         removeChildren(suggestionsEl);
         return;
@@ -62,7 +62,7 @@ function loadURL(url) {
 function shouldAutocomplete(input) {
     for (let index = 0; index < protocols.length; index++) {
         const protocol = protocols[index];
-        if (input.startsWith(`${protocol}://`)) {
+        if (input.startsWith(`${protocol}://`) || input.startsWith('view-source:')) {
             return false;
         }
     }
@@ -72,5 +72,11 @@ function shouldAutocomplete(input) {
 // add listeners
 searchbar.addEventListener("keydown", (e) => {
     var url = document.getElementById("searchbar").value;
+    if (url.startsWith('steam://rungameid/')) {
+            let confirmAction = confirm('Open steam game from URL?')
+            if (!confirmAction) {
+                throw new Error('User denied operation, stopping.');
+            }
+        }
     if (e.code === "Enter") loadURL(url);
 });

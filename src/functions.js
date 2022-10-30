@@ -17,7 +17,6 @@ const removeChildren = (parent) => {
     }
 };
 
-
 function downloadCurrentPage() {
     currentView = document.querySelector('.current')
     let contents = currentView.src;

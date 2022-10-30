@@ -10,6 +10,11 @@ ctlyststrppg = localStorage.getItem('ctlyststrppg')
  */
 
 async function createTab(url) {
+    var numberOfTabs = document.getElementById("tabs-bar").length;
+    if ( numberOfTabs > 43 ) {
+        alert("Too many tabs.")
+        return;
+    }
     url = url || ctlyststrppg
     const packageJSON = await getPackageJSON();
     const inputAgent = JSON.parse(

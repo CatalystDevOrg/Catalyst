@@ -5,23 +5,22 @@
 
 /* Custom Tailwind classes */
 @layer components {
+	#titlebar {
+		-webkit-app-region: drag;
+		@apply border-b-2 border-gray-900;
+	}
 	.tab {
-		@apply transition flex text-center items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 rounded-t-xl cursor-pointer whitespace-nowrap;
+		@apply transition flex text-center items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 rounded-b-lg bg-gray-100 dark:bg-gray-600 text-white cursor-pointer whitespace-nowrap;
 	}
 	.active-tab {
-		@apply transition flex items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 dark:text-white bg-gray-100 dark:bg-gray-700 rounded-t-xl cursor-default whitespace-nowrap;
+		@apply transition rounded-b-lg flex items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 dark:text-white bg-gray-200 dark:bg-gray-700 cursor-default whitespace-nowrap;
 	}
-  .tab-star {
-    @apply ml-auto;
-  	}
+
 	.btn {
 		@apply dark:text-white hover:bg-gray-400 text-black rounded-lg ml-2 dark:hover:bg-gray-600 text-center p-1.5 bg-transparent transition
 	}
 	.btn img {
 		@apply dark:invert;
-	}
-  	.bg {
-		@apply bg-cover bg-no-repeat;
 	}
 	.view {
 		@apply min-w-[100vw] min-h-[100vh];
@@ -31,9 +30,6 @@
 	}
 	.suggestions-box {
 		@apply absolute rounded-b-lg bg-red-200 dark:bg-gray-800 border-blue-500 shadow;
-	}
-	*:focus {
-		@apply outline-emerald-600;
 	}
 	.sliding-rtl {
 		animation-name: sliding-rtl;

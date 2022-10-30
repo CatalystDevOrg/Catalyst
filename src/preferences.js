@@ -1,11 +1,15 @@
 let preferences = getPreferences();
 const preferencesBox = document.getElementById("preferences-box");
+const moremenu = document.querySelector('#more-menu')
+const moremenubtn = document.querySelector('#more-btn')
 evaluatePreferences();
 
 /**
  * Toggles the preferences viewer
  */
 function togglePreferences() {
+    moremenubtn.disabled = true;
+    moremenu.classList.add('hidden');
     preferences = getPreferences();
     preferencesBox.classList.toggle("hidden");
     if (!preferencesBox.classList.contains("hidden")) {
@@ -19,13 +23,19 @@ function togglePreferences() {
         document.getElementById("pref-bookmarks").checked = preferences.bookmarks;
         addCheckboxListener(document.getElementById("pref-bookmarks"), "bookmarks");
         document.getElementById("pref-dm").checked = preferences.dm;
+        document.getElementById("pref-bmnt").checked = preferences.bmnt;
+        addCheckboxListener(document.getElementById('pref-bmnt'), 'bmnt');
         addCheckboxListener(document.getElementById('pref-dm'), "dm");
+        return;
     }
+    moremenubtn.disabled = false;
+    document.querySelector('#more-btn').classList.toggle('bg-gray-400')
 }
 
 function closePreferences() {
     preferences = getPreferences();
     if (!preferencesBox.classList.contains("hidden")) {
+        console.log('ran');
         preferencesBox.classList.toggle('hidden');
     }
 }

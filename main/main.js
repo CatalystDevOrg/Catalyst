@@ -2,6 +2,7 @@ const { app, BrowserWindow, dialog } = require("electron");
 const path = require("path");
 const { Menu } = require("electron");
 const { fetch } = require("cross-fetch");
+const contextMenu = require('electron-context-menu')
 
 if (require("electron-squirrel-startup")) app.quit();
 
@@ -11,9 +12,15 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1024,
         height: 768,
-        minWidth: 150,
-        minHeight: 599,
+        minWidth: 800,
+        minHeight: 600,
+        spellCheck: true,
+        titleBarStyle: 'hidden',
+        titleBarOverlay: true,
         webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: true,
+            preload: path.join(__dirname, "../src/preload.js"),
             webviewTag: true,
             devTools: true,
         },
@@ -42,6 +49,17 @@ app.on("web-contents-created", function(event, contents) {
             newWindowEvent.preventDefault();
         });
     }
+    contextMenu({
+        window: contents,
+        showSaveImageAs: true,
+        showLearnSpelling: true,
+        showLookUpSelection: true,
+        showSelectApp: true,
+        showCopyImage: true,
+        showCopyImageAddress: true,
+        showSaveImage: true,
+        showInspectElement: true
+     });
 });
 
 try {
@@ -95,48 +113,3 @@ function aboutApp() {
         icon: './assets/icon.png'
     });
 }
-
-const template = [{
-        label: "About",
-        click: function() {
-            aboutApp();
-        }
-    },
-    {
-        label: "Quit",
-        click: function() {
-            app.quit();
-        }
-    },
-    {
-        label: "Hide",
-        accelerator: "CmdOrCtrl+H",
-        click: function() {
-            mainWindow.setMenuBarVisibility(false);
-        }
-    },
-    {
-        label: "Show",
-        accelerator: "CmdOrCtrl+S",
-        click: function() {
-            mainWindow.setMenuBarVisibility(true);
-        }
-    },
-    {
-        label: "DevTools",
-        accelerator: "CmdOrCtrl+I",
-        click: function() {
-            mainWindow.webContents.toggleDevTools();
-        }
-    }/*
-    {
-        label: "Check for Updates",
-        accelerator: "CmdOrCtrl+U",
-        click: function() {
-            checkForUpdate(mainWindow);
-        }
-    }*/
-];
-
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);

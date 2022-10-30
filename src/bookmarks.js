@@ -15,11 +15,15 @@ updateBookmarksVar();
  * @param {string} title The title of the page.
  */
 function addBookmarkToBar(url, title) {
-	let bookmarkEl = document.createElement("div");
+	let bookmarkEl = document.createElement("a");
 	bookmarkEl.innerText = title;
 	bookmarkEl.onclick = () => {
+		if (preferences.bmnt) { 
+			createTab(url);
+			return;
+		}
 		document.getElementById("searchbar").value = url;
-		loadURL();
+		loadURL(url);
 	};
 	bookmarkEl.classList.add("bookmark");
 	bookmarksBar.appendChild(bookmarkEl);

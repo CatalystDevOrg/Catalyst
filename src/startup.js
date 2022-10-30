@@ -4,6 +4,6 @@ setTimeout(() => {
     document.getElementById('loading').classList.add('opacity-0');
     setTimeout(() => {
         document.getElementById('loading').style.display = 'none';
-    }, 500);
-}, 1000);
+    }, 50);
+}, 200);
 
