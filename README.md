@@ -132,5 +132,3 @@ Thank you to all of our contributers!
             <sub style="font-size:14px"><b>CocoTheMii</b></sub>
         </a>
     </td>
-</tr>
-</table>
