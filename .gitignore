@@ -4,5 +4,7 @@ node_modules
 *.bin
 out
 out/*
+# generated files
+package-lock.json
 # developers can build tailwind themselves
 output/
