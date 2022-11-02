@@ -6,3 +6,4 @@ out
 out/*
 # developers can build tailwind themselves
 output/
+.DS_Store

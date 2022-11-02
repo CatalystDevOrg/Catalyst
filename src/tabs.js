@@ -38,7 +38,7 @@ async function createTab(url) {
     let image = document.createElement("img");
     image.width = "16";
     image.height = "16";
-    image.style.border = "0";
+    image.style.border = "0"; 
     tab.appendChild(image);
     tab.appendChild(span);
     addListeners(view, randomHash);
@@ -146,6 +146,10 @@ function handleTabShortcuts(e) {
     }
     if (isModifier && e.key === "w") {
         removeTab();
+        e.preventDefault();
+    }
+    if (isModifier && e.key === "r") {
+        document.querySelector('.current').reload();
         e.preventDefault();
     }
 };
