@@ -39,10 +39,16 @@ async function createTab(url) {
     image.width = "16";
     image.height = "16";
     image.style.border = "0";
-    let closebutton = document.createElement("button", "style=\"background: url( ../assets/icons/x.svg )\"")
+    /*
+    let closebutton = document.createElement("button");
+    closebutton.style.background = "url(../assets/icons/x.svg)"   
+    closebutton.onclick(removeTab())
+    */      
     tab.appendChild(image);
     tab.appendChild(span);
-    tab.appendChild()
+    // tab.appendChild(closebutton)
+    // These last few things are commented out because they completely break the tab bar,
+    // but it's meant to add a close button to the end of every tab.
     addListeners(view, randomHash);
     document.getElementById("webviews").appendChild(view);
     switchTabs(randomHash);
