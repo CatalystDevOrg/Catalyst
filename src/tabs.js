@@ -38,17 +38,9 @@ async function createTab(url) {
     let image = document.createElement("img");
     image.width = "16";
     image.height = "16";
-    image.style.border = "0";
-    /*
-    let closebutton = document.createElement("button");
-    closebutton.style.background = "url(../assets/icons/x.svg)"   
-    closebutton.onclick(removeTab())
-    */      
+    image.style.border = "0"; 
     tab.appendChild(image);
     tab.appendChild(span);
-    // tab.appendChild(closebutton)
-    // These last few things are commented out because they completely break the tab bar,
-    // but it's meant to add a close button to the end of every tab.
     addListeners(view, randomHash);
     document.getElementById("webviews").appendChild(view);
     switchTabs(randomHash);
@@ -154,6 +146,10 @@ function handleTabShortcuts(e) {
     }
     if (isModifier && e.key === "w") {
         removeTab();
+        e.preventDefault();
+    }
+    if (isModifier && e.key === "r") {
+        document.querySelector('.current').reload();
         e.preventDefault();
     }
 };
