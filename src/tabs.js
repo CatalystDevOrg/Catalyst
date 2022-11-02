@@ -39,8 +39,10 @@ async function createTab(url) {
     image.width = "16";
     image.height = "16";
     image.style.border = "0";
+    let closebutton = document.createElement("button", "style=\"background: url( ../assets/icons/x.svg )\"")
     tab.appendChild(image);
     tab.appendChild(span);
+    tab.appendChild()
     addListeners(view, randomHash);
     document.getElementById("webviews").appendChild(view);
     switchTabs(randomHash);
