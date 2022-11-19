@@ -1,3 +1,6 @@
+Attention all current, new, or future Catalyst users. Catalyst will lose security patches on December 10th, 2022. It is highly recommended that you seek alternatives and move away from Catalyst before this date. Big thanks to all Catalyst contributors, testers, and users for improving and utilizing the Catalyst web browsing experience. This post only discloses details for the Catalyst Browser not other services and applications soon to come.
+
+_This is being disclosed due to the vast amount of noticed users and reviews from platforms such as Reddit and softpedia._
 # Development has been moved to [Platinum](https://github.com/redstone-scratch/Platinum), supplemental LTS releases of Catalyst will be provided.
 ![image](https://img.shields.io/github/issues/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/forks/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/stars/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/license/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge)
 # Catalyst 
