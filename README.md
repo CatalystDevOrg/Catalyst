@@ -1,3 +1,5 @@
+The Catalyst (Desktop) web browser is now officially discontinued and will no longer be recieving security patches or feature updates. If you wish to continue using 'Catalyst' you may install it on your phone (Catalyst for mobile is supported) [Download](https://d.jdev.eu.org/CatalystMobile.apk)
+
 Attention all current, new, or future Catalyst users. Catalyst will lose security patches on December 10th, 2022. It is highly recommended that you seek alternatives and move away from Catalyst before this date. Big thanks to all Catalyst contributors, testers, and users for improving and utilizing the Catalyst web browsing experience. This post only discloses details for the Catalyst Browser not other services and applications soon to come.
 
 _This is being disclosed due to the vast amount of noticed users and reviews from platforms such as Reddit and softpedia._
