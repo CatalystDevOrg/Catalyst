@@ -42,7 +42,8 @@
     "config": {
         "forge": {
             "packagerConfig": {
-                "icon": "./assets/icon-scaled"
+                "icon": "./assets/icon-scaled",
+                "asar": true
             },
             "publishers": [
                 {
