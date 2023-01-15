@@ -1,5 +1,5 @@
 ![image](https://img.shields.io/github/issues/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/forks/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/stars/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/license/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge)
-(https://img.shields.io/github/downloads/jdev082/Catalyst/total.svg) ![image]
+![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total.svg)
 # Catalyst 
 An amazing and elegant ElectronJS web browser.
 
