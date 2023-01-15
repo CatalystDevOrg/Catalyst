@@ -12,7 +12,7 @@
         "package": "electron-forge package",
         "publish": "electron-forge publish",
         "make": "electron-forge make",
-        "build: "concurrently -k npm:tailwind:once npm:make"
+        "build": "concurrently -k npm:tailwind:once npm:make"
     },
     "repository": "https://github.com/JaydenDev/Catalyst",
     "keywords": [
