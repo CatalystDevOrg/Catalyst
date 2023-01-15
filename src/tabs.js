@@ -45,7 +45,7 @@ async function createTab(url) {
     document.getElementById("webviews").appendChild(view);
     switchTabs(randomHash);
 }
-createTab('https://platinum-browser.github.io');
+createTab();
 
 /**
  * Switches the tab to the selected one
