@@ -67,14 +67,6 @@ const getPackageJSON = async() => {
     return await (await fetch("../package.json")).json();
 };
 
-function openFeedback() {
-    createTab('https://github.com/JaydenDev/Catalyst/issues/new')
-}
-
-function openGithub() {
-    createTab('https://github.com/JaydenDev/Catalyst')
-}
-
 function openDocs() {
     createTab('https://getcatalyst.eu.org/docs')
 }
