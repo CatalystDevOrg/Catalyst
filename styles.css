@@ -26,6 +26,22 @@
 	.view {
 		@apply min-w-[100vw] min-h-[100vh];
 	}
+	@keyframes sliding-ttb {
+		0% {
+			transform: translateY(-100%);
+			clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+		}
+
+		100% {
+			transform: translateY(0%);
+			clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+		}
+	}
+	.sliding-ttb {
+		animation-name: sliding-ttb;
+		animation-duration: 100ms;
+		animation-fill-mode: forwards;
+	}
 	.suggestion {
 		@apply w-screen border-solid p-2 border-blue-500 dark:text-white;
 	}
@@ -37,11 +53,6 @@
 	}
 	.sliding-rtl {
 		animation-name: sliding-rtl;
-		animation-duration: 100ms;
-		animation-fill-mode: forwards;
-	}
-	.sliding-ttb {
-		animation-name: sliding-ttb;
 		animation-duration: 100ms;
 		animation-fill-mode: forwards;
 	}
