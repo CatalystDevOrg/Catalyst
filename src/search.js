@@ -47,7 +47,8 @@ function loadURL(url) {
     } else {
         view.src = url
         view.addEventListener('did-fail-load', () => {
-            view.src = 'err.txt'
+            view.src = 'home.html'
+            alert(`Failed to load page ${url}`)
             return;
         })
     }
