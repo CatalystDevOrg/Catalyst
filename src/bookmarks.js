@@ -18,8 +18,7 @@ function addBookmarkToBar(url, title) {
     let bookmarkEl = document.createElement('div');
     bookmarkEl.innerText = title;
     bookmarkEl.onclick = () => {
-        document.getElementById('searchbar').value = url;
-        loadURL();
+        createTab(url)
     };
     bookmarkEl.classList.add('bookmark');
     bookmarksBar.appendChild(bookmarkEl);
