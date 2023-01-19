@@ -3,8 +3,7 @@
 # Catalyst 
 An amazing and elegant ElectronJS web browser.
 
-![image](https://user-images.githubusercontent.com/92550746/194955977-c37b21f6-5ec3-4d1a-939f-c27b23cd9a9a.png)
-
+![image](https://user-images.githubusercontent.com/92550746/213339204-d0ab12ec-cbb8-46f2-bea6-b9df97202b56.png)
 ---
 
 Catalyst is a hobby project entirely managed and written by the community. It is an Electron/Chromium based web browser that really doesn't have a purpose, the contributors are below
