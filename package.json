@@ -26,13 +26,14 @@
         "@electron-forge/cli": "^6.0.0-beta.67",
         "@electron-forge/maker-deb": "^6.0.0-beta.67",
         "@electron-forge/maker-dmg": "^6.0.0-beta.69",
-        "@electron-forge/maker-squirrel": "^6.0.0-beta.69",
         "@electron-forge/maker-rpm": "^6.0.0-beta.69",
+        "@electron-forge/maker-squirrel": "^6.0.0-beta.69",
         "@electron-forge/maker-zip": "^6.0.0-beta.67",
         "@electron-forge/publisher-github": "^6.0.0-beta.69",
         "concurrently": "^7.5.0",
         "electron": "^22.0.2",
         "electron-reloader": "^1.2.3",
+        "eslint": "^8.32.0",
         "tailwindcss": "^3.2.1"
     },
     "dependencies": {
