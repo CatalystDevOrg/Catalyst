@@ -1,5 +1,5 @@
 let preferences = getPreferences();
-const preferencesBox = document.getElementById("preferences-box");
+const preferencesBox = document.getElementById('preferences-box');
 evaluatePreferences();
 
 /**
@@ -7,25 +7,25 @@ evaluatePreferences();
  */
 function togglePreferences() {
     preferences = getPreferences();
-    preferencesBox.classList.toggle("hidden");
-    if (!preferencesBox.classList.contains("hidden")) {
+    preferencesBox.classList.toggle('hidden');
+    if (!preferencesBox.classList.contains('hidden')) {
         // run preferences
         evaluatePreferences();
         // update fields in preferences
-        document.getElementById("pref-darkmode").checked = preferences.dark;
-        addCheckboxListener(document.getElementById("pref-darkmode"), "dark");
-        document.getElementById("pref-autocomplete").checked = preferences.autocomplete;
-        addCheckboxListener(document.getElementById("pref-autocomplete"), "autocomplete");
-        document.getElementById("pref-bookmarks").checked = preferences.bookmarks;
-        addCheckboxListener(document.getElementById("pref-bookmarks"), "bookmarks");
-        document.getElementById("pref-dm").checked = preferences.dm;
-        addCheckboxListener(document.getElementById('pref-dm'), "dm");
+        document.getElementById('pref-darkmode').checked = preferences.dark;
+        addCheckboxListener(document.getElementById('pref-darkmode'), 'dark');
+        document.getElementById('pref-autocomplete').checked = preferences.autocomplete;
+        addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocomplete');
+        document.getElementById('pref-bookmarks').checked = preferences.bookmarks;
+        addCheckboxListener(document.getElementById('pref-bookmarks'), 'bookmarks');
+        document.getElementById('pref-dm').checked = preferences.dm;
+        addCheckboxListener(document.getElementById('pref-dm'), 'dm');
     }
 }
 
 function closePreferences() {
     preferences = getPreferences();
-    if (!preferencesBox.classList.contains("hidden")) {
+    if (!preferencesBox.classList.contains('hidden')) {
         preferencesBox.classList.toggle('hidden');
     }
 }
@@ -35,13 +35,13 @@ function closePreferences() {
  * @returns {Object}
  */
 function getPreferences() {
-    if (!window.localStorage.getItem("preferences")) {
+    if (!window.localStorage.getItem('preferences')) {
         window.localStorage.setItem(
-            "preferences",
-            JSON.stringify({ dark: false, agent: "", autocomplete: true, bookmarks: false })
+            'preferences',
+            JSON.stringify({ dark: false, agent: '', autocomplete: true, bookmarks: false })
         );
     }
-    return JSON.parse(window.localStorage.getItem("preferences"));
+    return JSON.parse(window.localStorage.getItem('preferences'));
 }
 
 /**
@@ -50,7 +50,7 @@ function getPreferences() {
  * @param {string} prefKey The key in "preferences" for this element.
  */
 function addCheckboxListener(element, prefKey) {
-    element.addEventListener("change", () => {
+    element.addEventListener('change', () => {
         preferences[prefKey] = !!element.checked;
         updatePreferences();
     });
@@ -61,7 +61,7 @@ function addCheckboxListener(element, prefKey) {
  * @param {string} prefKey The key in "preferences" for this element.
  */
 function addTextListener(element, prefKey) {
-    element.addEventListener("input", () => {
+    element.addEventListener('input', () => {
         preferences[prefKey] = element.value;
         updatePreferences();
     });
@@ -71,7 +71,7 @@ function addTextListener(element, prefKey) {
  * Updates the preferences in LocalStorage to the new preferences and evaluates the new ones
  */
 function updatePreferences() {
-    window.localStorage.setItem("preferences", JSON.stringify(preferences));
+    window.localStorage.setItem('preferences', JSON.stringify(preferences));
     evaluatePreferences();
 }
 
@@ -80,13 +80,13 @@ function updatePreferences() {
  */
 function evaluatePreferences() {
     if (preferences.dark) {
-        document.documentElement.classList.add("dark");
+        document.documentElement.classList.add('dark');
     } else {
-        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.remove('dark');
     }
-    if (preferences.bookmarks && JSON.parse(window.localStorage.getItem("bookmarks")).length > 0) {
-        document.getElementById("bookmarks").classList.remove("hidden");
+    if (preferences.bookmarks && JSON.parse(window.localStorage.getItem('bookmarks')).length > 0) {
+        document.getElementById('bookmarks').classList.remove('hidden');
     } else {
-        document.getElementById("bookmarks").classList.add("hidden");
+        document.getElementById('bookmarks').classList.add('hidden');
     }
 }

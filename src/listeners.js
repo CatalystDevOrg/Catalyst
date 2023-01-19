@@ -1,16 +1,16 @@
 // dependencies
-strt = document.querySelector('#pref-strt')
-reload = document.querySelector('#reload')
-backward = document.querySelector('#back')
-forward = document.querySelector('#forward')
+strt = document.querySelector('#pref-strt');
+reload = document.querySelector('#reload');
+backward = document.querySelector('#back');
+forward = document.querySelector('#forward');
 
-document.getElementById("more-btn").addEventListener("click", () => {
-    document.getElementById("more-menu").classList.toggle("hidden");
-    document.querySelector('#more-btn').classList.toggle("bg-gray-400")
+document.getElementById('more-btn').addEventListener('click', () => {
+    document.getElementById('more-menu').classList.toggle('hidden');
+    document.querySelector('#more-btn').classList.toggle('bg-gray-400');
 });
 
 strt.addEventListener('change', () => {
-    localStorage.setItem('ctlyststrppg', strt.value)
+    localStorage.setItem('ctlyststrppg', strt.value);
 }   
 );
 strt.value = localStorage.getItem('ctlyststrppg');

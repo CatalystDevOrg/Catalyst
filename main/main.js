@@ -1,9 +1,9 @@
-const { app, BrowserWindow, dialog } = require("electron");
-const path = require("path");
-const { Menu } = require("electron");
-const { fetch } = require("cross-fetch");
+const { app, BrowserWindow, dialog } = require('electron');
+const path = require('path');
+const { Menu } = require('electron');
+const { fetch } = require('cross-fetch');
 
-if (require("electron-squirrel-startup")) app.quit();
+if (require('electron-squirrel-startup')) app.quit();
 
 let mainWindow;
 
@@ -17,35 +17,35 @@ function createWindow() {
             webviewTag: true,
             devTools: true,
         },
-        title: "Catalyst",
-        icon: path.join(__dirname, "../assets/icon.png"),
+        title: 'Catalyst',
+        icon: path.join(__dirname, '../assets/icon.png'),
     });
-    mainWindow.loadFile("./src/index.html");
-    mainWindow.setMenuBarVisibility(false)
-    require('update-electron-app')()
+    mainWindow.loadFile('./src/index.html');
+    mainWindow.setMenuBarVisibility(false);
+    require('update-electron-app')();
 }
 
 app.whenReady().then(() => {
     createWindow();
 
-    app.on("activate", function() {
+    app.on('activate', function() {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
 });
 
-app.on("window-all-closed", function() {
-    if (process.platform !== "darwin") app.quit();
+app.on('window-all-closed', function() {
+    if (process.platform !== 'darwin') app.quit();
 });
-app.on("web-contents-created", function(event, contents) {
-    if (contents.getType() === "webview") {
-        contents.on("new-window", function(newWindowEvent) {
+app.on('web-contents-created', function(event, contents) {
+    if (contents.getType() === 'webview') {
+        contents.on('new-window', function(newWindowEvent) {
             newWindowEvent.preventDefault();
         });
     }
 });
 
 try {
-    require("electron-reloader")(module);
+    require('electron-reloader')(module);
 } catch {}
 
 /*
@@ -91,44 +91,44 @@ function aboutApp() {
     dialog.showMessageBoxSync({
         title: `About ${appName}`,
         message: `${appName} ${ver}`,
-        buttons: ["OK"],
+        buttons: ['OK'],
         icon: './assets/icon.png'
     });
 }
 
 const template = [{
-        label: "About",
-        click: function() {
-            aboutApp();
-        }
-    },
-    {
-        label: "Quit",
-        click: function() {
-            app.quit();
-        }
-    },
-    {
-        label: "Hide",
-        accelerator: "CmdOrCtrl+H",
-        click: function() {
-            mainWindow.setMenuBarVisibility(false);
-        }
-    },
-    {
-        label: "Show",
-        accelerator: "CmdOrCtrl+S",
-        click: function() {
-            mainWindow.setMenuBarVisibility(true);
-        }
-    },
-    {
-        label: "DevTools",
-        accelerator: "CmdOrCtrl+I",
-        click: function() {
-            mainWindow.webContents.toggleDevTools();
-        }
-    }/*
+    label: 'About',
+    click: function() {
+        aboutApp();
+    }
+},
+{
+    label: 'Quit',
+    click: function() {
+        app.quit();
+    }
+},
+{
+    label: 'Hide',
+    accelerator: 'CmdOrCtrl+H',
+    click: function() {
+        mainWindow.setMenuBarVisibility(false);
+    }
+},
+{
+    label: 'Show',
+    accelerator: 'CmdOrCtrl+S',
+    click: function() {
+        mainWindow.setMenuBarVisibility(true);
+    }
+},
+{
+    label: 'DevTools',
+    accelerator: 'CmdOrCtrl+I',
+    click: function() {
+        mainWindow.webContents.toggleDevTools();
+    }
+}/*
     {
         label: "Check for Updates",
         accelerator: "CmdOrCtrl+U",

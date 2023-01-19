@@ -1,5 +1,5 @@
-var loadPlugins = "true"
+var loadPlugins = 'true';
 
 const plugins = [
-    "example"
-]
+    'example'
+];

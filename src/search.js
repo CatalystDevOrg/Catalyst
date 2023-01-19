@@ -1,15 +1,15 @@
 // protocols
-const protocols = ["https", "http", "file", "data"];
-const searchbar = document.getElementById("searchbar");
-const suggestionsEl = document.getElementById("autocomplete-suggestions");
-searchbar.addEventListener("input", async() => {
+const protocols = ['https', 'http', 'file', 'data'];
+const searchbar = document.getElementById('searchbar');
+const suggestionsEl = document.getElementById('autocomplete-suggestions');
+searchbar.addEventListener('input', async() => {
     if (searchbar.value.length < 1) {
         removeChildren(suggestionsEl);
         return;
     }
     if (
         shouldAutocomplete(searchbar.value) &&
-        JSON.parse(window.localStorage.getItem("preferences")).autocomplete
+        JSON.parse(window.localStorage.getItem('preferences')).autocomplete
     ) {
         // This is for duckduckgo only, in the future, this may be something else, but I think DDG is fine for now.
         const autoCompleteCheck = await fetch(
@@ -21,13 +21,13 @@ searchbar.addEventListener("input", async() => {
         for (let index = 0; index < autocomplete.length; index++) {
             const suggestionText = autocomplete[index].phrase;
             // insert suggestion
-            let suggestion = document.createElement("button");
+            let suggestion = document.createElement('button');
             let suggestionHash = generateHashkey();
             suggestion.innerText = suggestionText;
-            suggestion.classList.add("suggestion");
-            suggestion.id = "suggestion-" + suggestionHash;
-            suggestion.addEventListener("click", () => {
-                document.getElementById("searchbar").value = suggestionText;
+            suggestion.classList.add('suggestion');
+            suggestion.id = 'suggestion-' + suggestionHash;
+            suggestion.addEventListener('click', () => {
+                document.getElementById('searchbar').value = suggestionText;
                 loadURL();
                 removeChildren(suggestionsEl);
             });
@@ -39,25 +39,25 @@ searchbar.addEventListener("input", async() => {
 });
 
 function loadURL(url) {
-    view = document.querySelector('.current')
+    view = document.querySelector('.current');
     if (shouldAutocomplete(url)) {
         document.querySelector(
-            ".current"
+            '.current'
         ).src = `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
     } else {
-        view.src = url
+        view.src = url;
         view.addEventListener('did-fail-load', () => {
-            view.src = 'home.html'
-            alert(`Failed to load page ${url}`)
+            view.src = 'home.html';
+            alert(`Failed to load page ${url}`);
             return;
-        })
+        });
     }
     removeChildren(suggestionsEl);
     view.addEventListener('did-finish-load', () => {
         if (preferences.dm) {
             invertTab();
         }
-    })
+    });
 }
 
 function shouldAutocomplete(input) {
@@ -71,7 +71,7 @@ function shouldAutocomplete(input) {
 }
 
 // add listeners
-searchbar.addEventListener("keydown", (e) => {
-    var url = document.getElementById("searchbar").value;
-    if (e.code === "Enter") loadURL(url);
+searchbar.addEventListener('keydown', (e) => {
+    var url = document.getElementById('searchbar').value;
+    if (e.code === 'Enter') loadURL(url);
 });
