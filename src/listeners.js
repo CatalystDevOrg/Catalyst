@@ -20,6 +20,7 @@ strt.addEventListener('keypress', (e) => {
             return;
         }
         localStorage.setItem('ctlyststrppg', strt.value);
+        alert('Browser must be restarted to complete change.')
     }}
 );
 strt.value = localStorage.getItem('ctlyststrppg');

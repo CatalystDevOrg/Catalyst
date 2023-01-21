@@ -69,24 +69,28 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="sliding-rtl space-y-2 fixed text-md right-0 shadow-lg bg-gray-200 p-1.5 rounded-sm dark:bg-gray-800 w-[35%] h-screen hidden max-h-screen h-full text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="sliding-rtl fixed text-md right-0 shadow-lg bg-gray-200 p-1.5 rounded-sm dark:bg-gray-800 w-[35%] h-screen hidden max-h-screen h-full text-gray-900 dark:text-gray-50">
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
         <input id="pref-darkmode" type="checkbox" class="" />
         <p class="text-sm">Toggle dark mode</p>
+        <br />
         <label for="pref-autocomplete">Autocomplete </label>
         <input id="pref-autocomplete" type="checkbox" class="" />
         <p class="text-sm">Search Autocomplete</p>
+        <br />
         <label for="pref-bookmarks">Bookmarks Bar </label>
         <input id="pref-bookmarks" type="checkbox" class=""/>
         <p class="text-sm">Toggles the bookmarks bar</p>
+        <br />
         <label for="pref-strt">Startup Page</label>
         <input class="text-black p-1.5 rounded-sm" id="pref-strt" class=""/>
         <p class="text-sm">Sets a custom startup page.</p>
-        <b>(You must restart Catalyst every time this is changed)</b>
+        <br />
         <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
         <input id="pref-dm" type="checkbox" class=""/>  
         <p class="text-sm">Toggles forced dark mode for all sites.</p>
+        <br />
                 <button onclick="clearData()" class="btn">
       Clear Data</button>
                 <button onclick="togglePreferences()" class="btn">Close
