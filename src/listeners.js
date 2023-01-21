@@ -9,13 +9,18 @@ document.getElementById('more-btn').addEventListener('click', () => {
     document.querySelector('#more-btn').classList.toggle('bg-gray-400');
 });
 
-strt.addEventListener('change', () => {
-    if (strt.value == 'default') {
-        localStorage.setItem('ctlyststrppg', './home.html')
-        return;
-    }
-    localStorage.setItem('ctlyststrppg', strt.value);
-}   
+strt.addEventListener('keypress', (e) => {
+    if (e.keyCode == 13) {
+        if (strt.value.includes('\'') || strt.value.includes('"')) {
+            alert('Invalid characters. Must not contain quotes!');
+            return;
+        }
+        if (strt.value == 'default') {
+            localStorage.setItem('ctlyststrppg', './home.html');
+            return;
+        }
+        localStorage.setItem('ctlyststrppg', strt.value);
+    }}
 );
 strt.value = localStorage.getItem('ctlyststrppg');
 
