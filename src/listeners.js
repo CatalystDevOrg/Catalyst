@@ -10,6 +10,10 @@ document.getElementById('more-btn').addEventListener('click', () => {
 });
 
 strt.addEventListener('change', () => {
+    if (strt.value == 'default') {
+        localStorage.setItem('ctlyststrppg', './home.html')
+        return;
+    }
     localStorage.setItem('ctlyststrppg', strt.value);
 }   
 );
