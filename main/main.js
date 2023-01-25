@@ -1,7 +1,6 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const path = require('path');
 const { Menu } = require('electron');
-const { fetch } = require('cross-fetch');
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -16,6 +15,7 @@ function createWindow() {
         webPreferences: {
             webviewTag: true,
             devTools: true,
+            preload: path.join(__dirname, 'preload.js'),
         },
         title: 'Catalyst',
         icon: path.join(__dirname, '../assets/icon.png'),
