@@ -43,6 +43,7 @@
         src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
         <button id="more-btn" class="btn"><img
         src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
+        <button id="bkmtggl">Bookmarks</button>&nbsp;
     </div>
     <!-- More menu -->
     <div id="more-menu" class="sliding-rtl shadow-lg absolute bg-white dark:bg-gray-800 dark:text-white text-gray-900 h-[95%] p-1.5 w-56 blurred float-right hidden right-0 ">
@@ -68,7 +69,7 @@
         </ul>
     </div>
     <!-- Bookmarks -->
-    <div id="bookmarks" class="slide-ttb flex px-1 mb-0.2 bg-white dark:bg-gray-800">
+    <div id="bookmarks" class="slide-ttb flex px-1 mb-0.2 h-screen bg-white dark:bg-gray-800">
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
@@ -81,10 +82,6 @@
         <label for="pref-autocomplete">Autocomplete </label>
         <input id="pref-autocomplete" type="checkbox" class="" />
         <p class="text-sm">Search Autocomplete</p>
-        <br />
-        <label for="pref-bookmarks">Bookmarks Bar </label>
-        <input id="pref-bookmarks" type="checkbox" class=""/>
-        <p class="text-sm">Toggles the bookmarks bar</p>
         <br />
         <label for="pref-strt">Startup Page</label>
         <input class="text-black p-1.5 rounded-sm" id="pref-strt" class=""/>

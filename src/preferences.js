@@ -16,8 +16,6 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-darkmode'), 'dark');
         document.getElementById('pref-autocomplete').checked = preferences.autocomplete;
         addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocomplete');
-        document.getElementById('pref-bookmarks').checked = preferences.bookmarks;
-        addCheckboxListener(document.getElementById('pref-bookmarks'), 'bookmarks');
         document.getElementById('pref-dm').checked = preferences.dm;
         addCheckboxListener(document.getElementById('pref-dm'), 'dm');
     }
@@ -83,10 +81,5 @@ function evaluatePreferences() {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
-    }
-    if (preferences.bookmarks && JSON.parse(window.localStorage.getItem('bookmarks')).length > 0) {
-        document.getElementById('bookmarks').classList.remove('hidden');
-    } else {
-        document.getElementById('bookmarks').classList.add('hidden');
     }
 }
