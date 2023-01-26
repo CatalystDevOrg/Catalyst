@@ -1,6 +1,6 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const path = require('path');
-const { Menu } = require('electron');
+const { Menu, ipcMain } = require('electron');
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -15,6 +15,7 @@ function createWindow() {
         webPreferences: {
             webviewTag: true,
             devTools: true,
+            sandbox: false,
             preload: path.join(__dirname, 'preload.js'),
         },
         title: 'Catalyst',

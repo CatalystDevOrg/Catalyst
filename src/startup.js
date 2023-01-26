@@ -11,6 +11,3 @@ if (!localStorage.getItem('home-postfix')) {
     var ctlyststrppg = './home.html';
     localStorage.setItem('home-postfix', 'true');
 }
-
-const version = app.getVersion();
-alert(version);

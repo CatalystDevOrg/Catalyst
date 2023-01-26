@@ -72,4 +72,9 @@ function invertTab() {
     view.insertCSS('img { filter: invert(100%) !important} ');
 }
 
+function openChangeLog() {
+    ver = document.querySelector('#ver').innerText
+    createTab(`https://github.com/jdev082/Catalyst/releases/tag/${ver}`)
+}
+
 openWelcome();
