@@ -1,6 +1,7 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const path = require('path');
 const { Menu, ipcMain } = require('electron');
+const openAboutWindow = require('about-window').default;
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -89,11 +90,15 @@ let ver = app.getVersion();
 let appName = app.getName();
 
 function aboutApp() {
-    dialog.showMessageBoxSync({
-        title: `About ${appName}`,
-        message: `${appName} ${ver}`,
-        buttons: ['OK'],
-        icon: './assets/icon.png'
+    openAboutWindow({
+        package_json_dir: path.join(__dirname, './package.json'),
+        product_name: 'Catalyst',
+        icon_path: path.join(__dirname, '../assets/icon.png'),
+        license: 'MIT',
+        copyright: '2020-2023',
+        bug_report_url: 'https://github.com/jdev082/Catalyst/issues',
+        homepage: 'https://getcatalyst.eu.org',
+        description: 'A fast and elegant Electron web browser.',
     });
 }
 
