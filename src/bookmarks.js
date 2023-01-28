@@ -1,6 +1,5 @@
 
 // initialise global variables
-const bookmarksBar = document.getElementById('bookmarks');
 // get bookmarks initialised
 if (window.localStorage.getItem('bookmarks') == null) {
     window.localStorage.setItem('bookmarks', JSON.stringify([]));
