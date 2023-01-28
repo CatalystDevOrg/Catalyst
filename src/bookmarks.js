@@ -16,7 +16,7 @@ updateBookmarksVar();
  */
 function addBookmarkToBar(url, title) {
     let bookmarkEl = document.createElement('div');
-    img = `https://s2.googleusercontent.com/s2/favicons?sz=64&domain_url=${url}`
+    img = `https://s2.googleusercontent.com/s2/favicons?sz=64&domain_url=${url}`;
     bookmarkEl.innerHTML = `<img src='${img}'<h1>${title}</h1>`;
     bookmarkEl.onclick = () => {
         createTab(url);

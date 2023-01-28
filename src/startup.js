@@ -13,5 +13,5 @@ if (!localStorage.getItem('home-postfix')) {
 }
 
 if (localStorage.getItem('bookmarks') < 1) {
-    document.querySelector('#bookmarks').innerText = 'When you add bookmarks they will appear here!'
+    document.querySelector('#bookmarks').innerText = 'When you add bookmarks they will appear here!';
 }

@@ -73,13 +73,13 @@ function invertTab() {
 }
 
 function openChangeLog() {
-    ver = document.querySelector('#ver').innerText
-    createTab(`https://github.com/jdev082/Catalyst/releases/tag/${ver}`)
+    ver = document.querySelector('#ver').innerText;
+    createTab(`https://github.com/jdev082/Catalyst/releases/tag/${ver}`);
 }
 
 openWelcome();
 
 function toggleBookmarks() { 
-    document.querySelector('#bookmarks').classList.toggle('hidden')
-    document.querySelector('.current').classList.toggle('hidden')
+    document.querySelector('#bookmarks').classList.toggle('hidden');
+    document.querySelector('.current').classList.toggle('hidden');
 }
