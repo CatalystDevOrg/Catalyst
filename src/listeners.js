@@ -8,6 +8,12 @@ document.getElementById('more-btn').addEventListener('click', () => {
     document.querySelector('#more-btn').classList.toggle('bg-gray-400');
 });
 
+dlcp.addEventListener('click', downloadURI(`${document.querySelector('.current').src}`))
+ghbtn.addEventListener('click', createTab('https://github.com/JaydenDev/Catalyst'))
+ocl.addEventListener('click', openChangeLog())
+tgglpref.addEventListener('click', togglePreferences())
+bugrep.addEventListener('click', createTab('https://github.com/JaydenDev/Catalyst/issues/new'))
+
 strt.addEventListener('keypress', (e) => {
     if (e.keyCode == 13) {
         if (strt.value.includes('\'') || strt.value.includes('"')) {

@@ -55,7 +55,7 @@ function bookmarkCurrentTab() {
 function updateBookmarksVar() {
     bookmarks = JSON.parse(window.localStorage.getItem('bookmarks'));
     removeChildren(bookmarksBar);
-    if (bookmarks.length === 0) bookmarksBar.innerHTML = "<p class='m-4 text-md dark:text-white'> When you add a bookmark, it will appear here!</p>";
+    if (bookmarks.length === 0) bookmarksBar.innerHTML = '<p class=\'m-4 text-md dark:text-white\'> When you add a bookmark, it will appear here!</p>';
     for (let bookmarkIdx in bookmarks) {
         const bookmark = bookmarks[bookmarkIdx];
         addBookmarkToBar(bookmark.url, bookmark.title);

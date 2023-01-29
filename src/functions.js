@@ -17,13 +17,6 @@ const removeChildren = (parent) => {
     }
 };
 
-
-function downloadCurrentPage() {
-    currentView = document.querySelector('.current');
-    let contents = currentView.src;
-    downloadURI(contents, contents);
-}
-
 function closeWelcome() {
     // add hidden class to welcomepage id
     document.getElementById('welcomepage').classList.add('hidden');
@@ -86,16 +79,16 @@ function toggleBookmarks() {
 
 function bareURL(url) {
     for (var i = 0; i < protocols.length; i++) {
-        url = url.replace(protocols[i], '')
+        url = url.replace(protocols[i], '');
     }
-    url = url.replace('://', '')
-    url = url.replace('www.', '')
-    url = url.replace('/', '')
+    url = url.replace('://', '');
+    url = url.replace('www.', '');
+    url = url.replace('/', '');
     return url;
 }
 
 function checkSafety() {
-    src = document.querySelector('.current').src
-    src = bareURL(src)
-    window.open('https://www.urlvoid.com/scan/' + src)
+    src = document.querySelector('.current').src;
+    src = bareURL(src);
+    window.open('https://www.urlvoid.com/scan/' + src);
 }
