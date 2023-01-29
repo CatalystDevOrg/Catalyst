@@ -3,14 +3,13 @@ const path = require('path');
 const { Menu, ipcMain } = require('electron');
 const openAboutWindow = require('about-window').default;
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
-const { fetch } = require('cross-fetch');
-require('v8-compile-cache');
+const { fetch } = require('cross-fetch')
 
 if (require('electron-squirrel-startup')) app.quit();
 
 ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
     blocker.enableBlockingInSession(session.defaultSession);
-});
+ });
 
 
 let mainWindow;
