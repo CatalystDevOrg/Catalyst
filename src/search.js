@@ -1,7 +1,4 @@
 // protocols
-const protocols = ['https', 'http', 'file', 'data'];
-const searchbar = document.getElementById('searchbar');
-const suggestionsEl = document.getElementById('autocomplete-suggestions');
 searchbar.addEventListener('input', async() => {
     if (searchbar.value.length < 1) {
         removeChildren(suggestionsEl);

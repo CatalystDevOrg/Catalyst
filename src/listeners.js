@@ -1,10 +1,3 @@
-// dependencies
-strt = document.querySelector('#pref-strt');
-reload = document.querySelector('#reload');
-backward = document.querySelector('#back');
-forward = document.querySelector('#forward');
-bkmrk = document.querySelector('#bkmtggl');
-
 bkmrk.addEventListener('click', () => {
     toggleBookmarks();
     console.log('t');
