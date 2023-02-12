@@ -7,6 +7,10 @@ body {
     min-height: 100vh;
 }
 
+* {
+    border: none;
+}
+
 #tab-bar-wrapper {
     display: flex;
     padding-top: 0.25rem;
@@ -246,4 +250,12 @@ webview {
     padding-bottom: 0.25rem;
     background-color: #ffffff;
     width: 100%;
+}
+
+#searchbar {
+    padding: 2pt;
+    background-color: #F3F4F6;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border-radius: 1.5rem;
 }
