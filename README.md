@@ -20,6 +20,9 @@ Catalyst is a hobby project entirely managed and written by the community. It is
 3. Scroll down and click on the file for your specific platform (Windows = `.exe`, Debian Linux distros = `.deb`, etc.)
 4. Open the downloaded file then let Catalyst install!
 
+## Other Systems
+[ARM Systems (DEB/RPM)](https://github.com/michaeleldar/Catalyst-Rpi/releases)
+
 ## Contributors
 
 <table>
