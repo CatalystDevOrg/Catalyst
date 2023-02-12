@@ -21,7 +21,7 @@ Catalyst is a hobby project entirely managed and written by the community. It is
 4. Open the downloaded file then let Catalyst install!
 
 ## Other Systems
-[ARM Systems (DEB/RPM)](https://github.com/michaeleldar/Catalyst-Rpi/releases)
+[ARM Systems (Raspberry Pi) (DEB/RPM)](https://github.com/michaeleldar/Catalyst-Rpi/releases)
 
 ## Contributors
 
