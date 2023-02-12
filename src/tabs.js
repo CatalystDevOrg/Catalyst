@@ -2,7 +2,6 @@
 let activeHash = '0';
 let hasFavicon = {};
 // Functions
-ctlyststrppg = localStorage.getItem('ctlyststrppg');
 
 /**
  * Creates a new tab
