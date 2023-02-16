@@ -1,12 +1,12 @@
 ![image](https://img.shields.io/github/issues/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/forks/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/stars/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/license/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge)
 ![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total.svg)
-# Catalyst 
-An amazing and elegant ElectronJS web browser.
+The Catalyst Web Browser
+An Electron web browser aiming to provide a simple but useful user interface.
 
 ![image](https://user-images.githubusercontent.com/92550746/213339204-d0ab12ec-cbb8-46f2-bea6-b9df97202b56.png)
 ---
 
-Catalyst is a hobby project entirely managed and written by the community. It is an Electron/Chromium based web browser that really doesn't have a purpose, the contributors are below
+The Catalyst Project however, is a whole suite of applications for Desktop and Mobile.
 
 ## Installation Instructions
 1. Go to the Releases tab on the GitHub repo (or just click [this link](https://github.com/JaydenDev/Catalyst/releases)) or click on the release underneath the "Releases" text.
