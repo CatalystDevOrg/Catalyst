@@ -1,6 +1,6 @@
 ![image](https://img.shields.io/github/issues/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/forks/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/stars/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/license/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge)
 ![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total.svg)
-The Catalyst Web Browser
+# The Catalyst Web Browser
 An Electron web browser aiming to provide a simple but useful user interface.
 
 ![image](https://user-images.githubusercontent.com/92550746/213339204-d0ab12ec-cbb8-46f2-bea6-b9df97202b56.png)
