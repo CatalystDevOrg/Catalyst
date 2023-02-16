@@ -2,8 +2,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     object-fit: contain;
     overflow: hidden;
-    background-color: #E5E7EB;
-    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
     min-height: 100vh;
 }
 
@@ -29,6 +30,11 @@ body {
     align-items: center;
 }
 
+#tabs-inline {
+    display: inline-flex;
+    padding: 0.25rem;
+}
+
 .tab {
     display: flex;
     overflow: hidden;
@@ -46,7 +52,6 @@ body {
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     cursor: pointer;
-
 }
 
 .active-tab {
@@ -230,8 +235,6 @@ webview {
 }
 
 #bookmarks {
-    display: none;
-    display: flex;
     display: grid;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
