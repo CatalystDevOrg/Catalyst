@@ -3,7 +3,6 @@ const path = require('path');
 const { Menu, ipcMain } = require('electron');
 const openAboutWindow = require('about-window').default;
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
-const { fetch } = require('cross-fetch');
 
 if (require('electron-squirrel-startup')) app.quit();
 const lock = app.requestSingleInstanceLock();
