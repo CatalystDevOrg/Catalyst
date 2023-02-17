@@ -1,108 +1,45 @@
 {
-    "name": "catalyst",
-    "version": "3.5.0-cceb555",
-    "description": "A minimal Electron Web Browser",
-    "main": "main/main.js",
-    "private": true,
-    "scripts": {
-        "start": "electron .",
-        "package": "electron-forge package",
-        "publish": "electron-forge publish",
-        "make": "electron-forge make",
-        "lint": "eslint .",
-        "lint:fix": "eslint . --fix"
-    },
-    "repository": "https://github.com/JaydenDev/Catalyst",
-    "keywords": [
-        "Electron",
-        "Browser",
-        "Internet"
-    ],
-    "author": "JaydenDev",
-    "license": "MIT",
-    "devDependencies": {
-        "@electron-forge/cli": "^6.0.5",
-        "@electron-forge/maker-deb": "^6.0.5",
-        "@electron-forge/maker-dmg": "^6.0.5",
-        "@electron-forge/maker-rpm": "^6.0.5",
-        "@electron-forge/maker-squirrel": "^6.0.5",
-        "@electron-forge/maker-zip": "^6.0.5",
-        "@electron-forge/publisher-github": "^6.0.5",
-        "electron": "^23.0.0",
-        "electron-reloader": "^1.2.3",
-        "eslint": "^8.34.0"
-    },
-    "dependencies": {
-        "@cliqz/adblocker-electron": "^1.25.2",
-        "about-window": "^1.15.2",
-        "cross-fetch": "^3.1.5",
-        "electron-better-ipc": "^2.0.1",
-        "electron-prompt": "^1.7.0",
-        "electron-squirrel-startup": "^1.0.0",
-        "update-electron-app": "^2.0.1"
-    },
-    "config": {
-        "forge": {
-            "packagerConfig": {
-                "icon": "./assets/icon-scaled",
-                "asar": true
-            },
-            "publishers": [
-                {
-                    "name": "@electron-forge/publisher-github",
-                    "config": {
-                        "repository": {
-                            "owner": "JaydenDev",
-                            "name": "Catalyst"
-                        },
-                        "draft": true
-                    }
-                }
-            ],
-            "makers": [
-                {
-                    "name": "@electron-forge/maker-squirrel",
-                    "config": {
-                        "name": "Catalyst3"
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-zip",
-                    "platforms": [
-                        "darwin"
-                    ]
-                },
-                {
-                    "name": "@electron-forge/maker-dmg",
-                    "config": {
-                        "format": "ULFO"
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-deb",
-                    "config": {
-                        "options": {
-                            "icon": "./assets/icon.png"
-                        }
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-rpm",
-                    "config": {}
-                },
-                {
-                    "name": "@electron-forge/maker-flatpak",
-                    "config": {
-                        "options": {
-                            "categories": [
-                                "Internet"
-                            ],
-                            "id": "io.github.catalystdevorg.catalyst",
-                            "productName": "catalyst"
-                        }
-                    }
-                }
-            ]
-        }
-    }
+  "name": "catalyst",
+  "version": "3.5.0-cceb555",
+  "description": "A minimal Electron Web Browser",
+  "main": "main/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "publish": "electron-forge publish",
+    "make": "electron-forge make",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": "https://github.com/JaydenDev/Catalyst",
+  "keywords": [
+    "Electron",
+    "Browser",
+    "Internet"
+  ],
+  "author": "JaydenDev",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-dmg": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
+    "@electron-forge/maker-flatpak": "^6.0.5",
+    "@electron-forge/publisher-github": "^6.0.5",
+    "electron": "^23.0.0",
+    "electron-reloader": "^1.2.3",
+    "eslint": "^8.34.0"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.25.2",
+    "about-window": "^1.15.2",
+    "cross-fetch": "^3.1.5",
+    "electron-better-ipc": "^2.0.1",
+    "electron-prompt": "^1.7.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "update-electron-app": "^2.0.1"
+  }
 }

@@ -6,7 +6,7 @@ const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const { fetch } = require('cross-fetch');
 
 if (require('electron-squirrel-startup')) app.quit();
-const lock = app.requestSingleInstanceLock()
+const lock = app.requestSingleInstanceLock();
 
 ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
     blocker.enableBlockingInSession(session.defaultSession);
@@ -41,7 +41,7 @@ app.whenReady().then(() => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
     if (!lock) {
-        app.quit()
+        app.quit();
     }
 });
 
@@ -63,28 +63,28 @@ try {
 async function checkForUpdate(windowToDialog) {
     try {
         const githubFetch = await fetch(
-            "https://api.github.com/repos/JaydenDev/Catalyst/releases"
+            'https://api.github.com/repos/JaydenDev/Catalyst/releases'
         );
         if (!githubFetch.ok) {
-            alert("There was an error checking for a new update, check your WiFi connection and try again from the menubar.");
+            alert('There was an error checking for a new update, check your WiFi connection and try again from the menubar.');
             return;
         }
         const releaseJSON = await githubFetch.json();
         const replacerRegex = /["."]/gm;
         const appVersionStr = app.getVersion();
-        const tagVersionInt = Number(appVersionStr.replace(replacerRegex, ""));
+        const tagVersionInt = Number(appVersionStr.replace(replacerRegex, ''));
         for (let i in releaseJSON) {
             const release = releaseJSON[i];
             if (release.draft || release.prerelease) continue;
-            const replaced = release["tag_name"].replace(replacerRegex, "");
+            const replaced = release['tag_name'].replace(replacerRegex, '');
             if (
                 tagVersionInt <
-                Number(replaced.startsWith("v") ? replaced.slice(1) : replaced)
+                Number(replaced.startsWith('v') ? replaced.slice(1) : replaced)
             ) {
                 dialog.showMessageBox(windowToDialog, {
-                    message: "An update is available for Catalyst.",
-                    detail: `Go to github.com/JaydenDev/Catalyst/releases to install Catalyst ${release["tag_name"]}`,
-                    type: "info",
+                    message: 'An update is available for Catalyst.',
+                    detail: `Go to github.com/JaydenDev/Catalyst/releases to install Catalyst ${release['tag_name']}`,
+                    type: 'info',
                 });
                 return;
             }
@@ -143,16 +143,16 @@ const template = [{
         mainWindow.webContents.toggleDevTools();
     }
 },
-    {
-        label: "Check for Updates",
-        accelerator: "CmdOrCtrl+U",
-        click: function() {
-            checkForUpdate(mainWindow);
-        }
+{
+    label: 'Check for Updates',
+    accelerator: 'CmdOrCtrl+U',
+    click: function() {
+        checkForUpdate(mainWindow);
     }
+}
 ];
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
 
-checkForUpdate(mainWindow)
+checkForUpdate(mainWindow);

@@ -80,7 +80,7 @@ function openChangeLog() {
 openWelcome();
 
 function toggleBookmarks() {
-    document.querySelector('#bookmarks').classList.toggle('hidden')
+    document.querySelector('#bookmarks').classList.toggle('hidden');
 }
 
 function bareURL(url) {
