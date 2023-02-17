@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog, session } = require('electron');
+const { app, BrowserWindow, dialog, session, Notification } = require('electron');
 const path = require('path');
 const { Menu, ipcMain } = require('electron');
 const openAboutWindow = require('about-window').default;
@@ -6,11 +6,15 @@ const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const { fetch } = require('cross-fetch');
 
 if (require('electron-squirrel-startup')) app.quit();
+const lock = app.requestSingleInstanceLock()
 
 ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
     blocker.enableBlockingInSession(session.defaultSession);
 });
 
+function displayNotification(body) {
+    new Notification({ title: 'Catalyst Web Browser', body: body }).show
+}
 
 let mainWindow;
 
@@ -37,17 +41,20 @@ function createWindow() {
 app.whenReady().then(() => {
     createWindow();
 
-    app.on('activate', function() {
+    app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
+    if (!lock) {
+        app.quit()
+    }
 });
 
-app.on('window-all-closed', function() {
+app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') app.quit();
 });
-app.on('web-contents-created', function(event, contents) {
+app.on('web-contents-created', function (event, contents) {
     if (contents.getType() === 'webview') {
-        contents.on('new-window', function(newWindowEvent) {
+        contents.on('new-window', function (newWindowEvent) {
             newWindowEvent.preventDefault();
         });
     }
@@ -55,7 +62,7 @@ app.on('web-contents-created', function(event, contents) {
 
 try {
     require('electron-reloader')(module);
-} catch {}
+} catch { }
 
 /*
 async function checkForUpdate(windowToDialog) {
@@ -111,34 +118,34 @@ function aboutApp() {
 
 const template = [{
     label: 'About',
-    click: function() {
+    click: function () {
         aboutApp();
     }
 },
 {
     label: 'Quit',
-    click: function() {
+    click: function () {
         app.quit();
     }
 },
 {
     label: 'Hide',
     accelerator: 'CmdOrCtrl+H',
-    click: function() {
+    click: function () {
         mainWindow.setMenuBarVisibility(false);
     }
 },
 {
     label: 'Show',
     accelerator: 'CmdOrCtrl+S',
-    click: function() {
+    click: function () {
         mainWindow.setMenuBarVisibility(true);
     }
 },
 {
     label: 'DevTools',
     accelerator: 'CmdOrCtrl+I',
-    click: function() {
+    click: function () {
         mainWindow.webContents.toggleDevTools();
     }
 }/*
