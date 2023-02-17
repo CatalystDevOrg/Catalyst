@@ -161,6 +161,10 @@ body {
     }
 }
 
+.hidden {
+    display: none !important;
+}
+
 .bookmark {
     display: flex;
     overflow: hidden;
@@ -242,10 +246,6 @@ webview {
     height: 100vh;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(6, minmax(0, 1fr));
-}
-
-.hidden {
-    display: none;
 }
 
 #util-bar {
