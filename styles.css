@@ -204,7 +204,6 @@ webview {
 }
 
 #more-menu {
-    display: none;
     float: right;
     position: absolute;
     right: 0;
