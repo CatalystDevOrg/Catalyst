@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog, session, Notification } = require('electron');
+const { app, BrowserWindow, dialog, session } = require('electron');
 const path = require('path');
 const { Menu, ipcMain } = require('electron');
 const openAboutWindow = require('about-window').default;
@@ -11,10 +11,6 @@ const lock = app.requestSingleInstanceLock()
 ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
     blocker.enableBlockingInSession(session.defaultSession);
 });
-
-function displayNotification(body) {
-    new Notification({ title: 'Catalyst Web Browser', body: body }).show
-}
 
 let mainWindow;
 
@@ -64,7 +60,6 @@ try {
     require('electron-reloader')(module);
 } catch { }
 
-/*
 async function checkForUpdate(windowToDialog) {
     try {
         const githubFetch = await fetch(
@@ -98,7 +93,6 @@ async function checkForUpdate(windowToDialog) {
         console.error(error);
     }
 }
-*/
 
 let ver = app.getVersion();
 let appName = app.getName();
@@ -148,15 +142,17 @@ const template = [{
     click: function () {
         mainWindow.webContents.toggleDevTools();
     }
-}/*
+},
     {
         label: "Check for Updates",
         accelerator: "CmdOrCtrl+U",
         click: function() {
             checkForUpdate(mainWindow);
         }
-    }*/
+    }
 ];
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
+
+checkForUpdate(mainWindow)
