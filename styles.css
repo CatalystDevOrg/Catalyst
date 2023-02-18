@@ -12,6 +12,11 @@ body {
     border: none;
 }
 
+/* For Debug */
+*:hover {
+    background-color: red;
+}
+
 #tab-bar-wrapper {
     display: flex;
     padding-top: 0.25rem;
