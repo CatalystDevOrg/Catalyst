@@ -87,3 +87,5 @@ The Catalyst Project however, is a whole suite of applications for Desktop and M
     </td>
 </tr>
 </table>
+# Stay up to date!
+Get the latest updates on all Catalyst applications on [the Discord](https://dsc.gg/catalystsoftware)!
