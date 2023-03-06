@@ -16,13 +16,13 @@
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     },
-    "repository": "https://github.com/JaydenDev/Catalyst",
+    "repository": "https://github.com/CatalystDevOrg/Catalyst",
     "keywords": [
         "Electron",
         "Browser",
         "Internet"
     ],
-    "author": "JaydenDev",
+    "author": "CatalystDevOrg",
     "license": "MIT",
     "devDependencies": {
         "@electron-forge/cli": "^6.0.5",
@@ -55,7 +55,7 @@
                     "name": "@electron-forge/publisher-github",
                     "config": {
                         "repository": {
-                            "owner": "JaydenDev",
+                            "owner": "CatalystDevOrg",
                             "name": "Catalyst"
                         },
                         "draft": true
