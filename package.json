@@ -34,7 +34,7 @@
     "eslint": "^8.34.0"
   },
   "dependencies": {
-    "@cliqz/adblocker-electron": "^1.25.2",
+    "@cliqz/adblocker-electron": "^1.26.3",
     "about-window": "^1.15.2",
     "cross-fetch": "^3.1.5",
     "electron-better-ipc": "^2.0.1",
