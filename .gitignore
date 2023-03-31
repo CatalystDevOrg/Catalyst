@@ -1,6 +1,7 @@
+# output & dependencies
+build
 node_modules
-*.swp
-*.out
-*.bin
-out
-out/*
+
+# ide
+/.idea
+/.vscode

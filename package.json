@@ -1,45 +1,42 @@
 {
-  "name": "catalyst",
-  "version": "3.5.0-cceb555",
-  "description": "A minimal Electron Web Browser",
-  "main": "main/main.js",
-  "private": true,
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "publish": "electron-forge publish",
-    "make": "electron-forge make",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
-  "repository": "https://github.com/JaydenDev/Catalyst",
-  "keywords": [
-    "Electron",
-    "Browser",
-    "Internet"
-  ],
-  "author": "JaydenDev",
-  "license": "MIT",
-  "devDependencies": {
-    "@electron-forge/cli": "^6.0.5",
-    "@electron-forge/maker-deb": "^6.0.5",
-    "@electron-forge/maker-dmg": "^6.0.5",
-    "@electron-forge/maker-rpm": "^6.0.5",
-    "@electron-forge/maker-squirrel": "^6.0.5",
-    "@electron-forge/maker-zip": "^6.0.5",
-    "@electron-forge/maker-flatpak": "^6.0.5",
-    "@electron-forge/publisher-github": "^6.0.5",
-    "electron": "^23.0.0",
-    "electron-reloader": "^1.2.3",
-    "eslint": "^8.34.0"
-  },
-  "dependencies": {
-    "@cliqz/adblocker-electron": "^1.25.2",
-    "about-window": "^1.15.2",
-    "cross-fetch": "^3.1.5",
-    "electron-better-ipc": "^2.0.1",
-    "electron-prompt": "^1.7.0",
-    "electron-squirrel-startup": "^1.0.0",
-    "update-electron-app": "^2.0.1"
-  }
+    "name": "catalyst",
+    "version": "4.0.0",
+    "description": "A minimal Electron Web Browser",
+    "main": "build/main/index.js",
+    "private": true,
+    "scripts": {
+        "lint": "eslint src",
+        "build": "node ./bundle.js",
+        "start": "npm run build && electron .",
+        "watch": "node ./bundle.js --watch"
+    },
+    "repository": "https://github.com/JaydenDev/Catalyst",
+    "keywords": [
+        "Electron",
+        "Browser",
+        "Internet"
+    ],
+    "author": "JaydenDev",
+    "license": "MIT",
+    "dependencies": {
+        "classnames": "^2.3.2",
+        "electron": "^21.2.0",
+        "events": "^3.3.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typed-emitter": "^2.1.0"
+    },
+    "devDependencies": {
+        "@types/events": "^3.0.0",
+        "@types/node": "^18.11.2",
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "^18.0.6",
+        "@typescript-eslint/eslint-plugin": "^5.54.0",
+        "@typescript-eslint/parser": "^5.54.0",
+        "concurrently": "^7.4.0",
+        "esbuild": "^0.15.12",
+        "esbuild-sass-plugin": "^2.3.3",
+        "eslint": "^8.35.0",
+        "typescript": "^4.8.4"
+    }
 }

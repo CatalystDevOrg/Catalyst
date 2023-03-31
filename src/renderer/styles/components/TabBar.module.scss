@@ -1,0 +1,201 @@
+@import "../theme";
+
+#tab-bar {
+    $tab-bar-height: 40px;
+
+    display: flex;
+    -webkit-app-region: drag;
+
+    width: 100%;
+    height: $tab-bar-height;
+
+    overflow: hidden;
+    flex-direction: row;
+
+    * {
+        -webkit-app-region: no-drag;
+    }
+
+    #tabs {
+        -webkit-app-region: drag;
+
+        display: flex;
+        flex-grow: 1;
+
+        .tab {
+            $tab-border-radius: 10px;
+
+            $favicon-size: 20px;
+            $favicon-margin: 5px;
+
+            justify-self: flex-start;
+
+            float: left;
+            display: inline-block;
+            position: relative;
+            white-space: nowrap;
+
+            flex-grow: 1;
+            height: $tab-bar-height;
+            max-width: 300px;
+            line-height: $tab-bar-height;
+
+            margin-left: 5px;
+            box-sizing: border-box;
+
+            background-color: $background-1;
+            border-radius: $tab-border-radius $tab-border-radius 0 0;
+
+            width: 0;
+
+            & ~ .tab {
+                margin: 0;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: $tab-border-radius * -2;
+                height: $tab-border-radius * 2;
+                width: $tab-border-radius * 2;
+                bottom: 0;
+                border-bottom-right-radius: 50%;
+                background: rgba(0, 0, 0, 0);
+                box-shadow: 0 $tab-border-radius 0 0 $background-1;
+                pointer-events: none;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                left: 100%;
+                height: $tab-border-radius * 2;
+                width: $tab-border-radius * 2;
+                bottom: 0;
+                border-bottom-left-radius: 50%;
+                background: rgba(0, 0, 0, 0);
+                box-shadow: 0 $tab-border-radius 0 0 $background-1;
+                pointer-events: none;
+            }
+
+            span {
+                display: inline-block;
+                max-width: calc(100% - ($favicon-size + $favicon-margin * 2));
+                height: 100%;
+                vertical-align: top;
+                overflow: hidden;
+            }
+
+            img, i {
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                font-size: 18px;
+                margin: calc(($tab-bar-height - $favicon-size) / 2) 7px calc(($tab-bar-height - $favicon-size) / 2) 5px;
+                text-align: center;
+                color: $background-3;
+            }
+
+            &:not(.active) {
+                background-color: transparent;
+
+                &:after {
+                    display: none;
+                }
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &:has(#window-controls.windows) {
+        justify-content: space-between;
+    }
+}
+
+#window-controls {
+    display: inline-block;
+    height: 100%;
+
+    &.windows {
+        justify-self: baseline;
+        order: 9999;
+
+        .window-control {
+            width: 45px;
+
+            float: right;
+
+            > svg {
+                position: absolute;
+
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+
+                > path {
+                    fill: $text-0;
+                }
+            }
+
+            &:hover {
+                background-color: $background-1;
+            }
+
+            &#close:hover {
+                background-color: #c42b1c;
+            }
+        }
+    }
+
+    &.macos {
+        float: left;
+        margin-left: 5px;
+
+        .window-control {
+            width: 20px;
+
+            &::after {
+                content: "";
+
+                display: block;
+                position: absolute;
+
+                width: 10px;
+                height: 10px;
+
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+
+                border-radius: 50%;
+
+                background-color: $background-3;
+            }
+
+            &#close::after {
+                background-color: #f35d5b;
+            }
+
+            &#minimize::after {
+                background-color: #f9bd3b;
+            }
+
+            &#maximize::after {
+                background-color: #44cc45;
+            }
+        }
+    }
+
+    .window-control {
+        height: 100%;
+
+        position: relative;
+
+        display: inline-block;
+    }
+}

@@ -1,0 +1,69 @@
+@import "../theme";
+
+#toolbar {
+    width: 100%;
+    height: 40px;
+    background-color: $background-1;
+    display: flex;
+    box-sizing: border-box;
+    padding: 5px;
+
+    form {
+        display: flex;
+        flex-grow: 1;
+
+        #omnibox {
+            flex-grow: 1;
+            background-color: $background-0;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            color: inherit;
+            box-sizing: border-box;
+            padding: 0 10px;
+
+            &::placeholder {
+                color: $background-3;
+            }
+        }
+    }
+
+    .icon-group {
+        display: flex;
+
+        justify-content: center;
+        margin: 0 5px;
+
+        i {
+            position: relative;
+            line-height: 30px;
+            width: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: transparent;
+            transition-duration: 0.3s;
+
+            &:hover {
+                background-color: $background-2;
+            }
+
+            &:not(&:last-child) {
+                margin-right: 5px;
+            }
+
+            &.inactive {
+                color: $background-3;
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            font-size: 18px;
+        }
+    }
+
+    #history {
+        margin-left: 0;
+    }
+}
