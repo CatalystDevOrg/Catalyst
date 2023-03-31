@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "allowUnreachableCode": false,
+        "allowJs": false,
+        "jsx": "react-jsx",
+        "alwaysStrict": true,
+        "module": "CommonJS",
+        "target": "ES2020",
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "outDir": "build",
+        "strict": true,
+        "declaration": false,
+        "resolveJsonModule": true
+    },
+    "include": [
+        "src/app.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
+}

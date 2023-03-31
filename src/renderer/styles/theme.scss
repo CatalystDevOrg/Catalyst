@@ -1,0 +1,30 @@
+body.theme-dark-nord {
+    --background-0: #2e3440;
+    --background-1: #3b4252;
+    --background-2: #434c5e;
+    --background-3: #4c566a;
+
+    --text-0: #eceff4;
+    --text-1: #e5e9f0;
+    --text-2: #d8dee9;
+
+    --danger: #bf616a;
+    --warn: #ebcb8b;
+    --safe: #a3be8c;
+}
+
+$background-0: var(--background-0);
+$background-1: var(--background-1);
+$background-2: var(--background-2);
+$background-3: var(--background-3);
+
+$text-0: var(--text-0);
+$text-1: var(--text-1);
+$text-2: var(--text-2);
+
+$danger: var(--danger);
+$warn: var(--warn);
+$safe: var(--safe);
+
+$error: var(--danger);
+$success: var(--safe);

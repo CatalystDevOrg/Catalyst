@@ -1,0 +1,24 @@
+@import "./theme.scss";
+
+@import url("./fonts/material-icons.scss");
+@import url("./fonts/simvoni.scss");
+
+body {
+    --total-height: 80px;
+
+    width: 100%;
+    height: var(--total-height);
+
+    margin: 0;
+
+    background-color: $background-0;
+
+    color: $text-0;
+
+    font-family: Simvoni, sans-serif;
+    font-size: 14px;
+
+    * {
+        user-select: none;
+    }
+}
