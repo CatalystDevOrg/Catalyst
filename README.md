@@ -72,6 +72,13 @@ The Catalyst Project however, is a whole suite of applications for Desktop and M
 </tr>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/Zxnii>
+            <img src=https://avatars.githubusercontent.com/u/61130784?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=zani/>
+            <br />
+            <sub style="font-size:14px"><b>zani</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/CocoTheMii>
             <img src=https://avatars.githubusercontent.com/u/44563370?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Coco/>
             <br />
@@ -87,5 +94,6 @@ The Catalyst Project however, is a whole suite of applications for Desktop and M
     </td>
 </tr>
 </table>
+
 # Stay up to date!
 Get the latest updates on all Catalyst applications on [the Discord](https://dsc.gg/catalystsoftware)!

@@ -1,10 +1,8 @@
 name: Add contributors
 on:
-  schedule:
-    - cron: "* * * * *"
-# push:
-#   branches:
-#     - master
+  push:
+   branches:
+    - develop
 
 jobs:
   add-contributors:
