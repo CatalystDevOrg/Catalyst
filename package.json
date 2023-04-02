@@ -8,7 +8,11 @@
         "lint": "eslint src",
         "build": "node ./bundle.js",
         "start": "npm run build && electron .",
-        "watch": "node ./bundle.js --watch"
+        "watch": "node ./bundle.js --watch",
+        "dist": "npm run build && electron-builder -mwl",
+        "dist:win": "npm run build && electron-builder -w",
+        "dist:mac": "npm run build && electron-builder -m",
+        "dist:linux": "npm run build && electron-builder -l"
     },
     "repository": "https://github.com/JaydenDev/Catalyst",
     "keywords": [
@@ -20,7 +24,6 @@
     "license": "MIT",
     "dependencies": {
         "classnames": "^2.3.2",
-        "electron": "^21.2.0",
         "events": "^3.3.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -37,6 +40,86 @@
         "esbuild": "^0.15.12",
         "esbuild-sass-plugin": "^2.3.3",
         "eslint": "^8.35.0",
-        "typescript": "^4.8.4"
+        "typescript": "^4.8.4",
+        "electron": "^21.2.0",
+        "electron-builder": "^23.6.0"
+    },
+    "build": {
+        "files": [
+            "build/**"
+        ],
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "portable",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        },
+        "linux": {
+            "category": "Network",
+            "maintainer": "JaydenDev",
+            "target": [
+                {
+                    "target": "appimage",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "deb",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "rpm",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "mac": {
+            "category": "public.app-category.productivity",
+            "target": [
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "nsis": {
+            "artifactName": "CatalystSetup-Win.${ext}"
+        },
+        "portable": {
+            "artifactName": "CatalystPortable-Win.${ext}"
+        },
+        "deb": {
+            "artifactName": "Catalyst-Linux-${arch}.${ext}"
+        },
+        "appImage": {
+            "artifactName": "Catalyst-Linux-${arch}.${ext}"
+        },
+        "rpm": {
+            "artifactName": "Catalyst-Linux-${arch}.${ext}"
+        },
+        "dmg": {
+            "artifactName": "Catalyst-Max-${arch}.${ext}"
+        }
     }
 }

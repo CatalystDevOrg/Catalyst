@@ -1,6 +1,7 @@
 # output & dependencies
-build
-node_modules
+/dist
+/build
+/node_modules
 
 # ide
 /.idea
