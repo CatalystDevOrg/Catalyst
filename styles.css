@@ -92,4 +92,9 @@
 /* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */
 webview {
 	background-color: #ffffff;
+	scroll-behavior: smooth;
+}
+
+html {
+	scroll-behavior: smooth;
 }
