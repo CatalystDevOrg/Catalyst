@@ -34,7 +34,7 @@
         "@electron-forge/maker-zip": "^6.0.5",
         "@electron-forge/publisher-github": "^6.0.0-beta.69",
         "concurrently": "latest",
-        "electron": "^22.3.2",
+        "electron": "^24.3.1",
         "electron-reloader": "^1.2.3",
         "eslint": "^8.32.0",
         "electron-forge-maker-appimage": "trusktr/electron-forge-maker-appimage#patch-1",
