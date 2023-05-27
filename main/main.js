@@ -1,10 +1,12 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const path = require('path');
 const { Menu, ipcMain } = require('electron');
+const { setupTitlebar, attachTitlebarToWindow } = require("custom-electron-titlebar/main");
 
 if (require('electron-squirrel-startup')) app.quit();
 
 let mainWindow;
+setupTitlebar();
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -12,6 +14,8 @@ function createWindow() {
         height: 768,
         minWidth: 800,
         minHeight: 600,
+        frame: false,
+        titleBarStyle: 'hidden',
         webPreferences: {
             webviewTag: true,
             devTools: true,
@@ -24,6 +28,7 @@ function createWindow() {
     mainWindow.loadFile('./src/index.html');
     mainWindow.setMenuBarVisibility(false);
     require('update-electron-app')();
+    attachTitlebarToWindow(mainWindow);
 }
 
 app.whenReady().then(() => {
