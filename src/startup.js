@@ -9,6 +9,7 @@ setTimeout(() => {
 
 if (!localStorage.getItem('home-postfix')) {
     var ctlyststrppg = './home.html';
+    localStorage.setItem('ctlyststrppg', './home.html')
     localStorage.setItem('home-postfix', 'true');
 }
 
