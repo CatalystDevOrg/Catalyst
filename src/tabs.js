@@ -2,10 +2,6 @@
 let activeHash = '0';
 let hasFavicon = {};
 // Functions
-if (!localStorage.getItem('ctlyststrppg')) {
-    localStorage.setItem('ctlyststrppg', './home.html');
-    var ctlyststrppg = './home.html';
-}
 
 /**
  * Creates a new tab
@@ -13,7 +9,7 @@ if (!localStorage.getItem('ctlyststrppg')) {
  */
 
 async function createTab(url) {
-    url = url || ctlyststrppg;
+    url = url || localStorage.getItem('catalyststrppg') || './home.html'
     const packageJSON = await getPackageJSON();
     const inputAgent = JSON.parse(
         window.localStorage.getItem('preferences')
