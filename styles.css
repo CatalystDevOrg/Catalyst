@@ -48,9 +48,6 @@
 	.suggestions-box {
 		@apply absolute rounded-b-lg bg-red-200 dark:bg-gray-800 border-blue-500 shadow;
 	}
-	*:focus {
-		@apply outline-emerald-600;
-	}
 	.sliding-rtl {
 		animation-name: sliding-rtl;
 		animation-duration: 100ms;
