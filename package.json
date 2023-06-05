@@ -6,14 +6,11 @@
     "private": true,
     "scripts": {
         "start": "electron .",
-        "dev": "concurrently -k npm:start npm:tailwind",
-        "tailwind": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch",
-        "tailwind:once": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify",
         "package": "electron-forge package",
         "package:flatpak": "electron-forge package flatpak",
         "publish": "electron-forge publish",
         "make": "electron-forge make",
-        "build": "concurrently -k npm:tailwind:once npm:make",
+        "build": "npm:make",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     },
