@@ -46,7 +46,7 @@ function loadURL(url) {
         ).src = `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
     } else {
         if ( url.startsWith('http://') ) {
-            alert(`Page ${url} is not secure.`)
+            alert(`Page ${url} is not secure.`);
         }
         view.src = url;
         view.addEventListener('did-fail-load', () => {

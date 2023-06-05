@@ -9,7 +9,7 @@ let hasFavicon = {};
  */
 
 async function createTab(url) {
-    url = url || localStorage.getItem('catalyststrppg') || './home.html'
+    url = url || localStorage.getItem('catalyststrppg') || './home.html';
     const packageJSON = await getPackageJSON();
     const inputAgent = JSON.parse(
         window.localStorage.getItem('preferences')
