@@ -157,7 +157,7 @@ const template = [{
         label: "Check for Updates",
         accelerator: "CmdOrCtrl+U",
         click: function() {
-            checkForUpdate(mainWindow);
+            // checkForUpdate(mainWindow);
         }
     }
 ];
