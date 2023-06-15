@@ -1,6 +1,6 @@
 {
     "name": "catalyst-lts",
-    "version": "3.1.10",
+    "version": "3.1.11-lts",
     "description": "A minimal Electron Web Browser",
     "main": "main/main.js",
     "private": true,
