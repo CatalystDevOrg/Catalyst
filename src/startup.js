@@ -1,11 +1,14 @@
 // add startup code here
 // dont touch this, it makes the loading screen work
-setTimeout(() => {
-    document.getElementById('loading').classList.add('opacity-0');
-    setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-    }, 500);
-}, 1000);
+if(document.readyState === 'ready' || document.readyState === 'complete') {
+    document.getElementById('loading').classList.add('opacity-0')
+  } else {
+    document.onreadystatechange = function () {
+      if (document.readyState == "complete") {
+        document.getElementById('loading').classList.add('opacity-0')
+      }
+    }
+}
 
 if (!localStorage.getItem('home-postfix')) {
     var ctlyststrppg = './home.html';
