@@ -98,3 +98,7 @@ webview {
 html {
 	scroll-behavior: smooth;
 }
+
+.cet-container {
+	overflow: hidden !important;
+}

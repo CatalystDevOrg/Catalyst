@@ -42,6 +42,7 @@
     },
     "dependencies": {
         "cross-fetch": "^3.1.5",
+        "custom-electron-titlebar": "^4.2.4",
         "electron-context-menu": "^3.6.1",
         "electron-squirrel-startup": "^1.0.0",
         "update-electron-app": "^2.0.1"

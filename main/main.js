@@ -2,10 +2,13 @@ const { app, BrowserWindow, dialog } = require('electron');
 const path = require('path');
 const { Menu} = require('electron');
 const contextMenu = require('electron-context-menu');
+const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main')
 
 if (require('electron-squirrel-startup')) app.quit();
 
 let mainWindow;
+
+setupTitlebar();
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -13,6 +16,8 @@ function createWindow() {
         height: 768,
         minWidth: 1024,
         minHeight: 768,
+        titleBarStyle: 'hidden',
+        frame: false,
         webPreferences: {
             webviewTag: true,
             devTools: true,
@@ -26,6 +31,7 @@ function createWindow() {
     mainWindow.loadFile('./src/index.html');
     mainWindow.setMenuBarVisibility(false);
     require('update-electron-app')();
+    attachTitlebarToWindow(mainWindow);
 }
 
 app.whenReady().then(() => {
@@ -109,20 +115,6 @@ const template = [{
     label: 'Quit',
     click: function() {
         app.quit();
-    }
-},
-{
-    label: 'Hide',
-    accelerator: 'CmdOrCtrl+H',
-    click: function() {
-        mainWindow.setMenuBarVisibility(false);
-    }
-},
-{
-    label: 'Show',
-    accelerator: 'CmdOrCtrl+S',
-    click: function() {
-        mainWindow.setMenuBarVisibility(true);
     }
 },
 {
