@@ -11,7 +11,8 @@
 </head>
 
 <body class="object-contain bg min-w-full bg-gray-200 dark:bg-gray-900 min-h-screen bg-white/0 overflow-hidden">
-    <div id="loading" class="fixed z-40 flex items-center justify-center w-full h-full transition duration-500 bg-gray-50 dark:bg-gray-900">
+    <div id="loading"
+        class="fixed z-40 flex items-center justify-center w-full h-full transition duration-500 bg-gray-50 dark:bg-gray-900">
         <img src="../assets/icon.png" alt="loading..." class="animate-spin h-1/2 aspect-square">
     </div>
     </div>
@@ -23,98 +24,125 @@
         </div>
         <div class="inline-flex px-1">
             <button id="create-tab" onclick="createTab()" class="btn"><img src="../assets/icons/plus.svg"
-          alt="Create tab"></button>&nbsp;
+                    alt="Create tab"></button>&nbsp;
             <button id="remove-tab" onclick="removeTab()" class="btn"><img src="../assets/icons/x.svg"
-          alt="Remove tab"></button>&nbsp;
+                    alt="Remove tab"></button>&nbsp;
             <button id="remove-tab" onclick="bookmarkCurrentTab()" class="btn"><img src="../assets/icons/star.svg"
-          width="" alt="Bookmark tab" disabled></button>
+                    width="" alt="Bookmark tab" disabled></button>
         </div>
     </div>
     <!-- Utility bar -->
     <div class="w-full flex pb-1 dark:text-gray-900 bg-white dark:bg-gray-800">
-        <button id="back" class="btn"><img
-        src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
-        <button id="forward" class="btn"><img
-        src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
-        <input id="searchbar" type="text" class="rounded-3xl outline-0 dark:text-white min-w-fit w-[95%] text-sm bg-gray-100 dark:bg-gray-700 dark:text-gray-900 py-1 px-2" placeholder="Search or type a URL" />&nbsp;
-        <button id="reload" class="btn"><img
-        src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
-        <button id="more-btn" class="btn"><img
-        src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>&nbsp;
-        <button class="dark:text-white btn" id="bkmtggl"><img width="20" height="20" src="../assets/icons/bookmark.svg"></button>&nbsp;
+        <button id="back" class="btn"><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
+        <button id="forward" class="btn"><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
+        <input id="searchbar" type="text"
+            class="rounded-3xl outline-0 dark:text-white min-w-fit w-[95%] text-sm bg-gray-100 dark:bg-gray-700 dark:text-gray-900 py-1 px-2"
+            placeholder="Search or type a URL" />&nbsp;
+        <button id="reload" class="btn"><img src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
+        <button id="more-btn" class="btn"><img src="../assets/icons/three-dots-vertical.svg"
+                alt="More menu"></button>&nbsp;
+        <button class="dark:text-white btn" id="bkmtggl"><img width="20" height="20"
+                src="../assets/icons/bookmark.svg"></button>&nbsp;
     </div>
     <!-- More menu -->
-    <div id="more-menu" class="sliding-rtl shadow-lg absolute bg-white dark:bg-gray-800 dark:text-white text-gray-900 h-[95%] p-1.5 w-[15vw] blurred float-right hidden right-0 ">
+    <div id="more-menu"
+        class="sliding-rtl shadow-lg absolute bg-white dark:bg-gray-800 dark:text-white text-gray-900 h-[95%] p-1.5 w-[15vw] blurred float-right hidden right-0 ">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="moreMenuItem flex cursor-pointer" onclick="togglePreferences()">
-                <img class="rounded-sm dark:invert p-1" src="../assets/icons/gear-fill.svg" class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/gear-fill.svg"
+                    class="inline-flex mb-1 px-2" alt="Settings">&nbsp;Preferences
             </li>&nbsp;
             <li class="moreMenuItem cursor-pointer flex" onclick="inspectTab()">
-                <img class="rounded-sm dark:invert p-1" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2" alt="Tools">&nbsp;Inspect tab
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/code.svg" class="inline-flex mb-1 px-2"
+                    alt="Tools">&nbsp;Inspect tab
             </li>&nbsp;
-            <li onClick="createTab('https://github.com/JaydenDev/Catalyst/issues/new')" class="moreMenuItem flex cursor-pointer">
-                <img class="rounded-sm dark:invert p-1" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Feedback
+            <li onClick="createTab('https://github.com/JaydenDev/Catalyst/issues/new')"
+                class="moreMenuItem flex cursor-pointer">
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/bug.svg" class="inline-flex mb-1 px-2"
+                    alt="this image has not loaded properly">&nbsp;Feedback
             </li>&nbsp;
             <li onClick="createTab('https://github.com/JaydenDev/Catalyst')" class="moreMenuItem flex cursor-pointer">
-                <img class="rounded-sm dark:invert p-1" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Development
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/github.svg" class="inline-flex mb-1 px-2"
+                    alt="this image has not loaded properly">&nbsp;Development
             </li>&nbsp;
             <a onClick="downloadCurrentPage()" class="moreMenuItem flex cursor-pointer">
-                <img class="rounded-sm dark:invert p-1" src="../assets/icons/download.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly">&nbsp;Download Page
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/download.svg" class="inline-flex mb-1 px-2"
+                    alt="this image has not loaded properly">&nbsp;Download Page
             </a>&nbsp;
             <a id="changelogbtn" onClick="openChangeLog()" class="moreMenuItem flex cursor-pointer">
-                <svg fill="#FFFFFF" class="rounded-sm p-1 invert dark:invert-0" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M64.333,490h58.401l33.878-137.69h122.259L245.39,490h58.401l33.878-137.69h119.92v-48.162h-108.24l29.2-117.324h79.04 v-48.162H390.23L424.108,0H365.31l-33.878,138.661H208.79L242.668,0h-58.415l-33.864,138.661H32.411v48.162h106.298l-28.818,117.324 h-77.48v48.162h65.8L64.333,490z M197.11,186.824h122.642l-29.2,117.324H168.292L197.11,186.824z"></path></g></svg>&nbsp;&nbsp;<span id="ver"></span>&nbsp;Changes
+                <svg fill="#FFFFFF" class="rounded-sm p-1 invert dark:invert-0" height="20px" width="20px" version="1.1"
+                    id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 490 490" xml:space="preserve">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M64.333,490h58.401l33.878-137.69h122.259L245.39,490h58.401l33.878-137.69h119.92v-48.162h-108.24l29.2-117.324h79.04 v-48.162H390.23L424.108,0H365.31l-33.878,138.661H208.79L242.668,0h-58.415l-33.864,138.661H32.411v48.162h106.298l-28.818,117.324 h-77.48v48.162h65.8L64.333,490z M197.11,186.824h122.642l-29.2,117.324H168.292L197.11,186.824z">
+                        </path>
+                    </g>
+                </svg>&nbsp;&nbsp;<span id="ver"></span>&nbsp;Changes
             </a>
         </ul>
     </div>
     <!-- Bookmarks -->
-    <div id="bookmarks" class="grid grid-cols-3 grid-rows-6 sliding-ttb backdrop-blur-2xl flex px-1 mb-0.2 h-screen hidden bg-white dark:bg-gray-800">
+    <div id="bookmarks"
+        class="grid grid-cols-3 grid-rows-6 sliding-ttb backdrop-blur-2xl flex px-1 mb-0.2 h-screen hidden bg-white dark:bg-gray-800">
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="sliding-rtl fixed text-md right-0 shadow-lg bg-gray-200 p-1.5 dark:bg-gray-800 w-[17vw] h-screen hidden max-h-screen h-full text-gray-900 dark:text-gray-50" style="overflow-y: scroll !important;"">
-        <button onClick="togglePreferences()" class="btn"><img class="dark:invert" src="../assets/icons/x.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly"></button>
-        <h1 class="font-bold text-xl">Preferences</h1>
-        <label for="pref-darkmode">Dark Mode? </label>
-        <input id="pref-darkmode" type="checkbox" class="" />
-        <p class="text-sm">Toggle dark mode</p>
-        <br />
-        <label for="pref-autocomplete">Autocomplete </label>
-        <input id="pref-autocomplete" type="checkbox" class="" />
-        <p class="text-sm">Search Autocomplete</p>
-        <br />
-        <label for="pref-strt">Startup Page</label>
-        <input class="text-black p-1.5 rounded-sm" id="pref-strt" class=""/>
-        <p class="text-sm">Sets a custom startup page.</p>
-        <br />
-        <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
-        <input id="pref-dm" type="checkbox" class=""/>  
-        <p class="text-sm">Toggles forced dark mode for all sites.</p>
-        <br />
-        <label for="pref-usrchr">Custom CSS</label>
-        <input id="pref-usrchr" type="checkbox" class=""/>  
-        <p class="text-sm">Loads custom css from the userChrome.css file</p>
-        <br />
-        <label for="pref-adblk">Enable AD Blocker</label>
-        <input id="pref-adblk" type="checkbox" class=""/>  
-        <p class="text-sm">Enables the ad blocker</p>
-        <br />
-                <button onclick="clearData()" class="btn">
-      Clear Data</button>
-        <br />
-        <br />
-        <i class="text-sm" id="pref-ver"></i>
-        <br /> 
-        <i class="text-sm" id="distrib_id">catalyst-default-distrib</i>
+    <div id="preferences-box" class="h-screen flex items-center justify-center hidden">
+    <div
+        class="overflow-auto text-md shadow-lg bg-gray-200 p-1.5 dark:bg-gray-800 w-[17vw]
+        text-gray-900 dark:text-gray-50 rounded-lg w-[55em] h-[35em]">
+        <div class="ml-4 mt-2">
+            <button onClick="togglePreferences()" class="btn"><img class="dark:invert" src="../assets/icons/x.svg"
+                    class="inline-flex mb-1 px-2" alt="this image has not loaded properly"></button>
+            <h1 class="font-bold text-xl">Preferences</h1>
+            <label for="pref-darkmode">Dark Mode? </label>
+            <input id="pref-darkmode" type="checkbox" class="" />
+            <p class="text-sm">Toggle dark mode</p>
+            <br />
+            <label for="pref-autocomplete">Autocomplete </label>
+            <input id="pref-autocomplete" type="checkbox" class="" />
+            <p class="text-sm">Search Autocomplete</p>
+            <br />
+            <label for="pref-strt">Startup Page</label>
+            <input class="text-black p-1.5 rounded-sm" id="pref-strt" class="" />
+            <p class="text-sm">Sets a custom startup page.</p>
+            <br />
+            <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
+            <input id="pref-dm" type="checkbox" class="" />
+            <p class="text-sm">Toggles forced dark mode for all sites.</p>
+            <br />
+            <label for="pref-usrchr">Custom CSS</label>
+            <input id="pref-usrchr" type="checkbox" class="" />
+            <p class="text-sm">Loads custom css from the userChrome.css file</p>
+            <br />
+            <label for="pref-adblk">Enable AD Blocker</label>
+            <input id="pref-adblk" type="checkbox" class="" />
+            <p class="text-sm">Enables the ad blocker</p>
+            <br />
+            <button onclick="clearData()" class="btn">
+                Clear Data</button>
+            <br />
+            <br />
+            <i class="text-sm" id="pref-ver"></i>
+            <br />
+            <i class="text-sm" id="distrib_id">catalyst-default-distrib</i>
+        </div>
+    </div>
     </div>
     <!-- Suggestions -->
     <div class="sliding-ttb bg-gray-200 dark:bg-gray-800 suggestions-box" id="autocomplete-suggestions">
         <!-- suggestions made with js -->
     </div>
     <!-- Welcome to Catalyst page -->
-    <div id="welcomepage" class="hidden h-fit shadow-xl border-2 dark:border-0 bg-gray-200 dark:bg-gray-900 dark:text-white p-1.5 -l w-full rounded-b-sm">
+    <div id="welcomepage"
+        class="hidden h-fit shadow-xl border-2 dark:border-0 bg-gray-200 dark:bg-gray-900 dark:text-white p-1.5 -l w-full rounded-b-sm">
         <h1 class="dark:text-white font-bold text-xl">Welcome to Catalyst!</h1>&nbsp;
         <button class="rounded-sm p-1 bg-white text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
-        <button class="rounded-sm p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your Browser!</button>&nbsp;
+        <button class="rounded-sm p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your
+            Browser!</button>&nbsp;
     </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
