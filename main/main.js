@@ -1,5 +1,6 @@
 const { app, BrowserWindow, dialog, Menu, session, ipcMain } = require('electron');
 const path = require('path');
+const fs = require('fs')
 const contextMenu = require('electron-context-menu');
 const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main')
 
@@ -150,6 +151,12 @@ app.on("web-contents-created", (e, contents) => {
 
 ipcMain.handle('loadExt', async (event, ext) => {
     session.defaultSession.loadExtension(ext)
+})
+
+ipcMain.handle('read-user-data', async (event, fileName) => {
+    const path = app.getPath('userData');
+    const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r'});
+    return buf;
 })
 
 const menu = Menu.buildFromTemplate(template);

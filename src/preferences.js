@@ -18,6 +18,8 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocomplete');
         document.getElementById('pref-dm').checked = preferences.dm;
         addCheckboxListener(document.getElementById('pref-dm'), 'dm');
+        document.getElementById('pref-usrchr').checked = preferences.usrchr
+        addCheckboxListener(document.getElementById('pref-usrchr'), 'usrchr');
     }
 }
 
@@ -81,5 +83,8 @@ function evaluatePreferences() {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
+    }
+    if (preferences.usrchr) {
+        cat.loadCustomStyles();
     }
 }
