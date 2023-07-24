@@ -1,6 +1,7 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const path = require('path');
-const { Menu, ipcMain } = require('electron');
+const { Menu} = require('electron');
+const contextMenu = require('electron-context-menu');
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -17,6 +18,7 @@ function createWindow() {
             devTools: true,
             sandbox: false,
             preload: path.join(__dirname, 'preload.js'),
+            spellcheck: true
         },
         title: 'Catalyst',
         icon: path.join(__dirname, '../assets/icon.png'),
@@ -138,6 +140,22 @@ const template = [{
         }
     }*/
 ];
+
+app.on("web-contents-created", (e, contents) => {
+    contextMenu({
+        window: contents,
+        showSaveImageAs: true,
+        showSaveImage: true,
+        showInspectElement: true,
+        showLearnSpelling: true,
+        showSearchWithGoogle: true,
+        showSelectAll: true,
+        showCopyImageAddress: true,
+        showCopyVideoAddress: true,
+        showSaveVideoAs: true,
+        showCopyLink: true,
+     });
+})
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
