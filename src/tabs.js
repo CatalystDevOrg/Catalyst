@@ -71,6 +71,7 @@ function switchTabs(tabHash) {
     document.getElementById('view-' + tabHash).style.display = 'flex';
     document.getElementById('view-' + tabHash).classList.add('current');
     view = document.getElementById('view-' + tabHash);
+    document.getElementById('searchbar').value = view.src;
     activeHash = tabHash;
 }
 
