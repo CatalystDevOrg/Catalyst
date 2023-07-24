@@ -18,9 +18,9 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocomplete');
         document.getElementById('pref-dm').checked = preferences.dm;
         addCheckboxListener(document.getElementById('pref-dm'), 'dm');
-        document.getElementById('pref-usrchr').checked = preferences.usrchr
+        document.getElementById('pref-usrchr').checked = preferences.usrchr;
         addCheckboxListener(document.getElementById('pref-usrchr'), 'usrchr');
-        document.getElementById('pref-adblk').checked = preferences.adblk
+        document.getElementById('pref-adblk').checked = preferences.adblk;
         addCheckboxListener(document.getElementById('pref-adblk'), 'adblk');
     }
 }

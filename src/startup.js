@@ -1,13 +1,13 @@
 // add startup code here
 // dont touch this, it makes the loading screen work
 if(document.readyState === 'ready' || document.readyState === 'complete') {
-    document.getElementById('loading').classList.add('hidden')
-  } else {
+    document.getElementById('loading').classList.add('hidden');
+} else {
     document.onreadystatechange = function () {
-      if (document.readyState == "complete") {
-        document.getElementById('loading').classList.add('hidden')
-      }
-    }
+        if (document.readyState == 'complete') {
+            document.getElementById('loading').classList.add('hidden');
+        }
+    };
 }
 
 if (!localStorage.getItem('home-postfix')) {

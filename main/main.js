@@ -1,10 +1,10 @@
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const { app, BrowserWindow, dialog, Menu, session, ipcMain } = require('electron');
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
 const fetch = require('cross-fetch');
 const contextMenu = require('electron-context-menu');
-const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main')
+const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -135,7 +135,7 @@ const template = [{
     }*/
 ];
 
-app.on("web-contents-created", (e, contents) => {
+app.on('web-contents-created', (e, contents) => {
     contextMenu({
         window: contents,
         showSaveImageAs: true,
@@ -148,24 +148,24 @@ app.on("web-contents-created", (e, contents) => {
         showCopyVideoAddress: true,
         showSaveVideoAs: true,
         showCopyLink: true,
-     });
-})
+    });
+});
 
 ipcMain.handle('enable-ad-blocker', (event) => {
     ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
         blocker.enableBlockingInSession(session.defaultSession);
-    })
+    });
 });
 
 ipcMain.handle('loadExt', async (event, ext) => {
-    session.defaultSession.loadExtension(ext)
-})
+    session.defaultSession.loadExtension(ext);
+});
 
 ipcMain.handle('read-user-data', async (event, fileName) => {
     const path = app.getPath('userData');
     const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r'});
     return buf;
-})
+});
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

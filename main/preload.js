@@ -1,6 +1,6 @@
 const path = require('path');
-const { Titlebar } = require("custom-electron-titlebar");
-const { ipcRenderer, contextBridge, app } = require('electron')
+const { Titlebar } = require('custom-electron-titlebar');
+const { ipcRenderer, contextBridge, app } = require('electron');
 
 const dat = require(path.join(__dirname, '../package.json'),);
 
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 contextBridge.exposeInMainWorld('cat', {
     loadExt: (ext) => {
-        ipcRenderer.invoke('loadExt', ext)
+        ipcRenderer.invoke('loadExt', ext);
     },
     loadCustomStyles: () => {
         const file = ipcRenderer.invoke('read-user-data', 'userChrome.css').then(
@@ -22,8 +22,8 @@ contextBridge.exposeInMainWorld('cat', {
                 el.innerText = result;
                 document.head.appendChild(el);
             }
-        )
+        );
     },
     enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker')
-})
+});
 
