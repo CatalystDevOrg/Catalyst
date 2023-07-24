@@ -134,18 +134,3 @@ function removeTab() {
             )
     );
 }
-
-document.addEventListener('keydown', (e) => handleTabShortcuts(e));
-
-function handleTabShortcuts(e) {
-    // on macos, e.ctrlKey isn't true when pressing cmd, so use e.metaKey too
-    const isModifier = e.metaKey || e.ctrlKey;
-    if (isModifier && e.key === 't') {
-        createTab();
-        e.preventDefault();
-    }
-    if (isModifier && e.key === 'w') {
-        removeTab();
-        e.preventDefault();
-    }
-}
