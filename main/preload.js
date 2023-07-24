@@ -23,7 +23,7 @@ contextBridge.exposeInMainWorld('cat', {
                 document.head.appendChild(el);
             }
         )
-    }
-
+    },
+    enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker')
 })
 

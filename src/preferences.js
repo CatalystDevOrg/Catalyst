@@ -20,6 +20,8 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-dm'), 'dm');
         document.getElementById('pref-usrchr').checked = preferences.usrchr
         addCheckboxListener(document.getElementById('pref-usrchr'), 'usrchr');
+        document.getElementById('pref-adblk').checked = preferences.adblk
+        addCheckboxListener(document.getElementById('pref-adblk'), 'adblk');
     }
 }
 
@@ -86,5 +88,8 @@ function evaluatePreferences() {
     }
     if (preferences.usrchr) {
         cat.loadCustomStyles();
+    }
+    if (preferences.adblk) {
+        cat.enableAdBlocker();
     }
 }

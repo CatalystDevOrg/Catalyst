@@ -71,7 +71,7 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="sliding-rtl fixed text-md right-0 shadow-lg bg-gray-200 p-1.5 dark:bg-gray-800 w-[17vw] h-screen hidden max-h-screen h-full text-gray-900 dark:text-gray-50">
+    <div id="preferences-box" class="sliding-rtl fixed text-md right-0 shadow-lg bg-gray-200 p-1.5 dark:bg-gray-800 w-[17vw] h-screen hidden max-h-screen h-full text-gray-900 dark:text-gray-50" style="overflow-y: scroll !important;"">
         <button onClick="togglePreferences()" class="btn"><img class="dark:invert" src="../assets/icons/x.svg" class="inline-flex mb-1 px-2" alt="this image has not loaded properly"></button>
         <h1 class="font-bold text-xl">Preferences</h1>
         <label for="pref-darkmode">Dark Mode? </label>
@@ -93,6 +93,10 @@
         <label for="pref-usrchr">Custom CSS</label>
         <input id="pref-usrchr" type="checkbox" class=""/>  
         <p class="text-sm">Loads custom css from the userChrome.css file</p>
+        <br />
+        <label for="pref-adblk">Enable AD Blocker</label>
+        <input id="pref-adblk" type="checkbox" class=""/>  
+        <p class="text-sm">Enables the ad blocker</p>
         <br />
                 <button onclick="clearData()" class="btn">
       Clear Data</button>

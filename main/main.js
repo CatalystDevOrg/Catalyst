@@ -151,9 +151,11 @@ app.on("web-contents-created", (e, contents) => {
      });
 })
 
-ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
-    blocker.enableBlockingInSession(session.defaultSession);
-})
+ipcMain.handle('enable-ad-blocker', (event) => {
+    ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
+        blocker.enableBlockingInSession(session.defaultSession);
+    })
+});
 
 ipcMain.handle('loadExt', async (event, ext) => {
     session.defaultSession.loadExtension(ext)
