@@ -1,6 +1,8 @@
+const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const { app, BrowserWindow, dialog, Menu, session, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs')
+const fetch = require('cross-fetch');
 const contextMenu = require('electron-context-menu');
 const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main')
 
@@ -147,6 +149,10 @@ app.on("web-contents-created", (e, contents) => {
         showSaveVideoAs: true,
         showCopyLink: true,
      });
+})
+
+ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
+    blocker.enableBlockingInSession(session.defaultSession);
 })
 
 ipcMain.handle('loadExt', async (event, ext) => {
