@@ -10,8 +10,8 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1024,
         height: 768,
-        minWidth: 800,
-        minHeight: 600,
+        minWidth: 1024,
+        minHeight: 768,
         webPreferences: {
             webviewTag: true,
             devTools: true,
