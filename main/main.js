@@ -1,6 +1,5 @@
-const { app, BrowserWindow, dialog } = require('electron');
+const { app, BrowserWindow, dialog, Menu, session, ipcMain } = require('electron');
 const path = require('path');
-const { Menu} = require('electron');
 const contextMenu = require('electron-context-menu');
 const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main')
 
@@ -147,6 +146,10 @@ app.on("web-contents-created", (e, contents) => {
         showSaveVideoAs: true,
         showCopyLink: true,
      });
+})
+
+ipcMain.handle('loadExt', async (event, ext) => {
+    session.defaultSession.loadExtension(ext)
 })
 
 const menu = Menu.buildFromTemplate(template);
