@@ -44,6 +44,7 @@ async function createTab(url) {
     addListeners(view, randomHash);
     document.getElementById('webviews').appendChild(view);
     switchTabs(randomHash);
+    document.getElementById('searchbar').focus()
 }
 createTab();
 
