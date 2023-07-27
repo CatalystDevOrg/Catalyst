@@ -181,5 +181,11 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
     return buf;
 });
 
+ipcMain.handle('write-to-history', async (event, title, url) => {
+    const path = app.getPath('userData');
+    const file = path + '/history.txt'
+    fs.writeFileSync(file, `${title}`);
+})
+
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
