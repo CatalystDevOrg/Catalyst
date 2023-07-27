@@ -123,14 +123,14 @@ const template = [{
     label: 'New Tab',
     accelerator: 'CmdOrCtrl+T',
     click: function () {
-        mainWindow.webContents.executeJavaScript('createTab()')
+        mainWindow.webContents.executeJavaScript('createTab()');
     }
 },
 {
     label: 'Close Tab',
     accelerator: 'CmdOrCtrl+W',
     click: function () {
-        mainWindow.webContents.executeJavaScript('removeTab()')
+        mainWindow.webContents.executeJavaScript('removeTab()');
     }
 },
 {

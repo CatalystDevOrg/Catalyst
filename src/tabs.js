@@ -44,7 +44,7 @@ async function createTab(url) {
     addListeners(view, randomHash);
     document.getElementById('webviews').appendChild(view);
     switchTabs(randomHash);
-    document.getElementById('searchbar').focus()
+    document.getElementById('searchbar').focus();
 }
 createTab();
 
@@ -72,7 +72,7 @@ function switchTabs(tabHash) {
     document.getElementById('view-' + tabHash).classList.add('current');
     view = document.getElementById('view-' + tabHash);
     if (view.src.includes('home.html')) {
-        document.getElementById('searchbar').value = "catalyst://home"
+        document.getElementById('searchbar').value = 'catalyst://home';
     } else {
         document.getElementById('searchbar').value = view.src;
     }
