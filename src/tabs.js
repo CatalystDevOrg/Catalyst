@@ -71,7 +71,11 @@ function switchTabs(tabHash) {
     document.getElementById('view-' + tabHash).style.display = 'flex';
     document.getElementById('view-' + tabHash).classList.add('current');
     view = document.getElementById('view-' + tabHash);
-    document.getElementById('searchbar').value = view.src;
+    if (view.src.includes('home.html')) {
+        document.getElementById('searchbar').value = "catalyst://home"
+    } else {
+        document.getElementById('searchbar').value = view.src;
+    }
     activeHash = tabHash;
 }
 
