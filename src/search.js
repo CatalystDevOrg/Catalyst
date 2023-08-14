@@ -58,7 +58,13 @@ function loadURL(url) {
     removeChildren(suggestionsEl);
     view.addEventListener('did-finish-load', () => {
         if (preferences.dm) {
-            invertTab();
+            if (localStorage.getItem('forced-dm-excludes') == null) {
+                invertTab()
+            } else if (localStorage.getItem('forced-dm-excludes').indexOf(view.url)) {
+                return;
+            } else {
+                invertTab()
+            }
         }
     });
 }
