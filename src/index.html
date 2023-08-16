@@ -6,11 +6,12 @@
     <script src="./tabs.js" defer></script>
     <script src="./search.js" defer></script>
     <script src="./preferences.js" defer></script>
+    <script src="./dropHandler.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="object-contain bg min-w-full bg-gray-200 dark:bg-gray-900 min-h-screen bg-white/0 overflow-hidden">
+<body ondrop="dropHandler(event)" ondragover="dragOverHandler(event)"; class="object-contain bg min-w-full bg-gray-200 dark:bg-gray-900 min-h-screen bg-white/0 overflow-hidden">
     <div id="loading"
         class="fixed z-40 flex items-center justify-center w-full h-full transition duration-500 bg-gray-50 dark:bg-gray-900">
         <img src="../assets/icon.png" alt="loading..." class="animate-spin h-1/2 aspect-square">
