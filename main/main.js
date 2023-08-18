@@ -186,5 +186,22 @@ ipcMain.handle('ls-export', async (event, ls) => {
     fs.writeFileSync(`${path}/exported.json`, String(ls), { encoding: 'utf8', flag: 'w' })
 })
 
+ipcMain.handle('ls-import', async (event) => {
+    const fileName = dialog.showOpenDialog({
+        properties: ['openFile', 'multiSelections']
+      }, function (files) {
+        return files.path;
+      });
+    try {
+        if (fs.existsSync(fileName)) {
+            return(fs.readFileSync(`${fileName}`, { encoding: 'utf8', flag: 'r' }));
+        } else {
+            return false;
+        }
+    } catch(err) {
+        return;
+    }
+})
+
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

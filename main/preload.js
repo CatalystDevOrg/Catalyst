@@ -25,8 +25,8 @@ contextBridge.exposeInMainWorld('cat', {
         );
     },
     enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker'),
-    import_data: () => {
-
+    import_data: async () => {
+        alert(await ipcRenderer.invoke('ls-import'));
     },
     export_data: () => {
         ipcRenderer.invoke('ls-export', String(JSON.stringify(localStorage)));
