@@ -181,5 +181,10 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
     return buf;
 });
 
+ipcMain.handle('ls-export', async (event, ls) => {
+    const path = app.getPath('userData');
+    fs.writeFileSync(`${path}/exported.json`, String(ls), { encoding: 'utf8', flag: 'w' })
+})
+
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
