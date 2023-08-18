@@ -13,15 +13,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: actions/upload-artifact@v3
-        with:
-          name: nightly
-          path: |
-            out/
       - name: Install dependencies
         run: npm install
       - name: Get tailwind styles
         run: npm run tailwind:once
       - name: Build
         run: npm run make
+      - name: Upload binaries as build artifacts
+      - uses: actions/upload-artifact@v3
+        with:
+          name: nightly
+          path: |
+            out/
   
