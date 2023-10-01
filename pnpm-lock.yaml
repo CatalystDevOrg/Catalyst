@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^6.2.1
     version: 6.3.0
   '@electron-forge/maker-squirrel':
-    specifier: ^6.2.1
-    version: 6.3.0
+    specifier: ^6.4.2
+    version: 6.4.2
   '@electron-forge/maker-zip':
     specifier: ^6.2.1
     version: 6.3.0
@@ -298,13 +298,13 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-squirrel@6.3.0:
-    resolution: {integrity: sha512-SkVgkwBr+QYT6Cvfp785ni27EINC4tV2SBpy52gFTu+QTtH2cg/4aZJ8jmoXSkJ9rRSMKsHg9z7jInslM5A85w==}
+  /@electron-forge/maker-squirrel@6.4.2:
+    resolution: {integrity: sha512-ukK3RcFaBrQXUzR52PsHxfwDq5XKSnj6A1kkXiyHWqgj+HIU97prBScBb5JRtasPvYN+nDdQO2vlInsLaqcx9Q==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.3.0
-      '@electron-forge/shared-types': 6.3.0
-      fs-extra: 10.0.1
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
+      fs-extra: 10.1.0
     optionalDependencies:
       electron-winstaller: 5.0.0
     transitivePeerDependencies:
