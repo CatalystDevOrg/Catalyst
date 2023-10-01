@@ -21,6 +21,9 @@ searchbar.addEventListener('input', async() => {
         JSON.parse(window.localStorage.getItem('preferences')).autocomplete
     ) {
         // This is for duckduckgo only, in the future, this may be something else, but I think DDG is fine for now.
+        if (engine != engineurls[1]) {
+            return;
+        }
         const autoCompleteCheck = await fetch(
             `https://duckduckgo.com/ac/?q=${encodeURIComponent(searchbar.value)}`
         );
