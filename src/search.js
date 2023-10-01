@@ -1,3 +1,12 @@
+// search engine globals
+const engine = localStorage.getItem('engine') || 'https://duckduckgo.com/?q='
+const engineurls = [
+    "https://google.com/?q=",
+    "https://duckduckgo.com/ac/?q=",
+    "https://www.bing.com/search?q=",
+    "https://search.brave.com/search?q="
+]
+
 // protocols
 const protocols = ['https', 'http', 'file', 'data'];
 const searchbar = document.getElementById('searchbar');
@@ -43,7 +52,7 @@ function loadURL(url) {
     if (shouldAutocomplete(url)) {
         document.querySelector(
             '.current'
-        ).src = `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
+        ).src = `${engine}${encodeURIComponent(url)}`;
     } else {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
