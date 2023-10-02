@@ -32,15 +32,21 @@ devDependencies:
     specifier: ^6.4.2
     version: 6.4.2
   '@electron-forge/maker-dmg':
-    specifier: ^6.4.0
-    version: 6.4.0
+    specifier: ^6.4.2
+    version: 6.4.2
+  '@electron-forge/maker-flatpak':
+    specifier: ^6.4.2
+    version: 6.4.2
   '@electron-forge/maker-rpm':
-    specifier: ^6.2.1
-    version: 6.3.0
+    specifier: ^6.4.2
+    version: 6.4.2
   '@electron-forge/maker-squirrel':
     specifier: ^6.4.2
     version: 6.4.2
   '@electron-forge/maker-zip':
+    specifier: ^6.4.2
+    version: 6.4.2
+  '@electron-forge/plugin-auto-unpack-natives':
     specifier: ^6.4.2
     version: 6.4.2
   '@electron-forge/publisher-github':
@@ -222,30 +228,6 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-base@6.3.0:
-    resolution: {integrity: sha512-zAU2G7yh9gLyFbw08RfU4j8z/QAt5Sm4uaub3dE+GdRuXOc0NeqIfUiwP2xIl6Ja6mt5dU4gvdxQT/+hnqXqoQ==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron-forge/shared-types': 6.3.0
-      fs-extra: 10.1.0
-      which: 2.0.2
-    transitivePeerDependencies:
-      - enquirer
-      - supports-color
-    dev: true
-
-  /@electron-forge/maker-base@6.4.0:
-    resolution: {integrity: sha512-TKSBvf6PQ6IN8RZ8MZDaZITN9QZ5NzvATncxly/biWPkTXsVV290ggBSDcPX2eRAbOYM8g4B4sHuzlwMDt0XcA==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron-forge/shared-types': 6.4.0
-      fs-extra: 10.1.0
-      which: 2.0.2
-    transitivePeerDependencies:
-      - enquirer
-      - supports-color
-    dev: true
-
   /@electron-forge/maker-base@6.4.2:
     resolution: {integrity: sha512-zW3GH+LqDK9nxQmQEFkJPR8RqiX0lVk6a4mXll3ngujN1fPevO4ivUAWmaEVeC1dH/hXbN7s9m0S6a37MigftQ==}
     engines: {node: '>= 14.17.5'}
@@ -271,12 +253,12 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-dmg@6.4.0:
-    resolution: {integrity: sha512-UF7xSX04TDEuMpkQ6YvsjHGgrgk1qpQh9yezzMVfD15PmOV3qwR8aNCQ4o9R2LZ10efuXFwLb8EYMYc5NNjekQ==}
+  /@electron-forge/maker-dmg@6.4.2:
+    resolution: {integrity: sha512-PG3qzDKQhogZe7rPOlWYR72k85mvwYdn4tzAMKTXTJyPy7RNuRq8NhANZHqFyFi95d4fawTcsbyFKM4kY+qQRQ==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.4.0
-      '@electron-forge/shared-types': 6.4.0
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
       fs-extra: 10.1.0
     optionalDependencies:
       electron-installer-dmg: 4.0.0
@@ -285,12 +267,26 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-rpm@6.3.0:
-    resolution: {integrity: sha512-JZkkmGcMR9Ay87emmXZ4GFhrq9YswkA7zftoM+McK3RZoB8hNgCFKVlVI0tJq2UXqDZ5J8Fy3qg3TRNaSiPRIw==}
+  /@electron-forge/maker-flatpak@6.4.2:
+    resolution: {integrity: sha512-L52PcFaYh1Muspiejw8O+WwJhb5wS4PPYHYUPCSPRBPgv4MoAAu1IXY4ZZDTcPROPt/npvuQhz43JOEdSBEVtQ==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.3.0
-      '@electron-forge/shared-types': 6.3.0
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
+      fs-extra: 10.1.0
+    optionalDependencies:
+      '@malept/electron-installer-flatpak': 0.11.4
+    transitivePeerDependencies:
+      - enquirer
+      - supports-color
+    dev: true
+
+  /@electron-forge/maker-rpm@6.4.2:
+    resolution: {integrity: sha512-+hfbY5pYbAer0y07OtOzVgVBHoTRmemqqZ//T0mKJpyK2ThHKGTvyW8FFlr5jlQs5LoDCM2WHKE8oGtRhivsMg==}
+    engines: {node: '>= 14.17.5'}
+    dependencies:
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
     optionalDependencies:
       electron-installer-redhat: 3.3.0
     transitivePeerDependencies:
@@ -321,6 +317,17 @@ packages:
       cross-zip: 4.0.0
       fs-extra: 10.1.0
       got: 11.8.6
+    transitivePeerDependencies:
+      - enquirer
+      - supports-color
+    dev: true
+
+  /@electron-forge/plugin-auto-unpack-natives@6.4.2:
+    resolution: {integrity: sha512-AXmPQc2nUFuh/xFC+Qsebg/eg3M+5GQV6MOzMvTBZ9N1w49XtZbtvEGAdISnZWERExNRcwH+j+zuSAGtm6Y2Yw==}
+    engines: {node: '>= 14.17.5'}
+    dependencies:
+      '@electron-forge/plugin-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
     transitivePeerDependencies:
       - enquirer
       - supports-color
@@ -381,18 +388,6 @@ packages:
     dependencies:
       '@electron/rebuild': 3.2.13
       electron-packager: 17.1.1
-      listr2: 5.0.8
-    transitivePeerDependencies:
-      - enquirer
-      - supports-color
-    dev: true
-
-  /@electron-forge/shared-types@6.4.0:
-    resolution: {integrity: sha512-64nWCUAttNuSqqHPZWoC6ZYaRcBXlpTqD5oHVySmgQ4wD45CSTGjS3D+s09nkRtP56vk5q9qJE8+d6S7nIKzDw==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron/rebuild': 3.2.13
-      electron-packager: 17.1.2
       listr2: 5.0.8
     transitivePeerDependencies:
       - enquirer
@@ -674,6 +669,38 @@ packages:
     dependencies:
       cross-spawn: 7.0.3
     dev: true
+
+  /@malept/electron-installer-flatpak@0.11.4:
+    resolution: {integrity: sha512-ZdwhT4WeeJWdnsmALUtQ7bn4pzYVh0Vg+4NnF1S3n3OACc9IWg+B+LxI5gT3XSXIrxogouqkjM6gD8S592awyA==}
+    engines: {node: '>= 10.0.0'}
+    os: [darwin, linux]
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@malept/flatpak-bundler': 0.4.0
+      debug: 4.3.4
+      electron-installer-common: 0.10.3
+      lodash: 4.17.21
+      semver: 7.3.5
+      yargs: 16.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+    optional: true
+
+  /@malept/flatpak-bundler@0.4.0:
+    resolution: {integrity: sha512-9QOtNffcOF/c1seMCDnjckb3R9WHcG34tky+FHpNKKCW0wc/scYLwMtO+ptyGUfMW0/b/n4qRiALlaFHc9Oj7Q==}
+    engines: {node: '>= 10.0.0'}
+    requiresBuild: true
+    dependencies:
+      debug: 4.3.4
+      fs-extra: 9.1.0
+      lodash: 4.17.21
+      tmp-promise: 3.0.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+    optional: true
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
