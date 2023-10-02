@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^6.4.2
     version: 6.4.2
   '@electron-forge/maker-dmg':
-    specifier: ^6.4.0
-    version: 6.4.0
+    specifier: ^6.4.2
+    version: 6.4.2
   '@electron-forge/maker-flatpak':
     specifier: ^6.4.2
     version: 6.4.2
@@ -228,18 +228,6 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-base@6.4.0:
-    resolution: {integrity: sha512-TKSBvf6PQ6IN8RZ8MZDaZITN9QZ5NzvATncxly/biWPkTXsVV290ggBSDcPX2eRAbOYM8g4B4sHuzlwMDt0XcA==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron-forge/shared-types': 6.4.0
-      fs-extra: 10.1.0
-      which: 2.0.2
-    transitivePeerDependencies:
-      - enquirer
-      - supports-color
-    dev: true
-
   /@electron-forge/maker-base@6.4.2:
     resolution: {integrity: sha512-zW3GH+LqDK9nxQmQEFkJPR8RqiX0lVk6a4mXll3ngujN1fPevO4ivUAWmaEVeC1dH/hXbN7s9m0S6a37MigftQ==}
     engines: {node: '>= 14.17.5'}
@@ -265,12 +253,12 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-dmg@6.4.0:
-    resolution: {integrity: sha512-UF7xSX04TDEuMpkQ6YvsjHGgrgk1qpQh9yezzMVfD15PmOV3qwR8aNCQ4o9R2LZ10efuXFwLb8EYMYc5NNjekQ==}
+  /@electron-forge/maker-dmg@6.4.2:
+    resolution: {integrity: sha512-PG3qzDKQhogZe7rPOlWYR72k85mvwYdn4tzAMKTXTJyPy7RNuRq8NhANZHqFyFi95d4fawTcsbyFKM4kY+qQRQ==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.4.0
-      '@electron-forge/shared-types': 6.4.0
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
       fs-extra: 10.1.0
     optionalDependencies:
       electron-installer-dmg: 4.0.0
@@ -295,10 +283,12 @@ packages:
 
   /@electron-forge/maker-rpm@6.4.2:
     resolution: {integrity: sha512-+hfbY5pYbAer0y07OtOzVgVBHoTRmemqqZ//T0mKJpyK2ThHKGTvyW8FFlr5jlQs5LoDCM2WHKE8oGtRhivsMg==}
+
     engines: {node: '>= 14.17.5'}
     dependencies:
       '@electron-forge/maker-base': 6.4.2
       '@electron-forge/shared-types': 6.4.2
+
     optionalDependencies:
       electron-installer-redhat: 3.3.0
     transitivePeerDependencies:
@@ -384,12 +374,13 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/shared-types@6.4.0:
-    resolution: {integrity: sha512-64nWCUAttNuSqqHPZWoC6ZYaRcBXlpTqD5oHVySmgQ4wD45CSTGjS3D+s09nkRtP56vk5q9qJE8+d6S7nIKzDw==}
+  /@electron-forge/shared-types@6.3.0:
+    resolution: {integrity: sha512-6L4XIC4ErueM3mbWjVJLNtRZPxjdw3aa64e58m8gBwXnrreKVuKL+DFDKMvI2FO7IZXeLsIn/CEka+wQRwW87w==}
     engines: {node: '>= 14.17.5'}
     dependencies:
       '@electron/rebuild': 3.2.13
-      electron-packager: 17.1.2
+      electron-packager: 17.1.1
+
       listr2: 5.0.8
     transitivePeerDependencies:
       - enquirer
