@@ -34,13 +34,19 @@ devDependencies:
   '@electron-forge/maker-dmg':
     specifier: ^6.4.0
     version: 6.4.0
+  '@electron-forge/maker-flatpak':
+    specifier: ^6.4.2
+    version: 6.4.2
   '@electron-forge/maker-rpm':
-    specifier: ^6.2.1
-    version: 6.3.0
+    specifier: ^6.4.2
+    version: 6.4.2
   '@electron-forge/maker-squirrel':
     specifier: ^6.4.2
     version: 6.4.2
   '@electron-forge/maker-zip':
+    specifier: ^6.4.2
+    version: 6.4.2
+  '@electron-forge/plugin-auto-unpack-natives':
     specifier: ^6.4.2
     version: 6.4.2
   '@electron-forge/publisher-github':
@@ -59,8 +65,8 @@ devDependencies:
     specifier: ^1.2.3
     version: 1.2.3
   eslint:
-    specifier: ^8.45.0
-    version: 8.47.0
+    specifier: ^8.50.0
+    version: 8.50.0
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -222,18 +228,6 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-base@6.3.0:
-    resolution: {integrity: sha512-zAU2G7yh9gLyFbw08RfU4j8z/QAt5Sm4uaub3dE+GdRuXOc0NeqIfUiwP2xIl6Ja6mt5dU4gvdxQT/+hnqXqoQ==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron-forge/shared-types': 6.3.0
-      fs-extra: 10.1.0
-      which: 2.0.2
-    transitivePeerDependencies:
-      - enquirer
-      - supports-color
-    dev: true
-
   /@electron-forge/maker-base@6.4.0:
     resolution: {integrity: sha512-TKSBvf6PQ6IN8RZ8MZDaZITN9QZ5NzvATncxly/biWPkTXsVV290ggBSDcPX2eRAbOYM8g4B4sHuzlwMDt0XcA==}
     engines: {node: '>= 14.17.5'}
@@ -285,12 +279,26 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-rpm@6.3.0:
-    resolution: {integrity: sha512-JZkkmGcMR9Ay87emmXZ4GFhrq9YswkA7zftoM+McK3RZoB8hNgCFKVlVI0tJq2UXqDZ5J8Fy3qg3TRNaSiPRIw==}
+  /@electron-forge/maker-flatpak@6.4.2:
+    resolution: {integrity: sha512-L52PcFaYh1Muspiejw8O+WwJhb5wS4PPYHYUPCSPRBPgv4MoAAu1IXY4ZZDTcPROPt/npvuQhz43JOEdSBEVtQ==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.3.0
-      '@electron-forge/shared-types': 6.3.0
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
+      fs-extra: 10.1.0
+    optionalDependencies:
+      '@malept/electron-installer-flatpak': 0.11.4
+    transitivePeerDependencies:
+      - enquirer
+      - supports-color
+    dev: true
+
+  /@electron-forge/maker-rpm@6.4.2:
+    resolution: {integrity: sha512-+hfbY5pYbAer0y07OtOzVgVBHoTRmemqqZ//T0mKJpyK2ThHKGTvyW8FFlr5jlQs5LoDCM2WHKE8oGtRhivsMg==}
+    engines: {node: '>= 14.17.5'}
+    dependencies:
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
     optionalDependencies:
       electron-installer-redhat: 3.3.0
     transitivePeerDependencies:
@@ -321,6 +329,17 @@ packages:
       cross-zip: 4.0.0
       fs-extra: 10.1.0
       got: 11.8.6
+    transitivePeerDependencies:
+      - enquirer
+      - supports-color
+    dev: true
+
+  /@electron-forge/plugin-auto-unpack-natives@6.4.2:
+    resolution: {integrity: sha512-AXmPQc2nUFuh/xFC+Qsebg/eg3M+5GQV6MOzMvTBZ9N1w49XtZbtvEGAdISnZWERExNRcwH+j+zuSAGtm6Y2Yw==}
+    engines: {node: '>= 14.17.5'}
+    dependencies:
+      '@electron-forge/plugin-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
     transitivePeerDependencies:
       - enquirer
       - supports-color
@@ -562,13 +581,13 @@ packages:
       - supports-color
     dev: true
 
-  /@eslint-community/eslint-utils@4.4.0(eslint@8.47.0):
+  /@eslint-community/eslint-utils@4.4.0(eslint@8.50.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
-      eslint: 8.47.0
+      eslint: 8.50.0
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -594,13 +613,13 @@ packages:
       - supports-color
     dev: true
 
-  /@eslint/js@8.47.0:
-    resolution: {integrity: sha512-P6omY1zv5MItm93kLM8s2vr1HICJH8v0dvddDhysbIuZ+vcjOHg5Zbkf1mTkcmi2JA9oBG2anOkRnW8WJTS8Og==}
+  /@eslint/js@8.50.0:
+    resolution: {integrity: sha512-NCC3zz2+nvYd+Ckfh87rA47zfu2QsQpvc6k1yzTk+b9KzRj0wkGa8LSoGOXN6Zv4lRf/EIoZ80biDh9HOI+RNQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@humanwhocodes/config-array@0.11.10:
-    resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
+  /@humanwhocodes/config-array@0.11.11:
+    resolution: {integrity: sha512-N2brEuAadi0CcdeMXUkhbZB84eskAc8MEX1By6qEchoVywSgXPIjou4rYsl0V3Hj0ZnuGycGCjdNgockbzeWNA==}
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
@@ -674,6 +693,38 @@ packages:
     dependencies:
       cross-spawn: 7.0.3
     dev: true
+
+  /@malept/electron-installer-flatpak@0.11.4:
+    resolution: {integrity: sha512-ZdwhT4WeeJWdnsmALUtQ7bn4pzYVh0Vg+4NnF1S3n3OACc9IWg+B+LxI5gT3XSXIrxogouqkjM6gD8S592awyA==}
+    engines: {node: '>= 10.0.0'}
+    os: [darwin, linux]
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@malept/flatpak-bundler': 0.4.0
+      debug: 4.3.4
+      electron-installer-common: 0.10.3
+      lodash: 4.17.21
+      semver: 7.3.5
+      yargs: 16.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+    optional: true
+
+  /@malept/flatpak-bundler@0.4.0:
+    resolution: {integrity: sha512-9QOtNffcOF/c1seMCDnjckb3R9WHcG34tky+FHpNKKCW0wc/scYLwMtO+ptyGUfMW0/b/n4qRiALlaFHc9Oj7Q==}
+    engines: {node: '>= 10.0.0'}
+    requiresBuild: true
+    dependencies:
+      debug: 4.3.4
+      fs-extra: 9.1.0
+      lodash: 4.17.21
+      tmp-promise: 3.0.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+    optional: true
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2072,16 +2123,16 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint@8.47.0:
-    resolution: {integrity: sha512-spUQWrdPt+pRVP1TTJLmfRNJJHHZryFmptzcafwSvHsceV81djHOdnEeDmkdotZyLNjDhrOasNK8nikkoG1O8Q==}
+  /eslint@8.50.0:
+    resolution: {integrity: sha512-FOnOGSuFuFLv/Sa+FDVRZl4GGVAAFFi8LecRsI5a1tMO5HIE8nCm4ivAlzt4dT3ol/PaaGC0rJEEXQmHJBGoOg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.47.0)
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.50.0)
       '@eslint-community/regexpp': 4.6.2
       '@eslint/eslintrc': 2.1.2
-      '@eslint/js': 8.47.0
-      '@humanwhocodes/config-array': 0.11.10
+      '@eslint/js': 8.50.0
+      '@humanwhocodes/config-array': 0.11.11
       '@humanwhocodes/module-importer': 1.0.1
       '@nodelib/fs.walk': 1.2.8
       ajv: 6.12.6
