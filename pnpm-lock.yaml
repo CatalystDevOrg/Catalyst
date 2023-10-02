@@ -60,7 +60,7 @@ devDependencies:
     version: 26.2.4
   electron-forge-maker-appimage:
     specifier: trusktr/electron-forge-maker-appimage#patch-1
-    version: git/github.com+trusktr/electron-forge-maker-appimage/06d5bf02dba60a33391b5a3225b7535c134633cc
+    version: git@github.com+trusktr/electron-forge-maker-appimage/06d5bf02dba60a33391b5a3225b7535c134633cc
   electron-reloader:
     specifier: ^1.2.3
     version: 1.2.3
@@ -283,12 +283,10 @@ packages:
 
   /@electron-forge/maker-rpm@6.4.2:
     resolution: {integrity: sha512-+hfbY5pYbAer0y07OtOzVgVBHoTRmemqqZ//T0mKJpyK2ThHKGTvyW8FFlr5jlQs5LoDCM2WHKE8oGtRhivsMg==}
-
     engines: {node: '>= 14.17.5'}
     dependencies:
       '@electron-forge/maker-base': 6.4.2
       '@electron-forge/shared-types': 6.4.2
-
     optionalDependencies:
       electron-installer-redhat: 3.3.0
     transitivePeerDependencies:
@@ -370,19 +368,6 @@ packages:
       mime-types: 2.1.35
     transitivePeerDependencies:
       - encoding
-      - enquirer
-      - supports-color
-    dev: true
-
-  /@electron-forge/shared-types@6.3.0:
-    resolution: {integrity: sha512-6L4XIC4ErueM3mbWjVJLNtRZPxjdw3aa64e58m8gBwXnrreKVuKL+DFDKMvI2FO7IZXeLsIn/CEka+wQRwW87w==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron/rebuild': 3.2.13
-      electron-packager: 17.1.1
-
-      listr2: 5.0.8
-    transitivePeerDependencies:
       - enquirer
       - supports-color
     dev: true
@@ -4827,7 +4812,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  git/github.com+trusktr/electron-forge-maker-appimage/06d5bf02dba60a33391b5a3225b7535c134633cc:
+  git@github.com+trusktr/electron-forge-maker-appimage/06d5bf02dba60a33391b5a3225b7535c134633cc:
     resolution: {commit: 06d5bf02dba60a33391b5a3225b7535c134633cc, repo: git@github.com:trusktr/electron-forge-maker-appimage.git, type: git}
     name: electron-forge-maker-appimage
     version: 1.0.0
