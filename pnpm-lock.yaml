@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@cliqz/adblocker-electron':
-    specifier: ^1.26.6
-    version: 1.26.6(electron@26.2.4)
+    specifier: ^1.26.7
+    version: 1.26.7(electron@26.2.4)
   cross-fetch:
     specifier: ^4.0.0
     version: 4.0.0
@@ -94,46 +94,46 @@ packages:
       regenerator-runtime: 0.14.0
     dev: true
 
-  /@cliqz/adblocker-content@1.26.6:
-    resolution: {integrity: sha512-cebc5AjL/quVVdcClJ7dqqvW5SrqATfUhwqn5MzWtponZ3t3fRpgpFgkt2fNa5rd3iz1UfTcAtWrgpshHYurTA==}
+  /@cliqz/adblocker-content@1.26.7:
+    resolution: {integrity: sha512-9nCII7NcidGb16Tf49HV6QFbdDE6ZSTqhLS3vZFImunDRSOHfyCimHOsYEAUURpDi3mnDuK2Kq1yt1m+U4KyKw==}
     dependencies:
-      '@cliqz/adblocker-extended-selectors': 1.26.6
+      '@cliqz/adblocker-extended-selectors': 1.26.7
     dev: false
 
-  /@cliqz/adblocker-electron-preload@1.26.6(electron@26.2.4):
-    resolution: {integrity: sha512-G564oo1YANQR7mAzuQi7aYsgKwmRurYo0d9E8YaZr6ZD/kDHKxgHLfGPflKuOsYz2gf9zWQT89RsyQxDrjI49g==}
+  /@cliqz/adblocker-electron-preload@1.26.7(electron@26.2.4):
+    resolution: {integrity: sha512-/A9HmfZDxo+4wgQuj80YwrTSzm2tb99K7uJ0ymN4/QUKwrSeNIjEeXztbXakS2QqZE5gDWV0opCkGDpV0FuCcg==}
     peerDependencies:
       electron: '>11'
     dependencies:
-      '@cliqz/adblocker-content': 1.26.6
+      '@cliqz/adblocker-content': 1.26.7
       electron: 26.2.4
     dev: false
 
-  /@cliqz/adblocker-electron@1.26.6(electron@26.2.4):
-    resolution: {integrity: sha512-OE0Qh2+OGrx53DkV9gj1JzYdUV1IM7JigpU++5sA6yhsdbZBFijto0SK3iDsMsHeEUVq8DV1oLYspe0UpIU4SA==}
+  /@cliqz/adblocker-electron@1.26.7(electron@26.2.4):
+    resolution: {integrity: sha512-L11NgAGwFI4VnFRq6OrHnvzwVP2r6wyr5uNzj/L+bIAkUjGVqHgcJw4bzF6OdJkeye2trwol2gqONkJKMFlXPA==}
     peerDependencies:
       electron: '>11'
     dependencies:
-      '@cliqz/adblocker': 1.26.6
-      '@cliqz/adblocker-electron-preload': 1.26.6(electron@26.2.4)
+      '@cliqz/adblocker': 1.26.7
+      '@cliqz/adblocker-electron-preload': 1.26.7(electron@26.2.4)
       electron: 26.2.4
       tldts-experimental: 6.0.14
     dev: false
 
-  /@cliqz/adblocker-extended-selectors@1.26.6:
-    resolution: {integrity: sha512-Gpvg6eLO2aHiY7r2y0jueve6YbGkYvWaZ4MiwhQ1wPTwj/MxFqAh9cVHnz3EzoJUtsqoy9bvkhmfkRUatpvvzw==}
+  /@cliqz/adblocker-extended-selectors@1.26.7:
+    resolution: {integrity: sha512-J6IYdrWHvTy2U/iikMBB/nz0IbYHYomUgmwpOgDbzaesacrNShzr1evU06ncx7QFexKkUqYMqqt/JjUFnYn5qA==}
     dev: false
 
-  /@cliqz/adblocker@1.26.6:
-    resolution: {integrity: sha512-fSNCvyl0FRgKcc2NmHEhaQqeTT0QCLBT3eVZ15ah6baPdCaQm7N5IN/annv9bRalS8Lwbxymb3TBLzXpFTghrw==}
+  /@cliqz/adblocker@1.26.7:
+    resolution: {integrity: sha512-UGjsDoAcmSoG2uGrpZVTWOxAxQJ2Ws9fDxmYrzR0yS/vtxd0t+Q8G8vTLKWkdU7BN53xTTCZMjgCALwdqZhycw==}
     dependencies:
-      '@cliqz/adblocker-content': 1.26.6
-      '@cliqz/adblocker-extended-selectors': 1.26.6
+      '@cliqz/adblocker-content': 1.26.7
+      '@cliqz/adblocker-extended-selectors': 1.26.7
       '@remusao/guess-url-type': 1.2.1
       '@remusao/small': 1.2.1
       '@remusao/smaz': 1.9.1
-      '@types/chrome': 0.0.228
-      '@types/firefox-webext-browser': 111.0.1
+      '@types/chrome': 0.0.246
+      '@types/firefox-webext-browser': 111.0.2
       tldts-experimental: 6.0.14
     dev: false
 
@@ -905,8 +905,8 @@ packages:
       '@types/node': 18.17.6
       '@types/responselike': 1.0.0
 
-  /@types/chrome@0.0.228:
-    resolution: {integrity: sha512-rDmyVEF+l9H+6FQYqsEGqQOjBw/uaSx6KJ6o47FwbQmPPcskmt8XlPbKjy5KeQXU3ZLiV2x45Fk4kdtRMSghfQ==}
+  /@types/chrome@0.0.246:
+    resolution: {integrity: sha512-MxGxEomGxsJiL9xe/7ZwVgwdn8XVKWbPvxpVQl3nWOjrS0Ce63JsfzxUc4aU3GvRcUPYsfufHmJ17BFyKxeA4g==}
     dependencies:
       '@types/filesystem': 0.0.32
       '@types/har-format': 1.2.11
@@ -928,8 +928,8 @@ packages:
     resolution: {integrity: sha512-BsPXH/irW0ht0Ji6iw/jJaK8Lj3FJemon2gvEqHKpCdDCeemHa+rI3WBGq5z7cDMZgoLjY40oninGxqk+8NzNQ==}
     dev: false
 
-  /@types/firefox-webext-browser@111.0.1:
-    resolution: {integrity: sha512-mmHWdQTCT68X0hh0URrsIyWhJeFzZHaiprj6nni/CmsAmqYq27T0eZyu1ePeKJ/zuDD3wqtTzm5TwRFAso+oPw==}
+  /@types/firefox-webext-browser@111.0.2:
+    resolution: {integrity: sha512-NS7izfYOnQI/Opf3YdZSKkI5Ox89SqEffJHK2zfGY2BYEVuWuM6pSwDRglGl4W0SM84oUQfvLyYH4X6EQZAJ2w==}
     dev: false
 
   /@types/fs-extra@9.0.13:
