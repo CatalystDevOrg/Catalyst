@@ -43,7 +43,7 @@
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
-    "@cliqz/adblocker-electron": "^1.26.6",
+    "@cliqz/adblocker-electron": "^1.26.7",
     "cross-fetch": "^4.0.0",
     "custom-electron-titlebar": "^4.2.5",
     "electron-context-menu": "^3.6.1",
