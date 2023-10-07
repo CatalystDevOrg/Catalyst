@@ -97,6 +97,7 @@ function evaluatePreferences() {
 var enginespref = document.querySelector('#se')
 enginespref.onchange = (event) => {
     var index = enginespref.options.selectedIndex
-    console.log(index)
-    localStorage.setItem('engine', engineurls[index])
+    localStorage.setItem('engine', index)
 }
+
+enginespref.value = localStorage.getItem('engine') || '1'

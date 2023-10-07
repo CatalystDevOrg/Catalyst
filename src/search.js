@@ -1,8 +1,7 @@
 // search engine globals
-const engine = localStorage.getItem('engine') || 'https://duckduckgo.com/?q='
 const engineurls = [
     "https://google.com/?q=",
-    "https://duckduckgo.com/ac/?q=",
+    "https://duckduckgo.com/?q=",
     "https://www.bing.com/search?q=",
     "https://search.brave.com/search?q="
 ]
@@ -21,9 +20,6 @@ searchbar.addEventListener('input', async() => {
         JSON.parse(window.localStorage.getItem('preferences')).autocomplete
     ) {
         // This is for duckduckgo only, in the future, this may be something else, but I think DDG is fine for now.
-        if (engine != engineurls[1]) {
-            return;
-        }
         const autoCompleteCheck = await fetch(
             `https://duckduckgo.com/ac/?q=${encodeURIComponent(searchbar.value)}`
         );
@@ -55,7 +51,7 @@ function loadURL(url) {
     if (shouldAutocomplete(url)) {
         document.querySelector(
             '.current'
-        ).src = `${engine}${encodeURIComponent(url)}`;
+        ).src = `${engineurls[localStorage.getItem('engine')] || 'https://duckduckgo.com/?q='}`;
     } else {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
@@ -85,6 +81,9 @@ function shouldAutocomplete(input) {
     for (let index = 0; index < protocols.length; index++) {
         const protocol = protocols[index];
         if (input.startsWith(`${protocol}://`)) {
+            return false;
+        }
+        if (localStorage.getItem('engine') != 1) {
             return false;
         }
     }
