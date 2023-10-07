@@ -1,6 +1,6 @@
 {
     "name": "catalyst",
-    "version": "3.5.3",
+    "version": "3.5.4",
     "description": "A minimal Electron Web Browser",
     "main": "main/main.js",
     "private": true,
@@ -54,7 +54,18 @@
                 "icon": "./assets/icon-scaled",
                 "asar": true
             },
-            "ignore": ["contributing.md", ".gitignore", ".eslintrc.json", "pnpm-lock.yaml", "README.md", "tailwind.config.js", "CODE_OF_CONDUCT.md", ".pnpm-debug.log", ".github", ".vscode"],
+            "ignore": [
+                "contributing.md",
+                ".gitignore",
+                ".eslintrc.json",
+                "pnpm-lock.yaml",
+                "README.md",
+                "tailwind.config.js",
+                "CODE_OF_CONDUCT.md",
+                ".pnpm-debug.log",
+                ".github",
+                ".vscode"
+            ],
             "publishers": [
                 {
                     "name": "@electron-forge/publisher-github",
