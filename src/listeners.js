@@ -12,7 +12,7 @@ bkmrk.addEventListener('click', () => {
 
 document.getElementById('more-btn').addEventListener('click', () => {
     document.getElementById('more-menu').classList.toggle('hidden');
-    document.querySelector('#more-btn').classList.toggle('bg-gray-400');
+    document.querySelector('#more-btn').classList.toggle('bg-indigo-400');
 });
 
 strt.addEventListener('keypress', (e) => {
