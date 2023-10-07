@@ -93,3 +93,11 @@ function evaluatePreferences() {
         cat.enableAdBlocker();
     }
 }
+
+var enginespref = document.querySelector('#se')
+enginespref.onchange = (event) => {
+    var index = enginespref.options.selectedIndex
+    localStorage.setItem('engine', index)
+}
+
+enginespref.value = localStorage.getItem('engine') || '1'
