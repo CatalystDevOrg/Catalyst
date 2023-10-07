@@ -14,10 +14,10 @@
   .tab-star {
     @apply ml-auto;
   	}
-	.btn, select {
+	button, select {
 		@apply dark:text-white hover:bg-indigo-400 text-black rounded-lg ml-2 dark:hover:bg-indigo-600 text-center p-1.5 bg-transparent transition
 	}
-	.btn img {
+	button img {
 		@apply dark:invert;
 	}
   	.bg {

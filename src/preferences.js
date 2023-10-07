@@ -1,4 +1,5 @@
 let preferences = getPreferences();
+const categories = ["basic", "advanced", "experiments"]
 const preferencesBox = document.getElementById('preferences-box');
 evaluatePreferences();
 
@@ -101,3 +102,14 @@ enginespref.onchange = (event) => {
 }
 
 enginespref.value = localStorage.getItem('engine') || '1'
+
+function changePrefTab(itm) {
+    document.querySelector(`#${itm}`).classList.remove('hidden');
+    others = document.querySelector(`#preferences-box`).getElementsByTagName('*')
+    for (i = 0; i < others.length; ++i) {
+        e = others[i]
+        if (e.id != itm && categories.includes(e.id)) {
+            e.classList.add('hidden')
+        }
+    }
+}

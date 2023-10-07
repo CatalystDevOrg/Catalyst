@@ -91,14 +91,18 @@
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="h-screen flex items-center justify-center hidden">
-    <div
-        class="overflow-auto text-md shadow-lg bg-indigo-200 p-1.5 dark:bg-indigo-800 w-[17vw]
-        text-indigo-900 dark:text-indigo-50 rounded-lg w-[55em] h-[35em]">
+    <div id="preferences-box" class="h-screen w-screen hidden overflow-auto text-md shadow-lg bg-indigo-200 p-1.5 dark:bg-indigo-800
+    text-indigo-900 dark:text-indigo-50">
         <div class="ml-4 mt-2">
             <button onClick="togglePreferences()" class="btn"><img class="dark:invert" src="../assets/icons/x.svg"
                     class="inline-flex mb-1 px-2" alt="this image has not loaded properly"></button>
+            <div id="pref-tabs">
+                <button onClick='changePrefTab("basic")'>Basic</button>
+                <button onClick='changePrefTab("advanced")'>Advanced</button>
+                <button onClick='changePrefTab("experiments")'>Experiments</buttons>
+            </div>
             <h1 class="font-bold text-xl">Preferences</h1>
+            <div id="basic">
             <label for="pref-darkmode">Dark Mode? </label>
             <input id="pref-darkmode" type="checkbox" class="" />
             <p class="text-sm">Toggle dark mode</p>
@@ -108,12 +112,10 @@
             <p class="text-sm">Search Autocomplete</p>
             <br />
             <label for="pref-strt">Startup Page</label>
+            </div>
+            <div class="hidden" id="advanced">
             <input class="text-black p-1.5 rounded-sm" id="pref-strt" class="" />
             <p class="text-sm">Sets a custom startup page.</p>
-            <br />
-            <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
-            <input id="pref-dm" type="checkbox" class="" />
-            <p class="text-sm">Toggles forced dark mode for all sites.</p>
             <br />
             <label for="pref-usrchr">Custom CSS</label>
             <input id="pref-usrchr" type="checkbox" class="" />
@@ -122,6 +124,13 @@
             <label for="pref-adblk">Enable AD Blocker</label>
             <input id="pref-adblk" type="checkbox" class="" />
             <p class="text-sm">Enables the ad blocker</p>
+            <br />
+            </div>
+            <div class="hidden" id="experiments">
+            <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
+            <input id="pref-dm" type="checkbox" class="" />
+            <p class="text-sm">Toggles forced dark mode for all sites.</p>
+            </div>
             <br />
             <button onclick="clearData()" class="btn">
                 Clear Data</button>
