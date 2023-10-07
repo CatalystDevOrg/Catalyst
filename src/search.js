@@ -48,10 +48,10 @@ searchbar.addEventListener('input', async() => {
 
 function loadURL(url) {
     view = document.querySelector('.current');
-    if (shouldAutocomplete(url)) {
+    if (isSearch(url)) {
         document.querySelector(
             '.current'
-        ).src = `${engineurls[localStorage.getItem('engine')] || 'https://duckduckgo.com/?q='}`;
+        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)} || 'https://duckduckgo.com/?q='}`;
     } else {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
@@ -84,6 +84,16 @@ function shouldAutocomplete(input) {
             return false;
         }
         if (localStorage.getItem('engine') != 1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function isSearch(input) {
+    for (let index = 0; index < protocols.length; index++) {
+        const protocol = protocols[index];
+        if (input.startsWith(`${protocol}://`)) {
             return false;
         }
     }
