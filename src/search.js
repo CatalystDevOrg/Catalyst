@@ -51,7 +51,7 @@ function loadURL(url) {
     if (isSearch(url)) {
         document.querySelector(
             '.current'
-        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)} || 'https://duckduckgo.com/?q='}`;
+        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}` || `https://duckduckgo.com/?q='}`;
     } else {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
