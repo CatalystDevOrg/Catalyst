@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="object-contain bg min-w-full bg-indigo-200 dark:bg-indigo-900 min-h-screen bg-white/0 overflow-hidden">
+<body class="object-contain bg min-w-full bg-indigo-300 dark:bg-indigo-700 min-h-screen bg-indigo-300/0 overflow-hidden">
     <div id="loading"
-        class="fixed z-40 flex items-center justify-center w-full h-full transition duration-500 bg-indigo-50 dark:bg-indigo-900">
+        class="fixed z-40 flex items-center justify-center w-full h-full transition duration-500 bg-indigo-50 dark:bg-indigo-700">
         <img src="../assets/icon.png" alt="loading..." class="animate-spin h-1/2 aspect-square">
         <img src="../assets/icons/catalyst-indigo-4.svg" alt="loading..." class="h-1/2 aspect-square">
     </div>
     </div>
     </div>
     <!-- Tab bar -->
-    <div id="tb-wrapper" class="flex items-center px-1.5 py-1 mt-0 bg-white dark:bg-indigo-800">
+    <div id="tb-wrapper" class="flex items-center px-1.5 py-1 mt-0 bg-indigo-300 dark:bg-indigo-600">
         <div id="tabs-bar" class="flex items-center flex-1 space-x-1 overflow-auto no-scrollbar">
             <!-- tabs are inserted with JS -->
         </div>
@@ -33,7 +33,7 @@
         </div>
     </div>
     <!-- Utility bar -->
-    <div class="w-full flex pb-1 dark:text-indigo-900 bg-white dark:bg-indigo-800">
+    <div class="w-full flex pb-1 dark:text-indigo-900 bg-indigo-300 dark:bg-indigo-600">
         <button id="back" class="btn"><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
         <button id="forward" class="btn"><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
         <input id="searchbar" type="text"
@@ -47,7 +47,7 @@
     </div>
     <!-- More menu -->
     <div id="more-menu"
-        class="sliding-rtl shadow-lg absolute bg-white dark:bg-indigo-800 dark:text-white text-indigo-900 h-[95%] p-1.5 w-fit blurred float-right hidden right-0 ">
+        class="sliding-rtl shadow-lg absolute bg-indigo-300 dark:bg-indigo-800 dark:text-white text-indigo-900 h-[95%] p-1.5 w-fit blurred float-right hidden right-0 ">
         <ul class="justify-center align-middle flex-wrap max-w-sm">
             <li class="moreMenuItem flex cursor-pointer" onclick="togglePreferences()">
                 <img class="rounded-sm dark:invert p-1" src="../assets/icons/gear-fill.svg"
@@ -87,11 +87,11 @@
     </div>
     <!-- Bookmarks -->
     <div id="bookmarks"
-        class="grid grid-cols-3 grid-rows-6 sliding-ttb backdrop-blur-2xl flex px-1 mb-0.2 h-screen hidden bg-white dark:bg-indigo-800">
+        class="grid grid-cols-3 grid-rows-6 sliding-ttb backdrop-blur-2xl flex px-1 mb-0.2 h-screen hidden bg-indigo-300 dark:bg-indigo-700">
         <!-- bookmarks inserted with JS -->
     </div>
     <!-- Preferences -->
-    <div id="preferences-box" class="h-screen w-screen hidden overflow-auto text-md shadow-lg bg-indigo-200 p-1.5 dark:bg-indigo-800
+    <div id="preferences-box" class="h-screen w-screen hidden overflow-auto text-md shadow-lg bg-indigo-300 p-1.5 dark:bg-indigo-600
     text-indigo-900 dark:text-indigo-50">
         <div class="ml-4 mt-2">
             <button onClick="togglePreferences()" class="btn"><img class="dark:invert" src="../assets/icons/x.svg"
@@ -150,15 +150,15 @@
     </div>
     </div>
     <!-- Suggestions -->
-    <div class="sliding-ttb bg-indigo-200 dark:bg-indigo-800 suggestions-box" id="autocomplete-suggestions">
+    <div class="sliding-ttb bg-indigo-300 dark:bg-indigo-600 suggestions-box" id="autocomplete-suggestions">
         <!-- suggestions made with js -->
     </div>
     <!-- Welcome to Catalyst page -->
     <div id="welcomepage"
-        class="hidden h-fit shadow-xl border-2 dark:border-0 bg-indigo-200 dark:bg-indigo-900 dark:text-white p-1.5 -l w-full rounded-b-sm">
+        class="hidden h-fit shadow-xl border-2 dark:border-0 bg-indigo-300 dark:bg-indigo-700 dark:text-white p-1.5 -l w-full rounded-b-sm">
         <h1 class="dark:text-white font-bold text-xl">Welcome to Catalyst!</h1>&nbsp;
-        <button class="rounded-sm p-1 bg-white text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
-        <button class="rounded-sm p-1 bg-white  text-black w-fit" onClick="togglePreferences()">Customize Your
+        <button class="rounded-sm p-1 bg-indigo-300 text-black w-fit" onClick="closeWelcome()">Close</button>&nbsp;
+        <button class="rounded-sm p-1 bg-indigo-300  text-black w-fit" onClick="togglePreferences()">Customize Your
             Browser!</button>&nbsp;
     </div>
     <!-- Webviews generated with JS -->
