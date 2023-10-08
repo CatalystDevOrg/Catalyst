@@ -96,19 +96,24 @@ async function checkForUpdate(windowToDialog) {
 let ver = app.getVersion();
 let appName = app.getName();
 
-function aboutApp() {
-    dialog.showMessageBoxSync({
-        title: `About ${appName}`,
-        message: `${appName} ${ver}`,
-        buttons: ['OK'],
-        icon: './assets/icon.png'
+function createAboutWindow() {
+    aboutWindow = new BrowserWindow({
+        minWidth: 600,
+        minHeight: 400,
+        width: 600,
+        height: 400,
+        title: 'About Catalyst',
+        icon: path.join(__dirname, '../assets/icon.png'),
     });
+    aboutWindow.loadFile('./src/about.html');
+    aboutWindow.setMenuBarVisibility(false);
+
 }
 
 const template = [{
     label: 'About',
     click: function () {
-        aboutApp();
+        createAboutWindow();
     }
 },
 {
