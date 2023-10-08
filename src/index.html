@@ -102,6 +102,7 @@
                 <button onClick='changePrefTab("experiments")'>Experiments</buttons>
             </div>
             <h1 class="font-bold text-xl">Preferences</h1>
+            <br />
             <div id="basic">
             <label for="pref-darkmode">Dark Mode? </label>
             <input id="pref-darkmode" type="checkbox" class="" />
@@ -111,9 +112,16 @@
             <input id="pref-autocomplete" type="checkbox" class="" />
             <p class="text-sm">Search Autocomplete</p>
             <br />
-            <label for="pref-strt">Startup Page</label>
+            <label for="se">Search Engine</label>
+            <select name="se" id="se">
+              <option value="0">Google</option>
+              <option value="1">DuckDuckGo</option>
+              <option value="2">Bing</option>
+              <option value="3">Brave</option>
+            </select> 
             </div>
             <div class="hidden" id="advanced">
+            <label for="pref-strt">Startup Page</label>
             <input class="text-black p-1.5 rounded-sm" id="pref-strt" class="" />
             <p class="text-sm">Sets a custom startup page.</p>
             <br />
@@ -125,25 +133,15 @@
             <input id="pref-adblk" type="checkbox" class="" />
             <p class="text-sm">Enables the ad blocker</p>
             <br />
+            <button id="clearbtn" onclick="clearData()" class="btn">Reset Preferences</button>
+            <p class="text-sm">Sets all preferences back to their default values.</p>
+            <br />
             </div>
             <div class="hidden" id="experiments">
             <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
             <input id="pref-dm" type="checkbox" class="" />
             <p class="text-sm">Toggles forced dark mode for all sites.</p>
             </div>
-            <br />
-            <button onclick="clearData()" class="btn">
-                Clear Data</button>
-            <br />
-            <br />
-            <label for="se">Search Engine</label>
-            <select name="se" id="se">
-              <option value="0">Google</option>
-              <option value="1">DuckDuckGo</option>
-              <option value="2">Bing</option>
-              <option value="3">Brave</option>
-            </select> 
-            <br />
             <br />
             <i class="text-sm" id="pref-ver"></i>
             <br />
