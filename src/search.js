@@ -35,8 +35,7 @@ searchbar.addEventListener('input', async() => {
             suggestion.classList.add('suggestion');
             suggestion.id = 'suggestion-' + suggestionHash;
             suggestion.addEventListener('click', () => {
-                document.getElementById('searchbar').value = suggestionText;
-                loadURL();
+                loadURL(suggestionText);
                 removeChildren(suggestionsEl);
             });
             suggestionsEl.appendChild(suggestion);
