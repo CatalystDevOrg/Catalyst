@@ -23,6 +23,13 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-usrchr'), 'usrchr');
         document.getElementById('pref-adblk').checked = preferences.adblk;
         addCheckboxListener(document.getElementById('pref-adblk'), 'adblk');
+        if (preferences.agent.toString().length > 1) {
+			document.getElementById("pref-useragent").value =
+				preferences.agent || "Catalyst/{{version}}";
+		} else {
+			document.getElementById("pref-useragent").value = preferences.agent;
+		}
+		addTextListener(document.getElementById("pref-useragent"), "agent");
     }
 }
 
