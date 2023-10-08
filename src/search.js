@@ -1,10 +1,10 @@
 // search engine globals
 const engineurls = [
-    "https://google.com/?q=",
-    "https://duckduckgo.com/?q=",
-    "https://www.bing.com/search?q=",
-    "https://search.brave.com/search?q="
-]
+    'https://google.com/?q=',
+    'https://duckduckgo.com/?q=',
+    'https://www.bing.com/search?q=',
+    'https://search.brave.com/search?q='
+];
 
 // protocols
 const protocols = ['https', 'http', 'file', 'data'];
@@ -50,7 +50,7 @@ function loadURL(url) {
     if (isSearch(url)) {
         document.querySelector(
             '.current'
-        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}` || `https://duckduckgo.com/?q='}`;
+        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}` || 'https://duckduckgo.com/?q=\'}';
     } else {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
@@ -66,11 +66,11 @@ function loadURL(url) {
     view.addEventListener('did-finish-load', () => {
         if (preferences.dm) {
             if (localStorage.getItem('forced-dm-excludes') == null) {
-                invertTab()
+                invertTab();
             } else if (localStorage.getItem('forced-dm-excludes').indexOf(view.url)) {
                 return;
             } else {
-                invertTab()
+                invertTab();
             }
         }
     });

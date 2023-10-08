@@ -1,5 +1,5 @@
 let preferences = getPreferences();
-const categories = ["basic", "advanced", "experiments"]
+const categories = ['basic', 'advanced', 'experiments'];
 const preferencesBox = document.getElementById('preferences-box');
 evaluatePreferences();
 
@@ -24,12 +24,12 @@ function togglePreferences() {
         document.getElementById('pref-adblk').checked = preferences.adblk;
         addCheckboxListener(document.getElementById('pref-adblk'), 'adblk');
         if (preferences.agent.toString().length > 1) {
-			document.getElementById("pref-useragent").value =
-				preferences.agent || "Catalyst/{{version}}";
-		} else {
-			document.getElementById("pref-useragent").value = preferences.agent;
-		}
-		addTextListener(document.getElementById("pref-useragent"), "agent");
+            document.getElementById('pref-useragent').value =
+				preferences.agent || 'Catalyst/{{version}}';
+        } else {
+            document.getElementById('pref-useragent').value = preferences.agent;
+        }
+        addTextListener(document.getElementById('pref-useragent'), 'agent');
     }
 }
 
@@ -102,21 +102,21 @@ function evaluatePreferences() {
     }
 }
 
-var enginespref = document.querySelector('#se')
+var enginespref = document.querySelector('#se');
 enginespref.onchange = (event) => {
-    var index = enginespref.options.selectedIndex
-    localStorage.setItem('engine', index)
-}
+    var index = enginespref.options.selectedIndex;
+    localStorage.setItem('engine', index);
+};
 
-enginespref.value = localStorage.getItem('engine') || '1'
+enginespref.value = localStorage.getItem('engine') || '1';
 
 function changePrefTab(itm) {
     document.querySelector(`#${itm}`).classList.remove('hidden');
-    others = document.querySelector(`#preferences-box`).getElementsByTagName('*')
+    others = document.querySelector('#preferences-box').getElementsByTagName('*');
     for (i = 0; i < others.length; ++i) {
-        e = others[i]
+        e = others[i];
         if (e.id != itm && categories.includes(e.id)) {
-            e.classList.add('hidden')
+            e.classList.add('hidden');
         }
     }
 }

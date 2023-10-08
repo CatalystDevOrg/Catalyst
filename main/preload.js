@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
         backgroundColor: 'lightpurple',
         itemBackgroundColor: 'white',
         transparent: 0.5
-    }
+    };
     new Titlebar(tboptions);
 });
 
