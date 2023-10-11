@@ -11,7 +11,7 @@ bkmrk.addEventListener('click', () => {
 });
 
 document.getElementById('more-btn').addEventListener('click', () => {
-    document.getElementById('more-menu').classList.toggle('hidden');
+    toggleDisplay(document.getElementById('more-menu'))
     document.querySelector('#more-btn').classList.toggle('bg-indigo-400');
 });
 

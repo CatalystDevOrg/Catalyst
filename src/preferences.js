@@ -35,9 +35,7 @@ function togglePreferences() {
 
 function closePreferences() {
     preferences = getPreferences();
-    if (!preferencesBox.classList.contains('hidden')) {
-        preferencesBox.classList.toggle('hidden');
-    }
+    toggleDisplay(preferencesBox)
 }
 
 /**

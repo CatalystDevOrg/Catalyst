@@ -83,3 +83,7 @@ function toggleBookmarks() {
     document.querySelector('#bookmarks').classList.toggle('hidden');
     document.querySelector('.current').classList.toggle('hidden');
 }
+
+function toggleDisplay(e) {
+    e.classList.toggle('hidden')
+}
