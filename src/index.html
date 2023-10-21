@@ -71,6 +71,10 @@
                 <img class="rounded-sm dark:invert p-1" src="../assets/icons/download.svg" class="inline-flex mb-1 px-2"
                     alt="this image has not loaded properly">&nbsp;Download Page
             </a>&nbsp;
+            <a onClick="toggleFind()" class="moreMenuItem flex cursor-pointer">
+                <img class="rounded-sm dark:invert p-1" src="../assets/icons/download.svg" class="inline-flex mb-1 px-2"
+                    alt="this image has not loaded properly">&nbsp;Search Page
+            </a>&nbsp;
             <a id="changelogbtn" onClick="openChangeLog()" class="moreMenuItem flex cursor-pointer">
                 <svg fill="#FFFFFF" class="rounded-sm p-1 invert dark:invert-0" height="20px" width="20px" version="1.1"
                     id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -144,7 +148,8 @@
                 <p class="text-sm">Toggles forced dark mode for all sites.</p>
                 <br />
                 <label for="pref-useragent"><b class="text-emerald-500">Experimental</b> User Agent: </label>
-                <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded" placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
+                <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded"
+                    placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
                 <p class="text-sm">Sets a custom user agent.</p>
             </div>
             <br />
@@ -168,6 +173,8 @@
     </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
+    <!-- Find Window -->
+    <input id="find" class="hidden w-full fixed bottom-0" placeholder="Search..." />
     <script src="./functions.js"></script>
     <script src="./startup.js" defer></script>
     <script src="./bookmarks.js"></script>

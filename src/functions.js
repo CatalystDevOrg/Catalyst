@@ -87,3 +87,12 @@ function toggleBookmarks() {
 function toggleDisplay(e) {
     e.classList.toggle('hidden')
 }
+
+function toggleFind() {
+    e = document.querySelector('#find')
+    e.classList.toggle('hidden')
+}
+
+function initiatePageSearch() {
+
+}
