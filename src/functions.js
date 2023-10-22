@@ -48,7 +48,7 @@ function downloadURI(uri, name) {
     delete link;
 }
 
-const getPackageJSON = async() => {
+const getPackageJSON = async () => {
     return await (await fetch('../package.json')).json();
 };
 
@@ -79,11 +79,29 @@ function openChangeLog() {
 
 openWelcome();
 
-function toggleBookmarks() { 
+function toggleBookmarks() {
     document.querySelector('#bookmarks').classList.toggle('hidden');
     document.querySelector('.current').classList.toggle('hidden');
 }
 
 function toggleDisplay(e) {
     e.classList.toggle('hidden')
+}
+
+accentColors = ['blue', 'red']
+
+function setAccentColor(color) {
+    body = document.querySelector('#body')
+    for (let i = 0; i < accentColors.length; i++) {
+        h = accentColors[i]
+        if (body.classList.contains(`accent-color-${h}`)) {
+            body.classList.remove(`accent-color-${h}`)
+        }
+    }    
+        body.classList.add(`accent-color-${color}`)
+        localStorage.setItem('accentColor', color)
+    }
+
+if (localStorage.getItem('accentColor')) {
+    setAccentColor(localStorage.getItem('accentColor'))
 }
