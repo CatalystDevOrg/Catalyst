@@ -105,3 +105,9 @@ function setAccentColor(color) {
 if (localStorage.getItem('accentColor')) {
     setAccentColor(localStorage.getItem('accentColor'))
 }
+
+function toggleFullScreen() {
+    toggleDisplay(document.querySelector('#userchrome'))
+    cat.ipcToggleFs();
+}
+

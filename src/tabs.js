@@ -61,7 +61,6 @@ function switchTabs(tabHash) {
 
     let activeTab = document.getElementById('tab-' + tabHash);
     activeTab.classList.add('active-tab');
-    activeTab.classList.remove('tab');
 
     let views = document.querySelectorAll('.view');
     views.forEach((x) => {
