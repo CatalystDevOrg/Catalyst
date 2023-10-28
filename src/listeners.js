@@ -4,6 +4,7 @@ reload = document.querySelector('#reload');
 backward = document.querySelector('#back');
 forward = document.querySelector('#forward');
 bkmrk = document.querySelector('#bkmtggl');
+find = document.querySelector('#find')
 
 bkmrk.addEventListener('click', () => {
     toggleBookmarks();
@@ -41,4 +42,12 @@ forward.addEventListener('click', () => {
 
 backward.addEventListener('click', () => {
     document.querySelector('.current').goBack();
+});
+
+find.addEventListener("input", (event) => {
+    if (find.value !== "") {
+        document.querySelector('.current').findInPage(find.value)
+    } else {
+        document.querySelector('.current').stopFindInPage('clearSelection')
+    }
 });

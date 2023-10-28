@@ -88,6 +88,11 @@ function toggleDisplay(e) {
     e.classList.toggle('hidden')
 }
 
+function toggleFind() {
+    e = document.querySelector('#find')
+    e.classList.toggle('hidden')
+}
+
 accentColors = ['blue', 'red']
 
 function setAccentColor(color) {
@@ -110,4 +115,3 @@ function toggleFullScreen() {
     toggleDisplay(document.querySelector('#userchrome'))
     cat.ipcToggleFs();
 }
-
