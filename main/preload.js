@@ -29,6 +29,7 @@ contextBridge.exposeInMainWorld('cat', {
             }
         );
     },
-    enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker')
+    enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker'),
+    ipcToggleFs: () => ipcRenderer.invoke('toggle-full-screen'),
 });
 

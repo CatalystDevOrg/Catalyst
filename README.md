@@ -2,7 +2,7 @@
 ![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total?color=%230f172a&style=for-the-badge)
 # Catalyst 
 A lightweight and user-focused web browser powered by Electron
-![image](https://user-images.githubusercontent.com/92550746/213339204-d0ab12ec-cbb8-46f2-bea6-b9df97202b56.png)
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/2ef60866-f851-41bb-9659-27b7779e7d3c)
 ## Packages
 Here are the Linux distributions that have Catalyst in their repositories: \
 [![Packaging status](https://repology.org/badge/vertical-allrepos/catalyst-browser.svg)](https://repology.org/project/catalyst-browser/versions)

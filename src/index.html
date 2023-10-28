@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body
+<body id="body"
     class="object-contain bg min-w-full bg-indigo-300 dark:bg-indigo-700 min-h-screen bg-indigo-300/0 overflow-hidden">
     <div id="loading"
         class="fixed z-40 flex items-center justify-center w-full h-full transition duration-500 bg-indigo-50 dark:bg-indigo-700">
@@ -20,17 +20,76 @@
     </div>
     </div>
     <!-- Tab bar -->
-    <div id="tb-wrapper" class="flex items-center px-1.5 py-1 mt-0 bg-indigo-300 dark:bg-indigo-600">
-        <div id="tabs-bar" class="flex items-center flex-1 space-x-1 overflow-auto no-scrollbar">
-            <!-- tabs are inserted with JS -->
+    <div id="userchrome">
+        <div id="tb-wrapper" class="flex items-center px-1.5 py-1 mt-0 bg-indigo-300 dark:bg-indigo-600">
+            <div id="tabs-bar" class="flex items-center flex-1 space-x-1 overflow-auto no-scrollbar">
+                <!-- tabs are inserted with JS -->
+            </div>
+            <div class="inline-flex px-1">
+                <button id="create-tab" onclick="createTab()" class="btn"><img src="../assets/icons/plus.svg"
+                        alt="Create tab"></button>&nbsp;
+                <button id="remove-tab" onclick="removeTab()" class="btn"><img src="../assets/icons/x.svg"
+                        alt="Remove tab"></button>&nbsp;
+                <button id="remove-tab" onclick="bookmarkCurrentTab()" class="btn"><img src="../assets/icons/star.svg"
+                        width="" alt="Bookmark tab" disabled></button>
+            </div>
         </div>
-        <div class="inline-flex px-1">
-            <button id="create-tab" onclick="createTab()" class="btn"><img src="../assets/icons/plus.svg"
-                    alt="Create tab"></button>&nbsp;
-            <button id="remove-tab" onclick="removeTab()" class="btn"><img src="../assets/icons/x.svg"
-                    alt="Remove tab"></button>&nbsp;
-            <button id="remove-tab" onclick="bookmarkCurrentTab()" class="btn"><img src="../assets/icons/star.svg"
-                    width="" alt="Bookmark tab" disabled></button>
+        <!-- Utility bar -->
+        <div class="w-full flex pb-1 dark:text-indigo-900 bg-indigo-300 dark:bg-indigo-600">
+            <button id="back" class="btn"><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>&nbsp;
+            <button id="forward" class="btn"><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>&nbsp;
+            <input id="searchbar" type="text"
+                class="rounded-3xl outline-0 dark:text-white min-w-fit w-[95%] text-sm bg-indigo-100 dark:bg-indigo-700 dark:text-indigo-900 py-1 px-2"
+                placeholder="Search or type a URL" />&nbsp;
+            <button id="reload" class="btn"><img src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>&nbsp;
+            <button id="more-btn" class="btn"><img src="../assets/icons/three-dots-vertical.svg"
+                    alt="More menu"></button>&nbsp;
+            <button class="dark:text-white btn" id="bkmtggl"><img width="20" height="20"
+                    src="../assets/icons/bookmark.svg"></button>&nbsp;
+        </div>
+        <!-- More menu -->
+        <div id="more-menu"
+            class="ttb-fade shadow-lg absolute bg-indigo-300 dark:bg-indigo-800 dark:text-white text-indigo-900 h-fit p-2 w-fit blurred float-right hidden right-0 m-1 rounded-3xl">
+            <ul>
+                <li class="moreMenuItem flex cursor-pointer" onclick="togglePreferences()">
+                    <img src="../assets/icons/gear-fill.svg" class="inline-flex" alt="Settings">Preferences
+                </li>
+                <li class="moreMenuItem cursor-pointer flex" onclick="inspectTab()">
+                    <img src="../assets/icons/code.svg" class="inline-flex" alt="Tools">Inspect tab
+                </li>
+                <li onClick="createTab('https://github.com/JaydenDev/Catalyst/issues/new')"
+                    class="moreMenuItem flex cursor-pointer">
+                    <img src="../assets/icons/bug.svg" class="inline-flex"
+                        alt="this image has not loaded properly">Feedback
+                </li>
+                <li onClick="createTab('https://github.com/JaydenDev/Catalyst')"
+                    class="moreMenuItem flex cursor-pointer">
+                    <img src="../assets/icons/github.svg" class="inline-flex"
+                        alt="this image has not loaded properly">Development
+                </li>
+                <a onClick="downloadCurrentPage()" class="moreMenuItem flex cursor-pointer">
+                    <img src="../assets/icons/download.svg" class="inline-flex"
+                        alt="this image has not loaded properly">Download Page
+                </a>
+                <a id="changelogbtn" onClick="openChangeLog()" class="moreMenuItem flex cursor-pointer">
+                    <svg fill="#FFFFFF" class="rounded-sm p-1 invert dark:invert-0" height="20px" width="20px"
+                        version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" xml:space="preserve">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M64.333,490h58.401l33.878-137.69h122.259L245.39,490h58.401l33.878-137.69h119.92v-48.162h-108.24l29.2-117.324h79.04 v-48.162H390.23L424.108,0H365.31l-33.878,138.661H208.79L242.668,0h-58.415l-33.864,138.661H32.411v48.162h106.298l-28.818,117.324 h-77.48v48.162h65.8L64.333,490z M197.11,186.824h122.642l-29.2,117.324H168.292L197.11,186.824z">
+                            </path>
+                        </g>
+                    </svg>&nbsp;&nbsp;<span id="ver"></span>&nbsp;Changes
+                </a>
+            </ul>
+        </div>
+        <!-- Bookmarks -->
+        <div id="bookmarks"
+            class="grid grid-cols-3 grid-rows-6 sliding-ttb backdrop-blur-2xl flex px-1 mb-0.2 h-screen hidden bg-indigo-300 dark:bg-indigo-700">
+            <!-- bookmarks inserted with JS -->
         </div>
     </div>
     <!-- Utility bar -->
@@ -124,6 +183,14 @@
                     <option value="2">Bing</option>
                     <option value="3">Brave</option>
                 </select>
+                <br />
+                <br />
+                <label>Accent Colors</label>
+                <div class="accent-colors-grid w-fit">
+                    <div onClick="setAccentColor('blue')" id="accent-blue" class="bg-blue-400 dark:bg-blue-600"></div>
+                    <div onClick="setAccentColor('red')"" id="accent-red" class="bg-red-400 dark:bg-red-600"></div>
+                </div>
+                <p class="text-sm">Sets the accent color of the UI</p>
             </div>
             <div class="hidden" id="advanced">
                 <label for="pref-strt">Startup Page</label>

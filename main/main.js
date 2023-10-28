@@ -1,5 +1,5 @@
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
-const { app, BrowserWindow, dialog, Menu, session, ipcMain } = require('electron');
+const { app, BrowserWindow, dialog, Menu, session, ipcMain, electron } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const fetch = require('cross-fetch');
@@ -137,11 +137,19 @@ const template = [{
     }
 },
 {
+    label: 'Fullscreen',
+    accelerator: 'F11',
+    click: function () {
+        mainWindow.webContents.executeJavaScript('toggleFullScreen()');
+    }
+},
+{
     label: 'DevTools',
     accelerator: 'CmdOrCtrl+I',
     click: function () {
         mainWindow.webContents.toggleDevTools();
-    }
+    },
+    
 }/*
     {
         label: "Check for Updates",
@@ -183,6 +191,10 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
     const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r' });
     return buf;
 });
+
+ipcMain.handle('toggle-full-screen', async (event) => {
+    mainWindow.setFullScreen(!mainWindow.isFullScreen());
+})
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
