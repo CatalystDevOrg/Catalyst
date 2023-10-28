@@ -87,3 +87,8 @@ function toggleBookmarks() {
 function toggleDisplay(e) {
     e.classList.toggle('hidden')
 }
+
+function toggleFullScreen() {
+    toggleDisplay(document.querySelector('#userchrome'))
+    cat.ipcToggleFs();
+}
