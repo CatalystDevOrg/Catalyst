@@ -1,3 +1,5 @@
+/* eslint-enable no-undef */
+/* eslint-enable no-unused-vars */
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const { app, BrowserWindow, dialog, Menu, session, ipcMain, electron } = require('electron');
 const path = require('path');
