@@ -6,10 +6,10 @@
 /* Custom Tailwind classes */
 @layer components {
 	.tab {
-		@apply transition flex text-center items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-indigo-600 rounded-lg cursor-pointer whitespace-nowrap text-white;
+		@apply bg-indigo-100 dark:bg-indigo-700 transition flex text-center items-center flex-1 max-w-md px-2 py-1 overflow-hidden text-sm text-indigo-600 rounded-lg cursor-pointer whitespace-nowrap text-white;
 	}
-	.active-tab {
-		@apply dark:text-white bg-indigo-100 dark:bg-indigo-700;
+	.active-tab, .tab:hover {
+		@apply dark:text-white bg-indigo-200 dark:bg-indigo-800;
 	}
   .tab-star {
     @apply ml-auto;
