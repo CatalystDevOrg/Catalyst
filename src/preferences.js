@@ -35,7 +35,7 @@ function togglePreferences() {
 
 function closePreferences() {
     preferences = getPreferences();
-    toggleDisplay(preferencesBox)
+    toggleDisplay(preferencesBox);
 }
 
 /**

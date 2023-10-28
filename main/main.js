@@ -194,7 +194,7 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
 
 ipcMain.handle('toggle-full-screen', async (event) => {
     mainWindow.setFullScreen(!mainWindow.isFullScreen());
-})
+});
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

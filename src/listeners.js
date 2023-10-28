@@ -4,7 +4,7 @@ reload = document.querySelector('#reload');
 backward = document.querySelector('#back');
 forward = document.querySelector('#forward');
 bkmrk = document.querySelector('#bkmtggl');
-find = document.querySelector('#find')
+find = document.querySelector('#find');
 
 bkmrk.addEventListener('click', () => {
     toggleBookmarks();
@@ -12,7 +12,7 @@ bkmrk.addEventListener('click', () => {
 });
 
 document.getElementById('more-btn').addEventListener('click', () => {
-    toggleDisplay(document.getElementById('more-menu'))
+    toggleDisplay(document.getElementById('more-menu'));
     document.querySelector('#more-btn').classList.toggle('bg-indigo-400');
 });
 
@@ -44,10 +44,10 @@ backward.addEventListener('click', () => {
     document.querySelector('.current').goBack();
 });
 
-find.addEventListener("input", (event) => {
-    if (find.value !== "") {
-        document.querySelector('.current').findInPage(find.value)
+find.addEventListener('input', (event) => {
+    if (find.value !== '') {
+        document.querySelector('.current').findInPage(find.value);
     } else {
-        document.querySelector('.current').stopFindInPage('clearSelection')
+        document.querySelector('.current').stopFindInPage('clearSelection');
     }
 });
