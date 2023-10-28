@@ -103,13 +103,31 @@
                     "name": "@electron-forge/maker-deb",
                     "config": {
                         "options": {
-                            "icon": "./assets/icon.png"
+                            "name": "Catalyst3",
+                            "genericName": "Web Browser",
+                            "maintainer": "CatalystDevOrg",
+                            "icon": "./assets/icon.png",
+                            "categories": [
+                                "Network",
+                                "Utility"
+                            ]
                         }
                     }
                 },
                 {
                     "name": "@electron-forge/maker-rpm",
-                    "config": {}
+                    "config": {
+                        "options": {
+                            "name": "Catalyst3",
+                            "genericName": "Web Browser",
+                            "maintainer": "CatalystDevOrg",
+                            "icon": "./assets/icon.png",
+                            "categories": [
+                                "Network",
+                                "Utility"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "electron-forge-maker-appimage",
