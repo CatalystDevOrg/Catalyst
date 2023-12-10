@@ -109,10 +109,10 @@
 	}
 }
 .accent-color-blue button, btn, input {
-	@apply hover:bg-blue-400 dark:bg-blue-600 !important;
+	@apply hover:bg-blue-400 dark:bg-blue-600;
 }
 .accent-color-red button, btn, input {
-	@apply hover:bg-red-400 dark:bg-red-600 !important;
+	@apply hover:bg-red-400 dark:bg-red-600;
 }
 .accent-colors-grid div {
 	@apply p-6 w-fit rounded-full;
