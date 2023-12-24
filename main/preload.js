@@ -31,5 +31,6 @@ contextBridge.exposeInMainWorld('cat', {
     },
     enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker'),
     ipcToggleFs: () => ipcRenderer.invoke('toggle-full-screen'),
+    getPlugins: () => ipcRenderer.invoke('get-plugins')
 });
 

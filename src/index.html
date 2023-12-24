@@ -151,6 +151,9 @@
                 <button id="clearbtn" onclick="clearData()" class="btn">Reset Preferences</button>
                 <p class="text-sm">Sets all preferences back to their default values.</p>
                 <br />
+                <label for="pref-enabledplugs">Set which plugins to be enabled (restart required)</label>
+                <input placeholder="Enabled plugins: plugin_id, plugin_id" class="text-black p-1.5 rounded-sm" id="pref-enabledplugs"></input>
+
             </div>
             <div class="hidden" id="experiments">
                 <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
@@ -189,6 +192,7 @@
     <script src="./startup.js" defer></script>
     <script src="./bookmarks.js"></script>
     <script src="./listeners.js"></script>
+    <script src="./plugins.js"></script>
 </body>
 
 </html>
