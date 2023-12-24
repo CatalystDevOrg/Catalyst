@@ -34,11 +34,11 @@
         "@electron-forge/maker-zip": "^7.2.0",
         "@electron-forge/publisher-github": "^7.2.0",
         "concurrently": "latest",
-        "electron": "^28.0.0",
+        "electron": "^28.1.0",
         "electron-forge-maker-appimage": "trusktr/electron-forge-maker-appimage#patch-1",
         "electron-reloader": "^1.2.3",
-        "eslint": "^8.55.0",
-        "tailwindcss": "^3.3.6"
+        "eslint": "^8.56.0",
+        "tailwindcss": "^3.4.0"
     },
     "dependencies": {
         "@cliqz/adblocker-electron": "^1.26.12",
