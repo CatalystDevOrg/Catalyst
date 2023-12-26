@@ -2,4 +2,4 @@ async function getPlugins() {
     return await cat.getPlugins();
 }
 
-console.log(getPlugins())
+getPlugins().then(plugins => console.log(plugins));
