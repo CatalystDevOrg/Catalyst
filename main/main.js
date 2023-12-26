@@ -201,17 +201,23 @@ ipcMain.handle('toggle-full-screen', async (event) => {
 
 ipcMain.handle('get-plugins', async (event) => {
     const dir = app.getPath('userData');
-    fs.readdir(`${dir}/plugins`, (err, files) => {
-    if (err) throw err;
-      
-    files.forEach(file => {
-        const filePath = path.join(`${dir}/plugins`, file);
-        fs.readFile(filePath, 'utf8', (err, contents) => {
-        if (err) throw err;
-        return `${file}:${contents}`
-    })})});
+    const files = await new Promise((resolve, reject) => {
+        fs.readdir(`${dir}/plugins`, (err, files) => {
+            if (err) reject(err);
+            else resolve(files);
+        });
+    });
+    return Promise.all(
+        files.map(file => new Promise((resolve, reject) => {
+            const filePath = path.join(`${dir}/plugins`, file);
+            fs.readFile(filePath, 'utf8', (err, contents) => {
+                if (err) reject(err);
+                resolve(`${file}:${contents}`);
+            });
+        }))
+    );
+});
 
-})
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

@@ -1,5 +1,5 @@
 async function getPlugins() {
-    return await cat.getPlugins().result;
+    return await cat.getPlugins();
 }
 
 console.log(getPlugins())
