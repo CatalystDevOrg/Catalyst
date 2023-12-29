@@ -83,3 +83,11 @@ function toggleBookmarks() {
     document.querySelector('#bookmarks').classList.toggle('hidden');
     document.querySelector('.current').classList.toggle('hidden');
 }
+
+function toggleTabs() {
+    if (!document.querySelector('#tbb').classList.contains("hidden")) {
+        document.querySelector('#tbb').classList.add("hidden") 
+        } else {
+            document.querySelector('#tbb').classList.remove("hidden")
+        }
+}

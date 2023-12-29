@@ -6,10 +6,10 @@
 /* Custom Tailwind classes */
 @layer components {
 	.tab {
-		@apply transition flex text-center items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 rounded-t-xl cursor-pointer whitespace-nowrap;
+		@apply transition flex text-center items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 rounded-lg cursor-pointer whitespace-nowrap m-4 p-3;
 	}
 	.active-tab {
-		@apply transition flex items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 dark:text-white bg-gray-100 dark:bg-gray-700 rounded-t-xl cursor-default whitespace-nowrap;
+		@apply transition flex items-center flex-1 max-w-md p-1 overflow-hidden text-sm text-gray-600 dark:text-white bg-gray-100 dark:bg-gray-700 rounded-lg m-4 p-3 cursor-default whitespace-nowrap;
 	}
   .tab-star {
     @apply ml-auto;

@@ -17,11 +17,7 @@
     </div>
     </div>
     </div>
-    <!-- Tab bar -->
     <div id="tb-wrapper" class="flex items-center px-1.5 py-1 mt-0 bg-white dark:bg-gray-800">
-        <div id="tabs-bar" class="flex items-center flex-1 space-x-1 overflow-auto no-scrollbar">
-            <!-- tabs are inserted with JS -->
-        </div>
         <div class="inline-flex px-1">
             <button id="create-tab" onclick="createTab()" class="btn"><img src="../assets/icons/plus.svg"
                     alt="Create tab"></button>&nbsp;
@@ -29,6 +25,8 @@
                     alt="Remove tab"></button>&nbsp;
             <button id="remove-tab" onclick="bookmarkCurrentTab()" class="btn"><img src="../assets/icons/star.svg"
                     width="" alt="Bookmark tab" disabled></button>
+                    <button id="toggle-tabs" onclick="toggleTabs()" class="btn"><img width="20" height="20" src="../assets/icons/tabs.svg"
+                        width="" alt="Bookmark tab" disabled></button>
         </div>
     </div>
     <!-- Utility bar -->
@@ -43,6 +41,12 @@
                 alt="More menu"></button>&nbsp;
         <button class="dark:text-white btn" id="bkmtggl"><img width="20" height="20"
                 src="../assets/icons/bookmark.svg"></button>&nbsp;
+    </div>
+    <!-- Tab Bar -->
+    <div id="tbb" class="bg-gray-900 min-h-screen w-[20%] fixed left-0">
+    <div id="tabs-bar" class="overflow-auto no-scrollbar">
+        <!-- tabs are inserted with JS -->
+    </div>
     </div>
     <!-- More menu -->
     <div id="more-menu"
