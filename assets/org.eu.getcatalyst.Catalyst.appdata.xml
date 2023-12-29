@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.CatalystDevOrg.Catalyst</id>
+  <id>org.eu.getcatalyst.Catalyst</id>
   
   <name>Catalyst</name>
   <summary>A lightweight and user-focused web browser powered by Electron</summary>
@@ -14,7 +14,7 @@
     </p>
   </description>
   
-  <launchable type="desktop-id">io.github.CatalystDevOrg.Catalyst.desktop</launchable>
+  <launchable type="desktop-id">org.eu.getcatalyst.Catalyst.desktop</launchable>
   <screenshots>
     <screenshot type="default">
       <image>https://user-images.githubusercontent.com/92550746/213339204-d0ab12ec-cbb8-46f2-bea6-b9df97202b56.png</image>
