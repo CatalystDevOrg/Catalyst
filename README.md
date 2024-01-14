@@ -1,7 +1,7 @@
 ![image](https://img.shields.io/github/issues/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/forks/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/stars/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge) ![image](https://img.shields.io/github/license/JaydenDev/Catalyst?color=%230f172a&style=for-the-badge)
 ![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total?color=%230f172a&style=for-the-badge)
 # Catalyst 
-A lightweight and user-focused web browser powered by Electron
+A free and open source user and privacy focused web browser aiming to provide a simple and private browsing experience.
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/2ef60866-f851-41bb-9659-27b7779e7d3c)
 ## Packages
 Here are the Linux distributions that have Catalyst in their repositories: \
