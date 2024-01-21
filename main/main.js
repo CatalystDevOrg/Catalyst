@@ -147,6 +147,13 @@ const template = [{
     }
 },
 {
+    label: 'Find',
+    accelerator: 'CmdOrCtrl+F',
+    click: function() {
+        mainWindow.webContents.executeJavaScript('toggleFind()')
+    }
+},
+{
     label: 'DevTools',
     accelerator: 'CmdOrCtrl+I',
     click: function () {
