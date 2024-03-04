@@ -108,6 +108,9 @@
 		clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%);
 	}
 }
+/*
+Must be uncommented for experimental accent colors feature to work
+
 .accent-color-blue, button, btn{
 	@apply hover:bg-blue-400 dark:bg-blue-600;
 }
@@ -118,6 +121,7 @@
 	@apply p-6 w-fit rounded-full;
 }
 }
+*/
 
 /* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */
 webview {
