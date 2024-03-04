@@ -108,10 +108,10 @@
 		clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%);
 	}
 }
-.accent-color-blue button, btn, input {
+.accent-color-blue, button, btn{
 	@apply hover:bg-blue-400 dark:bg-blue-600;
 }
-.accent-color-red button, btn, input {
+.accent-color-red, button, btn {
 	@apply hover:bg-red-400 dark:bg-red-600;
 }
 .accent-colors-grid div {
