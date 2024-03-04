@@ -6,21 +6,16 @@ const path = require('path');
 const fs = require('fs');
 const fetch = require('cross-fetch');
 const contextMenu = require('electron-context-menu');
-const { setupTitlebar, attachTitlebarToWindow } = require('custom-electron-titlebar/main');
 const { updateElectronApp } = require('update-electron-app');
 
 if (require('electron-squirrel-startup')) app.quit();
 
 let mainWindow;
 
-setupTitlebar();
-
 function createWindow() {
     mainWindow = new BrowserWindow({
         minWidth: 1024,
         minHeight: 768,
-        titleBarStyle: 'hidden',
-        frame: false,
         webPreferences: {
             webviewTag: true,
             devTools: true,
@@ -33,8 +28,6 @@ function createWindow() {
     });
     mainWindow.loadFile('./src/index.html');
     updateElectronApp()
-    mainWindow.setMenuBarVisibility(false);
-    attachTitlebarToWindow(mainWindow);
 }
 
 app.whenReady().then(() => {
