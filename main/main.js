@@ -27,7 +27,7 @@ function createWindow() {
         icon: path.join(__dirname, '../assets/icon.png'),
     });
     mainWindow.loadFile('./src/index.html');
-    updateElectronApp()
+    updateElectronApp();
 }
 
 app.whenReady().then(() => {
@@ -143,7 +143,7 @@ const template = [{
     label: 'Find',
     accelerator: 'CmdOrCtrl+F',
     click: function() {
-        mainWindow.webContents.executeJavaScript('toggleFind()')
+        mainWindow.webContents.executeJavaScript('toggleFind()');
     }
 },
 {
