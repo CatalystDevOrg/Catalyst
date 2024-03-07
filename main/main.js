@@ -58,12 +58,13 @@ let appName = app.getName();
 
 function createAboutWindow() {
     aboutWindow = new BrowserWindow({
-        minWidth: 600,
-        minHeight: 400,
-        width: 600,
-        height: 400,
+        minWidth: 500,
+        minHeight: 250,
+        width: 500,
+        height: 250,
         title: 'About Catalyst',
         icon: path.join(__dirname, '../assets/icon.png'),
+        resizable: false,
     });
     aboutWindow.loadFile('./src/about.html');
     aboutWindow.setMenuBarVisibility(false);
