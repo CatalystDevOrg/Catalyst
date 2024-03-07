@@ -18,7 +18,3 @@ if (!localStorage.getItem('home-postfix')) {
 if (localStorage.getItem('bookmarks') < 1) {
     document.querySelector('#bookmarks').innerText = 'When you add bookmarks they will appear here!';
 }
-
-if (localStorage.getItem('catalyst.flags.features.experimental.accentcolors.enable')) {
-    document.querySelector('#flag-accents').classList.remove('hidden');
-}
