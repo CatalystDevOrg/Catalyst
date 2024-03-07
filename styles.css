@@ -108,17 +108,6 @@
 		clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%);
 	}
 }
-.accent-color-blue button, btn, input {
-.accent-color-blue, button, btn{
-	@apply hover:bg-blue-400 dark:bg-blue-600;
-}
-.accent-color-red button, btn, input {
-	@apply hover:bg-red-400 dark:bg-red-600;
-}
-.accent-colors-grid div {
-	@apply p-6 w-fit rounded-full;
-}
-}
 
 /* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */
 webview {
@@ -132,10 +121,4 @@ html {
 
 .cet-container {
 	overflow: hidden !important;
-}
-
-.accent-colors-grid {
-	display: grid;
-	gap: 16px;
-	grid-template-columns: repeat(3, 1fr);
 }

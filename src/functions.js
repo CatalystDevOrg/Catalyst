@@ -93,24 +93,6 @@ function toggleFind() {
     e.classList.toggle('hidden');
 }
 
-accentColors = ['blue', 'red'];
-
-function setAccentColor(color) {
-    body = document.querySelector('#body');
-    for (let i = 0; i < accentColors.length; i++) {
-        h = accentColors[i];
-        if (body.classList.contains(`accent-color-${h}`)) {
-            body.classList.remove(`accent-color-${h}`);
-        }
-    }    
-    body.classList.add(`accent-color-${color}`);
-    localStorage.setItem('accentColor', color);
-}
-
-if (localStorage.getItem('accentColor')) {
-    setAccentColor(localStorage.getItem('accentColor'));
-}
-
 function toggleFullScreen() {
     toggleDisplay(document.querySelector('#userchrome'));
     cat.ipcToggleFs();
