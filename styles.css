@@ -107,7 +107,7 @@
 		transform: translateX(100%);
 		clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%);
 	}
-}
+}}
 
 /* Custom Styles (they can stay to ensure compatibility with sites as webviews technically use iframes) */
 webview {
