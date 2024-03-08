@@ -97,7 +97,7 @@
 		}
 	}
   .bookmark {
-    @apply transition flex items-center flex-1 text-center m-auto max-w-sm p-6 m-0.5 min-w-[95px] h-[95px] overflow-hidden bg-indigo-200 dark:bg-indigo-900 text-2xl dark:hover:bg-indigo-700 hover:bg-indigo-400 rounded cursor-pointer text-indigo-600 dark:text-indigo-100 whitespace-nowrap;
+    @apply transition flex items-center flex-1 text-center m-auto max-w-sm p-6 m-0.5 min-w-[95px] h-[95px] overflow-hidden bg-indigo-200 dark:bg-indigo-800 text-2xl dark:hover:bg-indigo-900 hover:bg-indigo-500 rounded cursor-pointer text-indigo-600 dark:text-indigo-100 whitespace-nowrap;
   }
   .bookmark img {
 	@apply m-2 rounded-lg dark:bg-indigo-600 bg-indigo-200 p-2 w-[32pt] h-[32pt];
