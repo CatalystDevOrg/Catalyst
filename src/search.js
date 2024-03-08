@@ -48,9 +48,13 @@ searchbar.addEventListener('input', async() => {
 function loadURL(url) {
     view = document.querySelector('.current');
     if (isSearch(url)) {
+        if (!localStorage.getItem('engine')) {
+            document.querySelector('.current').src  = `${engineurls[1]}${encodeURIComponent(url)}`
+        } else {
         document.querySelector(
             '.current'
-        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}` || 'https://duckduckgo.com/?q=\'}';
+        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}`;
+        }
     } else {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
