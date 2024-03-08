@@ -1,6 +1,6 @@
 // search engine globals
 const engineurls = [
-    'https://google.com/?q=',
+    'https://www.google.com/search?q=',
     'https://duckduckgo.com/?q=',
     'https://www.bing.com/search?q=',
     'https://search.brave.com/search?q='
