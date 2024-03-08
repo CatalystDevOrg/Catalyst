@@ -15,7 +15,7 @@
     @apply ml-auto;
   	}
 	button, select {
-		@apply dark:text-white hover:bg-indigo-400 text-black rounded-lg dark:hover:bg-indigo-600 text-center p-1 bg-transparent transition
+		@apply dark:text-white bg-indigo-400 hover:bg-indigo-500 text-black rounded-lg dark:bg-indigo-700 dark:hover:bg-indigo-800 text-center p-1 transition
 	}
 	button img {
 		@apply dark:invert;
