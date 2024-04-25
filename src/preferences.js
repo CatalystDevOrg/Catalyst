@@ -17,8 +17,10 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-darkmode'), 'dark');
         document.getElementById('pref-autocomplete').checked = preferences.autocomplete;
         addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocomplete');
-        document.getElementById('pref-dm').checked = preferences.dm;
-        addCheckboxListener(document.getElementById('pref-dm'), 'dm');
+        document.getElementById('pref-dm').checked = prefExperiments.forcedDarkMode.enabled;
+        document.getElementById('pref-dm').addEventListener('change', () => {
+            prefExperiments.forcedDarkMode.enabled;
+        })
         document.getElementById('pref-usrchr').checked = preferences.usrchr;
         addCheckboxListener(document.getElementById('pref-usrchr'), 'usrchr');
         document.getElementById('pref-adblk').checked = preferences.adblk;
@@ -80,6 +82,7 @@ function addTextListener(element, prefKey) {
  */
 function updatePreferences() {
     window.localStorage.setItem('preferences', JSON.stringify(preferences));
+    window.localStorage.setItem('experiments', JSON.stringify(prefExperiments))
     evaluatePreferences();
 }
 
@@ -98,6 +101,7 @@ function evaluatePreferences() {
     if (preferences.adblk) {
         cat.enableAdBlocker();
     }
+    prefExperiments = experimentalFeatures
 }
 
 var enginespref = document.querySelector('#se');

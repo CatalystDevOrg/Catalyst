@@ -68,7 +68,7 @@ function loadURL(url) {
     }
     removeChildren(suggestionsEl);
     view.addEventListener('did-finish-load', () => {
-        if (preferences.dm) {
+        if (experimentalFeatures.forcedDarkMode.enable)  {
             if (localStorage.getItem('forced-dm-excludes') == null) {
                 invertTab();
             } else if (localStorage.getItem('forced-dm-excludes').indexOf(view.url)) {
