@@ -49,11 +49,11 @@ function loadURL(url) {
     view = document.querySelector('.current');
     if (isSearch(url)) {
         if (!localStorage.getItem('engine')) {
-            document.querySelector('.current').src  = `${engineurls[1]}${encodeURIComponent(url)}`
+            document.querySelector('.current').src  = `${engineurls[1]}${encodeURIComponent(url)}`;
         } else {
-        document.querySelector(
-            '.current'
-        ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}`;
+            document.querySelector(
+                '.current'
+            ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}`;
         }
     } else {
         if ( url.startsWith('http://') ) {
