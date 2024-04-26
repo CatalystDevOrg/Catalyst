@@ -119,7 +119,6 @@
                 },
                 {
                     "name": "electron-forge-maker-appimage",
-                    "targetArch": "x64"
                 }
             ]
         }
