@@ -8,8 +8,6 @@ Here are the Linux distributions that have Catalyst in their repositories: \
 [![Packaging status](https://repology.org/badge/vertical-allrepos/catalyst-browser.svg)](https://repology.org/project/catalyst-browser/versions)
 ## Other Systems
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/ec8b5c92-760a-4dde-aca5-e61a52073d55) Windows 10 or later x64 and ARM \
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf75d9b2-242f-47a5-9a15-964a43f18bb5) AppImage for Linux x64 \
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/c95a1e37-fcab-4c0a-a001-4d336f8ce670) DMGs and ZIPs for MacOS x64 and Apple Silicon \
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/1a18e7a4-cf04-47db-b3eb-de15d0dc4fa7) DEBs for Debian x64 and ARM \
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/c5fb1433-4efc-4a87-b129-6ffbdb0b14e2) RPMS for Fedora x64
 
