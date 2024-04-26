@@ -6,7 +6,6 @@ const path = require('path');
 const fs = require('fs');
 const fetch = require('cross-fetch');
 const contextMenu = require('electron-context-menu');
-const { updateElectronApp } = require('update-electron-app');
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -27,7 +26,6 @@ function createWindow() {
         icon: path.join(__dirname, '../assets/icon.png'),
     });
     mainWindow.loadFile('./src/index.html');
-    updateElectronApp();
 }
 
 app.whenReady().then(() => {
