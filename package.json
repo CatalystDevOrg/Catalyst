@@ -6,14 +6,10 @@
     "private": true,
     "scripts": {
         "start": "electron .",
-        "dev": "concurrently -k npm:start npm:tailwind",
-        "tailwind": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify --watch",
-        "tailwind:once": "tailwindcss -i ./styles.css -o ./output/tailwind.css --minify",
         "package": "electron-forge package",
         "package:flatpak": "electron-forge package flatpak",
         "publish": "electron-forge publish",
         "make": "electron-forge make",
-        "build": "concurrently -k npm:tailwind:once npm:make",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     },
@@ -32,11 +28,9 @@
         "@electron-forge/maker-squirrel": "^7.3.1",
         "@electron-forge/maker-zip": "^7.3.1",
         "@electron-forge/publisher-github": "^7.3.1",
-        "concurrently": "latest",
         "electron": "^29.1.5",
         "electron-reloader": "^1.2.3",
-        "eslint": "^8.57.0",
-        "tailwindcss": "^3.4.1"
+        "eslint": "^8.57.0"
     },
     "dependencies": {
         "@cliqz/adblocker-electron": "^1.26.16",
@@ -56,7 +50,6 @@
                     ".eslintrc.json",
                     "pnpm-lock.yaml",
                     "README.md",
-                    "tailwind.config.js",
                     "CODE_OF_CONDUCT.md",
                     ".pnpm-debug.log",
                     ".github",
