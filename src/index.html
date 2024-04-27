@@ -6,6 +6,7 @@
     <script src="./tabs.js" defer></script>
     <script src="./search.js" defer></script>
     <script src="./preferences.js" defer></script>
+    <link href="../node_modules/material-symbols/index.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../output/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -100,63 +101,64 @@
     <div id="preferences-box" class="h-screen w-screen hidden overflow-auto text-md shadow-lg bg-indigo-300 p-1.5 dark:bg-indigo-600
     text-indigo-900 dark:text-indigo-50 ttb-fade">
         <div class="ml-4 mt-2">
-            <button onClick="togglePreferences()" class="btn"><img class="dark:invert" src="../assets/icons/x.svg"
-                    class="inline-flex mb-1 px-2" alt="this image has not loaded properly"></button>
-            <div id="pref-tabs">
-                <button onClick='changePrefTab("basic")'>Basic</button>
-                <button onClick='changePrefTab("advanced")'>Advanced</button>
-                <button onClick='changePrefTab("experiments")'>Experiments</buttons>
-            </div>
-            <h1 class="font-bold text-xl">Preferences</h1>
-            <br />
-            <div id="basic">
-                <label for="pref-darkmode">Dark Mode? </label>
-                <input id="pref-darkmode" type="checkbox" class="" />
-                <p class="text-sm">Toggle dark mode</p>
+            <button onClick="togglePreferences()"><span class="material-symbols-rounded">close</span></button>
+            <aside id="pref-tabs">
+                <button onClick='changePrefTab("basic")'><span class="material-symbols-rounded">build</span>Basic</button>
+                <button onClick='changePrefTab("advanced")'><span class="material-symbols-rounded">construction</span>Advanced</button>
+                <button onClick='changePrefTab("experiments")'><span class="material-symbols-rounded">experiment</span>Experiments</button>
+            </aside>
+            <article>
+                <h1 class="font-bold text-xl">Preferences</h1>
                 <br />
-                <label for="pref-autocomplete">Autocomplete </label>
-                <input id="pref-autocomplete" type="checkbox" class="" />
-                <p class="text-sm">Search Autocomplete</p>
+                <div id="basic">
+                    <label for="pref-darkmode">Dark Mode? </label>
+                    <input id="pref-darkmode" type="checkbox" class="" />
+                    <p class="text-sm">Toggle dark mode</p>
+                    <br />
+                    <label for="pref-autocomplete">Autocomplete </label>
+                    <input id="pref-autocomplete" type="checkbox" class="" />
+                    <p class="text-sm">Search Autocomplete</p>
+                    <br />
+                    <label for="se">Search Engine</label>
+                    <select name="se" id="se">
+                        <option value="0">Google</option>
+                        <option value="1">DuckDuckGo</option>
+                        <option value="2">Bing</option>
+                        <option value="3">Brave</option>
+                    </select>
+                </div>
+                <div class="hidden" id="advanced">
+                    <label for="pref-strt">Startup Page</label>
+                    <input class="text-black p-1.5 rounded-sm" id="pref-strt" class="" />
+                    <p class="text-sm">Sets a custom startup page.</p>
+                    <br />
+                    <label for="pref-usrchr">Custom CSS</label>
+                    <input id="pref-usrchr" type="checkbox" class="" />
+                    <p class="text-sm">Loads custom css from the userChrome.css file</p>
+                    <br />
+                    <label for="pref-adblk">Enable AD Blocker</label>
+                    <input id="pref-adblk" type="checkbox" class="" />
+                    <p class="text-sm">Enables the ad blocker (RESTART REQUIRED)</p>
+                    <br />
+                    <button id="clearbtn" onclick="clearData()" class="btn">Reset Preferences</button>
+                    <p class="text-sm">Sets all preferences back to their default values.</p>
+                    <br />
+                </div>
+                <div class="hidden" id="experiments">
+                    <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
+                    <input id="pref-dm" type="checkbox" class="" />
+                    <p class="text-sm">Toggles forced dark mode for all sites.</p>
+                    <br />
+                    <label for="pref-useragent"><b class="text-emerald-500">Experimental</b> User Agent: </label>
+                    <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded"
+                        placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
+                    <p class="text-sm">Sets a custom user agent.</p>
+                </div>
                 <br />
-                <label for="se">Search Engine</label>
-                <select name="se" id="se">
-                    <option value="0">Google</option>
-                    <option value="1">DuckDuckGo</option>
-                    <option value="2">Bing</option>
-                    <option value="3">Brave</option>
-                </select>
-            </div>
-            <div class="hidden" id="advanced">
-                <label for="pref-strt">Startup Page</label>
-                <input class="text-black p-1.5 rounded-sm" id="pref-strt" class="" />
-                <p class="text-sm">Sets a custom startup page.</p>
+                <i class="text-sm" id="pref-ver"></i>
                 <br />
-                <label for="pref-usrchr">Custom CSS</label>
-                <input id="pref-usrchr" type="checkbox" class="" />
-                <p class="text-sm">Loads custom css from the userChrome.css file</p>
-                <br />
-                <label for="pref-adblk">Enable AD Blocker</label>
-                <input id="pref-adblk" type="checkbox" class="" />
-                <p class="text-sm">Enables the ad blocker (RESTART REQUIRED)</p>
-                <br />
-                <button id="clearbtn" onclick="clearData()" class="btn">Reset Preferences</button>
-                <p class="text-sm">Sets all preferences back to their default values.</p>
-                <br />
-            </div>
-            <div class="hidden" id="experiments">
-                <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
-                <input id="pref-dm" type="checkbox" class="" />
-                <p class="text-sm">Toggles forced dark mode for all sites.</p>
-                <br />
-                <label for="pref-useragent"><b class="text-emerald-500">Experimental</b> User Agent: </label>
-                <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded"
-                    placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
-                <p class="text-sm">Sets a custom user agent.</p>
-            </div>
-            <br />
-            <i class="text-sm" id="pref-ver"></i>
-            <br />
-            <i class="text-sm" id="distrib_id">catalyst-default-distrib</i>
+                <i class="text-sm" id="distrib_id">catalyst-default-distrib</i>
+            </article>
         </div>
     </div>
     </div>

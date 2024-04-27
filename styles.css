@@ -100,6 +100,22 @@
   .bookmark img {
 	@apply m-2 rounded-lg dark:bg-indigo-600 bg-indigo-200 p-2 w-[32pt] h-[32pt];
   }
+  #pref-tabs {
+	@apply bg-indigo-700 w-[10%] p-1 m-2 rounded-3xl fixed left-0;
+  }
+  #pref-tabs button {
+	display: block;
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	@apply rounded-3xl;
+  }
+  #pref-tabs button span {
+	vertical-align: bottom;
+  }
+  article {
+	margin-left: 10%;
+  }
   @keyframes sliding-rtl {
 	0% {
 		transform: translateX(100%);
@@ -115,6 +131,11 @@ webview {
 
 html {
 	scroll-behavior: smooth;
+	font-size: 12pt;
+}
+
+#preferences {
+	font-size: 2em;
 }
 
 .cet-container {
