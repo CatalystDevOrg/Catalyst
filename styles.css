@@ -19,7 +19,8 @@ body {
     overflow: hidden;
     min-width: 100%;
     min-height: 100vh;
-    background-color: var(--primary);;
+    background-color: var(--primary);
+    color: var(--foreground);
 }
 
 .tab {
@@ -98,9 +99,8 @@ button img {
 }
 
 .moreMenuItem:hover {
+    color: var(--foreground);
     background-color: #4F46E5;
-    color: white;
-
 }
 
 .moreMenuItem {
@@ -110,13 +110,8 @@ button img {
     cursor: pointer;
 }
 
-.moreMenuItem img {
-    margin: 0.25rem;
-    padding: 0.5rem;
-    width: 16pt;
-    height: 16pt;
-    background-color: #C7D2FE;
-    border-radius: 0.5rem;
+.moreMenuItem span {
+    margin-left: 4px;
 }
 
 .bookmark {
