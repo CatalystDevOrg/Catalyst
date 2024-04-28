@@ -232,6 +232,20 @@ ul {
     animation: spin 1s linear infinite;
 }
 
+#userchrome {
+    margin-left: 4pt;
+    margin-right: 4pt;
+}
+
+#userchrome button {
+    margin-left: 3pt;
+}
+
+#userchrome #searchbar {
+    margin-left: 2pt;
+    margin-right: 4pt;
+}
+
 #tb-wrapper {
     display: flex;
     padding-top: 0.25rem;
