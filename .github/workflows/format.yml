@@ -1,9 +1,8 @@
 # taken from https://dev.to/abulka/comment/1dh3k thanks!
 name: Format Code
 on:
-  push:
-    tags:
-      - "*"
+  push
+
 jobs:
   release:
     runs-on: ubuntu-latest
