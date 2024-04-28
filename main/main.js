@@ -34,6 +34,10 @@ app.whenReady().then(() => {
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
+
+    session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
+        callback(mainWindow.webContents.executeJavaScript(`confirm('This page has requested the following permission: ${permission}')`))
+    });
 });
 
 app.on('window-all-closed', function () {
