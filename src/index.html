@@ -24,34 +24,38 @@
                 <!-- tabs are inserted with JS -->
             </div>
             <div class="tabs-btns">
-                <button id="create-tab" onclick="createTab()" ><img src="../assets/icons/plus.svg"
+                <button id="create-tab" onclick="createTab()"><img src="../assets/icons/plus.svg"
                         alt="Create tab"></button>
                 <button id="remove-tab" onclick="removeTab()"><img src="../assets/icons/x.svg"
                         alt="Remove tab"></button>
-                <button id="remove-tab" onclick="bookmarkCurrentTab()"><img src="../assets/icons/star.svg"
-                        width="" alt="Bookmark tab" disabled></button>
+                <button id="remove-tab" onclick="bookmarkCurrentTab()"><img src="../assets/icons/star.svg" width=""
+                        alt="Bookmark tab" disabled></button>
             </div>
         </div>
         <!-- Utility bar -->
         <div id="utility">
-            <button id="back" ><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>
-            <button id="forward" ><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>
+            <button id="back"><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>
+            <button id="forward"><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>
             <input id="searchbar" type="text" placeholder="Search or type a URL" />
-            <button id="reload" ><img src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
-            <button id="more-btn" ><img src="../assets/icons/three-dots-vertical.svg"
-                    alt="More menu"></button>
-            <button  id="bkmtggl"><img width="20" height="20"
-                    src="../assets/icons/bookmark.svg"></button>
+            <button id="reload"><img src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
+            <button id="more-btn"><img src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
+            <button id="bkmtggl"><img width="20" height="20" src="../assets/icons/bookmark.svg"></button>
         </div>
         <!-- More menu -->
         <div class="hidden" id="more-menu">
             <ul>
-                <li class="moreMenuItem" onclick="togglePreferences()"><span class="material-symbols-rounded">settings</span>Preferences</li>
-                <li class="moreMenuItem" onclick="inspectTab()"><span class="material-symbols-rounded">search</span>Inspect Tab</li>
-                <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst/issues/new')"><span class="material-symbols-rounded">bug_report</span>Feedback</li>
-                <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst')"><span class="material-symbols-rounded">code</span>Development</li>
-                <li class="moreMenuItem" onClick="downloadCurrentPage()" class="moreMenuItem"><span class="material-symbols-rounded">download</span>Download Page</li>
-                <li class="moreMenuItem" id="changelogbtn" onClick="openChangeLog()" class="moreMenuItem"><span class="material-symbols-rounded">update</span><span id="ver"></span> Changes</li>
+                <li class="moreMenuItem" onclick="togglePreferences()"><span
+                        class="material-symbols-rounded">settings</span>Preferences</li>
+                <li class="moreMenuItem" onclick="inspectTab()"><span
+                        class="material-symbols-rounded">search</span>Inspect Tab</li>
+                <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst/issues/new')"><span
+                        class="material-symbols-rounded">bug_report</span>Feedback</li>
+                <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst')"><span
+                        class="material-symbols-rounded">code</span>Development</li>
+                <li class="moreMenuItem" onClick="downloadCurrentPage()" class="moreMenuItem"><span
+                        class="material-symbols-rounded">download</span>Download Page</li>
+                <li class="moreMenuItem" id="changelogbtn" onClick="openChangeLog()" class="moreMenuItem"><span
+                        class="material-symbols-rounded">update</span><span id="ver"></span> Changes</li>
             </ul>
         </div>
     </div>
@@ -61,105 +65,72 @@
     </div>
     <!-- Preferences -->
     <div class="hidden" id="preferences-box">
-        <div>
-            <button onClick="togglePreferences()" ><img src="../assets/icons/x.svg" alt="this image has not loaded properly"></button>
-            <div id="pref-tabs">
-                <button onClick='changePrefTab("basic")'><span class="material-symbols-rounded">build</span>Basic</button>
-                <button onClick='changePrefTab("advanced")'><span class="material-symbols-rounded">construction</span>Advanced</button>
-                <button onClick='changePrefTab("experiments")'><span class="material-symbols-rounded">experiment</span>Experiments</buttons>
-            </div>
-            <h1 class="font-bold text-xl">Preferences</h1>
-            <br />
-            <div id="basic">
-                <label for="pref-darkmode">Dark Mode? </label>
-                <input title="This feature is disabled as the implementation does not work due to recent changes." id="pref-darkmode" type="checkbox" class="" disabled/>
-                <p class="text-sm">Toggle dark mode</p>
-                <br />
-                <label for="pref-autocomplete">Autocomplete </label>
-                <input id="pref-autocomplete" type="checkbox" class="" />
-                <p class="text-sm">Search Autocomplete</p>
-                <br />
-                <label for="se">Search Engine</label>
-                <select name="se" id="se">
-                    <option value="0">Google</option>
-                    <option value="1">DuckDuckGo</option>
-                    <option value="2">Bing</option>
-                    <option value="3">Brave</option>
-                    <option value="4">Escosia</option>
-                </select>
-            </div>
-            <div class="hidden" id="advanced">
-                <label for="pref-strt">Startup Page</label>
-                <input class="text-black p-1.5 rounded-sm" id="pref-strt" class="" />
-                <p class="text-sm">Sets a custom startup page.</p>
-                <br />
-                <div id="basic">
-                    <label for="pref-darkmode">Dark Mode? </label>
-                    <input id="pref-darkmode" type="checkbox" class="" />
-                    <p class="text-sm">Toggle dark mode</p>
-                    <br />
-                    <label for="pref-autocomplete">Autocomplete </label>
-                    <input id="pref-autocomplete" type="checkbox" class="" />
-                    <p class="text-sm">Search Autocomplete</p>
-                    <br />
-                    <label for="se">Search Engine</label>
-                    <select name="se" id="se">
-                        <option value="0">Google</option>
-                        <option value="1">DuckDuckGo</option>
-                        <option value="2">Bing</option>
-                        <option value="3">Brave</option>
-                        <option value="4">Escosia</option>
-                    </select>
-                </div>
-                <div class="hidden" id="advanced">
-                    <label for="pref-strt">Startup Page</label>
-                    <input class="text-black p-1.5 rounded-sm" id="pref-strt" class="" />
-                    <p class="text-sm">Sets a custom startup page.</p>
-                    <br />
-                    <label for="pref-usrchr">Custom CSS</label>
-                    <input id="pref-usrchr" type="checkbox" class="" />
-                    <p class="text-sm">Loads custom css from the userChrome.css file</p>
-                    <br />
-                    <label for="pref-adblk">Enable AD Blocker</label>
-                    <input id="pref-adblk" type="checkbox" class="" />
-                    <p class="text-sm">Enables the ad blocker (RESTART REQUIRED)</p>
-                    <br />
-                    <button id="clearbtn" onclick="clearData()" class="btn">Reset Preferences</button>
-                    <p class="text-sm">Sets all preferences back to their default values.</p>
-                    <br />
-                </div>
-                <div class="hidden" id="experiments">
-                    <label for="pref-dm"><b class="text-emerald-500">Experimental</b> Force Dark Mode</label>
-                    <input id="pref-dm" type="checkbox" class="" />
-                    <p class="text-sm">Toggles forced dark mode for all sites.</p>
-                    <br />
-                    <label for="pref-useragent"><b class="text-emerald-500">Experimental</b> User Agent: </label>
-                    <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded"
-                        placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
-                    <p class="text-sm">Sets a custom user agent.</p>
-                </div>
-                <br />
-                <i class="text-sm" id="pref-ver"></i>
-                <br />
-                <button id="clearbtn" onclick="clearData()" >Reset Preferences</button>
-                <p class="text-sm">Sets all preferences back to their default values.</p>
-                <br />
-            </div>
-            <div class="hidden" id="experiments">
-                <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
-                <input id="pref-dm" type="checkbox" class="" />
-                <p class="text-sm">Toggles forced dark mode for all sites.</p>
-                <br />
-                <label for="pref-useragent"><b>Experimental</b> User Agent: </label>
-                <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded"
-                    placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
-                <p class="text-sm">Sets a custom user agent.</p>
-            </div>
-            <br />
-            <i class="text-sm" id="pref-ver"></i>
-            <br />
-            <i class="text-sm" id="distrib_id">catalyst-default-distrib</i>
+        <button onClick="togglePreferences()"><img src="../assets/icons/x.svg"
+                alt="this image has not loaded properly"></button>
+        <div id="pref-tabs">
+            <button onClick='changePrefTab("basic")'><span class="material-symbols-rounded">build</span>Basic</button>
+            <button onClick='changePrefTab("advanced")'><span
+                    class="material-symbols-rounded">construction</span>Advanced</button>
+            <button onClick='changePrefTab("experiments")'><span
+                    class="material-symbols-rounded">experiment</span>Experiments</button>
         </div>
+        <h1 class="font-bold text-xl">Preferences</h1>
+        <br />
+        <div id="basic">
+            <label for="pref-darkmode">Dark Mode? </label>
+            <input title="This feature is disabled as the implementation does not work due to recent changes."
+                id="pref-darkmode" type="checkbox" class="" disabled />
+            <p class="text-sm">Toggle dark mode</p>
+            <br />
+            <label for="pref-autocomplete">Autocomplete </label>
+            <input id="pref-autocomplete" type="checkbox" class="" />
+            <p class="text-sm">Search Autocomplete</p>
+            <br />
+            <label for="se">Search Engine</label>
+            <select name="se" id="se">
+                <option value="0">Google</option>
+                <option value="1">DuckDuckGo</option>
+                <option value="2">Bing</option>
+                <option value="3">Brave</option>
+                <option value="4">Escosia</option>
+            </select>
+        </div>
+        <div class="hidden" id="advanced">
+            <label for="pref-strt">Startup Page</label>
+            <input class="text-black p-1.5 rounded-sm" id="pref-strt" />
+            <p class="text-sm">Sets a custom startup page.</p>
+            <br />
+            <label for="pref-usrchr">Custom CSS</label>
+            <input id="pref-usrchr" type="checkbox" class="" />
+            <p class="text-sm">Loads custom css from the userChrome.css file</p>
+            <br />
+            <label for="pref-adblk">Enable AD Blocker</label>
+            <input id="pref-adblk" type="checkbox" class="" />
+            <p class="text-sm">Enables the ad blocker (RESTART REQUIRED)</p>
+            <br />
+            <button id="clearbtn" onclick="clearData()" class="btn">Reset Preferences</button>
+            <p class="text-sm">Sets all preferences back to their default values.</p>
+            <br />
+        </div>
+        <div class="hidden" id="experiments">
+            <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
+            <input id="pref-dm" type="checkbox" class="" />
+            <p class="text-sm">Toggles forced dark mode for all sites.</p>
+            <br />
+            <label for="pref-useragent"><b>Experimental</b> User Agent: </label>
+            <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded"
+                placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
+            <p class="text-sm">Sets a custom user agent.</p>
+        </div>
+        <br />
+        <i class="text-sm" id="pref-ver"></i>
+        <br />
+        <button id="clearbtn" onclick="clearData()">Reset Preferences</button>
+        <p class="text-sm">Sets all preferences back to their default values.</p>
+        <br />
+        <i class="text-sm" id="pref-ver"></i>
+        <br />
+        <i class="text-sm" id="distrib_id">catalyst-default-distrib</i>
     </div>
     </div>
     <!-- Suggestions -->
