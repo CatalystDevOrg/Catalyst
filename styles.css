@@ -47,10 +47,6 @@ body {
     background-color: var(--secondary);
 }
 
-.tab-star {
-    margin-left: auto;
-}
-
 button,
 select {
     color: black;
@@ -59,12 +55,7 @@ select {
     text-align: center;
     padding: 0.25rem;
     transition: all;
-}
-
-button,
-select {
-    color: white;
-    background-color: #4F46E5;
+    cursor: pointer;
 }
 
 button:hover,
@@ -232,9 +223,11 @@ ul {
     animation: spin 1s linear infinite;
 }
 
-#userchrome {
-    margin-left: 4pt;
-    margin-right: 4pt;
+#utility {
+    display: flex;
+    padding-bottom: 0.25rem;
+    width: 100%;
+    background-color: var(--primary);;
 }
 
 #userchrome button {
@@ -269,13 +262,6 @@ ul {
     display: inline-flex;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-}
-
-#utility {
-    display: flex;
-    padding-bottom: 0.25rem;
-    width: 100%;
-    background-color: var(--primary);;
 }
 
 #searchbar {
