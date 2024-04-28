@@ -1,0 +1,19 @@
+# taken from https://dev.to/abulka/comment/1dh3k thanks!
+name: Format Code
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install
+      - name: Run eslint
+        run: npm run lint:fix
