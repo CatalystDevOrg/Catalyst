@@ -2,7 +2,7 @@
 ![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total?color=%230f172a&style=for-the-badge)
 # Catalyst 
 A free and open source user and privacy focused web browser aiming to provide a simple and private browsing experience.
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/2ef60866-f851-41bb-9659-27b7779e7d3c)
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/a149a1ac-5c5c-43d9-af33-c821fc35f8d5)
 ## Packages
 Here are the Linux distributions that have Catalyst in their repositories: \
 [![Packaging status](https://repology.org/badge/vertical-allrepos/catalyst-browser.svg)](https://repology.org/project/catalyst-browser/versions)
@@ -79,3 +79,7 @@ Here are the Linux distributions that have Catalyst in their repositories: \
     </td>
 </tr>
 </table>
+# Additional Screenshots
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/7349226a-41a6-48bb-9302-63ed8082922c)
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf3fd063-639e-4130-9d49-4d01ac521cf2)
+
