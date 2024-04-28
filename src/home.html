@@ -57,10 +57,29 @@
     .inner:hover {
         background-color: var(--secondary);
     }
+
+    #preferences {
+        background-color: var(--primary);
+        color: white;
+        padding: 4pt;
+        position: fixed;
+        right: 0;
+        height: 100%;
+        width: 10%;
+    }
+    #toggle {
+        margin: 4pt;
+        padding: 4pt;
+        border-radius: 9999px;
+        color: white;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
 </style>
 
 <body>
-    <div id="preferences">
+    <div class="hidden" id="preferences">
         <label for="widget-main">Main</label>
         <input id="widget-main" type="checkbox" class="" />
         <br />
@@ -86,6 +105,7 @@
             </div>
         </div>
     </div>
+    <button id="toggle">Preferences</button>
 
     <script>
         const main = document.getElementById('main')
@@ -96,6 +116,10 @@
         const wclock = document.getElementById('widget-clock')
         const wshort = document.getElementById('widget-shortcuts')
 
+        const toggle = document.getElementById('toggle')
+        toggle.addEventListener("click", () => {
+            document.getElementById('preferences').classList.toggle('hidden')
+        })
 
         if (!localStorage.getItem('main')) {
             main.display = "none";
