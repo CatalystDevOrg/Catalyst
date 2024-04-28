@@ -3,7 +3,8 @@ const engineurls = [
     'https://www.google.com/search?q=',
     'https://duckduckgo.com/?q=',
     'https://www.bing.com/search?q=',
-    'https://search.brave.com/search?q='
+    'https://search.brave.com/search?q=',
+    'https://www.ecosia.org/search?method=index&q='
 ];
 
 // protocols
