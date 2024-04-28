@@ -70,7 +70,6 @@ select {
 button:hover,
 select:hover {
     background-color: #3730A3;
-    /* dark:hover:bg-indigo-800 */
 }
 
 button img {
@@ -91,31 +90,24 @@ button img {
     width: 100vw;
     padding: 0.5rem;
     border: 1px solid #60A5FA;
-    /* border-blue-500 */
     color: white;
-    /* Assumes dark mode as default */
 }
 
 .suggestions-box {
     position: absolute;
     background-color: #FECACA;
-    /* bg-red-200 */
     background-color: #1E293B;
-    /* dark:bg-indigo-800 */
     border-color: #60A5FA;
-    /* border-blue-500 */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
     border-radius: 0 0 0.5rem 0.5rem;
 }
 
 *:focus {
     outline: 2px solid #34D399;
-    /* outline-emerald-600 */
 }
 
 .moreMenuItem:hover {
     background-color: #4F46E5;
-    /* dark:hover:bg-indigo-600 */
     color: white;
 
 }
@@ -123,16 +115,16 @@ button img {
 .moreMenuItem {
     padding: 0.5rem;
     border-radius: 9999px;
-    /* rounded-3xl */
+    display: flex;
+    cursor: pointer;
 }
 
 .moreMenuItem img {
     margin: 0.25rem;
     padding: 0.5rem;
-    width: 32pt;
-    height: 32pt;
+    width: 16pt;
+    height: 16pt;
     background-color: #C7D2FE;
-    /* bg-indigo-200 */
     border-radius: 0.5rem;
 }
 
