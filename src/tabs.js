@@ -139,3 +139,35 @@ function removeTab() {
             )
     );
 }
+
+function createSplitTab(u1, u2, hash) {
+    let tab = document.createElement('div');
+    let span = document.createElement('span');
+    // Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
+    tab.classList.add('tab');
+    tab.id = `tab-${hash}`;
+    tab.onclick = () => {
+        switchTabs(hash)
+    };
+    span.innerText = `${u1} | ${u2}`;
+    tab.appendChild(span)
+    document.getElementById('tabs-bar').appendChild(tab);
+    document.getElementById('searchbar').focus();
+}
+
+function createSplit(u1=ctlyststrppg, u2=ctlyststrppg) {
+    let views = document.getElementById('webviews')
+    let split = document.createElement('div')
+    let hash = generateHashkey();
+    split.id = `view-${hash}`
+    let primary = document.createElement('webview')
+    let secondary = document.createElement('webview')
+    primary.src = u1;
+    secondary.src = u2;
+    split.appendChild(primary)
+    split.appendChild(secondary)
+    split.classList.add('view')
+    split.classList.add('split')
+    views.appendChild(split)
+    createSplitTab(u1, u2, hash)
+}

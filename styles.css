@@ -332,3 +332,10 @@ webview {
     background-color: #ffffff;
     scroll-behavior: smooth;
 }
+
+.split webview {
+    width: 100%;
+    border: 3px solid black;
+    resize: horizontal;
+    overflow: auto;
+}
