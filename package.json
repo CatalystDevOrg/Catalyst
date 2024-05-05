@@ -19,6 +19,7 @@
         "Internet"
     ],
     "author": "CatalystDevOrg",
+    "email": "email@localhost",
     "license": "MIT",
     "devDependencies": {
         "electron": "^29.1.5",
@@ -43,6 +44,7 @@
         "linux": {
             "icon": "assets/icon.png",
             "category": "Network",
+            "maintainer": "CatalystDevOrg",
             "target": [
                 "AppImage",
                 "deb",
