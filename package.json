@@ -23,6 +23,7 @@
     "devDependencies": {
         "electron": "^29.1.5",
         "electron-builder": "^24.13.3",
+        "electron-builder-squirrel-windows": "^24.13.3",
         "electron-reloader": "^1.2.3",
         "eslint": "^8.57.0"
     },
@@ -41,13 +42,27 @@
         ],
         "linux": {
             "icon": "assets/icon.png",
-            "category": "Network"
+            "category": "Network",
+            "target": [
+                "AppImage",
+                "deb",
+                "rpm",
+                "tar.gz"
+            ]
         },
         "win": {
-            "icon": "assets/icon-scaled.ico"
+            "icon": "assets/icon-scaled.ico",
+            "target": [
+                "portable",
+                "squirrel"
+            ]
         },
         "mac": {
-            "icon": "assets/icon-scaled.icns"
+            "icon": "assets/icon-scaled.icns",
+            "target": [
+                "dmg",
+                "zip"
+            ]
         }
     }
 }
