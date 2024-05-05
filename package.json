@@ -1,6 +1,6 @@
 {
     "name": "catalyst",
-    "version": "3.7.0-beta.1",
+    "version": "3.7.0-testing.1",
     "description": "A minimal Electron Web Browser",
     "main": "main/main.js",
     "private": true,
@@ -36,7 +36,9 @@
     },
     "build": {
         "appId": "org.eu.getcatalyst.catalyst",
-        "publish": ["github"],
+        "publish": [
+            "github"
+        ],
         "linux": {
             "icon": "assets/icon.png",
             "category": "Network"
