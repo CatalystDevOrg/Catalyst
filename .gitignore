@@ -2,8 +2,7 @@ node_modules
 *.swp
 *.out
 *.bin
-out
-out/*
+dist
 package-lock.json
 # developers can build tailwind themselves
 output/
