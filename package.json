@@ -1,15 +1,14 @@
 {
     "name": "catalyst",
-    "version": "3.7.0-beta.1",
+    "version": "3.7.0-testing.1",
     "description": "A minimal Electron Web Browser",
     "main": "main/main.js",
     "private": true,
     "scripts": {
         "start": "electron .",
-        "package": "electron-forge package",
-        "package:flatpak": "electron-forge package flatpak",
-        "publish": "electron-forge publish",
-        "make": "electron-forge make",
+        "dist": "electron-builder",
+        "dist:dir": "electron-builder --dir",
+        "publish": "electron-builder --publish",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     },
@@ -20,15 +19,12 @@
         "Internet"
     ],
     "author": "CatalystDevOrg",
+    "email": "email@localhost",
     "license": "MIT",
     "devDependencies": {
-        "@electron-forge/cli": "^7.3.1",
-        "@electron-forge/maker-deb": "^7.3.1",
-        "@electron-forge/maker-rpm": "^7.3.1",
-        "@electron-forge/maker-squirrel": "^7.3.1",
-        "@electron-forge/maker-zip": "^7.3.1",
-        "@electron-forge/publisher-github": "^7.3.1",
         "electron": "^29.1.5",
+        "electron-builder": "^24.13.3",
+        "electron-builder-squirrel-windows": "^24.13.3",
         "electron-reloader": "^1.2.3",
         "eslint": "^8.57.0"
     },
@@ -40,74 +36,34 @@
         "electron-squirrel-startup": "^1.0.0",
         "material-symbols": "^0.17.3"
     },
-    "config": {
-        "forge": {
-            "packagerConfig": {
-                "icon": "./assets/icon-scaled",
-                "asar": true,
-                "ignore": [
-                    "contributing.md",
-                    ".gitignore",
-                    ".eslintrc.json",
-                    "pnpm-lock.yaml",
-                    "README.md",
-                    "CODE_OF_CONDUCT.md",
-                    ".pnpm-debug.log",
-                    ".github",
-                    ".vscode",
-                    "styles.css",
-                    "banner.svg"
-                ]
-            },
-            "publishers": [
-                {
-                    "name": "@electron-forge/publisher-github",
-                    "config": {
-                        "repository": {
-                            "owner": "CatalystDevOrg",
-                            "name": "Catalyst"
-                        },
-                        "draft": true
-                    }
-                }
-            ],
-            "makers": [
-                {
-                    "name": "@electron-forge/maker-squirrel",
-                    "config": {
-                        "name": "Catalyst3"
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-deb",
-                    "config": {
-                        "options": {
-                            "name": "Catalyst3",
-                            "genericName": "Web Browser",
-                            "maintainer": "CatalystDevOrg",
-                            "icon": "./assets/icon.png",
-                            "categories": [
-                                "Network",
-                                "Utility"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "@electron-forge/maker-rpm",
-                    "config": {
-                        "options": {
-                            "name": "Catalyst3",
-                            "genericName": "Web Browser",
-                            "maintainer": "CatalystDevOrg",
-                            "icon": "./assets/icon.png",
-                            "categories": [
-                                "Network",
-                                "Utility"
-                            ]
-                        }
-                    }
-                }
+    "build": {
+        "appId": "org.eu.getcatalyst.catalyst",
+        "publish": [
+            "github"
+        ],
+        "linux": {
+            "icon": "assets/icon.png",
+            "category": "Network",
+            "maintainer": "CatalystDevOrg",
+            "target": [
+                "AppImage",
+                "deb",
+                "rpm",
+                "tar.gz"
+            ]
+        },
+        "win": {
+            "icon": "assets/icon-scaled.ico",
+            "target": [
+                "portable",
+                "squirrel"
+            ]
+        },
+        "mac": {
+            "icon": "assets/icon-scaled.icns",
+            "target": [
+                "dmg",
+                "zip"
             ]
         }
     }
