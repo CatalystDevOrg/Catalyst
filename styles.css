@@ -8,6 +8,7 @@
     --primary: #818cf8;
     --secondary: #6366f1;
     --tertiary: #4f46e5;
+    --foreground: white;
 }
 
 html {
