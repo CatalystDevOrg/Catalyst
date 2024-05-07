@@ -51,7 +51,7 @@ body {
 
 button,
 select {
-    color: black;
+    color: var(--foreground);
     background-color: var(--secondary);;
     border-radius: 0.5rem;
     text-align: center;
