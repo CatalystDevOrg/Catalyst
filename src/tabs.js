@@ -25,7 +25,6 @@ async function createTab(url) {
         switchTabs(randomHash);
     };
     span.innerText = 'New Tab';
-    document.getElementById('tabs-bar').appendChild(tab);
     let view = document.createElement('webview');
     view.id = 'view-' + randomHash;
     view.classList.add('view');
@@ -39,6 +38,7 @@ async function createTab(url) {
     image.width = '16';
     image.height = '16';
     image.style.border = '0';
+    document.getElementById('tabs-bar').appendChild(tab);
     tab.appendChild(image);
     tab.appendChild(span);
     addListeners(view, randomHash);
