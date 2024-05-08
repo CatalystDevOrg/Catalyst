@@ -18,7 +18,9 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm install
-      - name: Publish to release using Electron Builder
+      - name: Get tailwind styles
+        run: npm run tailwind:once
+      - name: Publish to release using Electron Forge
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish "always"
