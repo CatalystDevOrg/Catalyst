@@ -6,3 +6,4 @@ dist
 package-lock.json
 # developers can build tailwind themselves
 output/
+result
