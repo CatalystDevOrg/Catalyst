@@ -306,8 +306,21 @@ ul {
     width: 100vw;
     height: 100vh;
     color: #312E81;
-    background-color: var(--primary);;
+    background-color: var(--primary);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.modal {
+    position: absolute;
+    left: 50;
+    top: 50%;
+    transform: translateX(50%);
+    width: 50%;
+    z-index: 1;
+    background-color: var(--primary);
+    color: var(--foreground);
+    padding: 8pt;
+    border-radius: 8pt;
 }
 
 #preferences-box * {
