@@ -329,6 +329,38 @@ ul {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 15px;
+    position: relative;
+    border-radius: 50px;
+    box-sizing: content-box;
+    cursor: pointer;
+    transition: background 150ms ease-in-out;
+    background: var(--foreground);
+  }
+  
+  input[type="checkbox"]::after {
+    top: 0;
+    left: 0;
+    transition: left 150ms ease-in-out;
+    content: ' ';
+    width: 15px;
+    height: 15px;
+    background: var(--secondary);
+    position: absolute;
+    border-radius: 50px;
+  }
+  
+  input[type="checkbox"]:checked {
+    background: var(--tertiary);
+  }
+  
+  input[type="checkbox"]:checked::after {
+    left: calc(100% - 15px);
+  }
+
 .hidden {
     display: none !important;
 }
