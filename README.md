@@ -86,6 +86,7 @@ Here are the Linux distributions that have Catalyst in their repositories: \
     </td>
 </tr>
 </table>
+
 # Additional Screenshots
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/7349226a-41a6-48bb-9302-63ed8082922c)
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf3fd063-639e-4130-9d49-4d01ac521cf2)
