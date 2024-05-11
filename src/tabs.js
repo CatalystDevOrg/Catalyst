@@ -29,6 +29,7 @@ async function createTab(url) {
     mute.classList.add("material-symbols-rounded")
     mute.innerText = 'volume_off'
     mute.classList.add('hidden')
+    mute.classList.add('indicator')
     let view = document.createElement('webview');
     tab.onauxclick = () => {
         view.setAudioMuted(!view.audioMuted)
