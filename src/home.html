@@ -90,7 +90,7 @@
         <label for="widget-shortcuts">Shortcuts</label>
         <input id="widget-shortcuts" type="checkbox" class="" />
     </div>
-    <div class="widgets hidden">
+    <div class="widgets">
         <div id="main" class="widget">
             <h1>Widgets</h1>
             <p>Home page widgets!</p>
@@ -110,59 +110,64 @@
 
     <script>
         const preferences = JSON.parse(localStorage.getItem('preferences'))
+        const widgets = document.querySelector('.widgets')
         if (preferences.homewidgets) {
-            const widgets = document.querySelector('.widgets')
             widgets.classList.toggle("hidden")
+        }
 
-            const main = document.getElementById('main')
-            const clock = document.getElementById('clock')
-            const shortcuts = document.getElementById('shortcuts')
+        const main = document.getElementById('main')
+        const clock = document.getElementById('clock')
+        const shortcuts = document.getElementById('shortcuts')
 
-            const wmain = document.getElementById('widget-main')
-            const wclock = document.getElementById('widget-clock')
-            const wshort = document.getElementById('widget-shortcuts')
+        const wmain = document.getElementById('widget-main')
+        const wclock = document.getElementById('widget-clock')
+        const wshort = document.getElementById('widget-shortcuts')
 
-            const toggle = document.getElementById('toggle')
+        const toggle = document.getElementById('toggle')
 
-            widgets.classList.toggle("hidden")
-            toggle.classList.toggle("hidden")
-            
-            toggle.addEventListener("click", () => {
-                document.getElementById('preferences').classList.toggle('hidden')
-            })
+        widgets.classList.toggle("hidden")
+        toggle.classList.toggle("hidden")
 
-            if (!localStorage.getItem('main')) {
-                main.display = "none";
-            } else {
-                wmain.checked = true;
-            }
+        toggle.addEventListener("click", () => {
+            document.getElementById('preferences').classList.toggle('hidden')
+        })
 
-            if (!localStorage.getItem('clock')) {
-                clock.display = "none"
-            } else {
-                wclock.checked = true;
-            }
+        if (!localStorage.getItem('main')) {
+            main.classList.toggle('hidden')
+        } else {
+            wmain.checked = true;
+        }
 
-            if (!localStorage.getItem("shortcuts")) {
-                clock.display = "none"
-            } else {
-                wshort.checked = true;
-            }
+        if (!localStorage.getItem('clock')) {
+            main.classList.toggle('hidden')
+        } else {
+            wclock.checked = true;
+        }
 
-            wmain.addEventListener("change", () => {
-                localStorage.setItem('main', wmain.value)
-            })
+        if (!localStorage.getItem("shortcuts")) {
+            main.classList.toggle('hidden')
+        } else {
+            wshort.checked = true;
+        }
 
-            wclock.addEventListener("change", () => {
-                localStorage.setItem('clock', wmain.value)
-            })
+        wmain.addEventListener("change", () => {
+            localStorage.setItem('main', wmain.checked)
+        })
 
-            wshort.addEventListener("change", () => {
-                localStorage.setItem('shortcuts', wmain.value)
-            })
+        wclock.addEventListener("change", () => {
+            localStorage.setItem('clock', wmain.checked)
+        })
 
-            const date = currentDate = new Date()
-            setInterval(document.getElementById('time').innerText = date, 1000);
+        wshort.addEventListener("change", () => {
+            localStorage.setItem('shortcuts', wmain.checked)
+        })
+
+        function updateTime() {
+            document.getElementById('time').innerText = new Date();
+        }
+
+        if (preferences.homewidgets) { 
+            setInterval(updateTime, 1000);
         }
     </script>
 
