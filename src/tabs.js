@@ -17,6 +17,7 @@ async function createTab(url) {
     ).agent;
     let tab = document.createElement('div');
     let span = document.createElement('span');
+    let mute = document.createElement('span')
     // Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
     let randomHash = generateHashkey();
     tab.classList.add('tab');
@@ -25,7 +26,15 @@ async function createTab(url) {
         switchTabs(randomHash);
     };
     span.innerText = 'New Tab';
+    mute.classList.add("material-symbols-rounded")
+    mute.innerText = 'volume_off'
+    mute.classList.add('hidden')
     let view = document.createElement('webview');
+    tab.onauxclick = () => {
+        view.setAudioMuted(!view.audioMuted)
+        console.log(tab)
+        tab.children[2].classList.toggle("hidden")
+    }
     view.id = 'view-' + randomHash;
     view.classList.add('view');
     view.allowpopups = 'allowpopups';
@@ -41,6 +50,7 @@ async function createTab(url) {
     document.getElementById('tabs-bar').appendChild(tab);
     tab.appendChild(image);
     tab.appendChild(span);
+    tab.appendChild(mute)
     addListeners(view, randomHash);
     document.getElementById('webviews').appendChild(view);
     switchTabs(randomHash);
