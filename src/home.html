@@ -109,7 +109,8 @@
     <button class="hidden" id="toggle">Preferences</button>
 
     <script>
-        if (localStorage.getItem("catalyst.experiments.home.widgets.enable")) {
+        const preferences = localStorage.getItem('preferences')
+        if (preferences.pref-homewidgets) {
             const widgets = document.querySelector('.widgets')
 
             const main = document.getElementById('main')

@@ -315,6 +315,10 @@ ul {
     margin: 4pt;
 }
 
+#experiments b {
+    color: lime;
+}
+
 #suggestions {
     background-color: var(--primary);;
 }
