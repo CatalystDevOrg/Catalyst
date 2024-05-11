@@ -27,9 +27,6 @@ body {
 
 .tab {
     transition: all;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-grow: 1;
     max-width: 32rem;
     padding: 0.25rem 0.5rem;
@@ -40,6 +37,18 @@ body {
     border-radius: 0.5rem;
     cursor: pointer;
     white-space: nowrap;
+    padding: 4pt;
+}
+
+.tab span {
+    font-size: 12pt;
+}
+
+.tab .indicator {
+    position: relative;
+    float: right;
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 .active-tab {
