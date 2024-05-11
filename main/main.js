@@ -162,6 +162,12 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
     return buf;
 });
 
+ipcMain.handle('get-themes', async (event) => {
+    const path = app.getPath('userData');
+    const buf = fs.readdirSync(`${path}/themes`, { encoding: 'utf8', flag: 'r' });
+    return buf;
+});
+
 ipcMain.handle('toggle-full-screen', async (event) => {
     mainWindow.setFullScreen(!mainWindow.isFullScreen());
 });
