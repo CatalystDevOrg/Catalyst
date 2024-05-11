@@ -109,6 +109,7 @@ button img {
     padding: 0.5rem;
     border-radius: 9999px;
     display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -287,6 +288,10 @@ ul {
     color: #312E81;
     background-color: var(--primary);;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#more-menu * {
+    margin: 1pt;
 }
 
 #bookmarks {
