@@ -93,12 +93,16 @@ function addListeners(view, hash) {
         if (!viewURL.startsWith('file://')) {
             document.getElementById('searchbar').value = viewURL;
         }
-        removeChildren(document.getElementById('autocomplete-suggestions'));
+        if (engineSupportsAC()) {
+            removeChildren(document.getElementById('autocomplete-suggestions'));
+        }
     });
     view.addEventListener('did-start-loading', () => {
         tab.classList.add('animate-pulse');
         tab.getElementsByTagName('img')[0].style.display = 'none';
-        removeChildren(document.getElementById('autocomplete-suggestions'));
+        if (engineSupportsAC()) {
+            removeChildren(document.getElementById('autocomplete-suggestions'));
+        }
     });
     view.addEventListener('page-title-updated', (e) => {
         tab.getElementsByTagName('span')[0].innerText = e.title;
