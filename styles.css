@@ -40,6 +40,11 @@ body {
     border-radius: 0.5rem;
     cursor: pointer;
     white-space: nowrap;
+    padding: 4pt;
+}
+
+.tab span {
+    font-size: 12pt;
 }
 
 .active-tab {
