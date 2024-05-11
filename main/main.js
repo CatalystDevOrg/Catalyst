@@ -109,7 +109,7 @@ const template = [{
 {
     label: 'Find',
     accelerator: 'CmdOrCtrl+F',
-    click: function() {
+    click: function () {
         mainWindow.webContents.executeJavaScript('toggleFind()');
     }
 },
@@ -119,7 +119,7 @@ const template = [{
     click: function () {
         mainWindow.webContents.toggleDevTools();
     },
-    
+
 }/*
     {
         label: "Check for Updates",
@@ -158,7 +158,11 @@ ipcMain.handle('loadExt', async (event, ext) => {
 
 ipcMain.handle('read-user-data', async (event, fileName) => {
     const path = app.getPath('userData');
-    const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r' });
+    try {
+        const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r' });
+    } catch {
+        return;
+    }
     return buf;
 });
 
