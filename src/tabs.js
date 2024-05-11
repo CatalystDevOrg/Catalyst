@@ -33,7 +33,6 @@ async function createTab(url) {
     let view = document.createElement('webview');
     tab.onauxclick = () => {
         view.setAudioMuted(!view.audioMuted)
-        console.log(tab)
         tab.children[2].classList.toggle("hidden")
     }
     view.id = 'view-' + randomHash;
