@@ -16,6 +16,7 @@ searchbar.addEventListener('input', async() => {
         removeChildren(suggestionsEl);
         return;
     }
+    if (engineSupportsAC()) {
     if (
         shouldAutocomplete(searchbar.value) &&
         JSON.parse(window.localStorage.getItem('preferences')).autocomplete
@@ -43,6 +44,8 @@ searchbar.addEventListener('input', async() => {
         }
     } else {
         removeChildren(suggestionsEl);
+    }} else {
+        return;
     }
 });
 
@@ -87,9 +90,13 @@ function shouldAutocomplete(input) {
         if (input.startsWith(`${protocol}://`)) {
             return false;
         }
-        if (localStorage.getItem('engine') != 1) {
-            return false;
-        }
+    }
+    return true;
+}
+
+function engineSupportsAC(input) {
+    if (localStorage.getItem('engine') != 1) {
+        return false;
     }
     return true;
 }
