@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    <button class="hidden" id="toggle">Preferences</button>
+    <button id="toggle">Preferences</button>
 
     <div style="position: fixed; bottom: 10%; left: 20px; right: 20px;">
         <h1>100th release of Catalyst!</h1>
@@ -115,8 +115,11 @@
     <script>
         const preferences = JSON.parse(localStorage.getItem('preferences'))
         const widgets = document.querySelector('.widgets')
+        const toggle = document.getElementById('toggle')
+
         if (preferences.homewidgets) {
             widgets.classList.toggle("hidden")
+            toggle.classList.toggle("hidden")
         }
 
         const main = document.getElementById('main')
@@ -127,7 +130,6 @@
         const wclock = document.getElementById('widget-clock')
         const wshort = document.getElementById('widget-shortcuts')
 
-        const toggle = document.getElementById('toggle')
 
         widgets.classList.toggle("hidden")
         toggle.classList.toggle("hidden")
