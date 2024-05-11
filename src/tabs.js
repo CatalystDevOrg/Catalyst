@@ -92,7 +92,13 @@ function addListeners(view, hash) {
     const tab = document.getElementById(`tab-${hash}`);
     hasFavicon[hash] = false;
     if (!hasFavicon[hash]) {
-        tab.getElementsByTagName('img')[0].style.display = 'none';
+        if (!document.getElementById('searchbar').value.startsWith("catalyst://")) {
+            tab.getElementsByTagName('img')[0].src = '../assets/icon.png';
+            return;
+        } else {
+            tab.getElementsByTagName('img')[0].style.display = 'none';
+            return;
+        }
     } else {
         tab.getElementsByTagName('img')[0].style.display = 'inline';
     }
