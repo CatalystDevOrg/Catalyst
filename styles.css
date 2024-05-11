@@ -38,6 +38,7 @@ body {
     cursor: pointer;
     white-space: nowrap;
     padding: 4pt;
+    padding-left: 8pt;
 }
 
 .tab span {
