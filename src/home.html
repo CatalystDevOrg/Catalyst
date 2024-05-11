@@ -109,9 +109,10 @@
     <button class="hidden" id="toggle">Preferences</button>
 
     <script>
-        const preferences = localStorage.getItem('preferences')
-        if (preferences.pref-homewidgets) {
+        const preferences = JSON.parse(localStorage.getItem('preferences'))
+        if (preferences.homewidgets) {
             const widgets = document.querySelector('.widgets')
+            widgets.classList.toggle("hidden")
 
             const main = document.getElementById('main')
             const clock = document.getElementById('clock')

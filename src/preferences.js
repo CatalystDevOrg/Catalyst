@@ -30,6 +30,8 @@ function togglePreferences() {
             document.getElementById('pref-useragent').value = preferences.agent;
         }
         addTextListener(document.getElementById('pref-useragent'), 'agent');
+        addCheckboxListener(document.getElementById('pref-homewidgets'), 'homewidgets');
+        document.getElementById('pref-homewidgets').checked = preferences.homewidgets;
     }
 }
 
