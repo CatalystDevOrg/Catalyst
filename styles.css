@@ -28,7 +28,7 @@ body {
 .tab {
     transition: all;
     flex-grow: 1;
-    max-width: 32rem;
+    max-width: 16rem;
     padding: 0.25rem 0.5rem;
     overflow: hidden;
     font-size: 0.875rem;
