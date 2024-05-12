@@ -22,6 +22,33 @@ contextBridge.exposeInMainWorld('cat', {
             }
         );
     },
+    getThemes: () => {
+        const themes = ipcRenderer.invoke('get-themes').then(
+            result => {
+                themeSelect = document.getElementById('pref-theme')
+                for (x in result) {
+                    let sel = document.createElement('option')
+                    sel.value = result[x]
+                    sel.innerText = result[x].replace(".css", "")
+                    themeSelect.appendChild(sel)
+                }
+            }
+        )
+    },
+    loadTheme: (theme) => {
+        const file = ipcRenderer.invoke('read-user-data', `themes/${theme}`).then(
+            result => {
+                let el = document.createElement('style');
+                el.type = 'text/css';
+                el.innerText = result;
+                el.classList.add("theme")
+                document.head.appendChild(el);
+            }
+        )
+    },
+    unloadTheme: () => {
+        document.getElementsByClassName('theme')[0].remove()
+    },  
     enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker'),
     ipcToggleFs: () => ipcRenderer.invoke('toggle-full-screen'),
 });
