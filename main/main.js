@@ -160,10 +160,10 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
     const path = app.getPath('userData');
     try {
         const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r' });
+        return buf;
     } catch {
         return;
     }
-    return buf;
 });
 
 if (!fs.existsSync(`${app.getPath('userData')}/themes`)) {
