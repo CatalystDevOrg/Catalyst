@@ -27,10 +27,13 @@ contextBridge.exposeInMainWorld('cat', {
             result => {
                 themeSelect = document.getElementById('pref-theme')
                 for (x in result) {
-                    let sel = document.createElement('option')
-                    sel.value = result[x]
-                    sel.innerText = result[x].replace(".css", "")
-                    themeSelect.appendChild(sel)
+                    if (!result[x].endsWith(".css")) {
+                    } else {
+                        let sel = document.createElement('option')
+                        sel.value = result[x]
+                        sel.innerText = result[x].replace(".css", "")
+                        themeSelect.appendChild(sel)
+                    }
                 }
             }
         )
@@ -48,7 +51,7 @@ contextBridge.exposeInMainWorld('cat', {
     },
     unloadTheme: () => {
         document.getElementsByClassName('theme')[0].remove()
-    },  
+    },
     enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker'),
     ipcToggleFs: () => ipcRenderer.invoke('toggle-full-screen'),
 });
