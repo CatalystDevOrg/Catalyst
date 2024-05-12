@@ -26,6 +26,7 @@ function createWindow() {
         icon: path.join(__dirname, '../assets/icon.png'),
     });
     mainWindow.loadFile('./src/index.html');
+    mainWindow.setMenuBarVisibility(false);
 }
 
 app.whenReady().then(() => {
