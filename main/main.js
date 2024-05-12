@@ -86,6 +86,20 @@ const template = [{
     }
 },
 {
+    label: 'Hide',
+    accelerator: 'CmdOrCtrl+H',
+    click: function () {
+        mainWindow.setMenuBarVisibility(false);
+    }
+},
+{
+    label: 'Show',
+    accelerator: 'CmdOrCtrl+S',
+    click: function () {
+        mainWindow.setMenuBarVisibility(true);
+    }
+},
+{
     label: 'New Tab',
     accelerator: 'CmdOrCtrl+T',
     click: function () {
