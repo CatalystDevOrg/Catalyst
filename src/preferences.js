@@ -103,19 +103,19 @@ function evaluatePreferences() {
         document.documentElement.classList.remove('dark');
     }
     if (preferences.usrchr) {
-        native.loadCustomStyles();
+        catalyst.native.loadCustomStyles();
     }
     if (preferences.adblk) {
-        native.enableAdBlocker();
+        catalyst.native.enableAdBlocker();
     }
     if (preferences.theme) {
         if (document.getElementsByClassName('theme').length > 0) {
-            native.unloadTheme();
+            catalyst.native.unloadTheme();
         }
         if (preferences.theme == 0) {
             return;
         }
-        native.loadTheme(preferences.theme)
+        catalyst.native.loadTheme(preferences.theme)
     }
 }
 

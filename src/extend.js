@@ -1,0 +1,3 @@
+var catalyst = {
+    "native": native,
+}
