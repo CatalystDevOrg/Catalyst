@@ -5,6 +5,7 @@ const { app, BrowserWindow, dialog, Menu, session, ipcMain, electron } = require
 const path = require('path');
 const fs = require('fs');
 const fetch = require('cross-fetch');
+const https = require('https');
 const contextMenu = require('electron-context-menu');
 
 if (require('electron-squirrel-startup')) app.quit();
@@ -189,6 +190,22 @@ ipcMain.handle('get-themes', async (event) => {
     const path = app.getPath('userData');
     const buf = fs.readdirSync(`${path}/themes`, { encoding: 'utf8', flag: 'r' });
     return buf;
+});
+
+function download(url, dest, cb) {
+    var file = fs.createWriteStream(dest);
+    https.get(url, function (response) {
+        response.pipe(file);
+        file.on('finish', function () {
+            file.close(cb);
+        });
+    });
+}
+
+ipcMain.handle('download-theme', async (event, url, name) => {
+    download(url, `${app.getPath('userData')}/themes/${name}`, () => {
+        return;
+    })
 });
 
 ipcMain.handle('toggle-full-screen', async (event) => {

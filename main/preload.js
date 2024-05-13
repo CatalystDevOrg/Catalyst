@@ -49,6 +49,9 @@ contextBridge.exposeInMainWorld('native', {
             }
         )
     },
+    downloadTheme: (url, name) => {
+        ipcRenderer.invoke('download-theme', url, name);
+    },
     unloadTheme: () => {
         document.getElementsByClassName('theme')[0].remove()
     },
