@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pref-ver').innerText = 'v' + dat.version;
 });
 
-contextBridge.exposeInMainWorld('cat', {
+contextBridge.exposeInMainWorld('native', {
     loadExt: (ext) => {
         ipcRenderer.invoke('loadExt', ext);
     },

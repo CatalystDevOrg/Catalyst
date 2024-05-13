@@ -19,4 +19,4 @@ if (localStorage.getItem('bookmarks') < 1) {
     document.querySelector('#bookmarks').innerText = 'When you add bookmarks they will appear here!';
 }
 
-cat.getThemes();
+native.getThemes();
