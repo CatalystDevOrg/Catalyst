@@ -12,6 +12,10 @@
     --button-secondary: var(--secondary);
     --button-tertiary: var(--tertiary);
     --foreground: white;
+    --border-radius: 0.5rem;
+    --tab-radius: var(--border-radius);
+    --searchbar-radius: 1.5rem;
+    --moremenu-radius: 1.5rem;
 }
 
 html {
@@ -37,7 +41,7 @@ body {
     font-size: 0.875rem;
     color: var(--foreground);
     background-color: transparent;
-    border-radius: 0.5rem;
+    border-radius: var(--tab-radius);
     cursor: pointer;
     white-space: nowrap;
     padding: 4pt;
@@ -67,7 +71,7 @@ button,
 select {
     color: var(--foreground);
     background-color: var(--button-primary);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     text-align: center;
     padding: 0.25rem;
     transition: all;
@@ -106,7 +110,7 @@ button img {
     background-color: #1E293B;
     border-color: #60A5FA;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    border-radius: 0 0 0.5rem 0.5rem;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 *:focus {
@@ -170,7 +174,7 @@ button img {
     height: 32pt;
     background-color: var(--tertiary);
     ;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
 }
 
 @keyframes sliding-ttb {
@@ -285,7 +289,7 @@ ul {
     padding-bottom: 0.25rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    border-radius: 1.5rem;
+    border-radius: var(--searchbar-radius);
     outline-width: 0px;
     min-width: fit-content;
     font-size: 0.875rem;
@@ -300,7 +304,7 @@ ul {
     right: 0;
     padding: 0.5rem;
     margin: 0.25rem;
-    border-radius: 1.5rem;
+    border-radius: var(--moremenu-radius);
     width: fit-content;
     height: fit-content;
     color: var(--foreground);
