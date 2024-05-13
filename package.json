@@ -26,6 +26,7 @@
     "email": "email@localhost",
     "license": "MIT",
     "devDependencies": {
+        "concurrently": "^8.2.2",
         "electron": "^29.3.3",
         "electron-builder": "^24.13.3",
         "electron-builder-squirrel-windows": "^24.13.3",
