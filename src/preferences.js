@@ -1,5 +1,5 @@
 let preferences = getPreferences();
-const categories = ['basic', 'advanced', 'experiments'];
+const categories = ['basic', 'advanced', 'experiments', 'plugins'];
 const preferencesBox = document.getElementById('preferences-box');
 evaluatePreferences();
 

@@ -20,3 +20,4 @@ if (localStorage.getItem('bookmarks') < 1) {
 }
 
 catalyst.native.getThemes();
+catalyst.native.getPlugins();

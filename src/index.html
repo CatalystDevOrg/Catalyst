@@ -69,19 +69,22 @@
         <button onClick="togglePreferences()"><img src="../assets/icons/x.svg"
                 alt="this image has not loaded properly"></button>
         <div id="pref-tabs">
-            <button class="pref-tab" onClick='changePrefTab("basic")'><span class="material-symbols-rounded">build</span>Basic</button>
+            <button class="pref-tab" onClick='changePrefTab("basic")'><span
+                    class="material-symbols-rounded">build</span>Basic</button>
             <button class="pref-tab" onClick='changePrefTab("advanced")'><span
                     class="material-symbols-rounded">construction</span>Advanced</button>
             <button class="pref-tab" onClick='changePrefTab("experiments")'><span
                     class="material-symbols-rounded">experiment</span>Experiments</button>
+            <button class="pref-tab" onClick='changePrefTab("plugins")'><span
+                    class="material-symbols-rounded">extension</span>Plugins</button>
         </div>
         <h1 class="font-bold text-xl">Preferences</h1>
         <br />
         <div id="basic">
             <div class="toggle-area">
-            <label for="pref-darkmode">Dark Mode? </label>
-            <input title="This feature is disabled as the implementation does not work due to recent changes."
-                id="pref-darkmode" type="checkbox" class="" disabled />
+                <label for="pref-darkmode">Dark Mode? </label>
+                <input title="This feature is disabled as the implementation does not work due to recent changes."
+                    id="pref-darkmode" type="checkbox" class="" disabled />
             </div>
             <p class="text-sm">Toggle dark mode</p>
             <br />
@@ -91,8 +94,8 @@
             </select>
             <br />
             <div class="toggle-area">
-            <label for="pref-autocomplete">Autocomplete </label>
-            <input id="pref-autocomplete" type="checkbox" class="" />
+                <label for="pref-autocomplete">Autocomplete </label>
+                <input id="pref-autocomplete" type="checkbox" class="" />
             </div>
             <p class="text-sm">Search Autocomplete</p>
             <br />
@@ -111,14 +114,14 @@
             <p class="text-sm">Sets a custom startup page.</p>
             <br />
             <div class="toggle-area">
-            <label for="pref-usrchr">Custom CSS</label>
-            <input id="pref-usrchr" type="checkbox" class="" />
+                <label for="pref-usrchr">Custom CSS</label>
+                <input id="pref-usrchr" type="checkbox" class="" />
             </div>
             <p class="text-sm">Loads custom css from the userChrome.css file</p>
             <br />
             <div class="toggle-area">
-            <label for="pref-adblk">Enable AD Blocker</label>
-            <input id="pref-adblk" type="checkbox" class="" />
+                <label for="pref-adblk">Enable AD Blocker</label>
+                <input id="pref-adblk" type="checkbox" class="" />
             </div>
             <p class="text-sm">Enables the ad blocker (RESTART REQUIRED)</p>
             <br />
@@ -128,8 +131,8 @@
         </div>
         <div class="hidden" id="experiments">
             <div class="toggle-area">
-            <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
-            <input id="pref-dm" type="checkbox" class="" />
+                <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
+                <input id="pref-dm" type="checkbox" class="" />
             </div>
             <p class="text-sm">Toggles forced dark mode for all sites.</p>
             <br />
@@ -139,10 +142,13 @@
             <p class="text-sm">Sets a custom user agent.</p>
             <br />
             <div class="toggle-area">
-            <label for="pref-homewidgets"><b>Experimental</b> Home Widgets</label>
-            <input id="pref-homewidgets" type="checkbox">
+                <label for="pref-homewidgets"><b>Experimental</b> Home Widgets</label>
+                <input id="pref-homewidgets" type="checkbox">
             </div>
             <p>Enables widgets on the default home page.</p>
+        </div>
+        <div class="hidden" id="plugins">
+            <!-- ... -->
         </div>
         <br />
         <i class="text-sm" id="pref-ver"></i>
