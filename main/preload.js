@@ -81,9 +81,11 @@ contextBridge.exposeInMainWorld('native', {
                                 let enabled = localStorage.getItem(`catalyst.plugins.${pname}`) === "true";
                                 document.getElementById(`${pname}`).checked = enabled
                                 if (enabled && isValid(result)) {
-                                    let inject = document.createElement('script')
-                                    inject.innerHTML = result;
-                                    document.head.appendChild(inject)
+                                    let sandbox = document.createElement('iframe')
+                                    sandbox.srcdoc = `<script src="./extend.js"></script><script>${result}</script>`
+                                    sandbox.display = "none";
+                                    sandbox.sandbox = "allow-scripts allow-same-origin"
+                                    document.head.appendChild(sandbox)
                                 } else {
                                     console.log(`Plugin ${pname} is invalid.`)
                                     return;

@@ -95,5 +95,5 @@ function toggleFind() {
 
 function toggleFullScreen() {
     toggleDisplay(document.querySelector('#userchrome'));
-    catalyst.native.ipcToggleFs();
+    native.ipcToggleFs();
 }
