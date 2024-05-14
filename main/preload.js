@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function isValid(c) {
     const lines = c.split('\n')
-    const badKeyWords = ['document']
+    const badKeyWords = ['document', 'alert', 'confirm']
     for (const line of lines) {
         for (x in badKeyWords) {
             if (line.includes(badKeyWords[x])) {
