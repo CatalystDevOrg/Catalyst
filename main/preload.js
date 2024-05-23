@@ -8,20 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pref-ver').innerText = 'v' + dat.version;
 });
 
-function isValid(c) {
-    const lines = c.split('\n')
-    const badKeyWords = ['document', 'alert', 'confirm']
-    for (const line of lines) {
-        for (x in badKeyWords) {
-            if (line.includes(badKeyWords[x])) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-    }
-}
-
 contextBridge.exposeInMainWorld('native', {
     loadExt: (ext) => {
         ipcRenderer.invoke('loadExt', ext);
