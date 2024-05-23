@@ -38,7 +38,7 @@ app.whenReady().then(() => {
     });
 
     session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
-        callback(mainWindow.webContents.executeJavaScript(`confirm('This page has requested the following permission: ${permission}')`))
+        callback(mainWindow.webContents.executeJavaScript(`confirm('This page has requested the following permission: ${permission}')`));
     });
 });
 
@@ -183,7 +183,7 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
 });
 
 if (!fs.existsSync(`${app.getPath('userData')}/themes`)) {
-    fs.mkdirSync(`${app.getPath('userData')}/themes`)
+    fs.mkdirSync(`${app.getPath('userData')}/themes`);
 }
 
 ipcMain.handle('get-themes', async (event) => {
@@ -205,7 +205,7 @@ function download(url, dest, cb) {
 ipcMain.handle('download-theme', async (event, url, name) => {
     download(url, `${app.getPath('userData')}/themes/${name}`, () => {
         return;
-    })
+    });
 });
 
 ipcMain.handle('toggle-full-screen', async (event) => {

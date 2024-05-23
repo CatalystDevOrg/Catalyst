@@ -1,6 +1,6 @@
 var catalyst = {
-    "native": native,
-    "extend": {
+    'native': native,
+    'extend': {
         isCatalyst: true,
     },
-}
+};

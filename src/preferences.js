@@ -32,7 +32,7 @@ function togglePreferences() {
         addTextListener(document.getElementById('pref-useragent'), 'agent');
         addCheckboxListener(document.getElementById('pref-homewidgets'), 'homewidgets');
         document.getElementById('pref-homewidgets').checked = preferences.homewidgets;
-        addSelectListener(document.getElementById('pref-theme'), 'theme')
+        addSelectListener(document.getElementById('pref-theme'), 'theme');
     }
 }
 
@@ -82,7 +82,7 @@ function addSelectListener(element, prefKey) {
     element.addEventListener('change', () => {
         preferences[prefKey] = element.value;
         updatePreferences();
-    })
+    });
 }
 
 /**
@@ -115,7 +115,7 @@ function evaluatePreferences() {
         if (preferences.theme == 0) {
             return;
         }
-        catalyst.native.loadTheme(preferences.theme)
+        catalyst.native.loadTheme(preferences.theme);
     }
 }
 
