@@ -4,7 +4,6 @@ const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 const { app, BrowserWindow, dialog, Menu, session, ipcMain, electron } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const fetch = require('cross-fetch');
 const https = require('https');
 const contextMenu = require('electron-context-menu');
 
