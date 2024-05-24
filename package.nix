@@ -13,7 +13,7 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "catalyst3";
-  version = "3.7.0";
+  version = "3.8.0";
 
   src = fetchurl {
     url = "https://github.com/CatalystDevOrg/Catalyst/releases/download/v${version}/catalyst-${version}.AppImage";
