@@ -3,8 +3,8 @@
 , fetchurl
 , appimageTools
 , makeWrapper
-, electron_28
-, electronPackage ? electron_28
+, electron_30
+, electronPackage ? electron_30
 , asar
 }:
 
