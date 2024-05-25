@@ -71,6 +71,13 @@ Here are the Linux distributions that have Catalyst in their repositories: \
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+        <a href=https://github.com/Drsheppard01>
+            <img src=https://avatars.githubusercontent.com/u/60893791?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=DrSheppard/>
+            <br />
+            <sub style="font-size:14px"><b>DrSheppard</b></sub>
+        </a>
+    </td>
+    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/TechStudent10>
             <img src=https://avatars.githubusercontent.com/u/76978184?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=TechStudent10/>
             <br />
@@ -86,6 +93,7 @@ Here are the Linux distributions that have Catalyst in their repositories: \
     </td>
 </tr>
 </table>
+
 # Additional Screenshots
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/7349226a-41a6-48bb-9302-63ed8082922c)
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf3fd063-639e-4130-9d49-4d01ac521cf2)

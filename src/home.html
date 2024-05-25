@@ -48,7 +48,7 @@
         width: fit-content%;
     }
 
-    
+
     a {
         text-decoration: none;
         color: white;
@@ -67,6 +67,7 @@
         height: 100%;
         width: 10%;
     }
+
     #toggle {
         margin: 4pt;
         padding: 4pt;
@@ -108,6 +109,15 @@
     <button id="toggle">Preferences</button>
 
     <script>
+        const preferences = JSON.parse(localStorage.getItem('preferences'))
+        const widgets = document.querySelector('.widgets')
+        const toggle = document.getElementById('toggle')
+
+        if (preferences.homewidgets) {
+            widgets.classList.toggle("hidden")
+            toggle.classList.toggle("hidden")
+        }
+
         const main = document.getElementById('main')
         const clock = document.getElementById('clock')
         const shortcuts = document.getElementById('shortcuts')
@@ -116,43 +126,51 @@
         const wclock = document.getElementById('widget-clock')
         const wshort = document.getElementById('widget-shortcuts')
 
-        const toggle = document.getElementById('toggle')
+
+        widgets.classList.toggle("hidden")
+        toggle.classList.toggle("hidden")
+
         toggle.addEventListener("click", () => {
             document.getElementById('preferences').classList.toggle('hidden')
         })
 
         if (!localStorage.getItem('main')) {
-            main.display = "none";
+            main.classList.toggle('hidden')
         } else {
             wmain.checked = true;
         }
 
         if (!localStorage.getItem('clock')) {
-            clock.display = "none"
+            main.classList.toggle('hidden')
         } else {
             wclock.checked = true;
         }
 
         if (!localStorage.getItem("shortcuts")) {
-            clock.display = "none"
+            main.classList.toggle('hidden')
         } else {
             wshort.checked = true;
         }
 
         wmain.addEventListener("change", () => {
-            localStorage.setItem('main', wmain.value)
+            localStorage.setItem('main', wmain.checked)
         })
 
         wclock.addEventListener("change", () => {
-            localStorage.setItem('clock', wmain.value)
+            localStorage.setItem('clock', wmain.checked)
         })
 
         wshort.addEventListener("change", () => {
-            localStorage.setItem('shortcuts', wmain.value)
+            localStorage.setItem('shortcuts', wmain.checked)
         })
 
-        const date = currentDate = new Date()
-        setInterval(document.getElementById('time').innerText = date, 1000);
+        function updateTime() {
+            document.getElementById('time').innerText = new Date();
+        }
+
+        if (preferences.homewidgets) { 
+            setInterval(updateTime, 1000);
+        }
     </script>
 
 </body>

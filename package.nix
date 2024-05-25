@@ -3,8 +3,8 @@
 , fetchurl
 , appimageTools
 , makeWrapper
-, electron_28
-, electronPackage ? electron_28
+, electron_30
+, electronPackage ? electron_30
 , asar
 }:
 
@@ -13,11 +13,11 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "catalyst3";
-  version = "3.6.2";
+  version = "3.8.0";
 
   src = fetchurl {
     url = "https://github.com/CatalystDevOrg/Catalyst/releases/download/v${version}/catalyst-${version}.AppImage";
-    hash = "sha256-E8VGWYOcVlbk/kw1GPUEpGBzgV8NwfF53hqdVuVEhHo=";
+    hash = "sha256-wMqsj0G3AB5YBAUufGeq4+hsJpjPojRzM8lnyr4RPNk=";
     name = "${pname}-${version}.AppImage";
   };
 

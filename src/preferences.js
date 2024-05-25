@@ -25,11 +25,14 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-adblk'), 'adblk');
         if (preferences.agent.toString().length > 1) {
             document.getElementById('pref-useragent').value =
-				preferences.agent || 'Catalyst/{{version}}';
+                preferences.agent || 'Catalyst/{{version}}';
         } else {
             document.getElementById('pref-useragent').value = preferences.agent;
         }
         addTextListener(document.getElementById('pref-useragent'), 'agent');
+        addCheckboxListener(document.getElementById('pref-homewidgets'), 'homewidgets');
+        document.getElementById('pref-homewidgets').checked = preferences.homewidgets;
+        addSelectListener(document.getElementById('pref-theme'), 'theme');
     }
 }
 
@@ -75,6 +78,13 @@ function addTextListener(element, prefKey) {
     });
 }
 
+function addSelectListener(element, prefKey) {
+    element.addEventListener('change', () => {
+        preferences[prefKey] = element.value;
+        updatePreferences();
+    });
+}
+
 /**
  * Updates the preferences in LocalStorage to the new preferences and evaluates the new ones
  */
@@ -93,10 +103,19 @@ function evaluatePreferences() {
         document.documentElement.classList.remove('dark');
     }
     if (preferences.usrchr) {
-        cat.loadCustomStyles();
+        catalyst.native.loadCustomStyles();
     }
     if (preferences.adblk) {
-        cat.enableAdBlocker();
+        catalyst.native.enableAdBlocker();
+    }
+    if (preferences.theme) {
+        if (document.getElementsByClassName('theme').length > 0) {
+            catalyst.native.unloadTheme();
+        }
+        if (preferences.theme == 0) {
+            return;
+        }
+        catalyst.native.loadTheme(preferences.theme);
     }
 }
 

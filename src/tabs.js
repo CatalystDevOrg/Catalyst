@@ -17,6 +17,7 @@ async function createTab(url) {
     ).agent;
     let tab = document.createElement('div');
     let span = document.createElement('span');
+    let mute = document.createElement('span');
     // Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
     let randomHash = generateHashkey();
     tab.classList.add('tab');
@@ -25,7 +26,15 @@ async function createTab(url) {
         switchTabs(randomHash);
     };
     span.innerText = 'New Tab';
+    mute.classList.add('material-symbols-rounded');
+    mute.innerText = 'volume_off';
+    mute.classList.add('hidden');
+    mute.classList.add('indicator');
     let view = document.createElement('webview');
+    tab.onauxclick = () => {
+        view.setAudioMuted(!view.audioMuted);
+        tab.children[2].classList.toggle('hidden');
+    };
     view.id = 'view-' + randomHash;
     view.classList.add('view');
     view.allowpopups = 'allowpopups';
@@ -41,6 +50,7 @@ async function createTab(url) {
     document.getElementById('tabs-bar').appendChild(tab);
     tab.appendChild(image);
     tab.appendChild(span);
+    tab.appendChild(mute);
     addListeners(view, randomHash);
     document.getElementById('webviews').appendChild(view);
     switchTabs(randomHash);
@@ -82,7 +92,13 @@ function addListeners(view, hash) {
     const tab = document.getElementById(`tab-${hash}`);
     hasFavicon[hash] = false;
     if (!hasFavicon[hash]) {
-        tab.getElementsByTagName('img')[0].style.display = 'none';
+        if (!document.getElementById('searchbar').value.startsWith('catalyst://')) {
+            tab.getElementsByTagName('img')[0].src = '../assets/icon.png';
+            return;
+        } else {
+            tab.getElementsByTagName('img')[0].style.display = 'none';
+            return;
+        }
     } else {
         tab.getElementsByTagName('img')[0].style.display = 'inline';
     }
@@ -93,12 +109,16 @@ function addListeners(view, hash) {
         if (!viewURL.startsWith('file://')) {
             document.getElementById('searchbar').value = viewURL;
         }
-        removeChildren(document.getElementById('autocomplete-suggestions'));
+        if (engineSupportsAC()) {
+            removeChildren(document.getElementById('autocomplete-suggestions'));
+        }
     });
     view.addEventListener('did-start-loading', () => {
         tab.classList.add('animate-pulse');
         tab.getElementsByTagName('img')[0].style.display = 'none';
-        removeChildren(document.getElementById('autocomplete-suggestions'));
+        if (engineSupportsAC()) {
+            removeChildren(document.getElementById('autocomplete-suggestions'));
+        }
     });
     view.addEventListener('page-title-updated', (e) => {
         tab.getElementsByTagName('span')[0].innerText = e.title;

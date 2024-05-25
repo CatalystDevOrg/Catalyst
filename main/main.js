@@ -1,10 +1,10 @@
 /* eslint-enable no-undef */
 /* eslint-enable no-unused-vars */
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
-const { app, BrowserWindow, dialog, Menu, session, ipcMain, electron } = require('electron');
+const { app, BrowserWindow, Menu, session, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const fetch = require('cross-fetch');
+const https = require('https');
 const contextMenu = require('electron-context-menu');
 
 if (require('electron-squirrel-startup')) app.quit();
@@ -26,6 +26,7 @@ function createWindow() {
         icon: path.join(__dirname, '../assets/icon.png'),
     });
     mainWindow.loadFile('./src/index.html');
+    mainWindow.setMenuBarVisibility(false);
 }
 
 app.whenReady().then(() => {
@@ -36,7 +37,7 @@ app.whenReady().then(() => {
     });
 
     session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
-        callback(mainWindow.webContents.executeJavaScript(`confirm('This page has requested the following permission: ${permission}')`))
+        callback(mainWindow.webContents.executeJavaScript(`confirm('This page has requested the following permission: ${permission}')`));
     });
 });
 
@@ -86,6 +87,20 @@ const template = [{
     }
 },
 {
+    label: 'Hide',
+    accelerator: 'CmdOrCtrl+H',
+    click: function () {
+        mainWindow.setMenuBarVisibility(false);
+    }
+},
+{
+    label: 'Show',
+    accelerator: 'CmdOrCtrl+S',
+    click: function () {
+        mainWindow.setMenuBarVisibility(true);
+    }
+},
+{
     label: 'New Tab',
     accelerator: 'CmdOrCtrl+T',
     click: function () {
@@ -109,7 +124,7 @@ const template = [{
 {
     label: 'Find',
     accelerator: 'CmdOrCtrl+F',
-    click: function() {
+    click: function () {
         mainWindow.webContents.executeJavaScript('toggleFind()');
     }
 },
@@ -119,7 +134,7 @@ const template = [{
     click: function () {
         mainWindow.webContents.toggleDevTools();
     },
-    
+
 }/*
     {
         label: "Check for Updates",
@@ -158,8 +173,38 @@ ipcMain.handle('loadExt', async (event, ext) => {
 
 ipcMain.handle('read-user-data', async (event, fileName) => {
     const path = app.getPath('userData');
-    const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r' });
+    try {
+        const buf = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8', flag: 'r' });
+        return buf;
+    } catch {
+        return;
+    }
+});
+
+if (!fs.existsSync(`${app.getPath('userData')}/themes`)) {
+    fs.mkdirSync(`${app.getPath('userData')}/themes`);
+}
+
+ipcMain.handle('get-themes', async (event) => {
+    const path = app.getPath('userData');
+    const buf = fs.readdirSync(`${path}/themes`, { encoding: 'utf8', flag: 'r' });
     return buf;
+});
+
+function download(url, dest, cb) {
+    var file = fs.createWriteStream(dest);
+    https.get(url, function (response) {
+        response.pipe(file);
+        file.on('finish', function () {
+            file.close(cb);
+        });
+    });
+}
+
+ipcMain.handle('download-theme', async (event, url, name) => {
+    download(url, `${app.getPath('userData')}/themes/${name}`, () => {
+        return;
+    });
 });
 
 ipcMain.handle('toggle-full-screen', async (event) => {
