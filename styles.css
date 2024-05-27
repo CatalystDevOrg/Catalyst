@@ -83,6 +83,11 @@ select:hover {
     background-color: var(--button-secondary);
 }
 
+#preferences-box input[type=text] {
+    padding: 4pt;
+    border-radius: var(--border-radius);
+}
+
 button img {
     filter: invert(100%);
 }
