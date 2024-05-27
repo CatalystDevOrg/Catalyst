@@ -56,9 +56,6 @@ try {
     require('electron-reloader')(module);
 } catch { }
 
-let ver = app.getVersion();
-let appName = app.getName();
-
 function createAboutWindow() {
     aboutWindow = new BrowserWindow({
         minWidth: 500,
