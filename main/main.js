@@ -135,15 +135,7 @@ const template = [{
         mainWindow.webContents.toggleDevTools();
     },
 
-}/*
-    {
-        label: "Check for Updates",
-        accelerator: "CmdOrCtrl+U",
-        click: function() {
-            checkForUpdate(mainWindow);
-        }
-    }*/
-];
+}];
 
 app.on('web-contents-created', (e, contents) => {
     contextMenu({
