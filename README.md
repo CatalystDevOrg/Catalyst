@@ -2,7 +2,7 @@
 ![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total?color=%230f172a&style=for-the-badge)
 # Catalyst 
 A free and open source user and privacy focused web browser aiming to provide a simple and private browsing experience.
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/a149a1ac-5c5c-43d9-af33-c821fc35f8d5)
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/1b00553d-68d6-4172-baff-dba843b70fed)
 ## Flatpak
 <a href='https://flathub.org/apps/org.eu.getcatalyst.Catalyst'>
     <img width='240' alt='Download on Flathub' src='https://flathub.org/api/badge?locale=en'/>
@@ -98,6 +98,6 @@ Here are the Linux distributions that have Catalyst in their repositories: \
 </table>
 
 # Additional Screenshots
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/7349226a-41a6-48bb-9302-63ed8082922c)
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf3fd063-639e-4130-9d49-4d01ac521cf2)
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/98356b99-e2d3-44cf-8fd0-9a236ad081f3)
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/b16b8294-802e-4241-b5c1-a4f3a9e65805)
 
