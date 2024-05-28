@@ -101,3 +101,6 @@ Here are the Linux distributions that have Catalyst in their repositories: \
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/98356b99-e2d3-44cf-8fd0-9a236ad081f3)
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/b16b8294-802e-4241-b5c1-a4f3a9e65805)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=CatalystDevOrg/Catalyst&type=Date)](https://star-history.com/#CatalystDevOrg/Catalyst&Date)
