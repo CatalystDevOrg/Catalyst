@@ -121,7 +121,7 @@ function addListeners(view, hash) {
             document.getElementById('searchbar').value = viewURL;
         }
     });
-    view.addEventListener('new-window', (e) => createTab(e.url));
+    /* view.addEventListener('new-window', (e) => createTab(e.url)); */
     view.addEventListener('close', removeTab);
     view.addEventListener('page-favicon-updated', (e) => {
         if (e.favicons.length > 0) {
