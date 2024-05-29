@@ -97,3 +97,7 @@ function toggleFullScreen() {
     toggleDisplay(document.querySelector('#userchrome'));
     catalyst.native.ipcToggleFs();
 }
+
+function openInSidebar(u) {
+    document.getElementById('sidebar').src = u;
+}

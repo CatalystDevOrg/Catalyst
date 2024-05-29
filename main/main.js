@@ -50,6 +50,19 @@ app.on('web-contents-created', function (event, contents) {
             newWindowEvent.preventDefault();
         });
     }
+    contents.setWindowOpenHandler(({ url }) => {
+        if (mainWindow.webContents
+        .executeJavaScript('JSON.parse(localStorage.getItem("preferences")).osb')
+        .then(localStorage => {
+            if (localStorage) {
+                mainWindow.webContents.executeJavaScript(`openInSidebar('${url}')`)
+
+            } else {
+                mainWindow.webContents.executeJavaScript(`createTab('${url}')`)
+            }
+        }))
+        return { action: 'deny' }
+    });
 });
 
 try {

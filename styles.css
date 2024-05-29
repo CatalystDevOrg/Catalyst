@@ -307,6 +307,7 @@ ul {
     float: right;
     position: absolute;
     right: 0;
+    z-index: 1;
     padding: 0.5rem;
     margin: 0.25rem;
     border-radius: var(--moremenu-radius);
@@ -426,6 +427,15 @@ input[type="checkbox"]:checked::after {
 
 .hidden {
     display: none !important;
+}
+
+#sidebar {
+    min-width: 30%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    height: calc(100vh - 70px);
+    z-index: 0;
 }
 
 webview {
