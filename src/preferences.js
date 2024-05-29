@@ -33,6 +33,7 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-homewidgets'), 'homewidgets');
         document.getElementById('pref-homewidgets').checked = preferences.homewidgets;
         addSelectListener(document.getElementById('pref-theme'), 'theme');
+        addCheckboxListener(document.getElementById('pref-osb'), 'osb');
     }
 }
 
