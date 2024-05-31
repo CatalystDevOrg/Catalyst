@@ -160,7 +160,24 @@ app.on('web-contents-created', (e, contents) => {
         showCopyVideoAddress: true,
         showSaveVideoAs: true,
         showCopyLink: true,
+        prepend: (defaultActions, parameters, browserWindow) => [
+            {
+                label: 'Search for "{selection}"',
+                visible: parameters.selectionText.trim().length > 0,
+                click: () => {
+                    mainWindow.webContents.executeJavaScript(`loadURL("${parameters.selectionText.trim()}")`)
+                }
+            },
+            {
+                label: 'Open link in new tab',
+                visible: parameters.linkURL,
+                click: () => {
+                    mainWindow.webContents.executeJavaScript(`createTab('${parameters.linkURL}')`)
+                }
+            }
+        ]
     });
+    
 });
 
 ipcMain.handle('enable-ad-blocker', (event) => {
