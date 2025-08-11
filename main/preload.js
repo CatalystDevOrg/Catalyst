@@ -38,6 +38,8 @@ window.addEventListener('DOMContentLoaded', () => {
         applyTranslations('button', lang)
 });
 
+ipcRenderer.send('localstorage', JSON.stringify(window.localStorage))
+
 contextBridge.exposeInMainWorld('native', {
     loadExt: (ext) => {
         ipcRenderer.invoke('loadExt', ext);
@@ -85,6 +87,12 @@ contextBridge.exposeInMainWorld('native', {
     unloadTheme: () => {
         document.getElementsByClassName('theme')[0].remove();
     },
-    enableAdBlocker: () => ipcRenderer.invoke('enable-ad-blocker'),
+    enableAdBlocker: (id) => ipcRenderer.invoke('enable-ad-blocker', id),
     ipcToggleFs: () => ipcRenderer.invoke('toggle-full-screen'),
+    setTitlebarTitle: (title) => {
+        ipcRenderer.invoke('set-titlebar-title', title);
+    },
+    setPermissionHandler: (id) => {
+        ipcRenderer.invoke('set-permission-handler', id)
+    }
 });

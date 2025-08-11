@@ -80,6 +80,10 @@ body {
     background-color: var(--userchrome-btn-primary);
 }
 
+#userchrome button:hover {
+    background-color: var(--userchrome-btn-secondary);
+}
+
 button,
 select {
     color: var(--foreground);
@@ -157,7 +161,7 @@ button img {
 
 .moreMenuItem:hover {
     color: var(--foreground);
-    background-color: #4F46E5;
+    background-color: var(--secondary);
 }
 
 .moreMenuItem {
@@ -187,6 +191,11 @@ button img {
     color: var(--foreground);
     border-radius: var(--border-radius);
     cursor: pointer;
+}
+
+.bookmark h1 {
+    font-size: 12pt;
+    font-weight: normal;
 }
 
 .bookmark:hover {
@@ -480,13 +489,17 @@ input[type="checkbox"]:checked::after {
 }
 
 #sidebar {
+    background-color: var(--secondary);
     min-width: 400px;
     width: 30%;
     height: 100%;
     position: fixed;
-    right: 0;
     height: calc(100vh - 70px);
     z-index: 0;
+}
+
+#sidebarwv {
+    height: 95%;
 }
 
 webview {

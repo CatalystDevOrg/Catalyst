@@ -1,7 +1,7 @@
 /* eslint-enable no-undef */
 /* eslint-enable no-unused-vars */
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
-const { app, BrowserWindow, Menu, session, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu, session, ipcMain, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
@@ -34,10 +34,6 @@ app.whenReady().then(() => {
 
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
-    });
-
-    session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
-        callback(mainWindow.webContents.executeJavaScript(`confirm('This page has requested the following permission: ${permission}')`));
     });
 });
 
@@ -144,7 +140,6 @@ const template = [{
     click: function () {
         mainWindow.webContents.toggleDevTools();
     },
-
 }];
 
 app.on('web-contents-created', (e, contents) => {
@@ -174,15 +169,23 @@ app.on('web-contents-created', (e, contents) => {
                 click: () => {
                     mainWindow.webContents.executeJavaScript(`createTab('${parameters.linkURL}')`);
                 }
+            },
+            {
+                label: 'Open link in sidebar',
+                visible: parameters.linkURL,
+                click: () => {
+                    mainWindow.webContents.executeJavaScript(`sb.src = '${parameters.linkURL}'`);
+                }
             }
         ]
     });
     
 });
 
-ipcMain.handle('enable-ad-blocker', (event) => {
+ipcMain.handle('enable-ad-blocker', (event, id) => {
+    ses = session.fromPartition(id);
     ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
-        blocker.enableBlockingInSession(session.defaultSession);
+        blocker.enableBlockingInSession(ses);
     });
 });
 
@@ -229,6 +232,31 @@ ipcMain.handle('download-theme', async (event, url, name) => {
 ipcMain.handle('toggle-full-screen', async (event) => {
     mainWindow.setFullScreen(!mainWindow.isFullScreen());
 });
+
+ipcMain.handle('set-titlebar-title', async (event, title) => {
+    mainWindow.title = 'Catalyst - ' + title;
+}); 
+
+let prefs;
+
+ipcMain.on('localstorage', (event, data) => {
+    prefs = data;
+})
+
+ipcMain.handle('set-permission-handler', async (event, id) => {
+    ses = session.fromPartition(id)
+    ses.setPermissionRequestHandler((webContents, permission, callback) => {
+        let url = webContents.getURL();
+        mainWindow.webContents.executeJavaScript(`
+            new Promise((resolve) => {
+                const result = handlPermReq("${url}", "${permission}")
+                resolve(result);
+            })
+        `).then(result => {
+            callback(result);
+        });
+    });
+})
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

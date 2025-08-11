@@ -1,7 +1,7 @@
 {
     "name": "catalyst",
     "version": "3.10.0-beta.1",
-    "description": "A minimal Electron Web Browser",
+    "description": "A minimal, functional, and customizable user-focused FOSS web browser.",
     "main": "main/main.js",
     "private": true,
     "scripts": {
@@ -21,9 +21,10 @@
     "email": "email@localhost",
     "license": "MIT",
     "devDependencies": {
-        "electron": "^33.3.0",
-        "electron-builder": "^25.1.8",
-        "electron-builder-squirrel-windows": "^25.1.8",
+        "electron": "^36.7.4",
+        "electron-builder": "^26.0.12",
+        "electron-builder-squirrel-windows": "^26.0.12",
+        "electron-winstaller": "latest",
         "electron-reloader": "^1.2.3",
         "eslint": "^8.57.0"
     },
@@ -33,7 +34,6 @@
         "electron-context-menu": "^3.6.1",
         "electron-squirrel-startup": "^1.0.1",
         "vanilla-i18n": "^1.0.8",
-        "material-symbols": "^0.27.2"
     },
     "build": {
         "appId": "org.eu.getcatalyst.catalyst",

@@ -2,7 +2,7 @@
 let activeHash = '0';
 let hasFavicon = {};
 // Functions
-var ctlyststrppg = localStorage.getItem('ctlyststrppg') || './home.html';
+var ctlyststrppg = preferences.startpage;
 
 /**
  * Creates a new tab
@@ -43,6 +43,10 @@ async function createTab(url) {
         view.useragent = inputAgent.replace('{{version}}', packageJSON.version);
     }
     view.src = url;
+    view.partition = randomHash;
+    if (preferences.adblk) {
+        native.enableAdBlocker(randomHash);
+    }
     let image = document.createElement('img');
     image.width = '16';
     image.height = '16';
@@ -53,8 +57,10 @@ async function createTab(url) {
     tab.appendChild(mute);
     addListeners(view, randomHash);
     document.getElementById('webviews').appendChild(view);
+    native.setPermissionHandler(randomHash)
     switchTabs(randomHash);
     document.getElementById('searchbar').focus();
+    native.setTitlebarTitle(view.title);
 }
 createTab();
 
@@ -86,6 +92,7 @@ function switchTabs(tabHash) {
         document.getElementById('searchbar').value = view.src;
     }
     activeHash = tabHash;
+    native.setTitlebarTitle(view.title);
 }
 
 function addListeners(view, hash) {
@@ -116,6 +123,7 @@ function addListeners(view, hash) {
     });
     view.addEventListener('page-title-updated', (e) => {
         tab.getElementsByTagName('span')[0].innerText = e.title;
+        native.setTitlebarTitle(e.title);
         let viewURL = view.getURL();
         if (!viewURL.startsWith('file://')) {
             document.getElementById('searchbar').value = viewURL;
@@ -135,6 +143,9 @@ function addListeners(view, hash) {
             tab.getElementsByTagName('span')[0].classList.remove('px-2');
             tab.getElementsByTagName('img')[0].style.display = 'none';
         }
+    });
+    view.addEventListener('did-fail-load', (e) => {
+        view.src = './fail.html'
     });
 }
 
