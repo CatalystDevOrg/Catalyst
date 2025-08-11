@@ -33,7 +33,8 @@
         "cross-fetch": "^4.0.0",
         "electron-context-menu": "^3.6.1",
         "electron-squirrel-startup": "^1.0.1",
-        "vanilla-i18n": "^1.0.8"
+        "vanilla-i18n": "^1.0.8",
+        "material-symbols": "^0.31.0"
     },
     "build": {
         "appId": "org.eu.getcatalyst.catalyst",
