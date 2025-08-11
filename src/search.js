@@ -134,5 +134,4 @@ function checkUrlValidity(url) {
 searchbar.addEventListener('keydown', (e) => {
     var url = document.getElementById('searchbar').value;
     if (e.code === 'Enter') loadURL(url);
-    console.log(checkUrlValidity(url))
 });
