@@ -13,7 +13,15 @@ let es = {
     'Sets a custom theme': 'Establece un tema personalizado',
     'Search Autocomplete': 'Búsqueda Autocompletar',
     'Reset Preferences': 'Restablecer preferencias',
-    'Advanced': 'Advancado'
+    'Advanced': 'Advancado',
+    'Startup Page': 'Página De Inicio',
+    'Custom CSS': 'CSS Personalizado',
+    'Custom Font': 'Custom Fuente',
+    'Enable AD Blocker': 'Habilitar Bloqueador De AD',
+    'Experimental Force Dark Mode': 'Modo Oscuro De Fuerza Experimental',
+    'Experimental User Agent': 'Agente De Usuario Experimental',
+    'Experimental Enable Sidebar': 'Barra Lateral De Habilitación Experimental',
+    'Experimental Language': 'Idioma Experimental',
 };
 
 module.exports = es;
