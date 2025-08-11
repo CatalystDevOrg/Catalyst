@@ -30,7 +30,7 @@
     </div>
     <div id="right" style="float: right;">
         <label for="release">Release</label>
-        <span id="release"></span>
+        <span id="release"></span>&nbsp;(<span id="codename"></span>)
         <br />
         <label for="license">License:</label>
         <span id="license"></span>
@@ -46,6 +46,7 @@
                 window.license.innerText = json.license;
                 window.electron.innerText = json.devDependencies.electron.replace("^", "");
                 window.description.innerText = json.description;
+                window.codename.innerText = json.codename;
             });
     </script>
 </body>
