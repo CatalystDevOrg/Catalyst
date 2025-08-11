@@ -68,9 +68,9 @@ try {
 function createAboutWindow() {
     aboutWindow = new BrowserWindow({
         minWidth: 500,
-        minHeight: 250,
-        width: 550,
-        height: 200,
+        minHeight: 240,
+        width: 500,
+        height: 240,
         title: 'About Catalyst',
         icon: path.join(__dirname, '../assets/icon.png'),
         resizable: false,
