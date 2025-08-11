@@ -20,8 +20,8 @@ let es = {
     'Enable AD Blocker': 'Habilitar Bloqueador De AD',
     'Experimental Force Dark Mode': 'Modo Oscuro De Fuerza Experimental',
     'Experimental User Agent': 'Agente De Usuario Experimental',
-    'Experimental Enable Sidebar': 'Barra Lateral De Habilitación Experimental',
-    'Experimental Language': 'Idioma Experimental',
+    'Enable Sidebar': 'Barra Lateral De Habilitación',
+    'Language': 'Idioma',
 };
 
 module.exports = es;
