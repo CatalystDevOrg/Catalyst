@@ -36,7 +36,6 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-esb'), 'esb');
         document.getElementById('pref-esb').checked = preferences.esb;
         addSelectListener(document.getElementById('se'), 'searchengine');
-        addSelectListener(document.getElementById('pref-sbside'), 'sidebarside');
     }
 }
 
