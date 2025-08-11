@@ -3,7 +3,7 @@ node_modules
 *.out
 *.bin
 dist
-package-lock.json
+# package-lock.json
 # developers can build tailwind themselves
 output/
 result
