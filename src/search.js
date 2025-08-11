@@ -51,11 +51,7 @@ searchbar.addEventListener('input', async() => {
 
 function loadURL(url, scheck='true') {
     view = document.querySelector('.current');
-    if (isSearch(url)) {
-        document.querySelector(
-            '.current'
-        ).src = `${engineurls[preferences.searchengine]}${encodeURIComponent(url)}`;
-    } else {
+    if (checkUrlValidity(url)) {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
         }
@@ -77,7 +73,11 @@ function loadURL(url, scheck='true') {
             }
             return;
         }
-        view.src = url;
+        view.src = "https://" + url;
+    } else {
+        document.querySelector(
+            '.current'
+        ).src = `${engineurls[preferences.searchengine]}${encodeURIComponent(url)}`;
     }
     removeChildren(suggestionsEl);
     view.addEventListener('did-finish-load', () => {
@@ -120,8 +120,19 @@ function isSearch(input) {
     return true;
 }
 
+function checkUrlValidity(url) {
+    var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+    '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
+    return !!urlPattern.test(url);
+}
+
 // add listeners
 searchbar.addEventListener('keydown', (e) => {
     var url = document.getElementById('searchbar').value;
     if (e.code === 'Enter') loadURL(url);
+    console.log(checkUrlValidity(url))
 });
