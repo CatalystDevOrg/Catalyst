@@ -1,6 +1,6 @@
 {
     "name": "catalyst",
-    "version": "3.9.7",
+    "version": "3.9.8",
     "description": "A minimal, functional, and customizable user-focused FOSS web browser.",
     "main": "main/main.js",
     "private": true,
