@@ -1,6 +1,6 @@
 {
     "name": "catalyst",
-    "version": "3.9.8",
+    "version": "3.10.0-beta.1",
     "description": "A minimal, functional, and customizable user-focused FOSS web browser.",
     "main": "main/main.js",
     "private": true,
@@ -33,7 +33,7 @@
         "cross-fetch": "^4.0.0",
         "electron-context-menu": "^3.6.1",
         "electron-squirrel-startup": "^1.0.1",
-        "material-symbols": "^0.31.0"
+        "vanilla-i18n": "^1.0.8",
     },
     "build": {
         "appId": "org.eu.getcatalyst.catalyst",

@@ -135,6 +135,23 @@ function evaluatePreferences() {
         }}
 }
 
+var enginespref = document.querySelector('#se');
+enginespref.onchange = (event) => {
+    var index = enginespref.options.selectedIndex;
+    localStorage.setItem('engine', index);
+};
+
+enginespref.value = localStorage.getItem('engine') || '1';
+
+var langpref = document.querySelector('#lang');
+langpref.onchange = (event) => {
+    var index = langpref.value;
+    localStorage.setItem('catalyst.localization.language', index);
+    alert('Restart required to apply change.')
+};
+
+langpref.value = localStorage.getItem('catalyst.localization.language') || 'en'
+
 function changePrefTab(itm) {
     document.querySelector(`#${itm}`).classList.remove('hidden');
     others = document.querySelector('#preferences-box').getElementsByTagName('*');
