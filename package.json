@@ -24,6 +24,7 @@
         "electron": "^36.7.4",
         "electron-builder": "^26.0.12",
         "electron-builder-squirrel-windows": "^26.0.12",
+        "electron-winstaller": "latest",
         "electron-reloader": "^1.2.3",
         "eslint": "^8.57.0"
     },
