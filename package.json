@@ -22,7 +22,7 @@
     "email": "email@localhost",
     "license": "MIT",
     "devDependencies": {
-        "electron": "^36.7.4",
+        "electron": "^37.2.6",
         "electron-builder": "^26.0.12",
         "electron-builder-squirrel-windows": "^26.0.12",
         "electron-winstaller": "latest",
