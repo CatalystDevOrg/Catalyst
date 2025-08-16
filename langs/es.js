@@ -22,6 +22,8 @@ let es = {
     'Experimental User Agent': 'Agente De Usuario Experimental',
     'Enable Sidebar': 'Barra Lateral De Habilitación',
     'Language': 'Idioma',
+    'Have Catalyst be displayed in another language': 'Haga que Catalyst se muestre en otro idioma',
+    'Search Engine': 'Buscador'
 };
 
 module.exports = es;

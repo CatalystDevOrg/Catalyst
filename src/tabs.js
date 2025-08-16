@@ -16,7 +16,7 @@ async function createTab(url) {
         window.localStorage.getItem('preferences')
     ).agent;
     let tab = document.createElement('div');
-    let span = document.createElement('span');
+    let span = document.createElement('p');
     let mute = document.createElement('span');
     // Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
     let randomHash = generateHashkey();
@@ -104,7 +104,7 @@ function addListeners(view, hash) {
         tab.getElementsByTagName('img')[0].style.display = 'inline';
     }
     view.addEventListener('did-stop-loading', () => {
-        tab.getElementsByTagName('span')[0].innerText = view.getTitle();
+        tab.getElementsByTagName('p')[0].innerText = view.getTitle();
         tab.classList.remove('animate-pulse');
         let viewURL = view.getURL();
         if (!viewURL.startsWith('file://')) {
@@ -122,7 +122,7 @@ function addListeners(view, hash) {
         }
     });
     view.addEventListener('page-title-updated', (e) => {
-        tab.getElementsByTagName('span')[0].innerText = e.title;
+        tab.getElementsByTagName('p')[0].innerText = e.title;
         native.setTitlebarTitle(e.title);
         let viewURL = view.getURL();
         if (!viewURL.startsWith('file://')) {
@@ -136,11 +136,11 @@ function addListeners(view, hash) {
             let icon = e.favicons[0];
             let img = tab.getElementsByTagName('img')[0];
             img.style.display = 'inline';
-            tab.getElementsByTagName('span')[0].classList.add('px-2');
+            tab.getElementsByTagName('p')[0].classList.add('px-2');
             img.src = icon;
         } else {
             hasFavicon[hash] = false;
-            tab.getElementsByTagName('span')[0].classList.remove('px-2');
+            tab.getElementsByTagName('p')[0].classList.remove('px-2');
             tab.getElementsByTagName('img')[0].style.display = 'none';
         }
     });
