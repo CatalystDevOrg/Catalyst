@@ -4,6 +4,7 @@ reload = document.querySelector('#reload');
 backward = document.querySelector('#back');
 forward = document.querySelector('#forward');
 find = document.querySelector('#find');
+zoom = document.querySelector('#zoom');
 sidebar = document.querySelector('#tgl-sidebar');
 
 document.getElementById('more-btn').addEventListener('click', () => {
@@ -29,6 +30,10 @@ find.addEventListener('input', (event) => {
     } else {
         document.querySelector('.current').stopFindInPage('clearSelection');
     }
+});
+
+zoom.addEventListener('input', (event) => {
+    document.querySelector('.current').setZoomFactor(parseInt(zoom.value));
 });
 
 sidebar.addEventListener('click', () => {

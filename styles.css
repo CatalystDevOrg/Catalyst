@@ -275,7 +275,7 @@ ul {
     animation: spin 1s linear infinite;
 }
 
-#find {
+#find, #zoom {
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -284,7 +284,7 @@ ul {
     color: var(--foreground);
 }
 
-#find::placeholder {
+#find::placeholder, #zoom::placeholder {
     color: var(--foreground);
 }
 

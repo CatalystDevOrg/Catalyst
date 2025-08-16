@@ -92,6 +92,11 @@ function toggleFind() {
     e.classList.toggle('hidden');
 }
 
+function toggleZoom() {
+    e = document.querySelector('#zoom')
+    e.classList.toggle('hidden')
+}
+
 function toggleFullScreen() {
     toggleDisplay(document.querySelector('#userchrome'));
     native.ipcToggleFs();

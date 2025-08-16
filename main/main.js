@@ -135,6 +135,13 @@ const template = [{
     }
 },
 {
+    label: 'Zoom',
+    accelerator: 'Ctrl+J',
+    click: function() {
+        mainWindow.webContents.executeJavaScript('toggleZoom()');
+    }
+},
+{
     label: 'DevTools',
     accelerator: 'CmdOrCtrl+I',
     click: function () {
