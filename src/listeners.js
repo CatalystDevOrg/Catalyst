@@ -33,7 +33,7 @@ find.addEventListener('input', (event) => {
 });
 
 zoom.addEventListener('input', (event) => {
-    document.querySelector('.current').setZoomFactor(parseInt(zoom.value));
+    document.querySelector('.current').setZoomFactor(parseFloat(zoom.value / 100));
 });
 
 sidebar.addEventListener('click', () => {
