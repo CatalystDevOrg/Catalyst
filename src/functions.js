@@ -128,9 +128,8 @@ function createModal(h, t, f="") {
 function destroyModal(hash) {
     let modal = document.getElementById(hash)
     modal.remove();
-};
     native.ipcToggleFs();
-}
+};
 
 function openInSidebar(u) {
     document.getElementById('sidebar').src = u;
