@@ -48,9 +48,6 @@ async function createTab(url) {
         native.enableAdBlocker(randomHash);
     }
     let image = document.createElement('img');
-    image.width = '16';
-    image.height = '16';
-    image.style.border = '0';
     document.getElementById('tabs-bar').appendChild(tab);
     tab.appendChild(image);
     tab.appendChild(span);

@@ -42,13 +42,13 @@ body {
     max-width: 16rem;
     padding: 0.25rem 0.5rem;
     overflow: hidden;
-    font-size: 0.875rem;
+    font-size: 1.0rem;
     color: var(--foreground);
     background-color: transparent;
     border-radius: var(--tab-radius);
     cursor: pointer;
     white-space: nowrap;
-    padding: 4pt;
+    padding: 6pt;
     padding-left: 8pt;
     display: flex;
     align-items: center;
@@ -68,6 +68,12 @@ body {
     float: right;
     font-weight: bold;
     font-size: 1.3em;
+}
+
+.tab img {
+    border: 0;
+    width: 18px;
+    height: 18px;
 }
 
 .active-tab {
