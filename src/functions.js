@@ -99,6 +99,36 @@ function toggleZoom() {
 
 function toggleFullScreen() {
     toggleDisplay(document.querySelector('#userchrome'));
+    cat.ipcToggleFs();
+}
+
+function createModal(h, t, f="") {
+    let modal = document.createElement('div')
+    modal.classList.add("modal")
+    modal.id = generateHashkey();
+    let head = document.createElement('h1')
+    head.innerText = h;
+    let text = document.createElement('p')
+    text.innerText = t;
+    let func = document.createElement('button')
+    func.innerText = 'Ok'
+    func.onclick = f;
+    let exit = document.createElement('button')
+    exit.innerText = 'Done'
+    exit.onclick = () => {
+        destroyModal(modal.id);
+    }
+    modal.appendChild(head)
+    modal.appendChild(text)
+    modal.appendChild(func)
+    modal.appendChild(exit)
+    document.body.appendChild(modal)
+}
+
+function destroyModal(hash) {
+    let modal = document.getElementById(hash)
+    modal.remove();
+};
     native.ipcToggleFs();
 }
 
