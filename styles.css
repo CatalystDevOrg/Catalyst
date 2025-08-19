@@ -5,9 +5,9 @@
 }
 
 :root {
-    --tertiary: #a5b4fc;
-    --secondary: #818cf8;
     --primary: #6366f1;
+    --secondary: #818cf8;
+    --tertiary: #a5b4fc;
     --userchrome-background: var(--primary);
     --userchrome-btn-primary: var(--primary);
     --userchrome-btn-secondary: var(--secondary);
@@ -19,6 +19,7 @@
     --tab-radius: var(--border-radius);
     --searchbar-radius: 1.5rem;
     --moremenu-radius: 1.5rem;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;';
 }
 
 html {
@@ -32,7 +33,7 @@ body {
     min-height: 100vh;
     background-color: var(--primary);
     color: var(--foreground);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family);
 }
 
 .tab {
