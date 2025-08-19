@@ -158,17 +158,16 @@ button img {
 .suggestion {
     width: 100vw;
     padding: 0.5rem;
-    border: 1px solid #60A5FA;
+    border: 0;
+    border-radius: 0 !important;
     color: var(--foreground);
 }
 
+
 .suggestions-box {
     position: absolute;
-    background-color: #FECACA;
-    background-color: #1E293B;
-    border-color: #60A5FA;
+    background-color: var(--primary);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 *:focus {
@@ -447,7 +446,6 @@ select:hover {
 
 #suggestions {
     background-color: var(--primary);
-    ;
 }
 
 #welcomepage {
