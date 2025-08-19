@@ -8,6 +8,7 @@
     --tertiary: #a5b4fc;
     --secondary: #818cf8;
     --primary: #6366f1;
+    --userchrome-background: var(--primary);
     --userchrome-btn-primary: var(--primary);
     --userchrome-btn-secondary: var(--secondary);
     --button-primary: #a855f7;
@@ -292,7 +293,10 @@ ul {
     display: flex;
     padding-bottom: 0.25rem;
     width: 100%;
-    background-color: var(--primary);
+}
+
+#userchrome {
+    background: var(--userchrome-background);
 }
 
 #userchrome button {
@@ -312,8 +316,6 @@ ul {
     padding-right: 0.375rem;
     margin-top: 0;
     align-items: center;
-    background-color: var(--primary);
-    ;
 }
 
 #tabs-bar {
