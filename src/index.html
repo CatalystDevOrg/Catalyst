@@ -60,15 +60,16 @@
     </div>
     <!-- Preferences -->
     <div class="hidden" id="preferences-box">
-        <button onClick="togglePreferences()"><span class="material-symbols-rounded">close</span></button>
-        <div id="pref-tabs">
+        <aside id="pref-tabs">
+            <button onClick="togglePreferences()"><span class="material-symbols-rounded">close</span></button>
             <button class="pref-tab" onClick='changePrefTab("basic")'><span
                     class="material-symbols-rounded">build</span>Basic</button>
             <button class="pref-tab" onClick='changePrefTab("advanced")'><span
                     class="material-symbols-rounded">construction</span>Advanced</button>
             <button class="pref-tab" onClick='changePrefTab("experiments")'><span
                     class="material-symbols-rounded">experiment</span>Experiments</button>
-        </div>
+        </aside>
+        <div id="prefs-content">
         <h1>Preferences</h1>
         <br />
         <div id="basic">
@@ -155,6 +156,7 @@
         <i id="pref-ver"></i>
         <br />
         <iid="distrib_id">catalyst-default-distrib</i>
+        </div>
         </div>
     </div>
     </div>

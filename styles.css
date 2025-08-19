@@ -113,6 +113,14 @@ select {
     background-color: var(--button-tertiary);
 }
 
+#preferences-box aside {
+    float: left;
+}
+
+#preferences-box #prefs-content {
+    margin-left: 200px;
+}
+
 button:hover,
 select:hover {
     background-color: var(--button-secondary);
@@ -392,7 +400,6 @@ ul {
 }
 
 #pref-tabs {
-    display: flex;
     margin: 16pt;
 }
 
