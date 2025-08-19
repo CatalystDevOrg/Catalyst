@@ -101,6 +101,7 @@ function toggleFullScreen() {
 function createModal(h, t, f="") {
     let modal = document.createElement('div')
     modal.classList.add("modal")
+    modal.id = generateHashkey();
     let head = document.createElement('h1')
     head.innerText = h;
     let text = document.createElement('p')
@@ -110,10 +111,17 @@ function createModal(h, t, f="") {
     func.onclick = f;
     let exit = document.createElement('button')
     exit.innerText = 'Done'
-    exit.onclick = console.log(document.querySelectorAll("modal"))
+    exit.onclick = () => {
+        destroyModal(modal.id);
+    }
     modal.appendChild(head)
     modal.appendChild(text)
     modal.appendChild(func)
     modal.appendChild(exit)
     document.body.appendChild(modal)
 }
+
+function destroyModal(hash) {
+    let modal = document.getElementById(hash)
+    modal.remove();
+};
