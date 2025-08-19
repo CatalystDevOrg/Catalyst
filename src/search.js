@@ -8,7 +8,7 @@ const engineurls = [
 ];
 
 // protocols
-const protocols = ['https', 'http', 'file', 'data'];
+const protocols = ['https', 'http', 'file', 'data', 'catalyst'];
 const searchbar = document.getElementById('searchbar');
 const suggestionsEl = document.getElementById('suggestions');
 searchbar.addEventListener('input', async() => {
@@ -49,34 +49,35 @@ searchbar.addEventListener('input', async() => {
     }
 });
 
-function loadURL(url) {
+function loadURL(url, scheck='true') {
     view = document.querySelector('.current');
-    if (isSearch(url)) {
-        if (!localStorage.getItem('engine')) {
-            document.querySelector('.current').src  = `${engineurls[1]}${encodeURIComponent(url)}`;
-        } else {
-            document.querySelector(
-                '.current'
-            ).src = `${engineurls[localStorage.getItem('engine')]}${encodeURIComponent(url)}`;
-        }
-    } else {
+    if (checkUrlValidity(url)) {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
         }
         if (url.startsWith('https://raw.githubusercontent.com/CatalystDevOrg/Themes/master/') && url.endsWith('.css')) {
             if (confirm('This link looks like a theme URL. Attempt to install theme?')) {
-                catalyst.native.downloadTheme(url, url.split('/')[6]);
+                native.downloadTheme(url, url.split('/')[6]);
                 if (confirm(`Theme ${url.split('/')[6]} installed successfully! Switch to theme?`)) {
-                    catalyst.native.loadTheme(url.split('/')[6]);
+                    native.loadTheme(url.split('/')[6]);
                 }
             }
         }
-        view.src = url;
-        view.addEventListener('did-fail-load', () => {
-            view.src = 'home.html';
-            alert(`Failed to load page ${url}`);
+        if (url.startsWith('catalyst://')) {
+            keyword = url.split('catalyst://')[1];
+            if (keyword == 'home') {
+                // loadURL(ctlyststrppg)
+                alert('not supported.');
+            } else if (keyword == 'preferences') {
+                togglePreferences();
+            }
             return;
-        });
+        }
+        view.src = "https://" + url;
+    } else {
+        document.querySelector(
+            '.current'
+        ).src = `${engineurls[preferences.searchengine]}${encodeURIComponent(url)}`;
     }
     removeChildren(suggestionsEl);
     view.addEventListener('did-finish-load', () => {
@@ -103,7 +104,7 @@ function shouldAutocomplete(input) {
 }
 
 function engineSupportsAC(input) {
-    if (localStorage.getItem('engine') != 1) {
+    if (preferences.searchengine != 1) {
         return false;
     }
     return true;
@@ -117,6 +118,16 @@ function isSearch(input) {
         }
     }
     return true;
+}
+
+function checkUrlValidity(url) {
+    var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+    '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
+    return !!urlPattern.test(url);
 }
 
 // add listeners

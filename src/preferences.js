@@ -30,9 +30,12 @@ function togglePreferences() {
             document.getElementById('pref-useragent').value = preferences.agent;
         }
         addTextListener(document.getElementById('pref-useragent'), 'agent');
-        addCheckboxListener(document.getElementById('pref-homewidgets'), 'homewidgets');
-        document.getElementById('pref-homewidgets').checked = preferences.homewidgets;
+        addTextListener(document.getElementById('pref-font'), 'font');
+        addTextListener(document.getElementById('pref-strt'), 'startpage');
         addSelectListener(document.getElementById('pref-theme'), 'theme');
+        addCheckboxListener(document.getElementById('pref-esb'), 'esb');
+        document.getElementById('pref-esb').checked = preferences.esb;
+        addSelectListener(document.getElementById('se'), 'searchengine');
     }
 }
 
@@ -49,7 +52,7 @@ function getPreferences() {
     if (!window.localStorage.getItem('preferences')) {
         window.localStorage.setItem(
             'preferences',
-            JSON.stringify({ dark: false, agent: '', autocomplete: true, bookmarks: false })
+            JSON.stringify({ dark: false, agent: '', autocomplete: true, bookmarks: false, esb: false, startpage: './home.html', sidebarside: '1', searchengine: 1 })
         );
     }
     return JSON.parse(window.localStorage.getItem('preferences'));
@@ -103,20 +106,32 @@ function evaluatePreferences() {
         document.documentElement.classList.remove('dark');
     }
     if (preferences.usrchr) {
-        catalyst.native.loadCustomStyles();
-    }
-    if (preferences.adblk) {
-        catalyst.native.enableAdBlocker();
+        native.loadCustomStyles();
     }
     if (preferences.theme) {
         if (document.getElementsByClassName('theme').length > 0) {
-            catalyst.native.unloadTheme();
+            native.unloadTheme();
         }
         if (preferences.theme == 0) {
-            return;
         }
-        catalyst.native.loadTheme(preferences.theme);
+        native.loadTheme(preferences.theme);
     }
+    if (preferences.font) {
+        document.body.style.fontFamily = preferences.font;
+    }
+    if (preferences.esb) {
+        document.getElementById('tgl-sidebar').classList.remove('hidden');
+    }
+    if (preferences.sidebarside) {
+        var sb = document.getElementById('sidebar');
+        if (preferences.sidebarside === '0') {
+            sb.style.right = 'unset';
+            sb.style.left = 0;
+        } 
+        if (preferences.sidebarside === '1' ){
+            sb.style.left = 'unset';
+            sb.style.right = 0;
+        }}
 }
 
 var enginespref = document.querySelector('#se');
@@ -126,6 +141,15 @@ enginespref.onchange = (event) => {
 };
 
 enginespref.value = localStorage.getItem('engine') || '1';
+
+var langpref = document.querySelector('#lang');
+langpref.onchange = (event) => {
+    var index = langpref.value;
+    localStorage.setItem('catalyst.localization.language', index);
+    alert('Restart required to apply change.')
+};
+
+langpref.value = localStorage.getItem('catalyst.localization.language') || 'en'
 
 function changePrefTab(itm) {
     document.querySelector(`#${itm}`).classList.remove('hidden');

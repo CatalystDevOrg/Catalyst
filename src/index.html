@@ -3,10 +3,9 @@
 
 <head>
     <title>Catalyst</title>
-    <script src="./extend.js"></script>
-    <script src="./tabs.js" defer></script>
-    <script src="./search.js" defer></script>
     <script src="./preferences.js" defer></script>
+    <script src="./search.js" defer></script>
+    <script src="./tabs.js" defer></script>
     <link href="../node_modules/material-symbols/index.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +15,6 @@
     <div id="loading">
         <img src="../assets/icon.png" alt="loading...">
     </div>
-    </div>
-    </div>
     <!-- Tab bar -->
     <div id="userchrome">
         <div id="tb-wrapper">
@@ -25,38 +22,35 @@
                 <!-- tabs are inserted with JS -->
             </div>
             <div class="tabs-btns">
-                <button id="create-tab" onclick="createTab()"><img src="../assets/icons/plus.svg"
-                        alt="Create tab"></button>
-                <button id="remove-tab" onclick="removeTab()"><img src="../assets/icons/x.svg"
-                        alt="Remove tab"></button>
-                <button id="remove-tab" onclick="bookmarkCurrentTab()"><img src="../assets/icons/star.svg" width=""
-                        alt="Bookmark tab" disabled></button>
+                <button id="create-tab" onclick="createTab()"><span class="material-symbols-rounded">add</span></button>
+                <button id="remove-tab" onclick="removeTab()"><span class="material-symbols-rounded">close</span></button>
+                <button id="remove-tab" onclick="bookmarkCurrentTab()"><span class="material-symbols-rounded">bookmark</span></button>
             </div>
         </div>
         <!-- Utility bar -->
         <div id="utility">
-            <button id="back"><img src="../assets/icons/arrow-left.svg" alt="Backward"></button>
-            <button id="forward"><img src="../assets/icons/arrow-right.svg" alt="Forward"></button>
+            <button id="back"><span class="material-symbols-rounded">arrow_back</span></button>
+            <button id="forward"><span class="material-symbols-rounded">arrow_forward</span></button>
             <input id="searchbar" type="text" placeholder="Search or type a URL" />
-            <button id="reload"><img src="../assets/icons/arrow-clockwise.svg" alt="Reload"></button>
-            <button id="more-btn"><img src="../assets/icons/three-dots-vertical.svg" alt="More menu"></button>
-            <button id="bkmtggl"><img width="20" height="20" src="../assets/icons/bookmark.svg"></button>
+            <button id="reload"><span class="material-symbols-rounded">refresh</span></button>
+            <button id="more-btn"><span class="material-symbols-rounded">more_vert</span></button>
+            <button id="tgl-sidebar" class="hidden"><span class="material-symbols-rounded">view_sidebar</span></button>
         </div>
         <!-- More menu -->
         <div class="hidden" id="more-menu">
             <ul>
                 <li class="moreMenuItem" onclick="togglePreferences()"><span
-                        class="material-symbols-rounded">settings</span>Preferences</li>
+                        class="material-symbols-rounded">settings</span><p>Preferences</p></li>
                 <li class="moreMenuItem" onclick="inspectTab()"><span
-                        class="material-symbols-rounded">search</span>Inspect Tab</li>
+                        class="material-symbols-rounded">search</span><p>Inspect Tab</p></li>
                 <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst/issues/new')"><span
-                        class="material-symbols-rounded">bug_report</span>Feedback</li>
+                        class="material-symbols-rounded">bug_report</span><p>Feedback</p></li>
                 <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst')"><span
-                        class="material-symbols-rounded">code</span>Development</li>
+                        class="material-symbols-rounded">code</span><p>Development</p></li>
                 <li class="moreMenuItem" onClick="downloadCurrentPage()" class="moreMenuItem"><span
-                        class="material-symbols-rounded">download</span>Download Page</li>
+                        class="material-symbols-rounded">download</span><p>Download Page</p></li>
                 <li class="moreMenuItem" id="changelogbtn" onClick="openChangeLog()" class="moreMenuItem"><span
-                        class="material-symbols-rounded">update</span><span id="ver"></span>&nbsp;Changes</li>
+                        class="material-symbols-rounded">update</span><span id="ver"></span>&nbsp;<p>Changes</p></li>
             </ul>
         </div>
     </div>
@@ -66,35 +60,37 @@
     </div>
     <!-- Preferences -->
     <div class="hidden" id="preferences-box">
-        <button onClick="togglePreferences()"><img src="../assets/icons/x.svg"
-                alt="this image has not loaded properly"></button>
-        <div id="pref-tabs">
-            <button class="pref-tab" onClick='changePrefTab("basic")'><span class="material-symbols-rounded">build</span>Basic</button>
+        <aside id="pref-tabs">
+            <button onClick="togglePreferences()"><span class="material-symbols-rounded">close</span></button>
+            <button class="pref-tab" onClick='changePrefTab("basic")'><span
+                    class="material-symbols-rounded">build</span>Basic</button>
             <button class="pref-tab" onClick='changePrefTab("advanced")'><span
                     class="material-symbols-rounded">construction</span>Advanced</button>
             <button class="pref-tab" onClick='changePrefTab("experiments")'><span
                     class="material-symbols-rounded">experiment</span>Experiments</button>
-        </div>
-        <h1 class="font-bold text-xl">Preferences</h1>
+        </aside>
+        <div id="prefs-content">
+        <h1>Preferences</h1>
         <br />
         <div id="basic">
-            <div class="toggle-area">
-            <label for="pref-darkmode">Dark Mode? </label>
-            <input title="This feature is disabled as the implementation does not work due to recent changes."
-                id="pref-darkmode" type="checkbox" class="" disabled />
+            <div class="toggle-area hidden">
+                <label for="pref-darkmode">Dark Mode?</label>
+                <input title="This feature is disabled as the implementation does not work due to recent changes."
+                    id="pref-darkmode" type="checkbox" disabled />
             </div>
-            <p class="text-sm">Toggle dark mode</p>
-            <br />
+            <p class="hidden">Toggle dark mode</p>
+            <br class="hidden"/>
             <label for="pref-theme">Theme</label>
             <select name="pref-theme" id="pref-theme">
                 <option value="0">Default</option>
             </select>
+            <p>Sets a custom theme</p>
             <br />
             <div class="toggle-area">
-            <label for="pref-autocomplete">Autocomplete </label>
-            <input id="pref-autocomplete" type="checkbox" class="" />
+                <label for="pref-autocomplete">Autocomplete </label>
+                <input id="pref-autocomplete" type="checkbox" />
             </div>
-            <p class="text-sm">Search Autocomplete</p>
+            <p>Search Autocomplete</p>
             <br />
             <label for="se">Search Engine</label>
             <select name="se" id="se">
@@ -104,55 +100,64 @@
                 <option value="3">Brave</option>
                 <option value="4">Escosia</option>
             </select>
+            <br />
+            <br />
+            <label for="lang">Language</label>
+            <select name="lang" id="lang">
+                <option value="en">English (Default)</option>
+                <option value="es">Español (Spanish)</option>
+            </select>
+            <p>Have Catalyst be displayed in another language.</p>
         </div>
         <div class="hidden" id="advanced">
             <label for="pref-strt">Startup Page</label>
-            <input class="text-black p-1.5 rounded-sm" id="pref-strt" />
-            <p class="text-sm">Sets a custom startup page.</p>
+            <input type="text" id="pref-strt" />
+            <p>Sets a custom startup page.</p>
             <br />
             <div class="toggle-area">
-            <label for="pref-usrchr">Custom CSS</label>
-            <input id="pref-usrchr" type="checkbox" class="" />
+                <label for="pref-usrchr">Custom CSS</label>
+                <input id="pref-usrchr" type="checkbox" />
             </div>
-            <p class="text-sm">Loads custom css from the userChrome.css file</p>
+            <p>Loads custom css from the userChrome.css file</p>
+            <br />
+            <label for="pref-font">Custom Font</label>
+            <input type="text" id="pref-font">
+            <p>Sets a custom font</p>
             <br />
             <div class="toggle-area">
-            <label for="pref-adblk">Enable AD Blocker</label>
-            <input id="pref-adblk" type="checkbox" class="" />
+                <label for="pref-adblk">Enable AD Blocker</label>
+                <input id="pref-adblk" type="checkbox" />
             </div>
-            <p class="text-sm">Enables the ad blocker (RESTART REQUIRED)</p>
+            <p>Enables the ad blocker (RESTART REQUIRED)</p>
             <br />
-            <button id="clearbtn" onclick="clearData()" class="btn">Reset Preferences</button>
-            <p class="text-sm">Sets all preferences back to their default values.</p>
+            <label for="pref-esb">Enable Sidebar</label>
+            <input id="pref-esb" type="checkbox">
+            <br />
+            <p>Enable the sidebar.</p>
             <br />
         </div>
         <div class="hidden" id="experiments">
             <div class="toggle-area">
-            <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
-            <input id="pref-dm" type="checkbox" class="" />
+                <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
+                <input id="pref-dm" type="checkbox" />
             </div>
-            <p class="text-sm">Toggles forced dark mode for all sites.</p>
+            <p>Toggles forced dark mode for all sites.</p>
             <br />
             <label for="pref-useragent"><b>Experimental</b> User Agent: </label>
-            <input id="pref-useragent" type="text" class="dark:text-gray-800 p-1 rounded"
+            <input id="pref-useragent" type="text"
                 placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
-            <p class="text-sm">Sets a custom user agent.</p>
-            <br />
-            <div class="toggle-area">
-            <label for="pref-homewidgets"><b>Experimental</b> Home Widgets</label>
-            <input id="pref-homewidgets" type="checkbox">
-            </div>
-            <p>Enables widgets on the default home page.</p>
+            <p>Sets a custom user agent.</p>
         </div>
         <br />
-        <i class="text-sm" id="pref-ver"></i>
-        <br />
+        <div style="margin-left: 16pt;">
         <button id="clearbtn" onclick="clearData()">Reset Preferences</button>
-        <p class="text-sm">Sets all preferences back to their default values.</p>
         <br />
-        <i class="text-sm" id="pref-ver"></i>
         <br />
-        <i class="text-sm" id="distrib_id">catalyst-default-distrib</i>
+        <i id="pref-ver"></i>
+        <br />
+        <iid="distrib_id">catalyst-default-distrib</i>
+        </div>
+        </div>
     </div>
     </div>
     <!-- Suggestions -->
@@ -163,15 +168,23 @@
     <div id="welcomepage">
         <h1>Welcome to Catalyst!</h1>
         <button onClick="closeWelcome()">Close</button>
-        <button onClick="togglePreferences()">Customize Your
-            Browser!</button>
+        <button onClick="togglePreferences()">Customize Catalyst</button>
+    </div>
+    <!-- Sidebar -->
+    <div class="hidden" id="sidebar">
+        <div style="display: flex;">
+            <button onClick="sbwv.src = 'https://wikipedia.org'"><span class="material-symbols-rounded">book</span>Wikipedia</button>
+        </div>
+        <webview id="sidebarwv" src="https://example.org"></webview>
     </div>
     <!-- Webviews generated with JS -->
     <div id="webviews"></div>
     <!-- Find Window -->
-    <input id="find" class="hidden w-full fixed bottom-0" placeholder="Search..." />
+    <input class="hidden" id="find" placeholder="Search..." />
+    <!-- Zoom Window -->
+    <input type="range" min="8" max="500" value="100" class="hidden" id="zoom">
     <script src="./functions.js"></script>
-    <script src="./startup.js" defer></script>
+    <script src="./startup.js"></script>
     <script src="./bookmarks.js"></script>
     <script src="./listeners.js"></script>
 </body>

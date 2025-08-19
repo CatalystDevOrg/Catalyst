@@ -1,0 +1,29 @@
+let es = {
+    'Close': 'Cerrar',
+    'Theme': 'Tema',
+    'Welcome to Catalyst!': 'Bienvenidos a Catalyst',
+    'Customize Catalyst': 'Personalizar Catalyst',
+    'Home': 'Casa',
+    'Preferences': 'Preferencias',
+    'Inspect Tab': 'Pestaña Inspeccionar',
+    'Development': 'Desarrollo',
+    'Download Page': 'Descargar Página',
+    'Changes': 'Cambios',
+    'Autocomplete': 'Autocompletar',
+    'Sets a custom theme': 'Establece un tema personalizado',
+    'Search Autocomplete': 'Búsqueda Autocompletar',
+    'Reset Preferences': 'Restablecer preferencias',
+    'Advanced': 'Advancado',
+    'Startup Page': 'Página De Inicio',
+    'Custom CSS': 'CSS Personalizado',
+    'Custom Font': 'Custom Fuente',
+    'Enable AD Blocker': 'Habilitar Bloqueador De AD',
+    'Experimental Force Dark Mode': 'Modo Oscuro De Fuerza Experimental',
+    'Experimental User Agent': 'Agente De Usuario Experimental',
+    'Enable Sidebar': 'Barra Lateral De Habilitación',
+    'Language': 'Idioma',
+    'Have Catalyst be displayed in another language': 'Haga que Catalyst se muestre en otro idioma',
+    'Search Engine': 'Buscador'
+};
+
+module.exports = es;

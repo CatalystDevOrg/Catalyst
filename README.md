@@ -2,18 +2,21 @@
 ![image](https://img.shields.io/github/downloads/jdev082/Catalyst/total?color=%230f172a&style=for-the-badge)
 # Catalyst 
 A free and open source user and privacy focused web browser aiming to provide a simple and private browsing experience.
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/a149a1ac-5c5c-43d9-af33-c821fc35f8d5)
+![image](https://github.com/user-attachments/assets/2656b5d3-cc09-468b-9950-2912dd17549a)
+## Flatpak
+<a href='https://flathub.org/apps/org.eu.getcatalyst.Catalyst'>
+    <img width='240' alt='Download on Flathub' src='https://flathub.org/api/badge?locale=en'/>
+</a>
+
 ## Packages
 Here are the Linux distributions that have Catalyst in their repositories: \
 [![Packaging status](https://repology.org/badge/vertical-allrepos/catalyst-browser.svg)](https://repology.org/project/catalyst-browser/versions)
-## Other Systems
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/ec8b5c92-760a-4dde-aca5-e61a52073d55) Windows 10 or later x64 and ARM \
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf75d9b2-242f-47a5-9a15-964a43f18bb5) AppImage for Linux x64 \
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/1a18e7a4-cf04-47db-b3eb-de15d0dc4fa7) DEBs for Debian x64 and ARM \
+## Official Binaries/Packages
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/ec8b5c92-760a-4dde-aca5-e61a52073d55) Windows 10 or later x64 \
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf75d9b2-242f-47a5-9a15-964a43f18bb5) AppImage and TAR for Linux x64 \
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/c95a1e37-fcab-4c0a-a001-4d336f8ce670) DMGs and ZIPs for MacOS x64 and Apple Silicon \
+![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/1a18e7a4-cf04-47db-b3eb-de15d0dc4fa7) DEBs for Debian x64 \
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/c5fb1433-4efc-4a87-b129-6ffbdb0b14e2) RPMS for Fedora x64
-
-
-
 
 ## Contributors
 
@@ -28,16 +31,16 @@ Here are the Linux distributions that have Catalyst in their repositories: \
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/webdev03>
-            <img src=https://avatars.githubusercontent.com/u/75148774?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=webdev03/>
+            <img src=https://avatars.githubusercontent.com/u/75148774?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Devarsh/>
             <br />
-            <sub style="font-size:14px"><b>webdev03</b></sub>
+            <sub style="font-size:14px"><b>Devarsh</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/ScolderCreations>
-            <img src=https://avatars.githubusercontent.com/u/69083943?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Scolder/>
+            <img src=https://avatars.githubusercontent.com/u/69083943?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=ScolderCreations/>
             <br />
-            <sub style="font-size:14px"><b>Scolder</b></sub>
+            <sub style="font-size:14px"><b>ScolderCreations</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -64,7 +67,7 @@ Here are the Linux distributions that have Catalyst in their repositories: \
 </tr>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/CocoTheMii>
+        <a href=https://github.com/cocoelacanth>
             <img src=https://avatars.githubusercontent.com/u/44563370?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Coco/>
             <br />
             <sub style="font-size:14px"><b>Coco</b></sub>
@@ -95,6 +98,9 @@ Here are the Linux distributions that have Catalyst in their repositories: \
 </table>
 
 # Additional Screenshots
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/7349226a-41a6-48bb-9302-63ed8082922c)
-![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/bf3fd063-639e-4130-9d49-4d01ac521cf2)
+![image](https://github.com/user-attachments/assets/dba18126-b4f4-49ae-85c7-8f954d7bf684)
+![image](https://github.com/user-attachments/assets/4aa4f30c-2411-4e66-a578-c99076e739f2)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=CatalystDevOrg/Catalyst&type=Date)](https://star-history.com/#CatalystDevOrg/Catalyst&Date)

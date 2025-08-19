@@ -1,7 +1,7 @@
 /* eslint-enable no-undef */
 /* eslint-enable no-unused-vars */
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
-const { app, BrowserWindow, Menu, session, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu, session, ipcMain, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
@@ -35,10 +35,6 @@ app.whenReady().then(() => {
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
-
-    session.defaultSession.setPermissionRequestHandler((webContents, permission, callback) => {
-        callback(mainWindow.webContents.executeJavaScript(`confirm('This page has requested the following permission: ${permission}')`));
-    });
 });
 
 app.on('window-all-closed', function () {
@@ -50,21 +46,31 @@ app.on('web-contents-created', function (event, contents) {
             newWindowEvent.preventDefault();
         });
     }
+    contents.setWindowOpenHandler(({ url }) => {
+        if (mainWindow.webContents
+            .executeJavaScript('JSON.parse(localStorage.getItem("preferences")).osb')
+            .then(localStorage => {
+                if (localStorage) {
+                    mainWindow.webContents.executeJavaScript(`openInSidebar('${url}')`);
+
+                } else {
+                    mainWindow.webContents.executeJavaScript(`createTab('${url}')`);
+                }
+            }))
+            return { action: 'deny' };
+    });
 });
 
 try {
     require('electron-reloader')(module);
 } catch { }
 
-let ver = app.getVersion();
-let appName = app.getName();
-
 function createAboutWindow() {
     aboutWindow = new BrowserWindow({
         minWidth: 500,
-        minHeight: 250,
+        minHeight: 240,
         width: 500,
-        height: 250,
+        height: 240,
         title: 'About Catalyst',
         icon: path.join(__dirname, '../assets/icon.png'),
         resizable: false,
@@ -129,21 +135,19 @@ const template = [{
     }
 },
 {
+    label: 'Zoom',
+    accelerator: 'Ctrl+J',
+    click: function() {
+        mainWindow.webContents.executeJavaScript('toggleZoom()');
+    }
+},
+{
     label: 'DevTools',
     accelerator: 'CmdOrCtrl+I',
     click: function () {
         mainWindow.webContents.toggleDevTools();
     },
-
-}/*
-    {
-        label: "Check for Updates",
-        accelerator: "CmdOrCtrl+U",
-        click: function() {
-            checkForUpdate(mainWindow);
-        }
-    }*/
-];
+}];
 
 app.on('web-contents-created', (e, contents) => {
     contextMenu({
@@ -158,12 +162,37 @@ app.on('web-contents-created', (e, contents) => {
         showCopyVideoAddress: true,
         showSaveVideoAs: true,
         showCopyLink: true,
+        prepend: (defaultActions, parameters, browserWindow) => [
+            {
+                label: 'Search for "{selection}"',
+                visible: parameters.selectionText.trim().length > 0,
+                click: () => {
+                    mainWindow.webContents.executeJavaScript(`loadURL("${parameters.selectionText.trim()}")`);
+                }
+            },
+            {
+                label: 'Open link in new tab',
+                visible: parameters.linkURL,
+                click: () => {
+                    mainWindow.webContents.executeJavaScript(`createTab('${parameters.linkURL}')`);
+                }
+            },
+            {
+                label: 'Open link in sidebar',
+                visible: parameters.linkURL,
+                click: () => {
+                    mainWindow.webContents.executeJavaScript(`sb.src = '${parameters.linkURL}'`);
+                }
+            }
+        ]
     });
+    
 });
 
-ipcMain.handle('enable-ad-blocker', (event) => {
+ipcMain.handle('enable-ad-blocker', (event, id) => {
+    ses = session.fromPartition(id);
     ElectronBlocker.fromPrebuiltAdsAndTracking(fetch).then((blocker) => {
-        blocker.enableBlockingInSession(session.defaultSession);
+        blocker.enableBlockingInSession(ses);
     });
 });
 
@@ -210,6 +239,31 @@ ipcMain.handle('download-theme', async (event, url, name) => {
 ipcMain.handle('toggle-full-screen', async (event) => {
     mainWindow.setFullScreen(!mainWindow.isFullScreen());
 });
+
+ipcMain.handle('set-titlebar-title', async (event, title) => {
+    mainWindow.title = 'Catalyst - ' + title;
+}); 
+
+let prefs;
+
+ipcMain.on('localstorage', (event, data) => {
+    prefs = data;
+})
+
+ipcMain.handle('set-permission-handler', async (event, id) => {
+    ses = session.fromPartition(id)
+    ses.setPermissionRequestHandler((webContents, permission, callback) => {
+        let url = webContents.getURL();
+        mainWindow.webContents.executeJavaScript(`
+            new Promise((resolve) => {
+                const result = handlPermReq("${url}", "${permission}")
+                resolve(result);
+            })
+        `).then(result => {
+            callback(result);
+        });
+    });
+})
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

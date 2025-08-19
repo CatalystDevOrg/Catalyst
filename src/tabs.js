@@ -2,7 +2,7 @@
 let activeHash = '0';
 let hasFavicon = {};
 // Functions
-ctlyststrppg = localStorage.getItem('ctlyststrppg') || './home.html';
+var ctlyststrppg = preferences.startpage;
 
 /**
  * Creates a new tab
@@ -16,7 +16,7 @@ async function createTab(url) {
         window.localStorage.getItem('preferences')
     ).agent;
     let tab = document.createElement('div');
-    let span = document.createElement('span');
+    let span = document.createElement('p');
     let mute = document.createElement('span');
     // Some parts taken from MystPi/Ninetails on Github. Thank you so much!!!
     let randomHash = generateHashkey();
@@ -43,18 +43,21 @@ async function createTab(url) {
         view.useragent = inputAgent.replace('{{version}}', packageJSON.version);
     }
     view.src = url;
+    view.partition = randomHash;
+    if (preferences.adblk) {
+        native.enableAdBlocker(randomHash);
+    }
     let image = document.createElement('img');
-    image.width = '16';
-    image.height = '16';
-    image.style.border = '0';
     document.getElementById('tabs-bar').appendChild(tab);
     tab.appendChild(image);
     tab.appendChild(span);
     tab.appendChild(mute);
     addListeners(view, randomHash);
     document.getElementById('webviews').appendChild(view);
+    native.setPermissionHandler(randomHash)
     switchTabs(randomHash);
     document.getElementById('searchbar').focus();
+    native.setTitlebarTitle(view.title);
 }
 createTab();
 
@@ -86,24 +89,19 @@ function switchTabs(tabHash) {
         document.getElementById('searchbar').value = view.src;
     }
     activeHash = tabHash;
+    native.setTitlebarTitle(view.title);
 }
 
 function addListeners(view, hash) {
     const tab = document.getElementById(`tab-${hash}`);
     hasFavicon[hash] = false;
     if (!hasFavicon[hash]) {
-        if (!document.getElementById('searchbar').value.startsWith('catalyst://')) {
-            tab.getElementsByTagName('img')[0].src = '../assets/icon.png';
-            return;
-        } else {
-            tab.getElementsByTagName('img')[0].style.display = 'none';
-            return;
-        }
+        tab.getElementsByTagName('img')[0].style.display = 'none';
     } else {
         tab.getElementsByTagName('img')[0].style.display = 'inline';
     }
     view.addEventListener('did-stop-loading', () => {
-        tab.getElementsByTagName('span')[0].innerText = view.getTitle();
+        tab.getElementsByTagName('p')[0].innerText = view.getTitle();
         tab.classList.remove('animate-pulse');
         let viewURL = view.getURL();
         if (!viewURL.startsWith('file://')) {
@@ -121,13 +119,13 @@ function addListeners(view, hash) {
         }
     });
     view.addEventListener('page-title-updated', (e) => {
-        tab.getElementsByTagName('span')[0].innerText = e.title;
+        tab.getElementsByTagName('p')[0].innerText = e.title;
+        native.setTitlebarTitle(e.title);
         let viewURL = view.getURL();
         if (!viewURL.startsWith('file://')) {
             document.getElementById('searchbar').value = viewURL;
         }
     });
-    view.addEventListener('new-window', (e) => createTab(e.url));
     view.addEventListener('close', removeTab);
     view.addEventListener('page-favicon-updated', (e) => {
         if (e.favicons.length > 0) {
@@ -135,13 +133,16 @@ function addListeners(view, hash) {
             let icon = e.favicons[0];
             let img = tab.getElementsByTagName('img')[0];
             img.style.display = 'inline';
-            tab.getElementsByTagName('span')[0].classList.add('px-2');
+            tab.getElementsByTagName('p')[0].classList.add('px-2');
             img.src = icon;
         } else {
             hasFavicon[hash] = false;
-            tab.getElementsByTagName('span')[0].classList.remove('px-2');
+            tab.getElementsByTagName('p')[0].classList.remove('px-2');
             tab.getElementsByTagName('img')[0].style.display = 'none';
         }
+    });
+    view.addEventListener('did-fail-load', (e) => {
+        view.src = './fail.html'
     });
 }
 

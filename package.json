@@ -1,7 +1,8 @@
 {
     "name": "catalyst",
-    "version": "3.8.0",
-    "description": "A minimal Electron Web Browser",
+    "version": "3.10.0-beta.2",
+    "codename": "Mafuyu",
+    "description": "A minimal, functional, and customizable user-focused FOSS web browser.",
     "main": "main/main.js",
     "private": true,
     "scripts": {
@@ -21,18 +22,20 @@
     "email": "email@localhost",
     "license": "MIT",
     "devDependencies": {
-        "electron": "^30.0.8",
-        "electron-builder": "^24.13.3",
-        "electron-builder-squirrel-windows": "^24.13.3",
+        "electron": "^37.3.0",
+        "electron-builder": "^26.0.12",
+        "electron-builder-squirrel-windows": "^26.0.12",
+        "electron-winstaller": "latest",
         "electron-reloader": "^1.2.3",
-        "eslint": "^9.3.0"
+        "eslint": "^8.57.0"
     },
     "dependencies": {
         "@cliqz/adblocker-electron": "^1.27.3",
         "cross-fetch": "^4.0.0",
         "electron-context-menu": "^3.6.1",
         "electron-squirrel-startup": "^1.0.1",
-        "material-symbols": "^0.18.0"
+        "vanilla-i18n": "^1.0.8",
+        "material-symbols": "^0.34.1"
     },
     "build": {
         "appId": "org.eu.getcatalyst.catalyst",

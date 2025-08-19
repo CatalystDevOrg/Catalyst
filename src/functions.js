@@ -12,8 +12,12 @@ const generateHashkey = () => {
 };
 
 const removeChildren = (parent) => {
-    while (parent.lastChild) {
-        parent.removeChild(parent.lastChild);
+    try {
+        while (parent.lastChild) {
+            parent.removeChild(parent.lastChild);
+        }
+    } catch (e) {
+        return e;
     }
 };
 
@@ -79,11 +83,6 @@ function openChangeLog() {
 
 openWelcome();
 
-function toggleBookmarks() {
-    document.querySelector('#bookmarks').classList.toggle('hidden');
-    document.querySelector('.current').classList.toggle('hidden');
-}
-
 function toggleDisplay(e) {
     e.classList.toggle('hidden');
 }
@@ -91,6 +90,11 @@ function toggleDisplay(e) {
 function toggleFind() {
     e = document.querySelector('#find');
     e.classList.toggle('hidden');
+}
+
+function toggleZoom() {
+    e = document.querySelector('#zoom')
+    e.classList.toggle('hidden')
 }
 
 function toggleFullScreen() {
@@ -125,3 +129,19 @@ function destroyModal(hash) {
     let modal = document.getElementById(hash)
     modal.remove();
 };
+    native.ipcToggleFs();
+}
+
+function openInSidebar(u) {
+    document.getElementById('sidebar').src = u;
+}
+
+function handlPermReq(url, permission) {
+    urlbase = url.split("/")[2]
+    if (localStorage.getItem(`${urlbase}-${permission}`) == 'true') {
+        return true;
+    } else if (confirm(`Page ${url} would like to access permission ${permission}`)) {
+        localStorage.setItem(`${urlbase}-${permission}`, "true")
+        return true;
+    } 
+}
