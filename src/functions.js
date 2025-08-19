@@ -21,7 +21,6 @@ const removeChildren = (parent) => {
     }
 };
 
-
 function downloadCurrentPage() {
     currentView = document.querySelector('.current');
     let contents = currentView.src;
@@ -99,7 +98,7 @@ function toggleZoom() {
 
 function toggleFullScreen() {
     toggleDisplay(document.querySelector('#userchrome'));
-    cat.ipcToggleFs();
+    native.ipcToggleFs();
 }
 
 function createModal(h, t, f="") {
@@ -128,7 +127,6 @@ function createModal(h, t, f="") {
 function destroyModal(hash) {
     let modal = document.getElementById(hash)
     modal.remove();
-    native.ipcToggleFs();
 };
 
 function openInSidebar(u) {
