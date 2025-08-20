@@ -19,7 +19,7 @@
     --tab-radius: var(--border-radius);
     --searchbar-radius: 1.5rem;
     --moremenu-radius: 1.5rem;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;';
+    --font-family: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif;';
 }
 
 html {
