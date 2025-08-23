@@ -29,13 +29,13 @@ function togglePreferences() {
         } else {
             document.getElementById('pref-useragent').value = preferences.userAgent;
         }
-        addTextListener(document.getElementById('pref-useragent'), 'agent');
+        addTextListener(document.getElementById('pref-useragent'), 'userAgent');
         addTextListener(document.getElementById('pref-font'), 'font');
-        addTextListener(document.getElementById('pref-strt'), 'startpage');
+        addTextListener(document.getElementById('pref-strt'), 'startupPage');
         addSelectListener(document.getElementById('pref-theme'), 'theme');
-        addCheckboxListener(document.getElementById('pref-esb'), 'esb');
+        addCheckboxListener(document.getElementById('pref-esb'), 'sideBarEnabled');
         document.getElementById('pref-esb').checked = preferences.esb;
-        addSelectListener(document.getElementById('se'), 'searchengine');
+        addSelectListener(document.getElementById('se'), 'searchEngine');
     }
 }
 
