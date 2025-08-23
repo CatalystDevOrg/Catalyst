@@ -15,27 +15,42 @@ function togglePreferences() {
         // update fields in preferences
         document.getElementById('pref-darkmode').checked = preferences.darkModeEnabled;
         addCheckboxListener(document.getElementById('pref-darkmode'), 'darkModeEnabled');
+
         document.getElementById('pref-autocomplete').checked = preferences.autocompleteEnabled;
         addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocompleteEnabled');
+
         document.getElementById('pref-dm').checked = preferences.forcedDarkEnabled;
         addCheckboxListener(document.getElementById('pref-dm'), 'forcedDarkEnabled');
-        document.getElementById('pref-usrchr').checked = preferences.userChrome
-        addCheckboxListener(document.getElementById('pref-usrchr'), 'userChrome');
+
+        document.getElementById('pref-usrchr').checked = preferences.userChromeEnabled;
+        addCheckboxListener(document.getElementById('pref-usrchr'), 'userChromeEnabled');
+
         document.getElementById('pref-adblk').checked = preferences.adblockEnabled;
         addCheckboxListener(document.getElementById('pref-adblk'), 'adblockEnabled');
-        if (preferences.agent.toString().length > 1) {
-            document.getElementById('pref-useragent').value =
-                preferences.agent || 'Catalyst/{{version}}';
-        } else {
-            document.getElementById('pref-useragent').value = preferences.userAgent;
-        }
-        addTextListener(document.getElementById('pref-useragent'), 'userAgent');
-        addTextListener(document.getElementById('pref-font'), 'font');
-        addTextListener(document.getElementById('pref-strt'), 'startupPage');
-        addSelectListener(document.getElementById('pref-theme'), 'theme');
+
         addCheckboxListener(document.getElementById('pref-esb'), 'sideBarEnabled');
-        document.getElementById('pref-esb').checked = preferences.esb;
+        document.getElementById('pref-esb').checked = preferences.sideBarEnabled;
+
         addSelectListener(document.getElementById('se'), 'searchEngine');
+        document.getElementById('se').value = preferences.searchEngine;
+
+        addSelectListener(document.getElementById('pref-theme'), 'theme');
+        document.getElementById('pref-theme').value = preferences.theme;
+
+        addSelectListener(document.getElementById('lang'), 'language');
+        document.getElementById('lang').value = preferences.language;
+
+        addTextListener(document.getElementById('pref-useragent'), 'userAgent');
+        document.getElementById('pref-useragent').value = preferences.userAgent;
+
+        addTextListener(document.getElementById('pref-font'), 'font');
+        document.getElementById('pref-font').value = preferences.font;
+
+        addTextListener(document.getElementById('pref-strt'), 'startupPage');
+        document.getElementById('pref-strt').value = preferences.startupPage;
+
+        addTextListener(document.getElementById('pref-useragent'), 'userAgent')
+        document.getElementById('pref-useragent').value = preferences.userAgent;
     }
 }
 
@@ -52,7 +67,7 @@ function getPreferences() {
     if (!window.localStorage.getItem('preferences')) {
         window.localStorage.setItem(
             'preferences',
-            JSON.stringify({ dark: false, agent: '', autocomplete: true, bookmarks: false, esb: false, startpage: './home.html', sidebarside: '1', searchengine: 1 })
+            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: './home.html', sidebarSide: 1, searchEngine: 1 })
         );
     }
     return JSON.parse(window.localStorage.getItem('preferences'));
@@ -127,29 +142,13 @@ function evaluatePreferences() {
         if (preferences.sidebarside === '0') {
             sb.style.right = 'unset';
             sb.style.left = 0;
-        } 
-        if (preferences.sidebarSide === '1' ){
+        }
+        if (preferences.sidebarSide === '1') {
             sb.style.left = 'unset';
             sb.style.right = 0;
-        }}
+        }
+    }
 }
-
-var enginespref = document.querySelector('#se');
-enginespref.onchange = (event) => {
-    var index = enginespref.options.selectedIndex;
-    localStorage.setItem('engine', index);
-};
-
-enginespref.value = localStorage.getItem('engine') || '1';
-
-var langpref = document.querySelector('#lang');
-langpref.onchange = (event) => {
-    var index = langpref.value;
-    localStorage.setItem('catalyst.localization.language', index);
-    alert('Restart required to apply change.');
-};
-
-langpref.value = localStorage.getItem('catalyst.localization.language') || 'en';
 
 function changePrefTab(itm) {
     document.querySelector(`#${itm}`).classList.remove('hidden');
