@@ -2,7 +2,6 @@
 let activeHash = '0';
 let hasFavicon = {};
 // Functions
-var ctlyststrppg = preferences.startpage;
 
 /**
  * Creates a new tab
@@ -10,11 +9,11 @@ var ctlyststrppg = preferences.startpage;
  */
 
 async function createTab(url) {
-    url = url || ctlyststrppg;
+    url = url || preferences.startupPage;
     const packageJSON = await getPackageJSON();
     const inputAgent = JSON.parse(
         window.localStorage.getItem('preferences')
-    ).agent;
+    ).userAgent;
     let tab = document.createElement('div');
     let span = document.createElement('p');
     let mute = document.createElement('span');
@@ -44,7 +43,7 @@ async function createTab(url) {
     }
     view.src = url;
     view.partition = randomHash;
-    if (preferences.adblk) {
+    if (preferences.adBlockEnabled) {
         native.enableAdBlocker(randomHash);
     }
     let image = document.createElement('img');
