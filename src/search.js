@@ -54,12 +54,12 @@ function loadURL(url, scheck='true') {
     if (url.startsWith('catalyst://')) {
         keyword = url.split('catalyst://')[1];
         if (keyword == 'home') {
-            loadURL(ctlyststrppg)
+            loadURL(ctlyststrppg);
         } else if (keyword == 'preferences') {
             togglePreferences();
         }
-            return;
-        }
+        return;
+    }
     if (checkUrlValidity(url)) {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
@@ -72,7 +72,7 @@ function loadURL(url, scheck='true') {
                 }
             }
         }
-        view.src = "https://" + url;
+        view.src = 'https://' + url;
     } else {
         document.querySelector(
             '.current'

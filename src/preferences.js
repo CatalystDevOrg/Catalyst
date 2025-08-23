@@ -146,10 +146,10 @@ var langpref = document.querySelector('#lang');
 langpref.onchange = (event) => {
     var index = langpref.value;
     localStorage.setItem('catalyst.localization.language', index);
-    alert('Restart required to apply change.')
+    alert('Restart required to apply change.');
 };
 
-langpref.value = localStorage.getItem('catalyst.localization.language') || 'en'
+langpref.value = localStorage.getItem('catalyst.localization.language') || 'en';
 
 function changePrefTab(itm) {
     document.querySelector(`#${itm}`).classList.remove('hidden');

@@ -248,10 +248,10 @@ let prefs;
 
 ipcMain.on('localstorage', (event, data) => {
     prefs = data;
-})
+});
 
 ipcMain.handle('set-permission-handler', async (event, id) => {
-    ses = session.fromPartition(id)
+    ses = session.fromPartition(id);
     ses.setPermissionRequestHandler((webContents, permission, callback) => {
         let url = webContents.getURL();
         mainWindow.webContents.executeJavaScript(`
@@ -263,7 +263,7 @@ ipcMain.handle('set-permission-handler', async (event, id) => {
             callback(result);
         });
     });
-})
+});
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

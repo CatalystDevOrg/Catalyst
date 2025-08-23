@@ -92,8 +92,8 @@ function toggleFind() {
 }
 
 function toggleZoom() {
-    e = document.querySelector('#zoom')
-    e.classList.toggle('hidden')
+    e = document.querySelector('#zoom');
+    e.classList.toggle('hidden');
 }
 
 function toggleFullScreen() {
@@ -101,44 +101,44 @@ function toggleFullScreen() {
     native.ipcToggleFs();
 }
 
-function createModal(h, t, f="") {
-    let modal = document.createElement('div')
-    modal.classList.add("modal")
+function createModal(h, t, f='') {
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
     modal.id = generateHashkey();
-    let head = document.createElement('h1')
+    let head = document.createElement('h1');
     head.innerText = h;
-    let text = document.createElement('p')
+    let text = document.createElement('p');
     text.innerText = t;
-    let func = document.createElement('button')
-    func.innerText = 'Ok'
+    let func = document.createElement('button');
+    func.innerText = 'Ok';
     func.onclick = f;
-    let exit = document.createElement('button')
-    exit.innerText = 'Done'
+    let exit = document.createElement('button');
+    exit.innerText = 'Done';
     exit.onclick = () => {
         destroyModal(modal.id);
-    }
-    modal.appendChild(head)
-    modal.appendChild(text)
-    modal.appendChild(func)
-    modal.appendChild(exit)
-    document.body.appendChild(modal)
+    };
+    modal.appendChild(head);
+    modal.appendChild(text);
+    modal.appendChild(func);
+    modal.appendChild(exit);
+    document.body.appendChild(modal);
 }
 
 function destroyModal(hash) {
-    let modal = document.getElementById(hash)
+    let modal = document.getElementById(hash);
     modal.remove();
-};
+}
 
 function openInSidebar(u) {
     document.getElementById('sidebar').src = u;
 }
 
 function handlPermReq(url, permission) {
-    urlbase = url.split("/")[2]
+    urlbase = url.split('/')[2];
     if (localStorage.getItem(`${urlbase}-${permission}`) == 'true') {
         return true;
     } else if (confirm(`Page ${url} would like to access permission ${permission}`)) {
-        localStorage.setItem(`${urlbase}-${permission}`, "true")
+        localStorage.setItem(`${urlbase}-${permission}`, 'true');
         return true;
     } 
 }

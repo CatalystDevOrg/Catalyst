@@ -54,7 +54,7 @@ async function createTab(url) {
     tab.appendChild(mute);
     addListeners(view, randomHash);
     document.getElementById('webviews').appendChild(view);
-    native.setPermissionHandler(randomHash)
+    native.setPermissionHandler(randomHash);
     switchTabs(randomHash);
     document.getElementById('searchbar').focus();
     native.setTitlebarTitle(view.title);
@@ -142,7 +142,7 @@ function addListeners(view, hash) {
         }
     });
     view.addEventListener('did-fail-load', (e) => {
-        view.src = './fail.html'
+        view.src = './fail.html';
     });
 }
 

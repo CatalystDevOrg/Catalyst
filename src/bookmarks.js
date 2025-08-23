@@ -16,17 +16,17 @@ updateBookmarksVar();
  */
 function addBookmarkToBar(url, title, icon) {
     let bookmarkEl = document.createElement('div');
-    let bookmarkIc = document.createElement('img')
+    let bookmarkIc = document.createElement('img');
     bookmarkIc.src = icon;
-    let bookmarkTi = document.createElement('h1')
+    let bookmarkTi = document.createElement('h1');
     bookmarkTi.innerText = title;
     
     bookmarkEl.onclick = () => {
         createTab(url);
     };
     bookmarkEl.classList.add('bookmark');
-    bookmarkEl.appendChild(bookmarkIc)
-    bookmarkEl.appendChild(bookmarkTi)
+    bookmarkEl.appendChild(bookmarkIc);
+    bookmarkEl.appendChild(bookmarkTi);
     bookmarksBar.appendChild(bookmarkEl);
 }
 
