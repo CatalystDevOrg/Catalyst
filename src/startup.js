@@ -1,6 +1,7 @@
 // add startup code here
 // dont touch this, it makes the loading screen work
-var sb = document.getElementById('sb');
+var sideBar = document.getElementById('sb');
+var sideBarWebView = document.getElementById('sidebarwv');
 
 if(document.readyState === 'ready' || document.readyState === 'complete') {
     document.getElementById('loading').classList.add('hidden');
@@ -18,8 +19,7 @@ if (localStorage.getItem('bookmarks') < 1) {
 
 native.getThemes();
 
-sbwv = document.getElementById('sidebarwv');
-sbwv.addEventListener('did-attach', () => {
-    sbwv.src = 'https://' + engineurls[preferences.searchengine].split('/')[2];
+sideBarWebView.addEventListener('did-attach', () => {
+    sideBarWebView.src = 'https://' + engineurls[preferences.searchEngine].split('/')[2];
 });
 
