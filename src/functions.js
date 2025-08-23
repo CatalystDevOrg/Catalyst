@@ -61,7 +61,6 @@ function openDocs() {
 function clearData() {
     if (!confirm('Are you sure you want to delete all preferences and bookmarks from Catalyst? \n   You will stay logged into all the websites you use!')) return;
     window.localStorage.clear();
-    localStorage.setItem('ctlyststrppg', './home.html');
     window.close();
 }
 
