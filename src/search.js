@@ -51,6 +51,15 @@ searchbar.addEventListener('input', async() => {
 
 function loadURL(url, scheck='true') {
     view = document.querySelector('.current');
+    if (url.startsWith('catalyst://')) {
+        keyword = url.split('catalyst://')[1];
+        if (keyword == 'home') {
+            loadURL(ctlyststrppg)
+        } else if (keyword == 'preferences') {
+            togglePreferences();
+        }
+            return;
+        }
     if (checkUrlValidity(url)) {
         if ( url.startsWith('http://') ) {
             alert(`Page ${url} is not secure.`);
@@ -62,16 +71,6 @@ function loadURL(url, scheck='true') {
                     native.loadTheme(url.split('/')[6]);
                 }
             }
-        }
-        if (url.startsWith('catalyst://')) {
-            keyword = url.split('catalyst://')[1];
-            if (keyword == 'home') {
-                // loadURL(ctlyststrppg)
-                alert('not supported.');
-            } else if (keyword == 'preferences') {
-                togglePreferences();
-            }
-            return;
         }
         view.src = "https://" + url;
     } else {
