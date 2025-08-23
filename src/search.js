@@ -60,6 +60,7 @@ function loadURL(url, scheck='true') {
         }
         return;
     }
+
     if (url.startsWith('https://raw.githubusercontent.com/CatalystDevOrg/Themes/master/') && url.endsWith('.css')) {
         if (confirm('This link looks like a theme URL. Attempt to install theme?')) {
             native.downloadTheme(url, url.split('/')[6]);
@@ -68,17 +69,15 @@ function loadURL(url, scheck='true') {
             }
         }
     }
-    if (checkUrlValidity(url)) {
-        if ( url.startsWith('http://') ) {
-            alert(`Page ${url} is not secure.`);
-        }
 
+    if (checkUrlValidity(url)) {
         view.src = 'https://' + url;
     } else {
         document.querySelector(
             '.current'
         ).src = `${engineurls[preferences.searchengine]}${encodeURIComponent(url)}`;
     }
+
     removeChildren(suggestionsEl);
     view.addEventListener('did-finish-load', () => {
         if (preferences.dm) {
