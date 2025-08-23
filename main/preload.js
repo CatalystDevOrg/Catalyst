@@ -59,8 +59,7 @@ contextBridge.exposeInMainWorld('native', {
             result => {
                 themeSelect = document.getElementById('pref-theme');
                 for (x in result) {
-                    if (!result[x].endsWith('.css')) {
-                    } else {
+                    if (result[x].endsWith('.css')) {
                         let sel = document.createElement('option');
                         sel.value = result[x];
                         sel.innerText = result[x].replace('.css', '');

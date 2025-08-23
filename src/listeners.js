@@ -1,11 +1,11 @@
-// dependencies
-strt = document.querySelector('#pref-strt');
-reload = document.querySelector('#reload');
-backward = document.querySelector('#back');
-forward = document.querySelector('#forward');
-find = document.querySelector('#find');
-zoom = document.querySelector('#zoom');
-sidebar = document.querySelector('#tgl-sidebar');
+/* eslint-disable no-redeclare */
+const strt = document.querySelector('#pref-strt');
+const reload = document.querySelector('#reload');
+const backward = document.querySelector('#back');
+const forward = document.querySelector('#forward');
+const find = document.querySelector('#find');
+const zoom = document.querySelector('#zoom');
+const sidebar = document.querySelector('#tgl-sidebar');
 
 document.getElementById('more-btn').addEventListener('click', () => {
     toggleDisplay(document.getElementById('more-menu'));

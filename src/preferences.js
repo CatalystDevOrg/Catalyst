@@ -112,8 +112,8 @@ function evaluatePreferences() {
         if (document.getElementsByClassName('theme').length > 0) {
             native.unloadTheme();
         }
-        if (preferences.theme == 0) {
-        }
+        /* if (preferences.theme == 0) {
+        } */
         native.loadTheme(preferences.theme);
     }
     if (preferences.font) {

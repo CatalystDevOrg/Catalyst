@@ -61,9 +61,11 @@ app.on('web-contents-created', function (event, contents) {
     });
 });
 
+/* eslint-disable no-empty */
 try {
     require('electron-reloader')(module);
 } catch { }
+/* eslint-enable no-empty */
 
 function createAboutWindow() {
     aboutWindow = new BrowserWindow({
