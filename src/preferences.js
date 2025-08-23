@@ -13,21 +13,21 @@ function togglePreferences() {
         // run preferences
         evaluatePreferences();
         // update fields in preferences
-        document.getElementById('pref-darkmode').checked = preferences.dark;
-        addCheckboxListener(document.getElementById('pref-darkmode'), 'dark');
-        document.getElementById('pref-autocomplete').checked = preferences.autocomplete;
-        addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocomplete');
-        document.getElementById('pref-dm').checked = preferences.dm;
-        addCheckboxListener(document.getElementById('pref-dm'), 'dm');
-        document.getElementById('pref-usrchr').checked = preferences.usrchr;
-        addCheckboxListener(document.getElementById('pref-usrchr'), 'usrchr');
-        document.getElementById('pref-adblk').checked = preferences.adblk;
-        addCheckboxListener(document.getElementById('pref-adblk'), 'adblk');
+        document.getElementById('pref-darkmode').checked = preferences.darkModeEnabled;
+        addCheckboxListener(document.getElementById('pref-darkmode'), 'darkModeEnabled');
+        document.getElementById('pref-autocomplete').checked = preferences.autocompleteEnabled;
+        addCheckboxListener(document.getElementById('pref-autocomplete'), 'autocompleteEnabled');
+        document.getElementById('pref-dm').checked = preferences.forcedDarkEnabled;
+        addCheckboxListener(document.getElementById('pref-dm'), 'forcedDarkEnabled');
+        document.getElementById('pref-usrchr').checked = preferences.userChrome
+        addCheckboxListener(document.getElementById('pref-usrchr'), 'userChrome');
+        document.getElementById('pref-adblk').checked = preferences.adblockEnabled;
+        addCheckboxListener(document.getElementById('pref-adblk'), 'adblockEnabled');
         if (preferences.agent.toString().length > 1) {
             document.getElementById('pref-useragent').value =
                 preferences.agent || 'Catalyst/{{version}}';
         } else {
-            document.getElementById('pref-useragent').value = preferences.agent;
+            document.getElementById('pref-useragent').value = preferences.userAgent;
         }
         addTextListener(document.getElementById('pref-useragent'), 'agent');
         addTextListener(document.getElementById('pref-font'), 'font');
@@ -100,12 +100,12 @@ function updatePreferences() {
  * Evaluates the preferences in the preferences variable
  */
 function evaluatePreferences() {
-    if (preferences.dark) {
+    if (preferences.darkModeEnabled) {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
     }
-    if (preferences.usrchr) {
+    if (preferences.userChrome) {
         native.loadCustomStyles();
     }
     if (preferences.theme) {
@@ -119,16 +119,16 @@ function evaluatePreferences() {
     if (preferences.font) {
         document.body.style.fontFamily = preferences.font;
     }
-    if (preferences.esb) {
+    if (preferences.sideBarEnabled) {
         document.getElementById('tgl-sidebar').classList.remove('hidden');
     }
-    if (preferences.sidebarside) {
+    if (preferences.sidebarSide) {
         var sb = document.getElementById('sidebar');
         if (preferences.sidebarside === '0') {
             sb.style.right = 'unset';
             sb.style.left = 0;
         } 
-        if (preferences.sidebarside === '1' ){
+        if (preferences.sidebarSide === '1' ){
             sb.style.left = 'unset';
             sb.style.right = 0;
         }}
