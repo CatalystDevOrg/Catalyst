@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('ver').innerText = 'v' + dat.version;
     document.getElementById('pref-ver').innerText = 'v' + dat.version;
 
-    lang = localStorage.getItem('catalyst.localization.language');
+    lang = localStorage.getItem('language');
     switch(lang) {
     case 'es':
         i18n.setTranslate(es, 'es');
