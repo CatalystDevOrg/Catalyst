@@ -19,7 +19,7 @@ searchbar.addEventListener('input', async() => {
     if (engineSupportsAC()) {
         if (
             shouldAutocomplete(searchbar.value) &&
-        JSON.parse(window.localStorage.getItem('preferences')).autocomplete
+        JSON.parse(window.localStorage.getItem('preferences')).autocompleteEnabled
         ) {
         // This is for duckduckgo only, in the future, this may be something else, but I think DDG is fine for now.
             const autoCompleteCheck = await fetch(
@@ -75,12 +75,12 @@ function loadURL(url, scheck='true') {
     } else {
         document.querySelector(
             '.current'
-        ).src = `${engineurls[preferences.searchengine]}${encodeURIComponent(url)}`;
+        ).src = `${engineurls[preferences.searchEngine]}${encodeURIComponent(url)}`;
     }
 
     removeChildren(suggestionsEl);
     view.addEventListener('did-finish-load', () => {
-        if (preferences.dm) {
+        if (preferences.forcedDarkEnabled) {
             if (localStorage.getItem('forced-dm-excludes') == null) {
                 invertTab();
             } else if (localStorage.getItem('forced-dm-excludes').indexOf(view.url)) {
@@ -103,7 +103,7 @@ function shouldAutocomplete(input) {
 }
 
 function engineSupportsAC(input) {
-    if (preferences.searchengine != 1) {
+    if (preferences.searchEngine != 1) {
         return false;
     }
     return true;
