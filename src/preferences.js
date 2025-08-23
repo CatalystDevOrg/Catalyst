@@ -49,7 +49,7 @@ function togglePreferences() {
         addTextListener(document.getElementById('pref-strt'), 'startupPage');
         document.getElementById('pref-strt').value = preferences.startupPage;
 
-        addTextListener(document.getElementById('pref-useragent'), 'userAgent')
+        addTextListener(document.getElementById('pref-useragent'), 'userAgent');
         document.getElementById('pref-useragent').value = preferences.userAgent;
     }
 }
