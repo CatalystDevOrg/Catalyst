@@ -23,7 +23,9 @@ let es = {
     'Enable Sidebar': 'Barra Lateral De Habilitación',
     'Language': 'Idioma',
     'Have Catalyst be displayed in another language': 'Haga que Catalyst se muestre en otro idioma',
-    'Search Engine': 'Buscador'
+    'Search Engine': 'Buscador',
+    'Restart required': 'Reiniciar requerido',
+    'A restart is required to change languages.': 'Es necesario reiniciar para cambiar de idioma.'
 };
 
 module.exports = es;
