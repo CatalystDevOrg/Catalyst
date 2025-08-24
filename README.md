@@ -9,6 +9,7 @@ A free and open source user and privacy focused web browser aiming to provide a 
 </a>
 
 ## Packages
+**Note**: Packaging isn't my highest priority right now. If you're using Linux, consider using the official AppImage. The Flatpak will get an occasional update here and there.
 Here are the Linux distributions that have Catalyst in their repositories: \
 [![Packaging status](https://repology.org/badge/vertical-allrepos/catalyst-browser.svg)](https://repology.org/project/catalyst-browser/versions)
 ## Official Binaries/Packages
