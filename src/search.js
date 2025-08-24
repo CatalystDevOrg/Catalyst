@@ -16,7 +16,7 @@ searchbar.addEventListener('input', async() => {
         removeChildren(suggestionsEl);
         return;
     }
-    if (engineSupportsAC()) {
+    if (preferences.searchEngine == 1) {
         if (
             shouldAutocomplete(searchbar.value) &&
         JSON.parse(window.localStorage.getItem('preferences')).autocompleteEnabled
@@ -105,13 +105,6 @@ function shouldAutocomplete(input) {
         if (input.startsWith(`${protocol}://`)) {
             return false;
         }
-    }
-    return true;
-}
-
-function engineSupportsAC(input) {
-    if (preferences.searchEngine != 1) {
-        return false;
     }
     return true;
 }
