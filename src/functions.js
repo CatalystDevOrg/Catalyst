@@ -131,16 +131,3 @@ function destroyModal(hash) {
 function openInSidebar(u) {
     document.getElementById('sidebarwv').src = u;
 }
-
-function handlePermissionRequest(url, permission) {
-    urlBase = url.split('/')[2];
-    if (localStorage.getItem(`${urlBase}-${permission}`) == 'true') {
-        return true;
-    } else if (localStorage.getItem(`${urlBase}-${permission}`) == 'false') {
-        return false;
-    } else {
-        userResponse = confirm(`Page ${url} would like to access permission ${permission}`)
-        localStorage.setItem(`${urlBase}-${permission}`, `${userResponse}`)
-        return userResponse;
-    }
-}

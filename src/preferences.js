@@ -1,5 +1,5 @@
 let preferences = getPreferences();
-const categories = ['basic', 'advanced', 'experiments'];
+const categories = ['basic', 'advanced', 'experiments', 'permissions'];
 const preferencesBox = document.getElementById('preferences-box');
 evaluatePreferences();
 
@@ -173,3 +173,6 @@ function changePrefTab(itm) {
         }
     }
 }
+
+permissionsArea = document.getElementById('permissions');
+

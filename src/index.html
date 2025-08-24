@@ -80,6 +80,8 @@
                     class="material-symbols-rounded">construction</span>Advanced</button>
             <button class="pref-tab" onClick='changePrefTab("experiments")'><span
                     class="material-symbols-rounded">experiment</span>Experiments</button>
+            <button class="pref-tab" onClick='changePrefTab("permissions")'><span
+                    class="material-symbols-rounded">lock</span>Permissions</button>
         </aside>
         <div id="prefs-content">
             <h1>Preferences</h1>
@@ -172,6 +174,9 @@
                     value="Catalyst/{{version}}" />
                 <p>Sets a custom user agent.</p>
             </div>
+            <div class="hidden" id="permissions">
+
+            </div>
             <br />
             <div style="margin-left: 16pt;">
                 <button id="clearbtn" onclick="clearData()">Reset Preferences</button>
@@ -198,8 +203,7 @@
     <!-- Sidebar -->
     <div class="hidden" id="sidebar">
         <div style="display: flex;">
-            <button id="sideBarWikipediaShortcut"><span 
-                    class="material-symbols-rounded">book</span>Wikipedia</button>
+            <button id="sideBarWikipediaShortcut"><span class="material-symbols-rounded">book</span>Wikipedia</button>
         </div>
         <webview id="sidebarwv" src="https://example.org"></webview>
     </div>
@@ -213,6 +217,7 @@
     <script src="./startup.js"></script>
     <script src="./bookmarks.js"></script>
     <script src="./listeners.js"></script>
+    <script src="./permissions.js"></script>
 </body>
 
 </html>
