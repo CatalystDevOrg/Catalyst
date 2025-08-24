@@ -258,7 +258,7 @@ ipcMain.handle('set-permission-handler', async (event, id) => {
         let url = webContents.getURL();
         mainWindow.webContents.executeJavaScript(`
             new Promise((resolve) => {
-                const result = handlPermReq("${url}", "${permission}")
+                const result = handlePermissionRequest("${url}", "${permission}")
                 resolve(result);
             })
         `).then(result => {

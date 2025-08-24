@@ -132,12 +132,15 @@ function openInSidebar(u) {
     document.getElementById('sidebarwv').src = u;
 }
 
-function handlPermReq(url, permission) {
-    urlbase = url.split('/')[2];
-    if (localStorage.getItem(`${urlbase}-${permission}`) == 'true') {
+function handlePermissionRequest(url, permission) {
+    urlBase = url.split('/')[2];
+    if (localStorage.getItem(`${urlBase}-${permission}`) == 'true') {
         return true;
-    } else if (confirm(`Page ${url} would like to access permission ${permission}`)) {
-        localStorage.setItem(`${urlbase}-${permission}`, 'true');
-        return true;
-    } 
+    } else if (localStorage.getItem(`${urlBase}-${permission}`) == 'false') {
+        return false;
+    } else {
+        userResponse = confirm(`Page ${url} would like to access permission ${permission}`)
+        localStorage.setItem(`${urlBase}-${permission}`, `${userResponse}`)
+        return userResponse;
+    }
 }
