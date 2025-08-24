@@ -107,14 +107,14 @@ function addListeners(view, hash) {
         if (!viewURL.startsWith('file://')) {
             document.getElementById('searchbar').value = viewURL;
         }
-        if (engineSupportsAC()) {
+        if (preferences.searchEngine == 1) {
             removeChildren(document.getElementById('autocomplete-suggestions'));
         }
     });
     view.addEventListener('did-start-loading', () => {
         tab.classList.add('animate-pulse');
         tab.getElementsByTagName('img')[0].style.display = 'none';
-        if (engineSupportsAC()) {
+        if (preferences.searchEngine == 1) {
             removeChildren(document.getElementById('autocomplete-suggestions'));
         }
     });
