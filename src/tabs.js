@@ -10,9 +10,6 @@ let hasFavicon = {};
 
 async function createTab(url) {
     url = url || preferences.startupPage;
-    if (url == 'catalyst://newtab') {
-        document.querySelector('.current').classList.toggle('hidden')
-    }
     const packageJSON = await getPackageJSON();
     const inputAgent = JSON.parse(
         window.localStorage.getItem('preferences')
@@ -61,6 +58,9 @@ async function createTab(url) {
     document.getElementById('searchbar').focus();
     native.setTitlebarTitle(view.title);
     native.runTranslations();
+    if (url == 'catalyst://newtab') {
+        document.querySelector('.current').classList.toggle('hidden')
+    }
 }
 createTab();
 
