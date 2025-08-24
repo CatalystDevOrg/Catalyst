@@ -314,7 +314,7 @@ ul {
     background: var(--userchrome-background);
     background-color: var(--userchrome-background-color);
     background-repeat: no-repeat;
-    background-position-x: 200%;
+    background-position-x: right;
     background-position-y: 31%;
 }
 
