@@ -31,6 +31,9 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-esb'), 'sideBarEnabled');
         document.getElementById('pref-esb').checked = preferences.sideBarEnabled;
 
+        addCheckboxListener(document.getElementById('pref-anicontent'), 'anicontent');
+        document.getElementById('pref-anicontent').checked = preferences.anicontent;
+
         addSelectListener(document.getElementById('se'), 'searchEngine');
         document.getElementById('se').value = preferences.searchEngine;
 
@@ -67,7 +70,7 @@ function getPreferences() {
     if (!window.localStorage.getItem('preferences')) {
         window.localStorage.setItem(
             'preferences',
-            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: './home.html', sidebarSide: 1, searchEngine: 1 })
+            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: './home.html', sidebarSide: 1, searchEngine: 1, anicontent: false })
         );
     }
     return JSON.parse(window.localStorage.getItem('preferences'));
@@ -147,6 +150,9 @@ function evaluatePreferences() {
             sb.style.left = 'unset';
             sb.style.right = 0;
         }
+    }
+    if (!preferences.anicontent) {
+        document.getElementById('userchrome').style.backgroundImage = 'none';
     }
 }
 

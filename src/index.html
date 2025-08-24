@@ -23,8 +23,10 @@
             </div>
             <div class="tabs-btns">
                 <button id="create-tab" onclick="createTab()"><span class="material-symbols-rounded">add</span></button>
-                <button id="remove-tab" onclick="removeTab()"><span class="material-symbols-rounded">close</span></button>
-                <button id="remove-tab" onclick="bookmarkCurrentTab()"><span class="material-symbols-rounded">bookmark</span></button>
+                <button id="remove-tab" onclick="removeTab()"><span
+                        class="material-symbols-rounded">close</span></button>
+                <button id="remove-tab" onclick="bookmarkCurrentTab()"><span
+                        class="material-symbols-rounded">bookmark</span></button>
             </div>
         </div>
         <!-- Utility bar -->
@@ -40,17 +42,27 @@
         <div class="hidden" id="more-menu">
             <ul>
                 <li class="moreMenuItem" onclick="togglePreferences()"><span
-                        class="material-symbols-rounded">settings</span><p>Preferences</p></li>
-                <li class="moreMenuItem" onclick="inspectTab()"><span
-                        class="material-symbols-rounded">search</span><p>Inspect Tab</p></li>
+                        class="material-symbols-rounded">settings</span>
+                    <p>Preferences</p>
+                </li>
+                <li class="moreMenuItem" onclick="inspectTab()"><span class="material-symbols-rounded">search</span>
+                    <p>Inspect Tab</p>
+                </li>
                 <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst/issues/new')"><span
-                        class="material-symbols-rounded">bug_report</span><p>Feedback</p></li>
+                        class="material-symbols-rounded">bug_report</span>
+                    <p>Feedback</p>
+                </li>
                 <li class="moreMenuItem" onClick="createTab('https://github.com/JaydenDev/Catalyst')"><span
-                        class="material-symbols-rounded">code</span><p>Development</p></li>
+                        class="material-symbols-rounded">code</span>
+                    <p>Development</p>
+                </li>
                 <li class="moreMenuItem" onClick="downloadCurrentPage()" class="moreMenuItem"><span
-                        class="material-symbols-rounded">download</span><p>Download Page</p></li>
+                        class="material-symbols-rounded">download</span>
+                    <p>Download Page</p>
+                </li>
                 <li class="moreMenuItem" id="changelogbtn" onClick="openChangeLog()" class="moreMenuItem"><span
-                        class="material-symbols-rounded">update</span><span id="ver"></span>&nbsp;<p>Changes</p></li>
+                        class="material-symbols-rounded">update</span><span id="ver"></span>&nbsp;<p>Changes</p>
+                </li>
             </ul>
         </div>
     </div>
@@ -70,94 +82,100 @@
                     class="material-symbols-rounded">experiment</span>Experiments</button>
         </aside>
         <div id="prefs-content">
-        <h1>Preferences</h1>
-        <br />
-        <div id="basic">
-            <div class="toggle-area hidden">
-                <label for="pref-darkmode">Dark Mode?</label>
-                <input title="This feature is disabled as the implementation does not work due to recent changes."
-                    id="pref-darkmode" type="checkbox" disabled />
+            <h1>Preferences</h1>
+            <br />
+            <div id="basic">
+                <div class="toggle-area hidden">
+                    <label for="pref-darkmode">Dark Mode?</label>
+                    <input title="This feature is disabled as the implementation does not work due to recent changes."
+                        id="pref-darkmode" type="checkbox" disabled />
+                </div>
+                <p class="hidden">Toggle dark mode</p>
+                <br class="hidden" />
+                <label for="pref-theme">Theme</label>
+                <select name="pref-theme" id="pref-theme">
+                    <option value="0">Default</option>
+                </select>
+                <p>Sets a custom theme</p>
+                <br />
+                <div class="toggle-area">
+                    <label for="pref-autocomplete">Autocomplete </label>
+                    <input id="pref-autocomplete" type="checkbox" />
+                </div>
+                <p>Search Autocomplete</p>
+                <br />
+                <label for="se">Search Engine</label>
+                <select name="se" id="se">
+                    <option value="0">Google</option>
+                    <option value="1">DuckDuckGo</option>
+                    <option value="2">Bing</option>
+                    <option value="3">Brave</option>
+                    <option value="4">Escosia</option>
+                </select>
+                <br />
+                <br />
+                <label for="lang">Language</label>
+                <select name="lang" id="lang">
+                    <option value="en">English (Default)</option>
+                    <option value="es">Español (Spanish)</option>
+                </select>
+                <p>Have Catalyst be displayed in another language.</p>
+                <br />
+                <div class="toggle-area">
+                    <label for="pref-anicontent">Release Images </label>
+                    <input id="pref-anicontent" type="checkbox" />
+                </div>
+                <p>Each release will have a code name and related content will be included by default but only visible if this setting is turned on.</p>
             </div>
-            <p class="hidden">Toggle dark mode</p>
-            <br class="hidden"/>
-            <label for="pref-theme">Theme</label>
-            <select name="pref-theme" id="pref-theme">
-                <option value="0">Default</option>
-            </select>
-            <p>Sets a custom theme</p>
-            <br />
-            <div class="toggle-area">
-                <label for="pref-autocomplete">Autocomplete </label>
-                <input id="pref-autocomplete" type="checkbox" />
+            <div class="hidden" id="advanced">
+                <label for="pref-strt">Startup Page</label>
+                <input type="text" id="pref-strt" />
+                <p>Sets a custom startup page.</p>
+                <br />
+                <div class="toggle-area">
+                    <label for="pref-usrchr">Custom CSS</label>
+                    <input id="pref-usrchr" type="checkbox" />
+                </div>
+                <p>Loads custom css from the userChrome.css file</p>
+                <br />
+                <label for="pref-font">Custom Font</label>
+                <input type="text" id="pref-font">
+                <p>Sets a custom font</p>
+                <br />
+                <div class="toggle-area">
+                    <label for="pref-adblk">Enable AD Blocker</label>
+                    <input id="pref-adblk" type="checkbox" />
+                </div>
+                <p>Enables the ad blocker (RESTART REQUIRED)</p>
+                <br />
+                <label for="pref-esb">Enable Sidebar</label>
+                <input id="pref-esb" type="checkbox">
+                <br />
+                <p>Enable the sidebar.</p>
+                <br />
             </div>
-            <p>Search Autocomplete</p>
-            <br />
-            <label for="se">Search Engine</label>
-            <select name="se" id="se">
-                <option value="0">Google</option>
-                <option value="1">DuckDuckGo</option>
-                <option value="2">Bing</option>
-                <option value="3">Brave</option>
-                <option value="4">Escosia</option>
-            </select>
-            <br />
-            <br />
-            <label for="lang">Language</label>
-            <select name="lang" id="lang">
-                <option value="en">English (Default)</option>
-                <option value="es">Español (Spanish)</option>
-            </select>
-            <p>Have Catalyst be displayed in another language.</p>
-        </div>
-        <div class="hidden" id="advanced">
-            <label for="pref-strt">Startup Page</label>
-            <input type="text" id="pref-strt" />
-            <p>Sets a custom startup page.</p>
-            <br />
-            <div class="toggle-area">
-                <label for="pref-usrchr">Custom CSS</label>
-                <input id="pref-usrchr" type="checkbox" />
+            <div class="hidden" id="experiments">
+                <div class="toggle-area">
+                    <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
+                    <input id="pref-dm" type="checkbox" />
+                </div>
+                <p>Toggles forced dark mode for all sites.</p>
+                <br />
+                <label for="pref-useragent"><b>Experimental</b> User Agent: </label>
+                <input id="pref-useragent" type="text" placeholder="Catalyst/{{version}}"
+                    value="Catalyst/{{version}}" />
+                <p>Sets a custom user agent.</p>
             </div>
-            <p>Loads custom css from the userChrome.css file</p>
             <br />
-            <label for="pref-font">Custom Font</label>
-            <input type="text" id="pref-font">
-            <p>Sets a custom font</p>
-            <br />
-            <div class="toggle-area">
-                <label for="pref-adblk">Enable AD Blocker</label>
-                <input id="pref-adblk" type="checkbox" />
+            <div style="margin-left: 16pt;">
+                <button id="clearbtn" onclick="clearData()">Reset Preferences</button>
+                <button onclick="createModal('Modal Test', 'This is a modal!')">Test Modal</button>
+                <br />
+                <br />
+                <i id="pref-ver"></i>
+                <br />
+                <iid="distrib_id">catalyst-default-distrib</i>
             </div>
-            <p>Enables the ad blocker (RESTART REQUIRED)</p>
-            <br />
-            <label for="pref-esb">Enable Sidebar</label>
-            <input id="pref-esb" type="checkbox">
-            <br />
-            <p>Enable the sidebar.</p>
-            <br />
-        </div>
-        <div class="hidden" id="experiments">
-            <div class="toggle-area">
-                <label for="pref-dm"><b>Experimental</b> Force Dark Mode</label>
-                <input id="pref-dm" type="checkbox" />
-            </div>
-            <p>Toggles forced dark mode for all sites.</p>
-            <br />
-            <label for="pref-useragent"><b>Experimental</b> User Agent: </label>
-            <input id="pref-useragent" type="text"
-                placeholder="Catalyst/{{version}}" value="Catalyst/{{version}}" />
-            <p>Sets a custom user agent.</p>
-        </div>
-        <br />
-        <div style="margin-left: 16pt;">
-        <button id="clearbtn" onclick="clearData()">Reset Preferences</button>
-        <button onclick="createModal('Modal Test', 'This is a modal!')">Test Modal</button>
-        <br />
-        <br />
-        <i id="pref-ver"></i>
-        <br />
-        <iid="distrib_id">catalyst-default-distrib</i>
-        </div>
         </div>
     </div>
     </div>
@@ -174,7 +192,8 @@
     <!-- Sidebar -->
     <div class="hidden" id="sidebar">
         <div style="display: flex;">
-            <button onClick="sbwv.src = 'https://wikipedia.org'"><span class="material-symbols-rounded">book</span>Wikipedia</button>
+            <button onClick="sbwv.src = 'https://wikipedia.org'"><span
+                    class="material-symbols-rounded">book</span>Wikipedia</button>
         </div>
         <webview id="sidebarwv" src="https://example.org"></webview>
     </div>
