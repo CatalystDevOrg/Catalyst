@@ -53,6 +53,7 @@ body {
     padding-left: 8pt;
     display: flex;
     align-items: center;
+    animation: sliding-ltr 0.2s;
 }
 
 .tab span {
@@ -243,6 +244,13 @@ button img {
     0% {
         transform: translateX(100%);
         clip-path: polygon(0% 100%, 0% 0%, 0% 0%, 0% 100%);
+    }
+}
+
+@keyframes sliding-ltr {
+    0% {
+        transform: translateX(-100%);
+        clip-path: polygon(100% 100%, 100% 0%, 100% 0%, 100% 100%);
     }
 }
 
