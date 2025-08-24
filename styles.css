@@ -491,14 +491,17 @@ select:hover {
 }
 
 #welcomepage {
-    display: none;
     padding: 0.375rem;
     border-bottom-right-radius: 0.125rem;
     border-bottom-left-radius: 0.125rem;
     width: 100%;
-    height: fit-content;
+    height: 128px;
     background-color: var(--primary);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+#welcomepage h1 {
+    font-size: 64px;
 }
 
 #welcomepage * {

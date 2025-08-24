@@ -12,6 +12,7 @@ function togglePreferences() {
     if (!preferencesBox.classList.contains('hidden')) {
         // run preferences
         evaluatePreferences();
+        preferences.firstRun = false;
         // update fields in preferences
         document.getElementById('pref-darkmode').checked = preferences.darkModeEnabled;
         addCheckboxListener(document.getElementById('pref-darkmode'), 'darkModeEnabled');
@@ -75,7 +76,7 @@ function getPreferences() {
     if (!window.localStorage.getItem('preferences')) {
         window.localStorage.setItem(
             'preferences',
-            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: 'catalyst://newtab', sidebarSide: 1, searchEngine: 1, anicontent: false, theme: 0, language: 'en' })
+            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: 'catalyst://newtab', sidebarSide: 1, searchEngine: 1, anicontent: false, theme: 0, language: 'en', firstRun: true })
         );
     }
     return JSON.parse(window.localStorage.getItem('preferences'));
@@ -162,6 +163,9 @@ function evaluatePreferences() {
     if (preferences.sidebarRight) {
         sideBar.style.right = 0;
         sideBar.style.animation = 'sliding-rtl 0.2s';
+    }
+    if (!preferences.firstRun) {
+        // document.getElementById('welcomepage').classList.add('hidden')
     }
 }
 
