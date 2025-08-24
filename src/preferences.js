@@ -165,7 +165,7 @@ function evaluatePreferences() {
         sideBar.style.animation = 'sliding-rtl 0.2s';
     }
     if (!preferences.firstRun) {
-        // document.getElementById('welcomepage').classList.add('hidden')
+        document.getElementById('welcomepage').classList.add('hidden')
     }
 }
 
