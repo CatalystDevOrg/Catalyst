@@ -6,7 +6,7 @@
     "main": "main/main.js",
     "private": true,
     "scripts": {
-        "start": "electron .",
+        "start": "electron --enable-features=UseOzonePlatform --ozone-platform=wayland .",
         "dist": "electron-builder",
         "dist:dir": "electron-builder --dir",
         "publish": "electron-builder --publish",
