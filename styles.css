@@ -8,7 +8,8 @@
     --primary: #6366f1;
     --secondary: #818cf8;
     --tertiary: #a5b4fc;
-    --userchrome-background: var(--primary);
+    --userchrome-background: url('./assets/Searching_To_Return_A_Favor.png');
+    --userchrome-background-color: #AA87F7;
     --userchrome-btn-primary: var(--primary);
     --userchrome-btn-secondary: var(--secondary);
     --button-primary: #a855f7;
@@ -311,6 +312,10 @@ ul {
 
 #userchrome {
     background: var(--userchrome-background);
+    background-color: var(--userchrome-background-color);
+    background-repeat: no-repeat;
+    background-position-x: 200%;
+    background-position-y: 31%;
 }
 
 #userchrome button {

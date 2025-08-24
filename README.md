@@ -18,6 +18,10 @@ Here are the Linux distributions that have Catalyst in their repositories: \
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/1a18e7a4-cf04-47db-b3eb-de15d0dc4fa7) DEBs for Debian x64 \
 ![image](https://github.com/CatalystDevOrg/Catalyst/assets/92550746/c5fb1433-4efc-4a87-b129-6ffbdb0b14e2) RPMS for Fedora x64
 
+## Credits to third party content
+### Default userchrome background
+[Source](https://projectsekai.fandom.com/wiki/Asahina_Mafuyu/Cards), [License](https://creativecommons.org/licenses/by-sa/3.0/)
+
 ## Contributors
 
 <table>
