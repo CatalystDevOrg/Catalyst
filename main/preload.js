@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pref-ver').innerText = 'v' + dat.version;
 
     lang = JSON.parse(localStorage.getItem('preferences')).language;
-    
+
     switch(lang) {
     case 'es':
         i18n.setTranslate(es, 'es');
@@ -94,5 +94,16 @@ contextBridge.exposeInMainWorld('native', {
     },
     setPermissionHandler: (id) => {
         ipcRenderer.invoke('set-permission-handler', id);
+    },
+    runTranslations: () => {
+        lang = JSON.parse(localStorage.getItem('preferences')).language;
+        applyTranslations('button', lang);
+        applyTranslations('p', lang);
+        applyTranslations('h1', lang);
+        applyTranslations('h2', lang);
+        applyTranslations('h3', lang);
+        applyTranslations('li', lang);
+        applyTranslations('label', lang);
+        applyTranslations('button', lang);
     }
 });
