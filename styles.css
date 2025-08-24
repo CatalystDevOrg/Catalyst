@@ -546,7 +546,7 @@ input[type="checkbox"]:checked::after {
 }
 
 #sidebar button {
-    margin: 4px;
+    margin: 8px;
 }
 
 #sidebarwv {
