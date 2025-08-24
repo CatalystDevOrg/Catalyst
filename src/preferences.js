@@ -12,7 +12,6 @@ function togglePreferences() {
     if (!preferencesBox.classList.contains('hidden')) {
         // run preferences
         evaluatePreferences();
-        preferences.firstRun = false;
         // update fields in preferences
         document.getElementById('pref-darkmode').checked = preferences.darkModeEnabled;
         addCheckboxListener(document.getElementById('pref-darkmode'), 'darkModeEnabled');
@@ -76,7 +75,20 @@ function getPreferences() {
     if (!window.localStorage.getItem('preferences')) {
         window.localStorage.setItem(
             'preferences',
-            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: 'catalyst://newtab', sidebarSide: 1, searchEngine: 1, anicontent: false, theme: 0, language: 'en', firstRun: true })
+            JSON.stringify({
+                darkModeEnabled: false,
+                userAgent: null,
+                autocompleteEnabled: true,
+                bookmarks: false,
+                sidebarEnabled: false,
+                sidebarRight: true,
+                startupPage: 'catalyst://newtab',
+                searchEngine: 1,
+                anicontent: false,
+                theme: 0,
+                language: 'en',
+                firstRun: true
+            })
         );
     }
     return JSON.parse(window.localStorage.getItem('preferences'));
@@ -129,43 +141,40 @@ function evaluatePreferences() {
     } else {
         document.documentElement.classList.remove('dark');
     }
+
     if (preferences.userChrome) {
         native.loadCustomStyles();
     }
+
     if (preferences.theme) {
         if (document.getElementsByClassName('theme').length > 0) {
             native.unloadTheme();
         }
-        /* if (preferences.theme == 0) {
-        } */
+
         native.loadTheme(preferences.theme);
     }
+
     if (preferences.font) {
         document.body.style.fontFamily = preferences.font;
     }
+
     if (preferences.sideBarEnabled) {
         document.getElementById('tgl-sidebar').classList.remove('hidden');
     }
-    if (preferences.sidebarSide) {
-        var sb = document.getElementById('sidebar');
-        if (preferences.sidebarside === '0') {
-            sb.style.right = 'unset';
-            sb.style.left = 0;
-        }
-        if (preferences.sidebarSide === '1') {
-            sb.style.left = 'unset';
-            sb.style.right = 0;
-        }
-    }
+
     if (!preferences.anicontent) {
         document.getElementById('userchrome').style.backgroundImage = 'none';
     }
+
     if (preferences.sidebarRight) {
-        sideBar.style.right = 0;
-        sideBar.style.animation = 'sliding-rtl 0.2s';
+        sidebar.style.right = 0;
+        sidebar.style.animation = 'sliding-rtl 0.2s';
     }
-    if (!preferences.firstRun) {
-        document.getElementById('welcomepage').classList.add('hidden')
+
+    if (preferences.firstRun) {
+        document.getElementById('welcomepage').classList.toggle('hidden')
+        preferences.firstRun = false;
+        updatePreferences();
     }
 }
 
