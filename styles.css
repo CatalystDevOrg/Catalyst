@@ -543,6 +543,7 @@ input[type="checkbox"]:checked::after {
     position: fixed;
     height: calc(100vh - 70px);
     z-index: 0;
+    animation: sliding-ltr 0.2s;
 }
 
 #sidebar button {
