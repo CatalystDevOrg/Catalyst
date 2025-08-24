@@ -68,8 +68,6 @@ function openChangeLog() {
     createTab(`https://github.com/jdev082/Catalyst/releases/tag/${ver}`);
 }
 
-openWelcome();
-
 function toggleDisplay(e) {
     e.classList.toggle('hidden');
 }
