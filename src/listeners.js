@@ -6,6 +6,7 @@ const forward = document.querySelector('#forward');
 const find = document.querySelector('#find');
 const zoom = document.querySelector('#zoom');
 const sidebar = document.querySelector('#tgl-sidebar');
+const lang = document.getElementById('lang');
 
 document.getElementById('more-btn').addEventListener('click', () => {
     toggleDisplay(document.getElementById('more-menu'));
@@ -39,3 +40,7 @@ zoom.addEventListener('input', (event) => {
 sidebar.addEventListener('click', () => {
     toggleDisplay(document.getElementById('sidebar'));
 });
+
+lang.addEventListener('change', () => {
+    createModal('Restart required', 'A restart is required to change languages.')
+})
