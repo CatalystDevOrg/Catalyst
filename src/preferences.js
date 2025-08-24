@@ -75,7 +75,7 @@ function getPreferences() {
     if (!window.localStorage.getItem('preferences')) {
         window.localStorage.setItem(
             'preferences',
-            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: './home.html', sidebarSide: 1, searchEngine: 1, anicontent: false, theme: 0, language: 'en' })
+            JSON.stringify({ darkModeEnabled: false, userAgent: null, autocompleteEnabled: true, bookmarks: false, sidebarEnabled: false, startupPage: 'catalyst://newtab', sidebarSide: 1, searchEngine: 1, anicontent: false, theme: 0, language: 'en' })
         );
     }
     return JSON.parse(window.localStorage.getItem('preferences'));
