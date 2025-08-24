@@ -9,6 +9,7 @@
     --secondary: #818cf8;
     --tertiary: #a5b4fc;
     --userchrome-background: url('./assets/Searching_To_Return_A_Favor.png');
+    --home-background: url('./assets/CatalystBackgroundBranded.png');
     --userchrome-background-color: #AA87F7;
     --userchrome-btn-primary: var(--primary);
     --userchrome-btn-secondary: var(--secondary);
@@ -28,6 +29,10 @@ html {
 }
 
 body {
+    background: var(--home-background);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     object-fit: contain;
     overflow: hidden;
     min-width: 100%;
