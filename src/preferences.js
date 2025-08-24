@@ -57,6 +57,8 @@ function togglePreferences() {
 
         addTextListener(document.getElementById('pref-useragent'), 'userAgent');
         document.getElementById('pref-useragent').value = preferences.userAgent;
+
+        document.getElementById('pref-permissions').value = JSON.stringify(getPermissions());
     }
 }
 
@@ -173,6 +175,3 @@ function changePrefTab(itm) {
         }
     }
 }
-
-permissionsArea = document.getElementById('permissions');
-

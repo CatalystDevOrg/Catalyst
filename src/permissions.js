@@ -1,3 +1,5 @@
+const permissionsPreference = document.getElementById('pref-permissions');
+
 function getPermissions() {
     return JSON.parse(localStorage.getItem('permissions') || '{}')
 }
@@ -37,7 +39,6 @@ function updatePermissions(newJson) {
     localStorage.setItem('permissions', JSON.stringify(finalJson));
 };
 
-
 function handlePermissionRequest(url, permission) {
     urlBase = url.split('/')[2];
     if (getPermission(urlBase, permission) == true) {
@@ -50,3 +51,11 @@ function handlePermissionRequest(url, permission) {
         return false;
     }
 }
+
+permissionsPreference.addEventListener('input', () => {
+    try {
+        updatePermissions(JSON.parse(permissionsPreference.value));
+    } catch (err) {
+        return err;
+    }
+});
