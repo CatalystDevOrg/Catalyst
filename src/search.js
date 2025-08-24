@@ -49,7 +49,7 @@ searchbar.addEventListener('input', async() => {
     }
 });
 
-function loadURL(url, scheck='true') {
+function loadURL(url) {
     view = document.querySelector('.current');
     if (url.startsWith('catalyst://')) {
         keyword = url.split('catalyst://')[1];
