@@ -10,6 +10,9 @@ let hasFavicon = {};
 
 async function createTab(url) {
     url = url || preferences.startupPage;
+    if (url == 'catalyst://newtab') {
+        document.querySelector('.current').classList.toggle('hidden')
+    }
     const packageJSON = await getPackageJSON();
     const inputAgent = JSON.parse(
         window.localStorage.getItem('preferences')

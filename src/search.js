@@ -57,6 +57,8 @@ function loadURL(url, scheck='true') {
             loadURL(ctlyststrppg);
         } else if (keyword == 'preferences') {
             togglePreferences();
+        } else if (keyword == 'newtab') {
+            view.classList.toggle('hidden')
         }
         return;
     }
