@@ -172,7 +172,7 @@ function evaluatePreferences() {
     }
 
     if (preferences.firstRun) {
-        document.getElementById('welcomepage').classList.toggle('hidden')
+        document.getElementById('welcomepage').classList.toggle('hidden');
         preferences.firstRun = false;
         updatePreferences();
     }

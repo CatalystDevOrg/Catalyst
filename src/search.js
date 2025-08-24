@@ -58,7 +58,7 @@ function loadURL(url) {
         } else if (keyword == 'preferences') {
             togglePreferences();
         } else if (keyword == 'newtab') {
-            view.classList.toggle('hidden')
+            view.classList.toggle('hidden');
         }
         return;
     }
@@ -72,8 +72,8 @@ function loadURL(url) {
         }
     }
 
-    if (view.classList.contains("hidden")) {
-        view.classList.toggle("hidden")
+    if (view.classList.contains('hidden')) {
+        view.classList.toggle('hidden');
     }
 
     for (i=0; i<protocols.length; i++) {

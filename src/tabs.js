@@ -59,7 +59,7 @@ async function createTab(url) {
     native.setTitlebarTitle(view.title);
     native.runTranslations();
     if (url == 'catalyst://newtab') {
-        document.querySelector('.current').classList.toggle('hidden')
+        document.querySelector('.current').classList.toggle('hidden');
     }
 }
 createTab();

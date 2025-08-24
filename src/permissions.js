@@ -1,7 +1,7 @@
 const permissionsPreference = document.getElementById('pref-permissions');
 
 function getPermissions() {
-    return JSON.parse(localStorage.getItem('permissions') || '{}')
+    return JSON.parse(localStorage.getItem('permissions') || '{}');
 }
 
 function getPermission(url, permission) {
@@ -14,16 +14,16 @@ function getPermission(url, permission) {
                 return false;
             }
         } else {
-            return "unset";
+            return 'unset';
         }
     } else {
-        return "unset";
+        return 'unset';
     }
 }
 
 function setPermission(url, permission, value) {
     newJson = {
-    [url]: {
+        [url]: {
             [permission]: value
         }
     };
@@ -37,15 +37,15 @@ function updatePermissions(newJson) {
         ...newJson
     };
     localStorage.setItem('permissions', JSON.stringify(finalJson));
-};
+}
 
 function handlePermissionRequest(url, permission) {
     urlBase = url.split('/')[2];
     if (getPermission(urlBase, permission) == true) {
         return true;
-    } else if (getPermission(urlBase, permission) == "unset") {
-        userResponse = confirm(`Page ${url} would like to access permission ${permission}`)
-        setPermission(urlBase, permission, userResponse)
+    } else if (getPermission(urlBase, permission) == 'unset') {
+        userResponse = confirm(`Page ${url} would like to access permission ${permission}`);
+        setPermission(urlBase, permission, userResponse);
         return userResponse;
     }  else if (getPermission(url, permission) == false) {
         return false;
