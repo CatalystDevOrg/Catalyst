@@ -25,7 +25,8 @@ let es = {
     'Have Catalyst be displayed in another language': 'Haga que Catalyst se muestre en otro idioma',
     'Search Engine': 'Buscador',
     'Restart required': 'Reiniciar requerido',
-    'A restart is required to change languages.': 'Es necesario reiniciar para cambiar de idioma.'
+    'A restart is required to change languages.': 'Es necesario reiniciar para cambiar de idioma.',
+    'This change requires a restart': 'Este cambio requiere un reinicio.'
 };
 
 module.exports = es;
