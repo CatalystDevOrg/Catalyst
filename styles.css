@@ -546,6 +546,10 @@ input[type="checkbox"]:checked::after {
     padding: 8px;
 }
 
+#sidebar button {
+    margin: 4px;
+}
+
 #sidebarwv {
     height: 95%;
 }
