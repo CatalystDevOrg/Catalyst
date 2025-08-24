@@ -52,7 +52,7 @@ select {
     font-size: 12pt;
     text-align: center;
     padding: 0.25rem;
-    transition: all;
+    transition: all 0.4s;
     cursor: pointer;
 }
 
