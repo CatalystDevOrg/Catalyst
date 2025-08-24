@@ -475,8 +475,6 @@ ul {
     margin: 4px;
 }
 
-
-
 .toggle-area {
     display: flex;
     align-items: center;
@@ -504,15 +502,15 @@ ul {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-#welcomepage h1 {
-    font-size: 64px;
-}
-
 #welcomepage * {
     margin-left: 0;
     margin-right: 0;
     margin-top: 2pt;
     margin-right: 2pt;
+}
+
+#welcomepage h1 {
+    font-size: 64px;
 }
 
 input[type="checkbox"] {
