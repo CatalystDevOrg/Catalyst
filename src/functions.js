@@ -120,6 +120,7 @@ function createModal(h, t, f='') {
     modal.appendChild(func);
     modal.appendChild(exit);
     document.body.appendChild(modal);
+    native.runTranslations();
 }
 
 function destroyModal(hash) {
