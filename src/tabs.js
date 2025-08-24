@@ -104,7 +104,9 @@ function addListeners(view, hash) {
         tab.getElementsByTagName('img')[0].style.display = 'inline';
     }
     view.addEventListener('did-stop-loading', () => {
-        tab.getElementsByTagName('p')[0].innerText = view.getTitle();
+        if (!view.src == 'catalyst://newtab') {
+            tab.getElementsByTagName('p')[0].innerText = view.getTitle();
+        }
         tab.classList.remove('animate-pulse');
         let viewURL = view.getURL();
         if (!viewURL.startsWith('file://')) {
