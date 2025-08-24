@@ -38,7 +38,7 @@ async function createTab(url) {
     view.classList.add('view');
     view.allowpopups = 'allowpopups';
     view.webpreferences = 'nativeWindowOpen=true';
-    if (!inputAgent.length < 1) {
+    if (inputAgent != null) {
         view.useragent = inputAgent.replace('{{version}}', packageJSON.version);
     }
     view.src = url;
