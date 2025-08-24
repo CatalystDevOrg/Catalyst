@@ -47,7 +47,7 @@ function togglePreferences() {
         document.getElementById('pref-useragent').value = preferences.userAgent;
 
         addTextListener(document.getElementById('pref-font'), 'font');
-        document.getElementById('pref-font').value = preferences.font;
+        document.getElementById('pref-font').value = preferences.font || 'System (Default)';
 
         addTextListener(document.getElementById('pref-strt'), 'startupPage');
         document.getElementById('pref-strt').value = preferences.startupPage;
