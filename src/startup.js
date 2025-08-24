@@ -13,10 +13,6 @@ if(document.readyState === 'ready' || document.readyState === 'complete') {
     };
 }
 
-if (localStorage.getItem('bookmarks') < 1) {
-    document.querySelector('#bookmarks').innerText = 'When you add bookmarks they will appear here!';
-}
-
 native.getThemes();
 
 sideBarWebView.addEventListener('did-attach', () => {
