@@ -416,6 +416,11 @@ ul {
     border-radius: 8pt;
 }
   
+.modal * {
+    position: relative;
+    margin: 4px;
+}
+
 #pref-tabs {
     margin: 16pt;
 }
