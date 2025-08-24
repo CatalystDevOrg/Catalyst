@@ -1,6 +1,6 @@
 // add startup code here
 // dont touch this, it makes the loading screen work
-var sideBar = document.getElementById('sb');
+var sideBar = document.getElementById('sidebar');
 var sideBarWebView = document.getElementById('sidebarwv');
 
 if(document.readyState === 'ready' || document.readyState === 'complete') {
