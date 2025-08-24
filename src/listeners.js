@@ -7,7 +7,7 @@ const find = document.querySelector('#find');
 const zoom = document.querySelector('#zoom');
 const sidebar = document.querySelector('#tgl-sidebar');
 const lang = document.getElementById('lang');
-const anicontent = document.getElementById('pref-anicontent')
+const anicontent = document.getElementById('pref-anicontent');
 
 document.getElementById('more-btn').addEventListener('click', () => {
     toggleDisplay(document.getElementById('more-menu'));
@@ -43,9 +43,9 @@ sidebar.addEventListener('click', () => {
 });
 
 lang.addEventListener('change', () => {
-    createModal('Restart required', 'A restart is required to change languages.')
-})
+    createModal('Restart required', 'A restart is required to change languages.');
+});
 
 anicontent.addEventListener('change', () => {
-    createModal('Restart required', 'This change requires a restart.')
+    createModal('Restart required', 'This change requires a restart.');
 });
