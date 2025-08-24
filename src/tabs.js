@@ -57,6 +57,7 @@ async function createTab(url) {
     switchTabs(randomHash);
     document.getElementById('searchbar').focus();
     native.setTitlebarTitle(view.title);
+    native.runTranslations();
 }
 createTab();
 
