@@ -43,7 +43,7 @@ async function createTab(url) {
     }
     view.src = url;
     view.partition = randomHash;
-    if (preferences.adBlockEnabled) {
+    if (preferences.adblockEnabled) {
         native.enableAdBlocker(randomHash);
     }
     let image = document.createElement('img');
