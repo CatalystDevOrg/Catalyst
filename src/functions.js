@@ -90,7 +90,7 @@ function toggleFind() {
 }
 
 function toggleZoom() {
-    e = document.querySelector('#zoom');
+    e = document.querySelector('#zoomBox');
     e.classList.toggle('hidden');
 }
 

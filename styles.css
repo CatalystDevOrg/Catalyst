@@ -304,17 +304,21 @@ ul {
     animation: spin 1s linear infinite;
 }
 
-#find, #zoom {
+#zoomBox, #find {
+    padding: 8pt;
     position: fixed;
     bottom: 0;
     width: 100vw;
-    padding: 8pt;
     background-color: var(--primary);
     color: var(--foreground);
 }
 
 #find::placeholder, #zoom::placeholder {
     color: var(--foreground);
+}
+
+#zoom {
+    width: 95%;
 }
 
 #utility {
