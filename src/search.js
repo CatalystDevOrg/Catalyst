@@ -72,12 +72,17 @@ function loadURL(url, scheck='true') {
         }
     }
 
+    if (view.classList.contains("hidden")) {
+        view.classList.toggle("hidden")
+    }
+
     for (i=0; i<protocols.length; i++) {
         if (url.startsWith(protocols[i])) {
             view.src = url;
             return;
         }
     }
+
 
     if (checkUrlValidity(url)) {
         view.src = 'https://' + url;
