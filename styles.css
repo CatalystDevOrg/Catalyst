@@ -5,22 +5,23 @@
 }
 
 :root {
-    --primary: #6366f1;
-    --secondary: #818cf8;
-    --tertiary: #a5b4fc;
+    --primary: #a855f7;
+    --secondary: #9333ea;
+    --tertiary: #7e22ce;
     --userchrome-background: url('./assets/Searching_To_Return_A_Favor.png');
     --home-background: url('./assets/CatalystBackgroundBranded.png');
     --userchrome-background-color: #AA87F7;
-    --userchrome-btn-primary: var(--primary);
-    --userchrome-btn-secondary: var(--secondary);
-    --button-primary: #a855f7;
-    --button-secondary: #9333ea;
-    --button-tertiary: #7e22ce;
+    --userchrome-btn-primary: transparent;
+    --userchrome-btn-secondary: var(--primary);
+    --button-primary: var(--primary);
+    --button-secondary: var(--secondary);
+    --button-tertiary: var(--tertiary);
     --foreground: white;
-    --border-radius: 0.5rem;
-    --tab-radius: var(--border-radius);
+    --border-radius: 0.3rem;
+    --tab-radius: 0.6rem;
     --searchbar-radius: 1.5rem;
-    --moremenu-radius: 1.5rem;
+    --searchbar-background: var(--secondary);
+    --moremenu-radius: 0.8rem;
     --font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -59,8 +60,6 @@ button:hover,
 select:hover {
     background-color: var(--button-secondary);
 }
-
-
 
 button img {
     filter: invert(100%);
@@ -424,8 +423,13 @@ ul {
     min-width: fit-content;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    background-color: #E0E7FF;
+    color: var(--forgeround);
+    background-color: var(--searchbar-background);
     width: 95%;
+}
+
+#searchbar::placeholder {
+    color: var(--foreground);
 }
 
 #more-menu {
