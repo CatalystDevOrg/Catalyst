@@ -159,8 +159,8 @@ function evaluatePreferences() {
     }
     if (preferences.sidebarRight) {
         sideBar.style.right = 0;
-        sideBar.style.animation = "sliding-rtl 0.2s";
-    };
+        sideBar.style.animation = 'sliding-rtl 0.2s';
+    }
 }
 
 function changePrefTab(itm) {

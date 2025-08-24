@@ -75,7 +75,7 @@ function loadURL(url, scheck='true') {
             view.src = url;
             return;
         }
-    };
+    }
 
     if (checkUrlValidity(url)) {
         view.src = 'https://' + url;
