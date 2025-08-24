@@ -34,6 +34,9 @@ function togglePreferences() {
         addCheckboxListener(document.getElementById('pref-anicontent'), 'anicontent');
         document.getElementById('pref-anicontent').checked = preferences.anicontent;
 
+        addCheckboxListener(document.getElementById('pref-sidebar-right'), 'sidebarRight');
+        document.getElementById('pref-sidebar-right').checked = preferences.sidebarRight;
+
         addSelectListener(document.getElementById('se'), 'searchEngine');
         document.getElementById('se').value = preferences.searchEngine;
 
@@ -154,6 +157,9 @@ function evaluatePreferences() {
     if (!preferences.anicontent) {
         document.getElementById('userchrome').style.backgroundImage = 'none';
     }
+    if (preferences.sidebarRight) {
+        sideBar.style.right = 0;
+    };
 }
 
 function changePrefTab(itm) {
