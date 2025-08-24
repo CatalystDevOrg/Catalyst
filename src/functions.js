@@ -129,7 +129,7 @@ function destroyModal(hash) {
 }
 
 function openInSidebar(u) {
-    document.getElementById('sidebar').src = u;
+    document.getElementById('sidebarwv').src = u;
 }
 
 function handlPermReq(url, permission) {

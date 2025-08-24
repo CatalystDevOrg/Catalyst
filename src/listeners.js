@@ -5,7 +5,8 @@ const backward = document.querySelector('#back');
 const forward = document.querySelector('#forward');
 const find = document.querySelector('#find');
 const zoom = document.querySelector('#zoom');
-const sidebar = document.querySelector('#tgl-sidebar');
+const sidebar = document.getElementById('sidebar')
+const sidebarToggle = document.querySelector('#tgl-sidebar');
 const lang = document.getElementById('lang');
 const anicontent = document.getElementById('pref-anicontent');
 
@@ -38,7 +39,7 @@ zoom.addEventListener('input', (event) => {
     document.querySelector('.current').setZoomFactor(parseFloat(zoom.value / 100));
 });
 
-sidebar.addEventListener('click', () => {
+sidebarToggle.addEventListener('click', () => {
     toggleDisplay(document.getElementById('sidebar'));
 });
 
@@ -48,4 +49,8 @@ lang.addEventListener('change', () => {
 
 anicontent.addEventListener('change', () => {
     createModal('Restart required', 'This change requires a restart.');
+});
+
+document.getElementById('sideBarWikipediaShortcut').addEventListener('click', () => {
+    openInSidebar('https://wikipedia.org');
 });
