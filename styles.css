@@ -42,6 +42,30 @@ body {
     font-family: var(--font-family);
 }
 
+button,
+select {
+    color: var(--foreground);
+    background-color: var(--button-primary);
+    border-radius: var(--border-radius);
+    padding: 8pt;
+    font-size: 12pt;
+    text-align: center;
+    padding: 0.25rem;
+    transition: all;
+    cursor: pointer;
+}
+
+button:hover,
+select:hover {
+    background-color: var(--button-secondary);
+}
+
+
+
+button img {
+    filter: invert(100%);
+}
+
 .tab {
     transition: all;
     flex-grow: 1;
@@ -91,6 +115,47 @@ body {
     background-color: var(--tertiary);
 }
 
+#tb-wrapper {
+    display: flex;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    margin-top: 0;
+    align-items: center;
+}
+
+#tabs-bar {
+    display: flex;
+    overflow: auto;
+    margin-left: 0.25rem;
+    flex: 1 1 0%;
+    align-items: center;
+}
+
+.tabs-btns {
+    display: inline-flex;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+#userchrome {
+    background: var(--userchrome-background);
+    background-color: var(--userchrome-background-color);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 31%;
+}
+
+#userchrome button {
+    margin-left: 3pt;
+}
+
+#userchrome #searchbar {
+    margin-left: 2pt;
+    margin-right: 4pt;
+}
+
 #userchrome button {
     background-color: var(--userchrome-btn-primary);
 }
@@ -99,17 +164,48 @@ body {
     background-color: var(--userchrome-btn-secondary);
 }
 
-button,
-select {
+#preferences-box {
+    overflow: auto;
+    padding: 0.375rem;
+    width: 100vw;
+    height: 100vh;
     color: var(--foreground);
-    background-color: var(--button-primary);
-    border-radius: var(--border-radius);
-    padding: 8pt;
-    font-size: 12pt;
-    text-align: center;
-    padding: 0.25rem;
-    transition: all;
-    cursor: pointer;
+    background-color: var(--secondary);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    animation: sliding-ttb 0.2s;
+}
+
+#pref-tabs {
+    margin: 16pt;
+}
+
+.pref-tab {
+    display: flex;
+    align-items: center;
+    margin: 4pt;
+    background-color: transparent !important;
+}
+
+.pref-tab:hover {
+    background-color: var(--primary) !important;
+}
+
+#preferences-box button,
+select {
+    background-color: var(--button-secondary);
+}
+
+#preferences-box button:hover,
+select:hover {
+    background-color: var(--button-tertiary);
+}
+
+#preferences-box label, p, h1 {
+    margin-left: 16pt;
+}
+
+#preferences-box * {
+    /* margin: 4pt; */
 }
 
 #preferences-box button {
@@ -128,11 +224,6 @@ select {
     margin-left: 200px;
 }
 
-button:hover,
-select:hover {
-    background-color: var(--button-secondary);
-}
-
 #preferences-box input[type=text] {
     padding: 4pt;
     border-radius: var(--border-radius);
@@ -146,10 +237,6 @@ select:hover {
 #preferences-box label {
     font-size: 16pt;
     font-weight: bold;
-}
-
-button img {
-    filter: invert(100%);
 }
 
 .bg {
@@ -327,47 +414,6 @@ ul {
     width: 100%;
 }
 
-#userchrome {
-    background: var(--userchrome-background);
-    background-color: var(--userchrome-background-color);
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: 31%;
-}
-
-#userchrome button {
-    margin-left: 3pt;
-}
-
-#userchrome #searchbar {
-    margin-left: 2pt;
-    margin-right: 4pt;
-}
-
-#tb-wrapper {
-    display: flex;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    padding-left: 0.375rem;
-    padding-right: 0.375rem;
-    margin-top: 0;
-    align-items: center;
-}
-
-#tabs-bar {
-    display: flex;
-    overflow: auto;
-    margin-left: 0.25rem;
-    flex: 1 1 0%;
-    align-items: center;
-}
-
-.tabs-btns {
-    display: inline-flex;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-}
-
 #searchbar {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -411,17 +457,6 @@ ul {
     backdrop-blur: blur(40px);
 }
 
-#preferences-box {
-    overflow: auto;
-    padding: 0.375rem;
-    width: 100vw;
-    height: 100vh;
-    color: var(--foreground);
-    background-color: var(--secondary);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    animation: sliding-ttb 0.2s;
-}
-
 .modal {
     position: absolute;
     left: 50;
@@ -440,38 +475,7 @@ ul {
     margin: 4px;
 }
 
-#pref-tabs {
-    margin: 16pt;
-}
 
-.pref-tab {
-    display: flex;
-    align-items: center;
-    margin: 4pt;
-    background-color: transparent !important;
-}
-
-.pref-tab:hover {
-    background-color: var(--primary) !important;
-}
-
-#preferences-box button,
-select {
-    background-color: var(--button-secondary);
-}
-
-#preferences-box button:hover,
-select:hover {
-    background-color: var(--button-tertiary);
-}
-
-#preferences-box label, p, h1 {
-    margin-left: 16pt;
-}
-
-#preferences-box * {
-    /* margin: 4pt; */
-}
 
 .toggle-area {
     display: flex;
