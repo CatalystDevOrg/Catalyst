@@ -70,6 +70,13 @@ function loadURL(url, scheck='true') {
         }
     }
 
+    for (i=0; i<protocols.length; i++) {
+        if (url.startsWith(protocols[i])) {
+            view.src = url;
+            return;
+        }
+    };
+
     if (checkUrlValidity(url)) {
         view.src = 'https://' + url;
     } else {
