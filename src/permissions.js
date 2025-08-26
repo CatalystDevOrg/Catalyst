@@ -1,7 +1,7 @@
 const permissionsPreference = document.getElementById('pref-permissions');
 
 function getPermissions() {
-    return JSON.parse(localStorage.getItem('permissions') || '{}');
+    return JSON.parse(localStorage.getItem('permissions') || '{"undefined":{"openExternal":false}}');
 }
 
 function getPermission(url, permission) {
