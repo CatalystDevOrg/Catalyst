@@ -212,6 +212,10 @@ ipcMain.handle('read-user-data', async (event, fileName) => {
     }
 });
 
+ipcMain.handle('get-user-data-path', async (event) => {
+    return app.getPath('userData');
+});
+
 if (!fs.existsSync(`${app.getPath('userData')}/themes`)) {
     fs.mkdirSync(`${app.getPath('userData')}/themes`);
 }

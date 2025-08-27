@@ -10,6 +10,8 @@
     --tertiary: #7e22ce;
     --userchrome-background: url('./assets/Searching_To_Return_A_Favor.png');
     --home-background: url('./assets/CatalystBackgroundBranded.png');
+    --userchrome-background-position-x: right;
+    --userchrome-background-position-y: 31%;
     --userchrome-background-color: #AA87F7;
     --userchrome-btn-primary: transparent;
     --userchrome-btn-secondary: var(--primary);
@@ -142,8 +144,8 @@ button img {
     background: var(--userchrome-background);
     background-color: var(--userchrome-background-color);
     background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: 31%;
+    background-position-x: var(--userchrome-background-position-x);
+    background-position-y: var(--userchrome-background-position-y);
 }
 
 #userchrome button {

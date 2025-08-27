@@ -50,8 +50,7 @@ contextBridge.exposeInMainWorld('native', {
             result => {
                 let el = document.createElement('style');
                 el.type = 'text/css';
-                el.innerText = result;
-                document.head.appendChild(el);
+                
             }
         );
     },
@@ -75,9 +74,13 @@ contextBridge.exposeInMainWorld('native', {
             result => {
                 let el = document.createElement('style');
                 el.type = 'text/css';
-                el.innerText = result;
+                dataPath = ipcRenderer.invoke('get-user-data-path').then(
+                    dataPathReal => {
+                        el.innerText = result.replace("./", `${dataPathReal}/themes/`);
+                        document.head.appendChild(el);   
+                    }
+                )
                 el.classList.add('theme');
-                document.head.appendChild(el);
             }
         );
     },
