@@ -56,5 +56,5 @@ document.getElementById('sideBarWikipediaShortcut').addEventListener('click', ()
 });
 
 document.getElementById('calculatorShortcut').addEventListener('click', () => {
-    openInSidebar('https://duckduckgo.com/?q=calculator&ia=calculator');
+    openInSidebar('https://www.calculator.net/math-calculator.html');
 });
