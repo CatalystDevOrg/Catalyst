@@ -54,3 +54,7 @@ anicontent.addEventListener('change', () => {
 document.getElementById('sideBarWikipediaShortcut').addEventListener('click', () => {
     openInSidebar('https://wikipedia.org');
 });
+
+document.getElementById('calculatorShortcut').addEventListener('click', () => {
+    openInSidebar('https://duckduckgo.com/?q=calculator&ia=calculator');
+});
