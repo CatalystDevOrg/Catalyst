@@ -572,6 +572,12 @@ input[type="checkbox"]:checked::after {
     margin: 8px;
 }
 
+#sidebar .shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #sidebarwv {
     height: 95%;
 }
