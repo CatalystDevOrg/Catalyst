@@ -290,9 +290,10 @@ select:hover {
     transition: all;
     display: flex;
     align-items: center;
+    vertical-align: center;
     flex-grow: 1;
     max-width: 16rem;
-    padding: 4pt;
+    padding: 6pt;
     margin: 2pt;
     width: fit-content;
     height: 13px;
