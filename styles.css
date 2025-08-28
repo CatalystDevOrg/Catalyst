@@ -301,6 +301,7 @@ select:hover {
     color: var(--foreground);
     border-radius: var(--border-radius);
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .bookmark h1 {
