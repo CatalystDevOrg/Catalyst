@@ -176,6 +176,13 @@ button img {
     animation: sliding-ttb 0.2s;
 }
 
+#preferences-box textarea {
+    background-color: var(--tertiary);
+    color: var(--foreground);
+    border-radius: var(--border-radius);
+    font-size: 14pt;
+}
+
 #pref-tabs {
     margin: 16pt;
 }
