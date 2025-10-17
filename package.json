@@ -35,7 +35,7 @@
         "electron-context-menu": "^3.6.1",
         "electron-squirrel-startup": "^1.0.1",
         "vanilla-i18n": "^1.0.8",
-        "material-symbols": "^0.34.1"
+        "material-symbols": "^0.37.0"
     },
     "build": {
         "appId": "org.eu.getcatalyst.catalyst",
