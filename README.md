@@ -49,7 +49,7 @@ Here are the Linux distributions that have Catalyst in their repositories: \
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/VelocityDesign>
+        <a href=https://github.com/icarusinthewings>
             <img src=https://avatars.githubusercontent.com/u/24457862?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Judah Brown/>
             <br />
             <sub style="font-size:14px"><b>Judah Brown</b></sub>
