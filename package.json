@@ -23,7 +23,7 @@
     "license": "MIT",
     "devDependencies": {
         "electron": "^37.4.0",
-        "electron-builder": "^26.0.12",
+        "electron-builder": "^26.4.0",
         "electron-builder-squirrel-windows": "^26.0.12",
         "electron-winstaller": "latest",
         "electron-reloader": "^1.2.3",
