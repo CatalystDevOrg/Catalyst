@@ -24,7 +24,7 @@
     "devDependencies": {
         "electron": "^37.4.0",
         "electron-builder": "^26.6.0",
-        "electron-builder-squirrel-windows": "^26.6.0",
+        "electron-builder-squirrel-windows": "^26.8.1",
         "electron-winstaller": "latest",
         "electron-reloader": "^1.2.3",
         "eslint": "^8.57.0"
