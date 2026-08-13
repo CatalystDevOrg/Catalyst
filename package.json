@@ -22,20 +22,20 @@
     "email": "email@localhost",
     "license": "MIT",
     "devDependencies": {
-        "electron": "^42.0.1",
-        "electron-builder": "^26.6.0",
+        "electron": "^42.9.0",
+        "electron-builder": "^26.15.3",
         "electron-builder-squirrel-windows": "^26.6.0",
-        "electron-winstaller": "latest",
         "electron-reloader": "^1.2.3",
-        "eslint": "^8.57.0"
+        "electron-winstaller": "^5.4.4",
+        "eslint": "^8.57.1"
     },
     "dependencies": {
-        "@cliqz/adblocker-electron": "^1.27.3",
-        "cross-fetch": "^4.0.0",
+        "@cliqz/adblocker-electron": "^1.34.0",
+        "cross-fetch": "^4.1.0",
         "electron-context-menu": "^3.6.1",
         "electron-squirrel-startup": "^1.0.1",
-        "vanilla-i18n": "^1.0.8",
-        "material-symbols": "^0.34.1"
+        "material-symbols": "^0.34.1",
+        "vanilla-i18n": "^1.0.8"
     },
     "build": {
         "appId": "org.eu.getcatalyst.catalyst",
@@ -67,5 +67,9 @@
                 "zip"
             ]
         }
+    },
+    "allowScripts": {
+        "electron-winstaller@5.4.0": true,
+        "electron-winstaller@5.4.4": true
     }
 }
